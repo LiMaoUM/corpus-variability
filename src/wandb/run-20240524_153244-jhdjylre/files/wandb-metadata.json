@@ -1,0 +1,204 @@
+{
+    "os": "Linux-4.18.0-372.75.1.el8_6.x86_64-x86_64-with-glibc2.28",
+    "python": "3.10.9",
+    "heartbeatAt": "2024-05-24T19:32:44.840944",
+    "startedAt": "2024-05-24T19:32:44.284500",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "git@github.com:LiMaoUM/corpus-variability.git",
+        "commit": "43b7c003d09e5c3eec57cd4ff6168c386c32af9e"
+    },
+    "email": "maolee@umich.edu",
+    "root": "/nfs/turbo/isr-fconrad1/projects/corpus-variability",
+    "host": "gl1524.arc-ts.umich.edu",
+    "username": "maolee",
+    "executable": "/sw/pkgs/arc/python3.10-anaconda/2023.03/bin/python",
+    "cpu_count": 32,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 3.8364062500000014,
+        "min": 3900.0,
+        "max": 3900.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.6,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.6,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.365,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.6,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.6,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.9,
+            "min": 3900.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3.6,
+            "min": 3900.0,
+            "max": 3900.0
+        }
+    ],
+    "disk": {
+        "total": 19.990234375,
+        "used": 10.788276672363281
+    },
+    "gpu": "NVIDIA A40",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A40",
+            "memory_total": 48305799168
+        }
+    ],
+    "memory": {
+        "total": 376.3263702392578
+    }
+}
