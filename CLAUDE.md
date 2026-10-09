@@ -16,9 +16,16 @@ confidence band and a required-n.
   TIFU; GTR embeddings exist in `~/projects/SummEval`), Truth Social and Bluesky full corpora
   (`~/projects/social-media-corpus`), Maeda 2025's 522-document corpus (availability unchecked).
 
+## Data paths
+
+- SummEval GTR-T5-base caches: `/home/maolee/projects/SummEval/revision/experiments/cache/gtr_{askdocs,trump,tifu}_{42,43,44}_{1000,10000}.npy`, shape (N, 768) float32, mean-pooled, max length 128. Text: `SummEval/data/AskDocs.csv` (column `Question`), `SummEval/data/variability/trump.csv` (`Message`), `SummEval/data/tifu_all_tokenized_and_filtered.json` (JSON lines, `selftext_without_tldr`). Loader and cleaning: `SummEval/revision/experiments/common.py::load_corpus`. The EACL coverage metric (`covg`, mean-max cosine to k probes) is in `revision/experiments/scaling_curve.py`.
+- Old 2024 tweets: `from-windows-2026-07-26/data/random.csv` (7,860 rows, Sprinklr export) with `random_embeddings_encoder.csv` (768-d, no header) and `mistral_random_embedding.csv` (4,096-d).
+
 ## Environment
 
 - Python via `uv run`; deps in `pyproject.toml` (numpy, scipy, scikit-learn, pandas).
+- The box runs at load 60 to 80 on 64 cores; always set `OMP_NUM_THREADS=8` (the scripts do), or
+  BLAS thread contention makes a one-minute job take fifteen.
 - `from-windows-2026-07-26/` is 3.1 GB of 2023-2024 summarization data (50-sampled CSVs,
   covariance files, Mistral embeddings). Gitignored. Nothing in it is used yet.
 - Experiment cards live in `experiments/`; results in `results/` (large arrays gitignored).

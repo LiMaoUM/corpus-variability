@@ -21,3 +21,4 @@
 - **Artifacts**: `results/smoke_synthetic.csv`, `results/smoke_synthetic_required_n.csv`.
 - **Monitor contract**: foreground run, under a minute expected; no monitor.
 - **Status log**:
+  - 2026-10-08 v1: passed. alpha 0.5 gives rho 0.968, MAE 0.029 vs true coverage; alpha <= 0.3 fails. Chao required-n within 2x on 3 of 4 settings. Log: results/smoke_synthetic.log. Follow-up studies: scripts/eureka1_collapse.py, eureka1_predict.py, eureka2_error_bound.py; evidence memo docs/eureka-evidence.md.
