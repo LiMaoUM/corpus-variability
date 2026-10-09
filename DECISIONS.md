@@ -51,3 +51,13 @@ camera-ready of SummEval gets one paragraph citing this project as in prep to an
 Rationale: the two claims replicate on three seeds and three corpora, the survey analogy is
 exact with FPC, and the downstream summary-stability link is a within-corpus direction only and
 stays a limitation.
+
+## 2026-10-09: Cross-corpus test by enumeration (Mao, interactive)
+
+The free-summary stability test failed across corpora because the summariser chooses its own
+abstraction scale per genre (TIFU reads coarse, AskDocs fine). Mao chose the enumeration study
+over the cheaper per-corpus radius fit: build a fixed-granularity theme inventory per corpus
+(k = 30 clusters on the full Qwen3 embeddings, named by Gemma-4), then for each existing draw
+ask Gemma-4 which themes are present and score mass-weighted recall against the inventory.
+Coverage at the theme scale should predict recall across corpora. Card:
+`experiments/theme-recall.card.md`.
