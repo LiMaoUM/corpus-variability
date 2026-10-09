@@ -119,3 +119,33 @@ beside discussion clusters at d near 16, and one global d cannot describe both. 
 Zipf mixture fails for the related reason of unequal topic mass (local d CV 0.21, no
 duplicates). A corpus with a heterogeneous local dimension needs a mixture law, which is the
 second parameter named in claim 1.
+
+## Summary instability versus n, eight corpora (2026-10-09, `scripts/summary_n_curve.py`)
+
+Fresh summaries from Gemma-4-31B-it (temperature 0) of 30 draws at each n in {25, 50, 100,
+200, 400} on the five census corpora and the SummEval triple; instability is the mean pairwise
+cosine distance among the 30 summaries (Qwen3-Embedding-8B).
+
+Within a corpus, instability falls with n in all eight corpora and tracks G(n, r) in direction
+(Spearman +0.40 to +1.00). Across corpora at a fixed n, G does not order the corpora by
+instability: Spearman +0.14 at n = 25, +0.12 at n = 50, +0.07 at n = 200, -0.17 at n = 400,
+with bootstrap bands that reach zero; d does no better. The per-draw G of a sample does not
+predict how far that draw's summary sits from the centroid (median rho +0.05 over 40 cells).
+The card's stopping rule reads this as unsupported for the cross-corpus claim.
+
+What the table shows about why. At the shared radii, AskDocs sits at G near 1 for every n
+(its documents are long questions spread thinly, so almost no sampled document has a
+neighbour within r) while citizens sits at G 0.06 to 0.23; the shared scale is informative for
+neither extreme. Instability is also driven by the summariser's behaviour on each genre: at
+n = 25 AskDocs summaries vary most (0.27) although its G is saturated, and at n = 400 the
+census corpora with the lowest G (citizens, illegal) are not the most stable. Coverage of the
+embedding space and stability of a 150-word LLM summary are different quantities, and the
+paper should not claim the second from the first. The within-corpus direction is the only
+downstream statement the data support.
+
+Exploratory, outside the card: corpus-specific radii (each corpus's own 1-NN quantiles at
+n = 50) in `scripts/n_curve_exploratory.py`.
+Result of that check: with each corpus at its own scale, cross-corpus Spearman of instability
+with G is +0.04, +0.24, +0.55, +0.05, +0.43 at n = 25 to 400, and the corpus's own scale
+itself is uninformative (rho about +0.05). The shared-radius choice is not what hides the
+relation; the cross-corpus link is weak at any scale.
