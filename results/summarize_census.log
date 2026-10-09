@@ -19,3 +19,7 @@ covid n=100: 30 summaries, prompt chars median 19443
 covid n=200: 30 summaries, prompt chars median 38811
 covid n=400: 30 summaries, prompt chars median 77073
 illegal n=25: 30 summaries, prompt chars median 4950
+illegal n=50: 30 summaries, prompt chars median 9519
+illegal n=100: 30 summaries, prompt chars median 18698
+illegal n=200: 30 summaries, prompt chars median 37284
+illegal n=400: 30 summaries, prompt chars median 73765

@@ -96,3 +96,26 @@ cannot lock the claim; the card's stopping rule calls it inconclusive. Trump is 
 (moderate G, lowest instability): its summaries converge on one dominant mode, the same
 dense-mode structure that made it fail the collapse test. At n = 50 of N >= 7,600 the finite
 population correction is negligible and G equals M to 0.005.
+
+## Seed replication and collapse probe (2026-10-09, `scripts/replicate_seeds.py`)
+
+GTR caches, seeds 42, 43, 44, 10,000 documents each. Mean (sd) over seeds:
+
+| corpus | d (TwoNN) | R2 on n r^d | held-out R2 | MAE of predicted G at n = 7,000 | MAE G vs M | MAE G (1 - n/N) vs M |
+|---|---|---|---|---|---|---|
+| AskDocs | 13.4 (0.25) | 0.972 (0.007) | 0.950 (0.019) | 0.042 (0.007) | 0.076 (0.005) | 0.010 (0.003) |
+| TIFU | 17.7 (0.11) | 0.969 (0.004) | 0.954 (0.004) | 0.030 (0.004) | 0.064 (0.006) | 0.013 (0.002) |
+| Trump | 9.3 (0.55) | 0.857 (0.040) | 0.555 (0.092) | 0.060 (0.004) | 0.124 (0.006) | 0.009 (0.002) |
+
+Both claims hold on all three seeds: the collapse on AskDocs and TIFU, its failure on Trump,
+and the finite population correction (MAE 0.009 to 0.013 after correction on every corpus).
+
+Why Trump fails. In a 5,000-document sample, 3.4% of Trump documents have a near-duplicate
+(cosine distance under 0.02; AskDocs and TIFU: 0.0%), and TwoNN d across 20 k-means clusters
+runs from 2.0 to 16.2 (coefficient of variation 0.52; AskDocs 0.15, TIFU 0.10). Removing
+near-duplicates (greedy at 0.02, 266 documents) leaves the collapse broken (held-out R2
+0.74), so the cause is the spread of local dimension, with slogan-like clusters at d near 2
+beside discussion clusters at d near 16, and one global d cannot describe both. The synthetic
+Zipf mixture fails for the related reason of unequal topic mass (local d CV 0.21, no
+duplicates). A corpus with a heterogeneous local dimension needs a mixture law, which is the
+second parameter named in claim 1.

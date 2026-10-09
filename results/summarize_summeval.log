@@ -12,3 +12,4 @@ sv_tifu n=25: 30 summaries, prompt chars median 14613
 sv_tifu n=50: 30 summaries, prompt chars median 28867
 sv_tifu n=100: 30 summaries, prompt chars median 57410
 sv_tifu n=200: 30 summaries, prompt chars median 115213
+sv_tifu n=400: 30 summaries, prompt chars median 228161

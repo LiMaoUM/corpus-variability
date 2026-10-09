@@ -1,0 +1,38 @@
+{'corpus': 'askdocs', 'seed': 42, 'd_twonn': 13.62, 'r2_nrd': np.float64(0.973), 'r2_heldout': np.float64(0.948), 'b': 0.511, 'mae_pred_G': 0.044, 'n_target': 7000, 'mae_G_vs_M': 0.0717, 'mae_Gfpc_vs_M': 0.0108}
+{'corpus': 'askdocs', 'seed': 43, 'd_twonn': 13.13, 'r2_nrd': np.float64(0.965), 'r2_heldout': np.float64(0.932), 'b': 0.557, 'mae_pred_G': 0.0489, 'n_target': 7000, 'mae_G_vs_M': 0.0816, 'mae_Gfpc_vs_M': 0.0112}
+{'corpus': 'askdocs', 'seed': 44, 'd_twonn': 13.46, 'r2_nrd': np.float64(0.978), 'r2_heldout': np.float64(0.97), 'b': 0.496, 'mae_pred_G': 0.0344, 'n_target': 7000, 'mae_G_vs_M': 0.0746, 'mae_Gfpc_vs_M': 0.0065}
+{'corpus': 'trump', 'seed': 42, 'd_twonn': 9.16, 'r2_nrd': np.float64(0.811), 'r2_heldout': np.float64(0.448), 'b': 0.246, 'mae_pred_G': 0.0643, 'n_target': 7000, 'mae_G_vs_M': 0.1304, 'mae_Gfpc_vs_M': 0.009}
+{'corpus': 'trump', 'seed': 43, 'd_twonn': 9.93, 'r2_nrd': np.float64(0.878), 'r2_heldout': np.float64(0.612), 'b': 0.27, 'mae_pred_G': 0.0576, 'n_target': 7000, 'mae_G_vs_M': 0.1196, 'mae_Gfpc_vs_M': 0.0078}
+{'corpus': 'trump', 'seed': 44, 'd_twonn': 8.87, 'r2_nrd': np.float64(0.881), 'r2_heldout': np.float64(0.604), 'b': 0.271, 'mae_pred_G': 0.0567, 'n_target': 7000, 'mae_G_vs_M': 0.1208, 'mae_Gfpc_vs_M': 0.0111}
+{'corpus': 'tifu', 'seed': 42, 'd_twonn': 17.66, 'r2_nrd': np.float64(0.972), 'r2_heldout': np.float64(0.954), 'b': 0.47, 'mae_pred_G': 0.0293, 'n_target': 7000, 'mae_G_vs_M': 0.0573, 'mae_Gfpc_vs_M': 0.0111}
+{'corpus': 'tifu', 'seed': 43, 'd_twonn': 17.59, 'r2_nrd': np.float64(0.965), 'r2_heldout': np.float64(0.95), 'b': 0.52, 'mae_pred_G': 0.0349, 'n_target': 7000, 'mae_G_vs_M': 0.0654, 'mae_Gfpc_vs_M': 0.0126}
+{'corpus': 'tifu', 'seed': 44, 'd_twonn': 17.81, 'r2_nrd': np.float64(0.971), 'r2_heldout': np.float64(0.957), 'b': 0.508, 'mae_pred_G': 0.0265, 'n_target': 7000, 'mae_G_vs_M': 0.0697, 'mae_Gfpc_vs_M': 0.015}
+
+ corpus  seed  d_twonn  r2_nrd  r2_heldout     b  mae_pred_G  n_target  mae_G_vs_M  mae_Gfpc_vs_M
+askdocs    42    13.62   0.973       0.948 0.511      0.0440      7000      0.0717         0.0108
+askdocs    43    13.13   0.965       0.932 0.557      0.0489      7000      0.0816         0.0112
+askdocs    44    13.46   0.978       0.970 0.496      0.0344      7000      0.0746         0.0065
+  trump    42     9.16   0.811       0.448 0.246      0.0643      7000      0.1304         0.0090
+  trump    43     9.93   0.878       0.612 0.270      0.0576      7000      0.1196         0.0078
+  trump    44     8.87   0.881       0.604 0.271      0.0567      7000      0.1208         0.0111
+   tifu    42    17.66   0.972       0.954 0.470      0.0293      7000      0.0573         0.0111
+   tifu    43    17.59   0.965       0.950 0.520      0.0349      7000      0.0654         0.0126
+   tifu    44    17.81   0.971       0.957 0.508      0.0265      7000      0.0697         0.0150
+
+Mean over seeds:
+        d_twonn        r2_nrd        r2_heldout        mae_pred_G        mae_G_vs_M        mae_Gfpc_vs_M       
+           mean    std   mean    std       mean    std       mean    std       mean    std          mean    std
+corpus                                                                                                         
+askdocs  13.403  0.250  0.972  0.007      0.950  0.019      0.042  0.007      0.076  0.005         0.010  0.003
+tifu     17.687  0.112  0.969  0.004      0.954  0.004      0.030  0.004      0.064  0.006         0.013  0.002
+trump     9.320  0.548  0.857  0.040      0.555  0.092      0.060  0.004      0.124  0.006         0.009  0.002
+{'corpus': 'askdocs', 'N': 10000, 'near_dup_share': 0.0, 'local_d_min': 8.1, 'local_d_max': 16.28, 'local_d_cv': 0.147, 'N_dedup': 9997, 'r2_nrd_dedup': np.float64(0.97), 'r2_heldout_dedup': np.float64(0.953)}
+{'corpus': 'trump', 'N': 10000, 'near_dup_share': 0.0344, 'local_d_min': 1.96, 'local_d_max': 16.19, 'local_d_cv': 0.518, 'N_dedup': 9734, 'r2_nrd_dedup': np.float64(0.866), 'r2_heldout_dedup': np.float64(0.741)}
+{'corpus': 'tifu', 'N': 10000, 'near_dup_share': 0.0, 'local_d_min': 14.41, 'local_d_max': 21.68, 'local_d_cv': 0.101, 'N_dedup': 9999, 'r2_nrd_dedup': np.float64(0.964), 'r2_heldout_dedup': np.float64(0.919)}
+{'corpus': 'zipf_k200', 'N': 20000, 'near_dup_share': 0.0, 'local_d_min': 7.83, 'local_d_max': 18.12, 'local_d_cv': 0.207, 'N_dedup': 20000, 'r2_nrd_dedup': np.float64(0.662), 'r2_heldout_dedup': np.float64(0.602)}
+
+   corpus     N  near_dup_share  local_d_min  local_d_max  local_d_cv  N_dedup  r2_nrd_dedup  r2_heldout_dedup
+  askdocs 10000          0.0000         8.10        16.28       0.147     9997         0.970             0.953
+    trump 10000          0.0344         1.96        16.19       0.518     9734         0.866             0.741
+     tifu 10000          0.0000        14.41        21.68       0.101     9999         0.964             0.919
+zipf_k200 20000          0.0000         7.83        18.12       0.207    20000         0.662             0.602
