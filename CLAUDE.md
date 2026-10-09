@@ -1,0 +1,38 @@
+# corpus-variability
+
+A metric for how much of a corpus's topical spread a sample covers, and how many documents a
+sample needs to reach a target coverage. The survey analogy: a sample of a population gives a
+point estimate with a margin of error; a sample of a corpus should give a coverage estimate with a
+confidence band and a required-n.
+
+## Standing decisions (see DECISIONS.md)
+
+- Estimand: coverage of the finite corpus in hand. Sampling exists to save annotation and LLM
+  budget. The full corpus is the ground truth for validation.
+- Primary metric: nearest-neighbour isolation coverage, the continuous analogue of Good-Turing.
+  `C_r(n) = 1 - #{i : d(x_i, NN_{-i}(x_i)) > r} / n` on document embeddings. Comparison lines:
+  Vendi score convergence, discrete topics with iNEXT coverage-based rarefaction.
+- Validation corpora: synthetic GMM mixtures (known truth), the SummEval triple (AskDocs, Trump,
+  TIFU; GTR embeddings exist in `~/projects/SummEval`), Truth Social and Bluesky full corpora
+  (`~/projects/social-media-corpus`), Maeda 2025's 522-document corpus (availability unchecked).
+
+## Environment
+
+- Python via `uv run`; deps in `pyproject.toml` (numpy, scipy, scikit-learn, pandas).
+- `from-windows-2026-07-26/` is 3.1 GB of 2023-2024 summarization data (50-sampled CSVs,
+  covariance files, Mistral embeddings). Gitignored. Nothing in it is used yet.
+- Experiment cards live in `experiments/`; results in `results/` (large arrays gitignored).
+
+## Related work in the vault
+
+- Backlog origin: `~/maospace/wiki/_corpus-sweep-2026-06-19-plan.md:65` (2025-07-28).
+- SummEval reviewer item RR5 (coverage as heterogeneity grows):
+  `~/projects/SummEval/revision/reviews/eacl_panel_rereview_round2_2026-06-12.md:52`.
+- Maeda 2025 topic recovery (100 docs -> 60%, 250 -> 70% of 522):
+  `~/maospace/wiki/sources/syn-ppl/maeda-2025-balancing-human-machine.md:23`.
+- Overlap check: `~/maospace/map/CORPUS-PAPERS.md` holds only Truth Social and Bluesky
+  conclusion papers; add a row once those corpora enter the validation set.
+
+## Agent room
+
+Exchanges with Codex are archived in `docs/agent-room/` (see its README).
