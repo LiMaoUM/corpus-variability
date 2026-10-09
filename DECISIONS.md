@@ -31,3 +31,13 @@ Code is not merged. What carries over is recorded in `docs/archive-2024.md`: the
 comparison as a second-moment comparison line, and the 100 x 50-tweet repeated-sample
 summaries on five corpora as a downstream-stability check. Rationale (Mao): absorb what is
 usable, treat the restart as the project.
+
+## 2026-10-09 Next study: summary instability versus n (Mao, interactive)
+
+The census check at n = 50 was inconclusive (five corpora, rho 0.5 to 0.6). Mao chose the
+follow-up design: fresh summaries from Gemma-4-31B-it (vLLM, 127.0.0.1:8800) on the SummEval
+triple (AskDocs, Trump, TIFU) plus the five census corpora, n in {25, 50, 100, 200, 400},
+30 draws per (corpus, n), about 1,200 summaries. Rationale: eight corpora across two platforms
+double the cross-corpus points and one summariser makes the census corpora comparable; the
+within-corpus curve of instability against n is the test that G(n, r) should predict. Card:
+`experiments/summary-n-curve.card.md`.
