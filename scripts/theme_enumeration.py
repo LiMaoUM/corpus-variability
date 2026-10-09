@@ -36,9 +36,11 @@ SHARED_R = {0.25: 0.2659, 0.5: 0.3367, 0.75: 0.4355}   # from summary_n_curve.lo
 ENUM_PROMPT = (
     "Below are {n} documents sampled from a larger collection, followed by a list of {K} themes "
     "found in the full collection. Decide which themes are present among these {n} documents. A "
-    "theme is present if at least one document clearly belongs to it. Answer with the ids of the "
-    "present themes only, as a comma-separated list of integers, nothing else.\n\nDOCUMENTS\n{docs}\n\n"
-    "THEMES\n{themes}\n\nPresent theme ids:"
+    "theme is present only if you can point to one document that is primarily about it; in a small "
+    "sample most themes will be absent, and similar-sounding themes are distinct, so pick the single "
+    "best theme for each document. Answer with one line per present theme in the form "
+    "\"theme_id: document_number\" (the document that best supports it), nothing else.\n\n"
+    "DOCUMENTS\n{docs}\n\nTHEMES\n{themes}\n\nPresent themes:"
 )
 
 
@@ -53,7 +55,7 @@ async def enum_one(client, sem, prompt):
     async with sem:
         for attempt in range(4):
             try:
-                r = await client.chat.completions.create(model=MODEL, temperature=0.0, max_tokens=120,
+                r = await client.chat.completions.create(model=MODEL, temperature=0.0, max_tokens=400,
                                                          messages=[{"role": "user", "content": prompt}])
                 return r.choices[0].message.content
             except Exception:  # noqa: BLE001
@@ -82,10 +84,16 @@ async def enum_step(corpora, n_grid, max_draws, concurrency):
                 continue
             outs = await asyncio.gather(*(enum_one(client, sem, p) for _, p in jobs))
             with f_out.open("a") as fh:
+                counts = []
                 for (r, _), o in zip(jobs, outs):
-                    ids = sorted({int(x) for x in re.findall(r"\d+", o or "") if int(x) < inv["K"]})
-                    fh.write(json.dumps(dict(draw=r["draw"], present=ids, raw=(o or "")[:200])) + "\n")
-            print(f"{c} n={n}: {len(jobs)} enumerations, mean present {np.mean([len(set(int(x) for x in re.findall(r'\d+', o or '') if int(x) < inv['K'])) for o in outs]):.1f}", flush=True)
+                    pairs = {}
+                    for t, d in re.findall(r"\[?(\d+)\]?\s*:\s*\[?(\d+)\]?", o or ""):
+                        t, d = int(t), int(d)
+                        if t < inv["K"] and 1 <= d <= n and t not in pairs:
+                            pairs[t] = d
+                    counts.append(len(pairs))
+                    fh.write(json.dumps(dict(draw=r["draw"], present=sorted(pairs), support={str(k): v for k, v in pairs.items()}, raw=(o or "")[:300])) + "\n")
+            print(f"{c} n={n}: {len(jobs)} enumerations, mean present {np.mean(counts):.1f}", flush=True)
 
 
 def analysis_step():
@@ -100,10 +108,15 @@ def analysis_step():
         r_t = inv["r_theme"]
         for f_e in sorted(TH.glob(f"{c}_n*_enum.jsonl")):
             n = int(f_e.stem.split("_n")[1].split("_")[0])
-            draws = {json.loads(l)["draw"]: json.loads(l)["present"] for l in f_e.read_text().splitlines() if l.strip()}
+            draws = {json.loads(l)["draw"]: json.loads(l) for l in f_e.read_text().splitlines() if l.strip()}
             recs = {r["draw"]: r for r in (json.loads(l) for l in (SUMM / f"{c}_n{n}.jsonl").read_text().splitlines() if l.strip())}
-            for d, present in draws.items():
+            for d, e in draws.items():
+                present = e["present"]
                 idx = np.array(recs[d]["idx"])
+                grounded = np.zeros(len(mass), bool)
+                for t, dn in e.get("support", {}).items():
+                    if labels[idx[int(dn) - 1]] == int(t):
+                        grounded[int(t)] = True
                 seen = np.zeros(len(mass), bool)
                 seen[np.unique(labels[idx])] = True
                 rep = np.zeros(len(mass), bool)
@@ -112,6 +125,7 @@ def analysis_step():
                 d_s = NearestNeighbors(n_neighbors=2, metric="cosine").fit(Xs).kneighbors(Xs)[0][:, 1]
                 rows.append(dict(corpus=c, n=n, draw=d, label_cov=float(mass[seen].sum()), llm_recall=float(mass[rep].sum()),
                                  llm_recall_true=float(mass[rep & seen].sum()),
+                                 llm_recall_grounded=float(mass[grounded].sum()),
                                  precision=float((rep & seen).sum() / max(rep.sum(), 1)),
                                  cov_theme=1 - float((d_s > r_t).mean()),
                                  **{f"cov_q{q}": 1 - float((d_s > r).mean()) for q, r in SHARED_R.items()}))
@@ -121,7 +135,7 @@ def analysis_step():
     df.to_csv(ROOT / "results/theme_recall.csv", index=False)
     print(df.round(3).to_string(index=False))
     rng = np.random.default_rng(1)
-    for target in ["label_cov", "llm_recall", "llm_recall_true"]:
+    for target in ["label_cov", "llm_recall", "llm_recall_true", "llm_recall_grounded"]:
         print(f"\nCross-corpus Spearman of {target} with coverage predictors at each n (bootstrap 90% band over draws):")
         for n, g in df.groupby("n"):
             if len(g) < 4:
