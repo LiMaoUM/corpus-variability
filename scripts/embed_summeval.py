@@ -24,6 +24,8 @@ NAMES = ["askdocs", "trump", "tifu"]
 
 def load_texts(name: str, n: int = 10000, seed: int = 42) -> list[str]:
     sys.path.insert(0, str(SUMMEVAL))
+    import os
+    os.environ.setdefault("OPENAI_API_KEY", "unused")  # common.py builds an OpenAI client at import
     import importlib
     common = importlib.import_module("common")
     return common.load_corpus(name, n, seed)

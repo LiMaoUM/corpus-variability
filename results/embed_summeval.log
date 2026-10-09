@@ -1,1 +1,4 @@
-Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 8116.36it/s]
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 12016.16it/s]
+askdocs: 10000 docs -> (10000, 4096)
+trump: 10000 docs -> (10000, 4096)
+tifu: 10000 docs -> (10000, 4096)

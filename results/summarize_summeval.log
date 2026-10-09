@@ -1,0 +1,14 @@
+sv_askdocs n=25: 30 summaries, prompt chars median 10648
+sv_askdocs n=50: 30 summaries, prompt chars median 21167
+sv_askdocs n=100: 30 summaries, prompt chars median 41967
+sv_askdocs n=200: 30 summaries, prompt chars median 83865
+sv_askdocs n=400: 30 summaries, prompt chars median 168479
+sv_trump n=25: 30 summaries, prompt chars median 4698
+sv_trump n=50: 30 summaries, prompt chars median 9168
+sv_trump n=100: 30 summaries, prompt chars median 18293
+sv_trump n=200: 30 summaries, prompt chars median 36224
+sv_trump n=400: 30 summaries, prompt chars median 72546
+sv_tifu n=25: 30 summaries, prompt chars median 14613
+sv_tifu n=50: 30 summaries, prompt chars median 28867
+sv_tifu n=100: 30 summaries, prompt chars median 57410
+sv_tifu n=200: 30 summaries, prompt chars median 115213
