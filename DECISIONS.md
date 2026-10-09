@@ -41,3 +41,13 @@ triple (AskDocs, Trump, TIFU) plus the five census corpora, n in {25, 50, 100, 2
 double the cross-corpus points and one summariser makes the census corpora comparable; the
 within-corpus curve of instability against n is the test that G(n, r) should predict. Card:
 `experiments/summary-n-curve.card.md`.
+
+## 2026-10-09: Main line, venue, corpora, EACL paragraph (Mao, via /decide)
+
+The paper's main line is the corpus sample-size formula: the n r^d collapse with TwoNN d joined
+to the finite population correction on Maurer's G, with the collapse R2 as a corpus diagnostic.
+Venue ACL/EMNLP via ARR. Truth Social and Bluesky enter as 50k-document samples each. The EACL
+camera-ready of SummEval gets one paragraph citing this project as in prep to answer RR5.
+Rationale: the two claims replicate on three seeds and three corpora, the survey analogy is
+exact with FPC, and the downstream summary-stability link is a within-corpus direction only and
+stays a limitation.

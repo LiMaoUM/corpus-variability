@@ -12,9 +12,13 @@ confidence band and a required-n.
 - Primary metric: nearest-neighbour isolation coverage, the continuous analogue of Good-Turing.
   `C_r(n) = 1 - #{i : d(x_i, NN_{-i}(x_i)) > r} / n` on document embeddings. Comparison lines:
   Vendi score convergence, discrete topics with iNEXT coverage-based rarefaction.
+- Main line (2026-10-09): the corpus sample-size formula, n r^d collapse with TwoNN d plus the
+  finite population correction on Maurer's G; collapse R2 is the corpus diagnostic. Venue:
+  ACL/EMNLP via ARR. Summary stability is a within-corpus direction only, a limitation.
 - Validation corpora: synthetic GMM mixtures (known truth), the SummEval triple (AskDocs, Trump,
-  TIFU; GTR embeddings exist in `~/projects/SummEval`), Truth Social and Bluesky full corpora
-  (`~/projects/social-media-corpus`), Maeda 2025's 522-document corpus (availability unchecked).
+  TIFU; GTR caches in `~/projects/SummEval`, Qwen3 embeddings in `data/emb/`), the five 2024
+  census corpora, and Truth Social and Bluesky as 50k-document samples each
+  (`~/projects/social-media-corpus`).
 
 ## Data paths
 
