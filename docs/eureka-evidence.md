@@ -82,3 +82,17 @@ both and keeps the enumeration case as the use case.
   run.
 - Chao and Jost extrapolation from the smoke test over-predicts on the noisy Zipf setting and
   under-predicts on k=500; it is now a comparison line.
+
+## Downstream check on the 2024 census corpora (2026-10-09)
+
+Five census tweet corpora (7.6k to 30.1k docs after cleaning), Qwen3-Embedding-8B, 100
+LLaMa2 summaries of 50-tweet draws per corpus. Summary instability (mean pairwise cosine
+distance among the 100 summaries) ranks random 0.195 > citizens 0.181 > covid 0.158 >
+illegal 0.153 > trump 0.140. Spearman with corpus-side quantities over the five corpora:
+TwoNN d +0.60 (90% bootstrap band +0.30 to +0.70), G(50, median r) +0.50 (+0.20 to +0.51),
+participation ratio +0.30, mean document pairwise distance +0.30. The direction is right and
+G beats the second-moment measures, but five points from one platform and one topic family
+cannot lock the claim; the card's stopping rule calls it inconclusive. Trump is the outlier
+(moderate G, lowest instability): its summaries converge on one dominant mode, the same
+dense-mode structure that made it fail the collapse test. At n = 50 of N >= 7,600 the finite
+population correction is negligible and G equals M to 0.005.

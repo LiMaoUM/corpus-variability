@@ -1,0 +1,6 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 9307.84it/s]
+random: 7610 docs -> (7610, 4096), 100 summaries -> (100, 4096)
+citizens: 7849 docs -> (7849, 4096), 100 summaries -> (100, 4096)
+trump: 30136 docs -> (30136, 4096), 100 summaries -> (100, 4096)
+covid: 17837 docs -> (17837, 4096), 100 summaries -> (100, 4096)
+illegal: 17202 docs -> (17202, 4096), 100 summaries -> (100, 4096)

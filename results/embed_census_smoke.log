@@ -1,1 +1,7 @@
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:58<02:56, 58.78s/it]Fetching 4 files:  50%|█████     | 2/4 [01:19<01:12, 36.21s/it]Fetching 4 files:  75%|███████▌  | 3/4 [01:43<00:30, 30.87s/it]Fetching 4 files: 100%|██████████| 4/4 [01:55<00:00, 23.41s/it]Fetching 4 files: 100%|██████████| 4/4 [01:55<00:00, 28.92s/it]
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 7834.12it/s]
+random: 200 docs -> (200, 4096), 100 summaries -> (100, 4096)
+citizens: 200 docs -> (200, 4096), 100 summaries -> (100, 4096)
+trump: 200 docs -> (200, 4096), 100 summaries -> (100, 4096)
+covid: 200 docs -> (200, 4096), 100 summaries -> (100, 4096)
+illegal: 200 docs -> (200, 4096), 100 summaries -> (100, 4096)

@@ -29,3 +29,4 @@
 - **Monitor contract**: background run; report on completion or error only, leading with the
   headline Spearman and artifact path. Expires 2026-10-09 06:00.
 - **Status log**:
+  - 2026-10-09 v1: ran. Embedding 80,634 docs + 500 summaries on GPU 6 took under 10 min wall. Spearman across five corpora with summary instability: d_twonn +0.60 [90% band +0.30, +0.70], G(50, median r) +0.50 [+0.20, +0.51], M(50) +0.50 [+0.20, +0.70]; participation ratio +0.30. Per the stopping rule (rho below 0.5 for G, bands near the threshold) this is inconclusive; five points from one platform and topic family cannot settle it. Next study: SummEval triple with fresh summaries, own card. Results: results/summary_stability.csv, log results/summary_stability.log.

@@ -1,0 +1,24 @@
+{'corpus': 'random', 'N': 7610, 'd_twonn': 13.03, 'part_ratio': 101.85, 'summary_pairwise': 0.1947, 'summary_to_centroid': 0.1015, 'doc_pairwise': 0.5301, 'G50_q0.25': 0.8482, 'M50_q0.25': 0.8466, 'G50_q0.5': 0.6829, 'M50_q0.5': 0.6819, 'G50_q0.75': 0.4398, 'M50_q0.75': 0.4391}
+{'corpus': 'citizens', 'N': 7849, 'd_twonn': 9.44, 'part_ratio': 76.02, 'summary_pairwise': 0.1812, 'summary_to_centroid': 0.0941, 'doc_pairwise': 0.4207, 'G50_q0.25': 0.6644, 'M50_q0.25': 0.6622, 'G50_q0.5': 0.34, 'M50_q0.5': 0.3357, 'G50_q0.75': 0.0917, 'M50_q0.75': 0.0904}
+{'corpus': 'trump', 'N': 30136, 'd_twonn': 8.62, 'part_ratio': 85.07, 'summary_pairwise': 0.1397, 'summary_to_centroid': 0.0717, 'doc_pairwise': 0.4632, 'G50_q0.25': 0.7408, 'M50_q0.25': 0.7358, 'G50_q0.5': 0.5077, 'M50_q0.5': 0.5049, 'G50_q0.75': 0.2411, 'M50_q0.75': 0.2456}
+{'corpus': 'covid', 'N': 17837, 'd_twonn': 10.8, 'part_ratio': 99.64, 'summary_pairwise': 0.1584, 'summary_to_centroid': 0.0817, 'doc_pairwise': 0.4928, 'G50_q0.25': 0.8589, 'M50_q0.25': 0.8528, 'G50_q0.5': 0.6587, 'M50_q0.5': 0.6578, 'G50_q0.75': 0.3602, 'M50_q0.75': 0.3631}
+{'corpus': 'illegal', 'N': 17202, 'd_twonn': 11.05, 'part_ratio': 83.1, 'summary_pairwise': 0.1531, 'summary_to_centroid': 0.0789, 'doc_pairwise': 0.4216, 'G50_q0.25': 0.6382, 'M50_q0.25': 0.6295, 'G50_q0.5': 0.3252, 'M50_q0.5': 0.3223, 'G50_q0.75': 0.1024, 'M50_q0.75': 0.1044}
+
+radii: {0.25: 0.24551355838775635, 0.5: 0.29754531383514404, 0.75: 0.362641841173172}
+  corpus     N  d_twonn  part_ratio  summary_pairwise  summary_to_centroid  doc_pairwise  G50_q0.25  M50_q0.25  G50_q0.5  M50_q0.5  G50_q0.75  M50_q0.75
+  random  7610    13.03      101.85            0.1947               0.1015        0.5301     0.8482     0.8466    0.6829    0.6819     0.4398     0.4391
+citizens  7849     9.44       76.02            0.1812               0.0941        0.4207     0.6644     0.6622    0.3400    0.3357     0.0917     0.0904
+   trump 30136     8.62       85.07            0.1397               0.0717        0.4632     0.7408     0.7358    0.5077    0.5049     0.2411     0.2456
+   covid 17837    10.80       99.64            0.1584               0.0817        0.4928     0.8589     0.8528    0.6587    0.6578     0.3602     0.3631
+ illegal 17202    11.05       83.10            0.1531               0.0789        0.4216     0.6382     0.6295    0.3252    0.3223     0.1024     0.1044
+
+Spearman across the five corpora with summary_pairwise (bootstrap 90% band over summaries and draws):
+  d_twonn        rho=+0.60  band=[+0.30, +0.70]
+  part_ratio     rho=+0.30  band=[+0.00, +0.40]
+  doc_pairwise   rho=+0.30  band=[+0.10, +0.30]
+  G50_q0.25      rho=+0.30  band=[-0.10, +0.50]
+  G50_q0.5       rho=+0.50  band=[+0.20, +0.51]
+  G50_q0.75      rho=+0.30  band=[+0.10, +0.40]
+  M50_q0.25      rho=+0.30  band=[-0.10, +0.50]
+  M50_q0.5       rho=+0.50  band=[+0.20, +0.70]
+  M50_q0.75      rho=+0.30  band=[+0.10, +0.40]
