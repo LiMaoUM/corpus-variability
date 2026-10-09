@@ -24,6 +24,13 @@ confidence band and a required-n.
 ## Environment
 
 - Python via `uv run`; deps in `pyproject.toml` (numpy, scipy, scikit-learn, pandas).
+- Embedding model: `Qwen/Qwen3-Embedding-8B` (see `~/.claude/models.md`), run through this
+  project's venv (torch 2.6 cu124, sentence-transformers >= 5, transformers >= 4.56; the
+  SummEval venv is on transformers 4.49 and cannot load it). Shared HF cache:
+  `HF_HOME=/home/model_cache/huggingface/` (set in `~/.bashrc`). Use `CUDA_VISIBLE_DEVICES`
+  to pick a GPU; GPU 6 is the usual one with free memory, check `nvidia-smi` first.
+- Embeddings for the census corpora land in `data/emb/` (gitignored, see
+  `scripts/embed_census.py`).
 - The box runs at load 60 to 80 on 64 cores; always set `OMP_NUM_THREADS=8` (the scripts do), or
   BLAS thread contention makes a one-minute job take fifteen.
 - `from-windows-2026-07-26/` is 3.1 GB of 2023-2024 summarization data (50-sampled CSVs,
