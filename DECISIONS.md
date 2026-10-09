@@ -22,3 +22,12 @@ topic-recovery numbers, the agrifood persona-bank saturation stopping rule.
    Truth Social and Bluesky full corpora, and Maeda 2025's 522 documents if obtainable.
 4. **First step:** scaffold the repo and run a synthetic smoke test of the metric against true
    coverage. No writing before the smoke test reports.
+
+## 2026-10-09 The 2026 restart is the project (Mao)
+
+The 2024 exploration on `LiMaoUM/corpus-variability` (covariance spectra, eigenvector
+reconstruction, decoder fine-tuning) is kept as branch `archive-2024`; the 2026 tree is `main`.
+Code is not merged. What carries over is recorded in `docs/archive-2024.md`: the spectrum
+comparison as a second-moment comparison line, and the 100 x 50-tweet repeated-sample
+summaries on five corpora as a downstream-stability check. Rationale (Mao): absorb what is
+usable, treat the restart as the project.

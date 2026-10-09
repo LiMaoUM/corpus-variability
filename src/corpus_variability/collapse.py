@@ -31,6 +31,17 @@ def twonn_dimension(X: np.ndarray, metric: str = "cosine", discard_top: float = 
     return float((x * y).sum() / (x * x).sum())
 
 
+def participation_ratio(X: np.ndarray) -> float:
+    """Linear dimension estimate from the covariance spectrum, (sum l)^2 / sum l^2.
+
+    The 2024 archive compared sample and corpus covariance spectra; this is the one-number
+    summary of that spectrum, kept as a comparison line for TwoNN.
+    """
+    Xc = X - X.mean(axis=0, keepdims=True)
+    s = np.linalg.svd(Xc, compute_uv=False) ** 2
+    return float(s.sum() ** 2 / (s ** 2).sum())
+
+
 def isolation_surface(X: np.ndarray, n_grid: list[int], r_grid: np.ndarray, order: np.ndarray,
                       metric: str = "cosine") -> np.ndarray:
     """G[n_i, r_j] for nested samples order[:n_i]; counts points with no other point within r."""

@@ -19,7 +19,7 @@ confidence band and a required-n.
 ## Data paths
 
 - SummEval GTR-T5-base caches: `/home/maolee/projects/SummEval/revision/experiments/cache/gtr_{askdocs,trump,tifu}_{42,43,44}_{1000,10000}.npy`, shape (N, 768) float32, mean-pooled, max length 128. Text: `SummEval/data/AskDocs.csv` (column `Question`), `SummEval/data/variability/trump.csv` (`Message`), `SummEval/data/tifu_all_tokenized_and_filtered.json` (JSON lines, `selftext_without_tldr`). Loader and cleaning: `SummEval/revision/experiments/common.py::load_corpus`. The EACL coverage metric (`covg`, mean-max cosine to k probes) is in `revision/experiments/scaling_curve.py`.
-- Old 2024 tweets: `from-windows-2026-07-26/data/random.csv` (7,860 rows, Sprinklr export) with `random_embeddings_encoder.csv` (768-d, no header) and `mistral_random_embedding.csv` (4,096-d).
+- Old 2024 tweets: `from-windows-2026-07-26/data/random.csv` (Sprinklr census export) with `random_embeddings_encoder.csv` (BGE-base, 768-d, 7,860 rows, no header) and `mistral_random_embedding.csv` (4,096-d). Five corpora each have 100 repeated 50-tweet samples with LLaMa2 summaries (`*_summaries.csv`). Inventory and what carries over: `docs/archive-2024.md`; the 2024 code is branch `archive-2024` on the remote.
 
 ## Environment
 
