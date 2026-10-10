@@ -61,3 +61,12 @@ over the cheaper per-corpus radius fit: build a fixed-granularity theme inventor
 ask Gemma-4 which themes are present and score mass-weighted recall against the inventory.
 Coverage at the theme scale should predict recall across corpora. Card:
 `experiments/theme-recall.card.md`.
+
+## 2026-10-09: Absolute-scale cross-corpus test, label version first (Mao, interactive)
+
+The fixed-k enumeration showed that any corpus-relative readout is scale-free. Mao chose the
+label version of a shared taxonomy: merge the eight 30-theme inventories into one shared list
+by centroid distance, assign every document of every corpus to its nearest shared theme, score
+the same 1,200 draws by the corpus mass of shared themes they contain, and test whether G at an
+absolute radius predicts it across corpora. No LLM calls; the LLM enumeration on the shared list
+follows only if the label version succeeds. Script `scripts/shared_taxonomy.py`.
