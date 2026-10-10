@@ -1,0 +1,151 @@
+random n=25: 30 enumerations, mean present 14.5
+random n=50: 30 enumerations, mean present 20.1
+random n=100: 30 enumerations, mean present 26.4
+random n=200: 30 enumerations, mean present 28.3
+random n=400: 30 enumerations, mean present 29.0
+citizens n=25: 30 enumerations, mean present 16.0
+citizens n=50: 30 enumerations, mean present 25.4
+citizens n=100: 30 enumerations, mean present 28.5
+citizens n=200: 30 enumerations, mean present 29.7
+citizens n=400: 30 enumerations, mean present 29.8
+trump n=25: 30 enumerations, mean present 15.7
+trump n=50: 30 enumerations, mean present 23.2
+trump n=100: 30 enumerations, mean present 26.1
+trump n=200: 30 enumerations, mean present 29.6
+trump n=400: 30 enumerations, mean present 29.9
+covid n=25: 30 enumerations, mean present 13.8
+covid n=50: 30 enumerations, mean present 19.4
+covid n=100: 30 enumerations, mean present 24.4
+covid n=200: 30 enumerations, mean present 28.2
+covid n=400: 30 enumerations, mean present 29.4
+illegal n=25: 30 enumerations, mean present 12.2
+illegal n=50: 30 enumerations, mean present 23.9
+illegal n=100: 30 enumerations, mean present 28.9
+illegal n=200: 30 enumerations, mean present 29.6
+illegal n=400: 30 enumerations, mean present 29.9
+sv_askdocs n=25: 30 enumerations, mean present 12.8
+sv_askdocs n=50: 30 enumerations, mean present 20.3
+sv_askdocs n=100: 30 enumerations, mean present 25.9
+sv_askdocs n=200: 30 enumerations, mean present 29.9
+sv_askdocs n=400: 30 enumerations, mean present 30.0
+sv_trump n=25: 30 enumerations, mean present 12.9
+sv_trump n=50: 30 enumerations, mean present 17.4
+sv_trump n=100: 30 enumerations, mean present 23.6
+sv_trump n=200: 30 enumerations, mean present 27.3
+sv_trump n=400: 30 enumerations, mean present 29.2
+sv_tifu n=25: 30 enumerations, mean present 16.6
+sv_tifu n=50: 30 enumerations, mean present 23.2
+sv_tifu n=100: 30 enumerations, mean present 28.4
+sv_tifu n=200: 30 enumerations, mean present 29.9
+sv_tifu n=400: 30 enumerations, mean present 29.8
+    corpus   n  label_cov  llm_recall  llm_recall_true  llm_recall_grounded  precision  cov_theme  cov_q0.25  cov_q0.5  cov_q0.75
+  citizens  25      0.609       0.597            0.443                0.276      0.710      0.073      0.356     0.773      0.980
+  citizens  50      0.837       0.879            0.761                0.405      0.833      0.129      0.460     0.844      0.988
+  citizens 100      0.943       0.962            0.916                0.506      0.927      0.179      0.569     0.885      0.987
+  citizens 200      0.992       0.991            0.984                0.595      0.982      0.245      0.663     0.912      0.992
+  citizens 400      0.999       0.993            0.993                0.622      0.998      0.339      0.744     0.941      0.996
+     covid  25      0.628       0.547            0.420                0.248      0.728      0.071      0.120     0.391      0.776
+     covid  50      0.855       0.742            0.679                0.406      0.857      0.140      0.218     0.503      0.882
+     covid 100      0.976       0.874            0.862                0.533      0.926      0.216      0.291     0.621      0.930
+     covid 200      0.994       0.957            0.953                0.633      0.910      0.277      0.369     0.689      0.956
+     covid 400      0.999       0.969            0.969                0.679      0.898      0.345      0.439     0.758      0.974
+   illegal  25      0.578       0.439            0.309                0.189      0.711      0.099      0.420     0.771      0.956
+   illegal  50      0.832       0.811            0.698                0.359      0.837      0.149      0.501     0.825      0.969
+   illegal 100      0.955       0.969            0.929                0.451      0.943      0.210      0.588     0.874      0.983
+   illegal 200      0.996       0.989            0.985                0.524      0.993      0.287      0.678     0.906      0.989
+   illegal 400      1.000       0.996            0.996                0.525      1.000      0.362      0.728     0.924      0.989
+    random  25      0.630       0.526            0.391                0.203      0.697      0.131      0.129     0.371      0.715
+    random  50      0.837       0.727            0.668                0.316      0.887      0.187      0.185     0.442      0.772
+    random 100      0.955       0.909            0.881                0.451      0.948      0.264      0.260     0.520      0.830
+    random 200      0.993       0.952            0.950                0.607      0.995      0.324      0.319     0.592      0.865
+    random 400      0.999       0.962            0.962                0.579      1.000      0.385      0.379     0.660      0.891
+sv_askdocs  25      0.596       0.460            0.381                0.249      0.821      0.021      0.000     0.003      0.041
+sv_askdocs  50      0.820       0.716            0.646                0.441      0.892      0.047      0.003     0.013      0.068
+sv_askdocs 100      0.962       0.883            0.862                0.580      0.971      0.110      0.003     0.019      0.140
+sv_askdocs 200      0.998       0.996            0.994                0.718      0.998      0.168      0.005     0.029      0.210
+sv_askdocs 400      1.000       0.999            0.999                0.766      1.000      0.255      0.011     0.050      0.314
+   sv_tifu  25      0.583       0.570            0.413                0.272      0.719      0.027      0.003     0.027      0.384
+   sv_tifu  50      0.847       0.771            0.672                0.363      0.858      0.054      0.000     0.057      0.478
+   sv_tifu 100      0.952       0.944            0.903                0.487      0.950      0.096      0.012     0.100      0.649
+   sv_tifu 200      0.995       0.995            0.991                0.607      0.994      0.194      0.026     0.200      0.779
+   sv_tifu 400      1.000       0.993            0.993                0.656      1.000      0.276      0.040     0.281      0.853
+  sv_trump  25      0.645       0.483            0.371                0.224      0.697      0.136      0.263     0.624      0.912
+  sv_trump  50      0.837       0.629            0.557                0.300      0.827      0.197      0.351     0.673      0.927
+  sv_trump 100      0.956       0.809            0.776                0.440      0.920      0.248      0.433     0.742      0.947
+  sv_trump 200      0.989       0.903            0.894                0.557      0.950      0.295      0.501     0.774      0.959
+  sv_trump 400      0.997       0.970            0.968                0.598      0.977      0.376      0.589     0.828      0.973
+     trump  25      0.607       0.559            0.414                0.210      0.716      0.149      0.283     0.613      0.893
+     trump  50      0.827       0.802            0.694                0.348      0.843      0.177      0.353     0.671      0.931
+     trump 100      0.962       0.885            0.862                0.454      0.958      0.247      0.438     0.723      0.946
+     trump 200      0.996       0.986            0.982                0.592      0.991      0.295      0.499     0.777      0.963
+     trump 400      0.999       0.997            0.996                0.618      0.998      0.365      0.577     0.825      0.972
+
+Cross-corpus Spearman of label_cov with coverage predictors at each n (bootstrap 90% band over draws):
+  n=  25 cov_theme rho=+0.43 band=[+0.12, +0.71] (k=8)
+  n=  25 cov_q0.5  rho=+0.12 band=[-0.24, +0.33] (k=8)
+  n=  50 cov_theme rho=-0.05 band=[-0.40, +0.38] (k=8)
+  n=  50 cov_q0.5  rho=+0.14 band=[-0.48, +0.45] (k=8)
+  n= 100 cov_theme rho=+0.29 band=[-0.29, +0.55] (k=8)
+  n= 100 cov_q0.5  rho=-0.43 band=[-0.62, +0.02] (k=8)
+  n= 200 cov_theme rho=-0.31 band=[-0.74, -0.07] (k=8)
+  n= 200 cov_q0.5  rho=-0.33 band=[-0.71, +0.00] (k=8)
+  n= 400 cov_theme rho=-0.66 band=[-0.83, -0.41] (k=8)
+  n= 400 cov_q0.5  rho=-0.37 band=[-0.63, +0.08] (k=8)
+
+Cross-corpus Spearman of llm_recall with coverage predictors at each n (bootstrap 90% band over draws):
+  n=  25 cov_theme rho=-0.02 band=[-0.38, +0.31] (k=8)
+  n=  25 cov_q0.5  rho=+0.12 band=[-0.17, +0.31] (k=8)
+  n=  50 cov_theme rho=-0.24 band=[-0.48, +0.00] (k=8)
+  n=  50 cov_q0.5  rho=+0.57 band=[+0.38, +0.69] (k=8)
+  n= 100 cov_theme rho=-0.38 band=[-0.62, -0.14] (k=8)
+  n= 100 cov_q0.5  rho=+0.33 band=[+0.09, +0.48] (k=8)
+  n= 200 cov_theme rho=-0.83 band=[-0.90, -0.52] (k=8)
+  n= 200 cov_q0.5  rho=-0.24 band=[-0.38, +0.10] (k=8)
+  n= 400 cov_theme rho=-0.52 band=[-0.79, -0.31] (k=8)
+  n= 400 cov_q0.5  rho=+0.00 band=[-0.33, +0.22] (k=8)
+
+Cross-corpus Spearman of llm_recall_true with coverage predictors at each n (bootstrap 90% band over draws):
+  n=  25 cov_theme rho=-0.12 band=[-0.48, +0.24] (k=8)
+  n=  25 cov_q0.5  rho=+0.10 band=[-0.29, +0.24] (k=8)
+  n=  50 cov_theme rho=-0.19 band=[-0.45, +0.14] (k=8)
+  n=  50 cov_q0.5  rho=+0.62 band=[+0.21, +0.74] (k=8)
+  n= 100 cov_theme rho=-0.43 band=[-0.69, -0.02] (k=8)
+  n= 100 cov_q0.5  rho=+0.29 band=[+0.07, +0.48] (k=8)
+  n= 200 cov_theme rho=-0.79 band=[-0.88, -0.52] (k=8)
+  n= 200 cov_q0.5  rho=-0.26 band=[-0.43, +0.00] (k=8)
+  n= 400 cov_theme rho=-0.62 band=[-0.79, -0.31] (k=8)
+  n= 400 cov_q0.5  rho=-0.19 band=[-0.38, +0.19] (k=8)
+
+Cross-corpus Spearman of llm_recall_grounded with coverage predictors at each n (bootstrap 90% band over draws):
+  n=  25 cov_theme rho=-0.62 band=[-0.81, -0.30] (k=8)
+  n=  25 cov_q0.5  rho=-0.14 band=[-0.60, +0.05] (k=8)
+  n=  50 cov_theme rho=-0.90 band=[-0.90, -0.45] (k=8)
+  n=  50 cov_q0.5  rho=-0.31 band=[-0.41, +0.07] (k=8)
+  n= 100 cov_theme rho=-0.60 band=[-0.88, -0.19] (k=8)
+  n= 100 cov_q0.5  rho=-0.45 band=[-0.67, -0.05] (k=8)
+  n= 200 cov_theme rho=-0.57 band=[-0.76, -0.12] (k=8)
+  n= 200 cov_q0.5  rho=-0.76 band=[-0.86, -0.40] (k=8)
+  n= 400 cov_theme rho=-0.79 band=[-0.88, -0.60] (k=8)
+  n= 400 cov_q0.5  rho=-0.55 band=[-0.69, -0.52] (k=8)
+
+Within-corpus Spearman across n (llm_recall vs cov_theme):
+  citizens     rho=+1.00  recall 0.60..0.99  label_cov 0.61..1.00
+  covid        rho=+1.00  recall 0.55..0.97  label_cov 0.63..1.00
+  illegal      rho=+1.00  recall 0.44..1.00  label_cov 0.58..1.00/home/maolee/projects/corpus-variability/scripts/theme_enumeration.py:160: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  np.nanmedian([spearmanr(g.cov_theme, g.label_cov).statistic for _, g in dd.groupby(["corpus", "n"]) if len(g) >= 10])))
+
+  random       rho=+1.00  recall 0.53..0.96  label_cov 0.63..1.00
+  sv_askdocs   rho=+1.00  recall 0.46..1.00  label_cov 0.60..1.00
+  sv_tifu      rho=+0.90  recall 0.57..1.00  label_cov 0.58..1.00
+  sv_trump     rho=+1.00  recall 0.48..0.97  label_cov 0.64..1.00
+  trump        rho=+1.00  recall 0.56..1.00  label_cov 0.61..1.00
+
+Pooled per-draw Spearman within (corpus, n): llm_recall vs cov_theme median rho=-0.06; label_cov vs cov_theme median rho=-0.07
+
+LLM precision against label truth, mean by n:
+n
+25     0.725
+50     0.854
+100    0.943
+200    0.977
+400    0.984

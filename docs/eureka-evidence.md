@@ -149,3 +149,31 @@ Result of that check: with each corpus at its own scale, cross-corpus Spearman o
 with G is +0.04, +0.24, +0.55, +0.05, +0.43 at n = 25 to 400, and the corpus's own scale
 itself is uninformative (rho about +0.05). The shared-radius choice is not what hides the
 relation; the cross-corpus link is weak at any scale.
+
+## Theme recall at fixed granularity, eight corpora (2026-10-09, `scripts/theme_enumeration.py`)
+
+Each corpus got a 30-theme inventory (k-means on the full Qwen3 embeddings, named by
+Gemma-4); for the same 1,200 draws as the n-curve study, Gemma-4 listed the themes present
+with a supporting document, and label coverage (mass of clusters with a drawn document) was
+computed exactly.
+
+Two results. Within a corpus, LLM-reported recall rises with n along the coverage curve
+(Spearman +1.00 in 7 of 8 corpora, +0.90 in TIFU) and LLM precision against the label truth
+rises from 0.73 at n = 25 to 0.98 at n = 400, so enumeration is a usable readout from about
+n = 100. Across corpora, label coverage at a given n is the same everywhere: 0.58 to 0.65 at
+n = 25, 0.82 to 0.86 at n = 50, 0.94 to 0.98 at n = 100, and it equals the Good-Turing
+expectation from the cluster masses alone, sum over k of m_k (1 - (1 - m_k)^n), to MAE 0.005.
+Coverage at the absolute theme scale (1 - G at r_theme) varies from 0.02 to 0.15 across the
+same corpora at n = 25.
+
+What this settles. A readout defined relative to the corpus, k themes per corpus or a free
+summary, is scale-free: it sees the same coverage curve in every corpus, because that curve
+is fixed by the mass distribution over k groups and k was fixed. The cross-corpus differences
+the sample-size formula is about live at an absolute scale r, where AskDocs at n = 25 has
+nothing within r of anything and citizens has most documents paired. A cross-corpus
+validation of the formula therefore needs an absolute-scale readout, one taxonomy shared by
+all corpora, so that a broad corpus needs more documents to cover it than a narrow one. With
+the per-corpus inventories merged into one shared list and every document assigned to its
+nearest shared theme, coverage at n would differ across corpora and G at absolute r could be
+tested against it. The relative-scale result is itself a usable rule: to see k themes of a
+corpus at 95% mass, about 3k to 4k documents suffice whatever the corpus.
