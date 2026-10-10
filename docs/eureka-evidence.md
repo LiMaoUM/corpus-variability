@@ -177,3 +177,27 @@ the per-corpus inventories merged into one shared list and every document assign
 nearest shared theme, coverage at n would differ across corpora and G at absolute r could be
 tested against it. The relative-scale result is itself a usable rule: to see k themes of a
 corpus at 95% mass, about 3k to 4k documents suffice whatever the corpus.
+
+## Shared taxonomy at absolute scale, label version (2026-10-09, `scripts/shared_taxonomy.py`)
+
+The eight 30-theme inventories were merged into one shared list by average-linkage clustering
+of their centroids at cosine distance 0.20, 0.15, 0.10 and 0.05 (42, 69, 112 and 187 shared
+themes), every document assigned to its nearest shared centroid, and the same 1,200 draws
+scored by the corpus mass of shared themes they contain. Cross-corpus spread now exists (at
+merge 0.05 and n = 50: 0.69 to 0.83). Label-free coverage 1 - G(n, r) at r in {0.2, 0.3, 0.4}
+does not predict it across corpora: Spearman at n = 50 is +0.31, +0.21, +0.38 and -0.40 for
+the four merges, and at n = 100 it is +0.26, -0.33, -0.07 and -0.40; the one high value
+(+0.88 at merge 0.10, n = 25) does not survive a change of merge radius. The Good-Turing
+expectation from the shared mass vector, sum over k of m_k (1 - (1 - m_k)^n), predicts it at
++0.93 to +1.00 in every setting, which is the same labels used twice.
+
+What this settles. Coverage of a partition is a function of the partition's mass vector and
+nothing else; the r-scale missing mass is a different functional of the geometry, and the two
+agree only when the partition cells are r-balls, which clusters are not. The sample-size
+formula is therefore a statement at resolution r: how many documents until a new document has
+a sampled neighbour within r. Its cross-corpus validation is claim 2, G (1 - n/N) against the
+true missing mass at MAE 0.01 on every corpus, and its cross-corpus content is d. "How many
+documents to see every theme" is a partition question, answered by Good-Turing on the theme
+masses, which the enumeration study validated within corpus and showed to be universal for a
+fixed k. The paper states both questions and which tool answers each; it does not claim that
+the label-free formula predicts theme recall across corpora.

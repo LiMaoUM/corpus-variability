@@ -70,3 +70,11 @@ by centroid distance, assign every document of every corpus to its nearest share
 the same 1,200 draws by the corpus mass of shared themes they contain, and test whether G at an
 absolute radius predicts it across corpora. No LLM calls; the LLM enumeration on the shared list
 follows only if the label version succeeds. Script `scripts/shared_taxonomy.py`.
+
+## 2026-10-09: Shared-taxonomy outcome (Claude, for Mao's confirmation)
+
+Across four merge radii, label-free coverage at absolute r does not predict shared-taxonomy
+coverage across corpora; the partition's own mass vector does (tautologically). Proposed
+position: the sample-size formula is a resolution-r statement, validated cross-corpus by claim 2
+(G with FPC against the true missing mass); theme-level coverage is a partition question,
+answered by Good-Turing on theme masses and validated within corpus. Pending Mao's answer.

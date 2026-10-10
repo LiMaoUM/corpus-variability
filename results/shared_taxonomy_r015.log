@@ -1,0 +1,81 @@
+merge radius 0.15: 240 themes -> 69 shared themes
+  shared 7 (32): random:Census Impact on Political Representation; random:Trump's 2020 Census Exclusion Controversy; random:2020 US Census Early Deadline; trump:Political Discourse on the US Census; trump:Trump Administration Census Deadline Dispute; trump:Calls to Redo the Trump-era Census
+  shared 1 (30): citizens:2020 Census Citizenship and Privacy Clarifications; citizens:US Census Citizenship Question History; citizens:2020 Census Citizenship Question Controversy; citizens:Census Citizenship Question Debate; citizens:Chief Justice Roberts and the Census Citizenship Question; citizens:2020 Census Participation Encouragement
+  shared 5 (21): random:Census Inclusion of Undocumented Immigrants; illegal:Census Participation and Illegal Immigration; illegal:Illegal Immigration, Census, and Voting Rights; illegal:Excluding Non-Citizens from the US Census; illegal:Census Inclusion of Undocumented Immigrants; illegal:Census Inclusion of Non-Citizens and Political Power
+  shared 10 (16): random:COVID-19 Impact on the 2020 Census; random:The U.S. Census and COVID-19; covid:Census Field Operations and COVID-19; covid:Community Health and Civic Engagement Events; covid:Census Bureau COVID-19 Pulse Surveys; covid:COVID-19 Impact on the US Census
+  shared 32 (15): trump:Trump's Census Exclusion of Undocumented Immigrants; trump:Trump Census Executive Order; trump:Trump Census Undocumented Immigrants Dispute; trump:Trump's Census Exclusion of Undocumented Immigrants; trump:Trump Census Apportionment Legal Dispute; illegal:Trump's Census Exclusion of Illegal Immigrants
+shared themes with mass > 0.2% per corpus: {'random': 27, 'citizens': 17, 'trump': 22, 'covid': 18, 'illegal': 15, 'sv_askdocs': 27, 'sv_trump': 21, 'sv_tifu': 13}
+/home/maolee/projects/corpus-variability/scripts/shared_taxonomy.py:115: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  np.nanmedian([spearmanr(g["cov_r0.30"], g.shared_cov).statistic for _, g in dd.groupby(["corpus", "n"]) if g.shared_cov.std() > 0]))
+    corpus   n  shared_cov  themes_seen  themes_occupied  cov_r0.20  cov_r0.30  cov_r0.40  gt_expected
+  citizens  25       0.870        6.600             17.0      0.089      0.579      0.945        0.862
+  citizens  50       0.915        9.067             17.0      0.143      0.673      0.960        0.919
+  citizens 100       0.956       11.733             17.0      0.197      0.755      0.972        0.958
+  citizens 200       0.981       14.367             17.0      0.268      0.817      0.979        0.980
+  citizens 400       0.991       17.167             17.0      0.364      0.873      0.987        0.991
+     covid  25       0.874        8.367             18.0      0.017      0.253      0.656        0.863
+     covid  50       0.927       10.033             18.0      0.045      0.355      0.780        0.927
+     covid 100       0.962       12.967             18.0      0.082      0.447      0.850        0.959
+     covid 200       0.975       16.333             18.0      0.125      0.528      0.891        0.976
+     covid 400       0.985       19.333             18.0      0.175      0.601      0.930        0.986
+   illegal  25       0.856        6.467             15.0      0.099      0.597      0.928        0.863
+   illegal  50       0.917        9.233             15.0      0.147      0.681      0.952        0.922
+   illegal 100       0.961       12.467             15.0      0.209      0.758      0.963        0.961
+   illegal 200       0.983       14.933             15.0      0.284      0.819      0.971        0.981
+   illegal 400       0.991       17.567             15.0      0.360      0.849      0.977        0.991
+    random  25       0.758       10.233             27.0      0.020      0.225      0.612        0.761
+    random  50       0.857       15.167             27.0      0.027      0.293      0.681        0.865
+    random 100       0.945       20.533             27.0      0.083      0.384      0.740        0.936
+    random 200       0.973       24.467             27.0      0.113      0.452      0.791        0.971
+    random 400       0.988       28.233             27.0      0.154      0.518      0.824        0.987
+sv_askdocs  25       0.658       15.333             27.0      0.000      0.000      0.011        0.659
+sv_askdocs  50       0.858       20.967             27.0      0.000      0.004      0.033        0.853
+sv_askdocs 100       0.961       24.833             27.0      0.000      0.007      0.080        0.960
+sv_askdocs 200       0.991       26.900             27.0      0.001      0.013      0.107        0.990
+sv_askdocs 400       0.994       28.300             27.0      0.002      0.022      0.175        0.994
+   sv_tifu  25       0.875        9.200             13.0      0.000      0.005      0.183        0.887
+   sv_tifu  50       0.969       11.467             13.0      0.000      0.013      0.269        0.957
+   sv_tifu 100       0.974       12.600             13.0      0.000      0.043      0.417        0.974
+   sv_tifu 200       0.979       15.067             13.0      0.003      0.073      0.584        0.979
+   sv_tifu 400       0.985       19.067             13.0      0.003      0.118      0.690        0.984
+  sv_trump  25       0.826        8.800             21.0      0.097      0.431      0.835        0.838
+  sv_trump  50       0.906       11.467             21.0      0.149      0.501      0.857        0.909
+  sv_trump 100       0.953       14.933             21.0      0.176      0.587      0.896        0.950
+  sv_trump 200       0.974       18.533             21.0      0.219      0.649      0.917        0.974
+  sv_trump 400       0.988       22.467             21.0      0.285      0.726      0.942        0.988
+     trump  25       0.845        8.433             22.0      0.108      0.432      0.813        0.842
+     trump  50       0.909       11.367             22.0      0.125      0.523      0.853        0.910
+     trump 100       0.949       14.467             22.0      0.189      0.595      0.888        0.950
+     trump 200       0.972       18.167             22.0      0.224      0.656      0.919        0.973
+     trump 400       0.987       21.967             22.0      0.283      0.717      0.937        0.987
+
+Cross-corpus spread of shared_cov by n: min, max, sd
+  n=  25  0.658 0.875 sd=0.076
+  n=  50  0.857 0.969 sd=0.037
+  n= 100  0.945 0.974 sd=0.009
+  n= 200  0.972 0.991 sd=0.006
+  n= 400  0.985 0.994 sd=0.003
+
+Cross-corpus Spearman of shared_cov with predictors at each n (bootstrap 90% band over draws):
+  n=  25 cov_r0.20    rho=-0.11 band=[-0.13, +0.37]
+  n=  25 cov_r0.30    rho=+0.24 band=[+0.12, +0.60]
+  n=  25 cov_r0.40    rho=+0.24 band=[+0.14, +0.57]
+  n=  25 gt_expected  rho=+0.93 band=[+0.74, +0.93]
+  n=  50 cov_r0.20    rho=+0.00 band=[-0.07, +0.18]
+  n=  50 cov_r0.30    rho=+0.21 band=[+0.05, +0.31]
+  n=  50 cov_r0.40    rho=+0.17 band=[+0.05, +0.29]
+  n=  50 gt_expected  rho=+0.98 band=[+0.83, +1.00]
+  n= 100 cov_r0.20    rho=-0.50 band=[-0.63, -0.08]
+  n= 100 cov_r0.30    rho=-0.33 band=[-0.48, +0.05]
+  n= 100 cov_r0.40    rho=-0.33 band=[-0.45, +0.05]
+  n= 100 gt_expected  rho=+0.88 band=[+0.71, +0.98]
+  n= 200 cov_r0.20    rho=-0.07 band=[-0.19, +0.05]
+  n= 200 cov_r0.30    rho=-0.07 band=[-0.24, +0.02]
+  n= 200 cov_r0.40    rho=-0.10 band=[-0.29, +0.05]
+  n= 200 gt_expected  rho=+0.98 band=[+0.79, +1.00]
+  n= 400 cov_r0.20    rho=+0.26 band=[+0.12, +0.31]
+  n= 400 cov_r0.30    rho=+0.26 band=[+0.12, +0.29]
+  n= 400 cov_r0.40    rho=+0.26 band=[+0.12, +0.31]
+  n= 400 gt_expected  rho=+0.98 band=[+0.88, +1.00]
+
+Pooled per-draw Spearman within (corpus, n), shared_cov vs cov_r0.30: median rho=-0.04
