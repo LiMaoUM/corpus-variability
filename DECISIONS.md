@@ -77,4 +77,16 @@ Across four merge radii, label-free coverage at absolute r does not predict shar
 coverage across corpora; the partition's own mass vector does (tautologically). Proposed
 position: the sample-size formula is a resolution-r statement, validated cross-corpus by claim 2
 (G with FPC against the true missing mass); theme-level coverage is a partition question,
-answered by Good-Turing on theme masses and validated within corpus. Pending Mao's answer.
+answered by Good-Turing on theme masses and validated within corpus. Confirmed by the entry below.
+
+## 2026-10-09: Two questions, two tools (Mao, via /decide)
+
+The sample-size formula is a resolution-r statement (how many documents until a new one has a
+sampled neighbour within r), label-free, carried across corpora by the intrinsic dimension d
+and validated by claims 1 and 2. Theme coverage is a partition question, answered by Good-Turing
+on the theme masses, validated within corpus by the enumeration study and universal across
+corpora for a fixed k. The paper does not claim that the label-free formula predicts theme
+recall across corpora; summary stability stays a within-corpus direction and a limitation.
+Confirms the "Shared-taxonomy outcome" entry above. Rationale: across four merge radii of a
+shared taxonomy, G at absolute r did not predict partition coverage across corpora while the
+partition's own mass vector did, so the two are different functionals of the geometry.

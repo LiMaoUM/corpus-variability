@@ -14,7 +14,10 @@ confidence band and a required-n.
   Vendi score convergence, discrete topics with iNEXT coverage-based rarefaction.
 - Main line (2026-10-09): the corpus sample-size formula, n r^d collapse with TwoNN d plus the
   finite population correction on Maurer's G; collapse R2 is the corpus diagnostic. Venue:
-  ACL/EMNLP via ARR. Summary stability is a within-corpus direction only, a limitation.
+  ACL/EMNLP via ARR. Two questions, two tools (2026-10-09): the formula answers coverage at
+  resolution r, label-free, cross-corpus through d; theme coverage is a partition question
+  answered by Good-Turing on theme masses, within corpus and universal for fixed k. Summary
+  stability is a within-corpus direction only, a limitation.
 - Validation corpora: synthetic GMM mixtures (known truth), the SummEval triple (AskDocs, Trump,
   TIFU; GTR caches in `~/projects/SummEval`, Qwen3 embeddings in `data/emb/`), the five 2024
   census corpora, and Truth Social and Bluesky as 50k-document samples each
