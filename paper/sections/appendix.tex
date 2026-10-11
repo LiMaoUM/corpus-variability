@@ -1,0 +1,52 @@
+\section{Synthetic smoke test}
+\label{app:smoke}
+
+Zipf topic mixtures with 20{,}000 documents in 64 dimensions, four settings (50 topics with Zipf exponent 0.5; 200 and 500 topics with exponent 1.0; 200 topics with noise 1.0), three seeds, nested samples at eleven sizes from 50 to 5{,}000. Coverage $1 - G$ at radius $\alpha$ times the median pilot pairwise distance, against the true topic mass coverage: $\alpha = 0.5$ gives $\rho = 0.968$ and error 0.029; $\alpha = 0.4$ gives 0.797 and 0.091; $\alpha = 0.3$ gives 0.677 and 0.209; $\alpha \le 0.2$ fails. The Chao and Jost extrapolation from a 500-document pilot to the sample size for 95\% coverage lands within a factor of two of the empirical crossing in three of four settings and over-predicts on the noisy setting (1{,}267 against 1{,}000).
+
+\section{Summary stability}
+\label{app:summaries}
+
+For each of the eight forum and census corpora and each $n \in \{25, 50, 100, 200, 400\}$, thirty independent samples were summarized by Gemma~4 at temperature 0 in one paragraph of at most 150 words, and the summaries were embedded with Qwen3-Embedding-8B. Instability is the mean pairwise cosine distance among the thirty summaries. Within every corpus instability falls with $n$ and tracks $G$ (Spearman $+0.40$ to $+1.00$, seven of eight at $+0.70$ or above), but the slope of $\log$ instability on $\log G$ runs from $+0.17$ (citizens) to $+24$ (AskDocs). Across corpora at a fixed $n$, Spearman of instability with $G$ is $+0.14$, $+0.12$, $+0.12$, $+0.07$ and $-0.17$ at $n = 25$ to 400, with bootstrap bands that include zero, and with $d$ it is $+0.10$ to $+0.29$. The per sample $G$ does not predict how far that sample's summary sits from the centroid (median $\rho = +0.05$ over forty cells). TIFU illustrates the mechanism: its $G$ is near 1 at every shared radius and its summaries are the most stable, because the model summarizes it as stories of mishap whichever thirty stories it is given.
+
+\section{Shared taxonomy}
+\label{app:shared}
+
+The eight thirty-theme inventories were merged by average-linkage clustering of their centroids at cosine distance 0.20, 0.15, 0.10 and 0.05, giving 42, 69, 112 and 187 shared themes, and every document was assigned to its nearest shared centroid. Table~\ref{tab:shared} gives, for each merge and each $n$, the cross-corpus Spearman of the shared theme coverage of the 1{,}200 samples with $1 - G$ at $r = 0.30$ and with Equation~\ref{eq:gt} evaluated on the shared masses.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Merge (themes) & $n{=}25$ & 50 & 100 & 200 & 400 \\
+\midrule
+\multicolumn{6}{l}{\emph{with $1 - G(n, 0.30)$}} \\
+0.20 (42) & $+0.26$ & $+0.31$ & $+0.26$ & $+0.29$ & $+0.38$ \\
+0.15 (69) & $+0.24$ & $+0.21$ & $-0.33$ & & \\
+0.10 (112) & $+0.88$ & $+0.38$ & $-0.07$ & $-0.24$ & $-0.38$ \\
+0.05 (187) & $+0.26$ & $-0.40$ & $-0.40$ & $-0.40$ & $-0.40$ \\
+\midrule
+\multicolumn{6}{l}{\emph{with Equation~\ref{eq:gt} on the shared masses}} \\
+0.20 (42) & $+0.98$ & $+1.00$ & $+1.00$ & $+0.98$ & $+0.93$ \\
+0.15 (69) & $+0.93$ & $+0.98$ & $+0.88$ & & \\
+0.10 (112) & $+0.93$ & $+0.90$ & $+0.90$ & $+0.98$ & $+0.81$ \\
+0.05 (187) & $+0.98$ & $+0.95$ & $+0.98$ & $+1.00$ & $+1.00$ \\
+\bottomrule
+\end{tabular}
+\caption{Cross-corpus Spearman correlation of shared theme coverage with the two predictors, eight corpora. Blank cells were not computed.}
+\label{tab:shared}
+\end{table}
+
+\section{A bound for functions that are stable at scale $r$}
+\label{app:bound}
+
+For a document function $f$ with range 1 that takes the same value on documents within $r$ of each other, the estimate of the corpus mean of $f$ formed by giving each corpus document the value of its nearest sampled document errs by at most $v(r) + M(r)$, where $v(r)$ is the share of covered documents whose nearest sampled document disagrees with them on $f$. On a family of fifty cluster indicator functions over four corpora, six sample sizes and six radii, the bound held in 144 of 144 cells and was loose for proportions (median 22 times the realised error), where the plain sample mean already errs by 0.003 to 0.07. The bound is tight by construction for presence indicators, where the error equals the missing mass.
+
+\section{Prompts}
+\label{app:prompts}
+
+\paragraph{Summary.} ``Below are $\{n\}$ documents sampled from a larger collection. Write a summary of the collection in one paragraph of at most 150 words. Cover the main themes in proportion to how often they appear, name notable minority themes briefly, and do not mention individual document numbers.''
+
+\paragraph{Theme naming.} ``The $\{m\}$ documents below were grouped together because they are about the same theme. Give the theme a short name (at most 8 words) and a one-sentence definition that would let a reader decide whether a new document belongs to it. Answer as JSON with keys name and definition.''
+
+\paragraph{Enumeration.} ``Below are $\{n\}$ documents sampled from a larger collection, followed by a list of $\{K\}$ themes found in the full collection. Decide which themes are present among these $\{n\}$ documents. A theme is present only if you can point to one document that is primarily about it; in a small sample most themes will be absent, and similar-sounding themes are distinct, so pick the single best theme for each document. Answer with one line per present theme in the form theme\_id: document\_number.''

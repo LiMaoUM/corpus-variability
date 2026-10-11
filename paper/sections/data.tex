@@ -1,0 +1,31 @@
+\section{Data}
+\label{sec:data}
+
+Table~\ref{tab:corpora} lists the corpora. Two synthetic families have a known answer. Gaussian manifolds place 20{,}000 points on a random $d$-dimensional subspace of $\mathbb{R}^{64}$ for $d \in \{2, 4, 8\}$, so the true intrinsic dimension is known and the collapse law can be checked against it. Zipf topic mixtures draw 20{,}000 documents from 50 to 500 topic centres with Zipf weights and Gaussian noise, so the topic coverage of any sample is known exactly.
+
+Three forum corpora come from the evaluation of a corpus summarizer \citep{morris2023vec2text}: AskDocs (medical questions from Reddit), Trump (posts about the 2020 election), and TIFU (stories told in the first person), 10{,}000 documents each after cleaning and deduplication, embedded with GTR-T5-base \citep{ni2022gtr} at three random seeds. Five corpora are keyword slices of a 2020 export of tweets about the United States Census: random, citizens, trump, covid and illegal, 7{,}610 to 30{,}136 tweets after URL and mention removal and deduplication. Two corpora are uniform samples of 50{,}000 English posts each from Truth Social and from Bluesky between May and December 2024, drawn from full platform collections; the Truth Social collection is conditioned on the 2024 candidates and the Bluesky collection is a broad political pool. These nine corpora are embedded with Qwen3-Embedding-8B \citep{qwen3embedding2025}, 4{,}096 dimensions, 256 tokens, normalised. Cosine distance is used throughout.
+
+For the theme study each of the eight forum and census corpora received an inventory of 30 themes: $k$-means on the full Qwen3 embeddings, each cluster named and defined by Gemma~4 \citep{gemma4} from its 15 documents nearest the centroid. The same model summarized or enumerated 1{,}200 samples, 30 independent draws at each $n \in \{25, 50, 100, 200, 400\}$ per corpus, at temperature 0, with documents truncated to 600 characters.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrll}
+\toprule
+Corpus & $N$ & Encoder & $d$ \\
+\midrule
+Manifold $d{=}2$ & 20{,}000 & none & 2.0 \\
+Manifold $d{=}4$ & 20{,}000 & none & 4.2 \\
+Manifold $d{=}8$ & 20{,}000 & none & 7.6 \\
+Zipf, 200 topics & 20{,}000 & none & 11.0 \\
+AskDocs & 10{,}000 & GTR & 13.4 \\
+Trump & 10{,}000 & GTR & 9.3 \\
+TIFU & 10{,}000 & GTR & 17.7 \\
+Census tweets, 5 slices & 7{,}610 to 30{,}136 & Qwen3 & 7.9 to 13.0 \\
+Truth Social & 50{,}000 & Qwen3 & \textcolor{red}{TBD} \\
+Bluesky & 50{,}000 & Qwen3 & \textcolor{red}{TBD} \\
+\bottomrule
+\end{tabular}
+\caption{Corpora. $d$ is the TwoNN intrinsic dimension of a 2{,}000-document pilot (mean over seeds where several exist).}
+\label{tab:corpora}
+\end{table}

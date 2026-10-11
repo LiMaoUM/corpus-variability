@@ -1,0 +1,1 @@
+{'corpus': 'ts', 'N': 50000, 'd_twonn': 12.31, 'r2_nrd': np.float64(0.966), 'r2_heldout': np.float64(0.927), 'b': 0.464, 'mae_pred_G': 0.0394, 'n_target': 7000, 'mae_G_vs_M': 0.024, 'mae_Gfpc_vs_M': 0.011}

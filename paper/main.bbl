@@ -1,0 +1,144 @@
+\begin{thebibliography}{28}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Chao(1984)}]{chao1984}
+Anne Chao. 1984.
+\newblock Nonparametric estimation of the number of classes in a population.
+\newblock \emph{Scandinavian Journal of Statistics}, 11(4):265--270.
+
+\bibitem[{Chao et~al.(2019)Chao, Chiu, Vill{\'e}ger, Sun, Thorn, Lin, Chiang, and Sherwin}]{chao2019attribute}
+Anne Chao, Chun-Huo Chiu, Sebastien Vill{\'e}ger, I-Fang Sun, Simon Thorn, Yi-Ching Lin, Jyh-Min Chiang, and William~B. Sherwin. 2019.
+\newblock \href {https://doi.org/10.1002/ecm.1343} {An attribute-diversity approach to functional diversity, functional beta diversity, and related (dis)similarity measures}.
+\newblock \emph{Ecological Monographs}, 89(2):e01343.
+
+\bibitem[{Chao and Jost(2012)}]{chao2012coverage}
+Anne Chao and Lou Jost. 2012.
+\newblock \href {https://doi.org/10.1890/11-1952.1} {Coverage-based rarefaction and extrapolation: Standardizing samples by completeness rather than size}.
+\newblock \emph{Ecology}, 93(12):2533--2547.
+
+\bibitem[{Chung et~al.(2018)Chung, Haas, Upfal, and Kraska}]{chung2018unknown}
+Yeounoh Chung, Peter~J. Haas, Eli Upfal, and Tim Kraska. 2018.
+\newblock \href {https://arxiv.org/abs/1808.08294} {Unknown examples \& machine learning model generalization}.
+\newblock \emph{arXiv preprint arXiv:1808.08294}.
+
+\bibitem[{Cochran(1977)}]{cochran1977}
+William~G. Cochran. 1977.
+\newblock \emph{Sampling Techniques}, 3rd edition.
+\newblock John Wiley \& Sons, New York.
+
+\bibitem[{De~Paoli and Mathis(2024)}]{depaoli2024}
+Stefano De~Paoli and Walter~Stan Mathis. 2024.
+\newblock \href {https://arxiv.org/abs/2401.03239} {Reflections on inductive thematic saturation as a potential metric for measuring the validity of an inductive thematic analysis with {LLMs}}.
+\newblock \emph{arXiv preprint arXiv:2401.03239}.
+
+\bibitem[{Efron and Thisted(1976)}]{efron1976}
+Bradley Efron and Ronald Thisted. 1976.
+\newblock \href {https://doi.org/10.1093/biomet/63.3.435} {Estimating the number of unseen species: How many words did {Shakespeare} know?}
+\newblock \emph{Biometrika}, 63(3):435--447.
+
+\bibitem[{Facco et~al.(2017)Facco, d'Errico, Rodriguez, and Laio}]{facco2017twonn}
+Elena Facco, Maria d'Errico, Alex Rodriguez, and Alessandro Laio. 2017.
+\newblock \href {https://doi.org/10.1038/s41598-017-11873-y} {Estimating the intrinsic dimension of datasets by a minimal neighborhood information}.
+\newblock \emph{Scientific Reports}, 7:12140.
+
+\bibitem[{Friedman and Dieng(2023)}]{friedman2023vendi}
+Dan Friedman and Adji~Bousso Dieng. 2023.
+\newblock \href {https://arxiv.org/abs/2210.02410} {The vendi score: A diversity evaluation metric for machine learning}.
+\newblock \emph{Transactions on Machine Learning Research}.
+
+\bibitem[{{Gemma Team}(2026)}]{gemma4}
+{Gemma Team}. 2026.
+\newblock \href {https://arxiv.org/abs/2607.02770} {Gemma 4 technical report}.
+\newblock \emph{arXiv preprint arXiv:2607.02770}.
+
+\bibitem[{Good(1953)}]{good1953}
+I.~J. Good. 1953.
+\newblock \href {https://doi.org/10.1093/biomet/40.3-4.237} {The population frequencies of species and the estimation of population parameters}.
+\newblock \emph{Biometrika}, 40(3-4):237--264.
+
+\bibitem[{Guest et~al.(2006)Guest, Bunce, and Johnson}]{guest2006}
+Greg Guest, Arwen Bunce, and Laura Johnson. 2006.
+\newblock \href {https://doi.org/10.1177/1525822X05279903} {How many interviews are enough? an experiment with data saturation and variability}.
+\newblock \emph{Field Methods}, 18(1):59--82.
+
+\bibitem[{Haji{\v c} and Moss(2025)}]{hajic2025}
+Jan Haji{\v c} and Fabian~C. Moss. 2025.
+\newblock \href {https://doi.org/10.1145/3748336.3748347} {Knowing when to stop: Insights from ecology for building catalogues, collections, and corpora}.
+\newblock In \emph{Proceedings of the 12th International Conference on Digital Libraries for Musicology (DLfM)}.
+
+\bibitem[{Hennink and Kaiser(2022)}]{hennink2022}
+Monique Hennink and Bonnie~N. Kaiser. 2022.
+\newblock \href {https://doi.org/10.1016/j.socscimed.2021.114523} {Sample sizes for saturation in qualitative research: A systematic review of empirical tests}.
+\newblock \emph{Social Science \& Medicine}, 292:114523.
+
+\bibitem[{Kish(1965)}]{kish1965}
+Leslie Kish. 1965.
+\newblock \emph{Survey Sampling}.
+\newblock John Wiley \& Sons, New York.
+
+\bibitem[{Kynk{\"a}{\"a}nniemi et~al.(2019)Kynk{\"a}{\"a}nniemi, Karras, Laine, Lehtinen, and Aila}]{kynkaanniemi2019}
+Tuomas Kynk{\"a}{\"a}nniemi, Tero Karras, Samuli Laine, Jaakko Lehtinen, and Timo Aila. 2019.
+\newblock \href {https://arxiv.org/abs/1904.06991} {Improved precision and recall metric for assessing generative models}.
+\newblock In \emph{Advances in Neural Information Processing Systems 32 (NeurIPS 2019)}.
+
+\bibitem[{Maeda et~al.(2025)Maeda, Wang, Zhang, Banks, and Kenney}]{maeda2025}
+Yukiko Maeda, Xiyu Wang, Yuxiao Zhang, Josiah~Bansueda Banks, and Rachael~H. Kenney. 2025.
+\newblock \href {https://doi.org/10.1016/j.chb.2025.108703} {Balancing human and machine coding: Evaluating the credibility and potential of topic modeling for open-ended survey responses}.
+\newblock \emph{Computers in Human Behavior}, 172:108703.
+
+\bibitem[{Maurer(2022)}]{maurer2022missing}
+Andreas Maurer. 2022.
+\newblock \href {https://arxiv.org/abs/2206.02012} {Concentration of the missing mass in metric spaces}.
+\newblock \emph{arXiv preprint arXiv:2206.02012}.
+
+\bibitem[{Morris et~al.(2023)Morris, Kuleshov, Shmatikov, and Rush}]{morris2023vec2text}
+John Morris, Volodymyr Kuleshov, Vitaly Shmatikov, and Alexander Rush. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.emnlp-main.765} {Text embeddings reveal (almost) as much as text}.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing}, pages 12448--12460, Singapore. Association for Computational Linguistics.
+
+\bibitem[{Naeem et~al.(2020)Naeem, Oh, Uh, Choi, and Yoo}]{naeem2020}
+Muhammad~Ferjad Naeem, Seong~Joon Oh, Youngjung Uh, Yunjey Choi, and Jaejun Yoo. 2020.
+\newblock \href {https://arxiv.org/abs/2002.09797} {Reliable fidelity and diversity metrics for generative models}.
+\newblock In \emph{Proceedings of the 37th International Conference on Machine Learning (ICML)}, volume 119 of \emph{Proceedings of Machine Learning Research}, pages 7176--7185.
+
+\bibitem[{Ni et~al.(2022)Ni, Qu, Lu, Dai, Hernandez~Abrego, Ma, Zhao, Luan, Hall, Chang, and Yang}]{ni2022gtr}
+Jianmo Ni, Chen Qu, Jing Lu, Zhuyun Dai, Gustavo Hernandez~Abrego, Ji~Ma, Vincent Zhao, Yi~Luan, Keith Hall, Ming-Wei Chang, and Yinfei Yang. 2022.
+\newblock \href {https://doi.org/10.18653/v1/2022.emnlp-main.669} {Large dual encoders are generalizable retrievers}.
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing}, pages 9844--9855, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.
+
+\bibitem[{Orlitsky et~al.(2016)Orlitsky, Suresh, and Wu}]{orlitsky2016unseen}
+Alon Orlitsky, Ananda~Theertha Suresh, and Yihong Wu. 2016.
+\newblock \href {https://doi.org/10.1073/pnas.1607774113} {Optimal prediction of the number of unseen species}.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 113(47):13283--13288.
+
+\bibitem[{Pal et~al.(2026)Pal, Bhattacharya, and Singh}]{pal2026blindspot}
+Biplab Pal, Santanu Bhattacharya, and Madanjit Singh. 2026.
+\newblock \href {https://arxiv.org/abs/2604.05057} {Blind-spot mass: A {Good-Turing} framework for quantifying deployment coverage risk in machine learning systems}.
+\newblock \emph{arXiv preprint arXiv:2604.05057}.
+
+\bibitem[{Pasarkar and Dieng(2024)}]{pasarkar2024cousins}
+Amey~P. Pasarkar and Adji~Bousso Dieng. 2024.
+\newblock \href {https://arxiv.org/abs/2310.12952} {Cousins of the {Vendi} score: A family of similarity-based diversity metrics for science and machine learning}.
+\newblock In \emph{Proceedings of the 27th International Conference on Artificial Intelligence and Statistics (AISTATS)}, volume 238 of \emph{Proceedings of Machine Learning Research}, pages 3808--3816.
+
+\bibitem[{Pham et~al.(2024)Pham, Hoyle, Sun, Resnik, and Iyyer}]{pham2024topicgpt}
+Chau~Minh Pham, Alexander Hoyle, Simeng Sun, Philip Resnik, and Mohit Iyyer. 2024.
+\newblock \href {https://doi.org/10.18653/v1/2024.naacl-long.164} {{TopicGPT}: A prompt-based topic modeling framework}.
+\newblock In \emph{Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)}, pages 2956--2984, Mexico City, Mexico. Association for Computational Linguistics.
+
+\bibitem[{Pillutla et~al.(2021)Pillutla, Swayamdipta, Zellers, Thickstun, Welleck, Choi, and Harchaoui}]{pillutla2021mauve}
+Krishna Pillutla, Swabha Swayamdipta, Rowan Zellers, John Thickstun, Sean Welleck, Yejin Choi, and Zaid Harchaoui. 2021.
+\newblock \href {https://arxiv.org/abs/2102.01454} {{MAUVE}: Measuring the gap between neural text and human text using divergence frontiers}.
+\newblock In \emph{Advances in Neural Information Processing Systems 34 (NeurIPS 2021)}.
+
+\bibitem[{Tran et~al.(2017)Tran, Porcher, Tran, and Ravaud}]{tran2017}
+Viet-Thi Tran, Rapha{\"e}l Porcher, Viet-Chi Tran, and Philippe Ravaud. 2017.
+\newblock \href {https://doi.org/10.1016/j.jclinepi.2016.10.001} {Predicting data saturation in qualitative surveys with mathematical models from ecological research}.
+\newblock \emph{Journal of Clinical Epidemiology}, 82:71--78.e2.
+
+\bibitem[{Zhang et~al.(2025)Zhang, Li, Long, Zhang, Lin, Yang, Xie, Yang, Liu, Lin, Huang, and Zhou}]{qwen3embedding2025}
+Yanzhao Zhang, Mingxin Li, Dingkun Long, Xin Zhang, Huan Lin, Baosong Yang, Pengjun Xie, An~Yang, Dayiheng Liu, Junyang Lin, Fei Huang, and Jingren Zhou. 2025.
+\newblock \href {https://arxiv.org/abs/2506.05176} {Qwen3 embedding: Advancing text embedding and reranking through foundation models}.
+\newblock \emph{arXiv preprint arXiv:2506.05176}.
+
+\end{thebibliography}
