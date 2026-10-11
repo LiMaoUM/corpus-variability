@@ -98,3 +98,8 @@ from it. Supersedes the EACL-paragraph clause of the 2026-10-09 entry "Main line
 corpora, EACL paragraph"; its other clauses stand. The drafted heterogeneity paragraph is kept
 as material for this paper (`docs/drafts/heterogeneity-diagnostic-paragraph.tex`). Rationale:
 this is a new paper, and the SummEval camera-ready is not the place for it.
+
+## 2026-10-11: Title and drafting route (Mao, interactive)
+
+Title: "How Many Documents Cover a Corpus". Drafting goes through the ARS academic-paper
+pipeline (full mode) on the ACL template, then unslop and fred-me before Mao reads it.
