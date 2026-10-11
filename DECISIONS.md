@@ -103,3 +103,14 @@ this is a new paper, and the SummEval camera-ready is not the place for it.
 
 Title: "How Many Documents Cover a Corpus". Drafting goes through the ARS academic-paper
 pipeline (full mode) on the ACL template, then unslop and fred-me before Mao reads it.
+
+## 2026-10-11: Revision experiments after the simulated panel (Mao, interactive)
+
+The ARS panel (paper/reviews/ars-panel-2026-10-11.md) returned Major Revision. Mao approved four
+experiment groups: (1) the n* test on every corpus that passes the diagnostic, with five
+independent draws per grid cell, bootstrap intervals, three seeds, and a harder extrapolation from
+n <= 300; (2) theme inventories at K in {10, 30, 100} plus a skewed-mass inventory, to test whether
+the "same curve" is a function of K; (3) the forum corpora under Qwen3 as a second encoder, plus
+two baselines, per-radius Chao and Jost extrapolation and greedy k-center covering; (4) a
+calibration of r by LLM judgments of document pairs binned by cosine distance. Claim 4 (theme
+coverage) is decided after the K sensitivity result.

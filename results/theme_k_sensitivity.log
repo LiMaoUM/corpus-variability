@@ -1,0 +1,37 @@
+random {'kmeans10': 9.6, 'kmeans30': 26.2, 'kmeans100': 82.6, 'kpp30_noref': 18.1, 'zipf30_from100': 7.5}
+citizens {'kmeans10': 9.6, 'kmeans30': 26.9, 'kmeans100': 81.7, 'kpp30_noref': 21.1, 'zipf30_from100': 7.2}
+trump {'kmeans10': 9.5, 'kmeans30': 27.8, 'kmeans100': 85.4, 'kpp30_noref': 22.1, 'zipf30_from100': 8.1}
+covid {'kmeans10': 8.0, 'kmeans30': 24.7, 'kmeans100': 81.4, 'kpp30_noref': 20.7, 'zipf30_from100': 7.3}
+illegal {'kmeans10': 8.8, 'kmeans30': 28.0, 'kmeans100': 87.7, 'kpp30_noref': 17.8, 'zipf30_from100': 8.9}
+sv_askdocs {'kmeans10': 9.6, 'kmeans30': 28.2, 'kmeans100': 91.0, 'kpp30_noref': 24.5, 'zipf30_from100': 10.0}
+sv_trump {'kmeans10': 8.6, 'kmeans30': 25.5, 'kmeans100': 79.8, 'kpp30_noref': 19.9, 'zipf30_from100': 6.8}
+sv_tifu {'kmeans10': 9.6, 'kmeans30': 29.1, 'kmeans100': 91.3, 'kpp30_noref': 27.9, 'zipf30_from100': 9.9}
+
+MAE of expected vs observed label coverage, all cells: 0.0039
+
+Cross-corpus spread of label coverage (min, max, sd) by inventory and n:
+  kmeans10         n=  25  0.886 0.937 sd=0.017  eff themes 8.0..9.6
+  kmeans10         n=  50  0.984 1.000 sd=0.005  eff themes 8.0..9.6
+  kmeans10         n= 100  0.997 1.000 sd=0.001  eff themes 8.0..9.6
+  kmeans10         n= 200  1.000 1.000 sd=0.000  eff themes 8.0..9.6
+  kmeans10         n= 400  1.000 1.000 sd=0.000  eff themes 8.0..9.6
+  kmeans100        n=  25  0.254 0.299 sd=0.016  eff themes 79.8..91.3
+  kmeans100        n=  50  0.439 0.482 sd=0.018  eff themes 79.8..91.3
+  kmeans100        n= 100  0.667 0.718 sd=0.018  eff themes 79.8..91.3
+  kmeans100        n= 200  0.873 0.889 sd=0.007  eff themes 79.8..91.3
+  kmeans100        n= 400  0.967 0.973 sd=0.002  eff themes 79.8..91.3
+  kmeans30         n=  25  0.578 0.645 sd=0.024  eff themes 24.7..29.1
+  kmeans30         n=  50  0.820 0.855 sd=0.011  eff themes 24.7..29.1
+  kmeans30         n= 100  0.943 0.976 sd=0.009  eff themes 24.7..29.1
+  kmeans30         n= 200  0.989 0.998 sd=0.003  eff themes 24.7..29.1
+  kmeans30         n= 400  0.997 1.000 sd=0.001  eff themes 24.7..29.1
+  kpp30_noref      n=  25  0.599 0.724 sd=0.045  eff themes 17.8..27.9
+  kpp30_noref      n=  50  0.823 0.875 sd=0.017  eff themes 17.8..27.9
+  kpp30_noref      n= 100  0.938 0.961 sd=0.007  eff themes 17.8..27.9
+  kpp30_noref      n= 200  0.982 0.995 sd=0.005  eff themes 17.8..27.9
+  kpp30_noref      n= 400  0.995 1.000 sd=0.002  eff themes 17.8..27.9
+  zipf30_from100   n=  25  0.785 0.842 sd=0.023  eff themes 6.8..10.0
+  zipf30_from100   n=  50  0.874 0.910 sd=0.013  eff themes 6.8..10.0
+  zipf30_from100   n= 100  0.930 0.956 sd=0.008  eff themes 6.8..10.0
+  zipf30_from100   n= 200  0.970 0.978 sd=0.003  eff themes 6.8..10.0
+  zipf30_from100   n= 400  0.987 0.991 sd=0.002  eff themes 6.8..10.0

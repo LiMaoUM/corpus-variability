@@ -201,3 +201,38 @@ documents to see every theme" is a partition question, answered by Good-Turing o
 masses, which the enumeration study validated within corpus and showed to be universal for a
 fixed k. The paper states both questions and which tool answers each; it does not claim that
 the label-free formula predicts theme recall across corpora.
+
+## Revision experiments after the simulated panel (2026-10-11)
+
+**Collapse and n* with five independent draws per cell** (`scripts/collapse_v2.py`,
+`results/collapse_v2.csv`, `results/nstar_v2.csv`). Out of sample R2 (fit on n <= 1,000, test on
+n up to 7,000): manifolds 0.92 to 0.96; AskDocs 0.947 to 0.950 over three GTR seeds and 0.991
+under Qwen3; TIFU 0.941 to 0.965 and 0.959 under Qwen3; census random 0.966; Truth Social 0.977;
+Bluesky 0.957; census illegal 0.852, covid 0.791, trump 0.781, citizens 0.734; Trump (forum)
+0.577 to 0.666 under GTR and 0.782 under Qwen3; Zipf 0.618. Fitting on n <= 300 changes these by
+at most 0.03 except Trump. The per-radius Chao and Jost extrapolation from f1 and f2 at n = 1,000
+predicts G at the largest n with MAE 0.10 to 0.27 against 0.015 to 0.05 for the collapse law.
+The n* test, every corpus, fit on n <= 1,000, ratio of predicted to empirical sample size: on
+corpora with out of sample R2 of at least 0.9, 59 of 66 cases within a factor of 1.5 and 63 of 66
+within 2 (AskDocs 14 of 16, AskDocs Qwen3 5 of 5, TIFU 17 of 17, TIFU Qwen3 6 of 6, manifolds 25
+of 25, census random 2 of 3, Truth Social 5 of 6, Bluesky 3 of 5); on corpora below 0.9, 10 of 23
+within 1.5 (citizens 0 of 2, census trump 1 of 2, covid 3 of 3, illegal 2 of 3, Trump GTR 2 of 6,
+Trump Qwen3 2 of 2, Zipf 0 of 5). The diagnostic threshold of 0.9 therefore separates the corpora
+where the formula holds. Bootstrap intervals on n_pred and the draw range of n_emp are in
+`results/nstar_v2.csv`. d by encoder: AskDocs 13.4 (GTR) and 12.8 (Qwen3); TIFU 18.0 and 13.6;
+Trump 9.0 and 9.0. The TwoNN sd over five pilots is 0.15 to 0.84.
+
+**Theme inventories at K = 10, 30, 100 and two skewed inventories** (`scripts/theme_k_sensitivity.py`).
+For every inventory the expected coverage from the masses matches label coverage to MAE 0.004,
+and the spread of label coverage across the eight corpora at a given n stays below sd 0.05 for
+every inventory, including the skewed ones (effective number of themes 6.8 to 10 for the Zipf
+merge, 17.8 to 27.9 for the unrefined k-means++ seeding). The panel's reading is confirmed: the
+"same curve" is a property of how the inventory is built, and the only content of claim 4 is the
+identity that partition coverage is set by the mass vector.
+
+**Greedy k-center baseline** (`scripts/kcenter_baseline.py`). To reach a target missing mass at
+radius r, a uniform random sample needs 0.6 to 1.0 times the points that greedy farthest-point
+k-center needs on the forum and census corpora (medians 0.59 to 1.00), and 0.12 times on Truth
+Social and Bluesky. Greedy k-center minimises the maximum uncovered distance and spends points on
+outliers; for the share of mass covered, random sampling is as good or better, which answers the
+question of why one should sample at random.

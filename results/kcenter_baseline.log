@@ -1,0 +1,16 @@
+askdocs_gtr_s42 done
+tifu_gtr_s42 done
+trump_gtr_s42 done
+census_random_qwen3 done
+census_citizens_qwen3 done
+ts_qwen3 done
+bsky_qwen3 done
+                       count   50%   min   max
+corpus                                        
+askdocs_gtr_s42         17.0  0.70  0.20  1.41
+bsky_qwen3               5.0  0.12  0.06  0.36
+census_citizens_qwen3   12.0  1.00  0.14  1.38
+census_random_qwen3     15.0  0.98  0.22  1.56
+tifu_gtr_s42            16.0  0.59  0.13  1.55
+trump_gtr_s42            6.0  0.78  0.14  1.11
+ts_qwen3                 5.0  0.12  0.06  0.34

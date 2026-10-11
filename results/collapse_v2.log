@@ -1,0 +1,96 @@
+{'corpus': 'manifold_d2', 'encoder': 'none', 'N': 20000, 'n_max': 7000, 'd_twonn': 1.99, 'd_sd': 0.05, 'fit1000_a': np.float64(-1.522), 'fit1000_b': np.float64(0.803), 'fit1000_r2_in': np.float64(0.963), 'fit1000_r2_out': np.float64(0.96), 'fit1000_mae_Gmax': 0.0269, 'fit1000_mae_Gmax_chaojost': 0.1051, 'fit300_a': np.float64(-1.391), 'fit300_b': np.float64(0.837), 'fit300_r2_in': np.float64(0.94), 'fit300_r2_out': np.float64(0.936), 'fit300_mae_Gmax': 0.0202}
+{'corpus': 'manifold_d4', 'encoder': 'none', 'N': 20000, 'n_max': 7000, 'd_twonn': 4.01, 'd_sd': 0.16, 'fit1000_a': np.float64(-3.11), 'fit1000_b': np.float64(0.724), 'fit1000_r2_in': np.float64(0.95), 'fit1000_r2_out': np.float64(0.922), 'fit1000_mae_Gmax': 0.0361, 'fit1000_mae_Gmax_chaojost': 0.1298, 'fit300_a': np.float64(-3.231), 'fit300_b': np.float64(0.778), 'fit300_r2_in': np.float64(0.927), 'fit300_r2_out': np.float64(0.923), 'fit300_mae_Gmax': 0.0349}
+{'corpus': 'manifold_d8', 'encoder': 'none', 'N': 20000, 'n_max': 7000, 'd_twonn': 7.98, 'd_sd': 0.21, 'fit1000_a': np.float64(-6.456), 'fit1000_b': np.float64(0.621), 'fit1000_r2_in': np.float64(0.961), 'fit1000_r2_out': np.float64(0.95), 'fit1000_mae_Gmax': 0.0421, 'fit1000_mae_Gmax_chaojost': 0.1509, 'fit300_a': np.float64(-6.684), 'fit300_b': np.float64(0.65), 'fit300_r2_in': np.float64(0.954), 'fit300_r2_out': np.float64(0.953), 'fit300_mae_Gmax': 0.0395}
+{'corpus': 'zipf_k200', 'encoder': 'none', 'N': 20000, 'n_max': 7000, 'd_twonn': 11.33, 'd_sd': 0.35, 'fit1000_a': np.float64(1.598), 'fit1000_b': np.float64(0.214), 'fit1000_r2_in': np.float64(0.671), 'fit1000_r2_out': np.float64(0.618), 'fit1000_mae_Gmax': 0.1355, 'fit1000_mae_Gmax_chaojost': 0.0956, 'fit300_a': np.float64(1.125), 'fit300_b': np.float64(0.179), 'fit300_r2_in': np.float64(0.597), 'fit300_r2_out': np.float64(0.575), 'fit300_mae_Gmax': 0.1872}
+{'corpus': 'askdocs_gtr_s42', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 13.39, 'd_sd': 0.38, 'fit1000_a': np.float64(2.031), 'fit1000_b': np.float64(0.517), 'fit1000_r2_in': np.float64(0.958), 'fit1000_r2_out': np.float64(0.947), 'fit1000_mae_Gmax': 0.0438, 'fit1000_mae_Gmax_chaojost': 0.1909, 'fit300_a': np.float64(2.015), 'fit300_b': np.float64(0.512), 'fit300_r2_in': np.float64(0.959), 'fit300_r2_out': np.float64(0.964), 'fit300_mae_Gmax': 0.0423}
+{'corpus': 'askdocs_gtr_s43', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 13.81, 'd_sd': 0.45, 'fit1000_a': np.float64(2.081), 'fit1000_b': np.float64(0.503), 'fit1000_r2_in': np.float64(0.963), 'fit1000_r2_out': np.float64(0.95), 'fit1000_mae_Gmax': 0.0422, 'fit1000_mae_Gmax_chaojost': 0.1789, 'fit300_a': np.float64(2.166), 'fit300_b': np.float64(0.518), 'fit300_r2_in': np.float64(0.958), 'fit300_r2_out': np.float64(0.958), 'fit300_mae_Gmax': 0.0444}
+{'corpus': 'askdocs_gtr_s44', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 13.7, 'd_sd': 0.24, 'fit1000_a': np.float64(2.103), 'fit1000_b': np.float64(0.506), 'fit1000_r2_in': np.float64(0.963), 'fit1000_r2_out': np.float64(0.95), 'fit1000_mae_Gmax': 0.041, 'fit1000_mae_Gmax_chaojost': 0.1784, 'fit300_a': np.float64(2.22), 'fit300_b': np.float64(0.522), 'fit300_r2_in': np.float64(0.957), 'fit300_r2_out': np.float64(0.956), 'fit300_mae_Gmax': 0.0407}
+{'corpus': 'askdocs_qwen3', 'encoder': 'Qwen3', 'N': 10000, 'n_max': 7000, 'd_twonn': 12.75, 'd_sd': 0.39, 'fit1000_a': np.float64(1.502), 'fit1000_b': np.float64(0.54), 'fit1000_r2_in': np.float64(0.979), 'fit1000_r2_out': np.float64(0.991), 'fit1000_mae_Gmax': 0.0148, 'fit1000_mae_Gmax_chaojost': 0.2051, 'fit300_a': np.float64(1.321), 'fit300_b': np.float64(0.508), 'fit300_r2_in': np.float64(0.978), 'fit300_r2_out': np.float64(0.986), 'fit300_mae_Gmax': 0.0173}
+{'corpus': 'trump_gtr_s42', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 8.81, 'd_sd': 0.44, 'fit1000_a': np.float64(0.451), 'fit1000_b': np.float64(0.267), 'fit1000_r2_in': np.float64(0.8), 'fit1000_r2_out': np.float64(0.636), 'fit1000_mae_Gmax': 0.0549, 'fit1000_mae_Gmax_chaojost': 0.2658, 'fit300_a': np.float64(0.526), 'fit300_b': np.float64(0.304), 'fit300_r2_in': np.float64(0.653), 'fit300_r2_out': np.float64(0.612), 'fit300_mae_Gmax': 0.061}
+{'corpus': 'trump_gtr_s43', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 9.06, 'd_sd': 0.56, 'fit1000_a': np.float64(0.555), 'fit1000_b': np.float64(0.271), 'fit1000_r2_in': np.float64(0.781), 'fit1000_r2_out': np.float64(0.577), 'fit1000_mae_Gmax': 0.0539, 'fit1000_mae_Gmax_chaojost': 0.2508, 'fit300_a': np.float64(1.142), 'fit300_b': np.float64(0.399), 'fit300_r2_in': np.float64(0.068), 'fit300_r2_out': np.float64(-0.082), 'fit300_mae_Gmax': 0.0973}
+{'corpus': 'trump_gtr_s44', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 9.0, 'd_sd': 0.45, 'fit1000_a': np.float64(0.55), 'fit1000_b': np.float64(0.274), 'fit1000_r2_in': np.float64(0.825), 'fit1000_r2_out': np.float64(0.666), 'fit1000_mae_Gmax': 0.0528, 'fit1000_mae_Gmax_chaojost': 0.2556, 'fit300_a': np.float64(0.821), 'fit300_b': np.float64(0.335), 'fit300_r2_in': np.float64(0.619), 'fit300_r2_out': np.float64(0.56), 'fit300_mae_Gmax': 0.0725}
+{'corpus': 'trump_qwen3', 'encoder': 'Qwen3', 'N': 10000, 'n_max': 7000, 'd_twonn': 8.97, 'd_sd': 0.51, 'fit1000_a': np.float64(1.296), 'fit1000_b': np.float64(0.259), 'fit1000_r2_in': np.float64(0.875), 'fit1000_r2_out': np.float64(0.782), 'fit1000_mae_Gmax': 0.0455, 'fit1000_mae_Gmax_chaojost': 0.2432, 'fit300_a': np.float64(1.611), 'fit300_b': np.float64(0.307), 'fit300_r2_in': np.float64(0.737), 'fit300_r2_out': np.float64(0.688), 'fit300_mae_Gmax': 0.0667}
+{'corpus': 'tifu_gtr_s42', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 18.04, 'd_sd': 0.34, 'fit1000_a': np.float64(4.22), 'fit1000_b': np.float64(0.505), 'fit1000_r2_in': np.float64(0.962), 'fit1000_r2_out': np.float64(0.959), 'fit1000_mae_Gmax': 0.0384, 'fit1000_mae_Gmax_chaojost': 0.1578, 'fit300_a': np.float64(4.324), 'fit300_b': np.float64(0.51), 'fit300_r2_in': np.float64(0.96), 'fit300_r2_out': np.float64(0.962), 'fit300_mae_Gmax': 0.0342}
+{'corpus': 'tifu_gtr_s43', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 18.65, 'd_sd': 0.37, 'fit1000_a': np.float64(4.372), 'fit1000_b': np.float64(0.492), 'fit1000_r2_in': np.float64(0.954), 'fit1000_r2_out': np.float64(0.941), 'fit1000_mae_Gmax': 0.0459, 'fit1000_mae_Gmax_chaojost': 0.1725, 'fit300_a': np.float64(4.753), 'fit300_b': np.float64(0.533), 'fit300_r2_in': np.float64(0.933), 'fit300_r2_out': np.float64(0.932), 'fit300_mae_Gmax': 0.0538}
+{'corpus': 'tifu_gtr_s44', 'encoder': 'GTR', 'N': 10000, 'n_max': 7000, 'd_twonn': 18.09, 'd_sd': 0.28, 'fit1000_a': np.float64(4.155), 'fit1000_b': np.float64(0.491), 'fit1000_r2_in': np.float64(0.967), 'fit1000_r2_out': np.float64(0.965), 'fit1000_mae_Gmax': 0.0356, 'fit1000_mae_Gmax_chaojost': 0.1563, 'fit300_a': np.float64(4.216), 'fit300_b': np.float64(0.494), 'fit300_r2_in': np.float64(0.966), 'fit300_r2_out': np.float64(0.968), 'fit300_mae_Gmax': 0.0323}
+{'corpus': 'tifu_qwen3', 'encoder': 'Qwen3', 'N': 10000, 'n_max': 7000, 'd_twonn': 13.64, 'd_sd': 0.35, 'fit1000_a': np.float64(3.408), 'fit1000_b': np.float64(0.528), 'fit1000_r2_in': np.float64(0.97), 'fit1000_r2_out': np.float64(0.959), 'fit1000_mae_Gmax': 0.0388, 'fit1000_mae_Gmax_chaojost': 0.1821, 'fit300_a': np.float64(3.727), 'fit300_b': np.float64(0.568), 'fit300_r2_in': np.float64(0.955), 'fit300_r2_out': np.float64(0.954), 'fit300_mae_Gmax': 0.0444}
+{'corpus': 'census_random_qwen3', 'encoder': 'Qwen3', 'N': 7610, 'n_max': 5000, 'd_twonn': 12.86, 'd_sd': 0.39, 'fit1000_a': np.float64(2.144), 'fit1000_b': np.float64(0.272), 'fit1000_r2_in': np.float64(0.974), 'fit1000_r2_out': np.float64(0.966), 'fit1000_mae_Gmax': 0.0402, 'fit1000_mae_Gmax_chaojost': 0.1669, 'fit300_a': np.float64(2.414), 'fit300_b': np.float64(0.298), 'fit300_r2_in': np.float64(0.955), 'fit300_r2_out': np.float64(0.953), 'fit300_mae_Gmax': 0.0489}
+{'corpus': 'census_citizens_qwen3', 'encoder': 'Qwen3', 'N': 7849, 'n_max': 5000, 'd_twonn': 9.07, 'd_sd': 0.24, 'fit1000_a': np.float64(1.636), 'fit1000_b': np.float64(0.272), 'fit1000_r2_in': np.float64(0.837), 'fit1000_r2_out': np.float64(0.734), 'fit1000_mae_Gmax': 0.043, 'fit1000_mae_Gmax_chaojost': 0.1557, 'fit300_a': np.float64(1.893), 'fit300_b': np.float64(0.307), 'fit300_r2_in': np.float64(0.731), 'fit300_r2_out': np.float64(0.711), 'fit300_mae_Gmax': 0.0475}
+{'corpus': 'census_trump_qwen3', 'encoder': 'Qwen3', 'N': 30136, 'n_max': 7000, 'd_twonn': 8.99, 'd_sd': 0.84, 'fit1000_a': np.float64(1.277), 'fit1000_b': np.float64(0.255), 'fit1000_r2_in': np.float64(0.891), 'fit1000_r2_out': np.float64(0.781), 'fit1000_mae_Gmax': 0.0426, 'fit1000_mae_Gmax_chaojost': 0.2369, 'fit300_a': np.float64(1.465), 'fit300_b': np.float64(0.284), 'fit300_r2_in': np.float64(0.816), 'fit300_r2_out': np.float64(0.793), 'fit300_mae_Gmax': 0.0557}
+{'corpus': 'census_covid_qwen3', 'encoder': 'Qwen3', 'N': 17837, 'n_max': 7000, 'd_twonn': 10.65, 'd_sd': 0.4, 'fit1000_a': np.float64(1.913), 'fit1000_b': np.float64(0.304), 'fit1000_r2_in': np.float64(0.891), 'fit1000_r2_out': np.float64(0.791), 'fit1000_mae_Gmax': 0.0452, 'fit1000_mae_Gmax_chaojost': 0.2056, 'fit300_a': np.float64(2.228), 'fit300_b': np.float64(0.35), 'fit300_r2_in': np.float64(0.762), 'fit300_r2_out': np.float64(0.734), 'fit300_mae_Gmax': 0.0646}
+{'corpus': 'census_illegal_qwen3', 'encoder': 'Qwen3', 'N': 17202, 'n_max': 7000, 'd_twonn': 11.38, 'd_sd': 0.33, 'fit1000_a': np.float64(2.439), 'fit1000_b': np.float64(0.262), 'fit1000_r2_in': np.float64(0.906), 'fit1000_r2_out': np.float64(0.852), 'fit1000_mae_Gmax': 0.0264, 'fit1000_mae_Gmax_chaojost': 0.2023, 'fit300_a': np.float64(2.948), 'fit300_b': np.float64(0.307), 'fit300_r2_in': np.float64(0.793), 'fit300_r2_out': np.float64(0.771), 'fit300_mae_Gmax': 0.0444}
+{'corpus': 'ts_qwen3', 'encoder': 'Qwen3', 'N': 50000, 'n_max': 7000, 'd_twonn': 12.63, 'd_sd': 0.15, 'fit1000_a': np.float64(2.523), 'fit1000_b': np.float64(0.428), 'fit1000_r2_in': np.float64(0.976), 'fit1000_r2_out': np.float64(0.977), 'fit1000_mae_Gmax': 0.0249, 'fit1000_mae_Gmax_chaojost': 0.195, 'fit300_a': np.float64(2.599), 'fit300_b': np.float64(0.428), 'fit300_r2_in': np.float64(0.974), 'fit300_r2_out': np.float64(0.976), 'fit300_mae_Gmax': 0.0252}
+{'corpus': 'bsky_qwen3', 'encoder': 'Qwen3', 'N': 50000, 'n_max': 7000, 'd_twonn': 16.01, 'd_sd': 0.69, 'fit1000_a': np.float64(2.459), 'fit1000_b': np.float64(0.424), 'fit1000_r2_in': np.float64(0.969), 'fit1000_r2_out': np.float64(0.957), 'fit1000_mae_Gmax': 0.0367, 'fit1000_mae_Gmax_chaojost': 0.2153, 'fit300_a': np.float64(2.833), 'fit300_b': np.float64(0.47), 'fit300_r2_in': np.float64(0.939), 'fit300_r2_out': np.float64(0.934), 'fit300_mae_Gmax': 0.0472}
+
+               corpus encoder     N  n_max  d_twonn  d_sd  fit1000_a  fit1000_b  fit1000_r2_in  fit1000_r2_out  fit1000_mae_Gmax  fit1000_mae_Gmax_chaojost  fit300_a  fit300_b  fit300_r2_in  fit300_r2_out  fit300_mae_Gmax
+          manifold_d2    none 20000   7000     1.99  0.05     -1.522      0.803          0.963           0.960            0.0269                     0.1051    -1.391     0.837         0.940          0.936           0.0202
+          manifold_d4    none 20000   7000     4.01  0.16     -3.110      0.724          0.950           0.922            0.0361                     0.1298    -3.231     0.778         0.927          0.923           0.0349
+          manifold_d8    none 20000   7000     7.98  0.21     -6.456      0.621          0.961           0.950            0.0421                     0.1509    -6.684     0.650         0.954          0.953           0.0395
+            zipf_k200    none 20000   7000    11.33  0.35      1.598      0.214          0.671           0.618            0.1355                     0.0956     1.125     0.179         0.597          0.575           0.1872
+      askdocs_gtr_s42     GTR 10000   7000    13.39  0.38      2.031      0.517          0.958           0.947            0.0438                     0.1909     2.015     0.512         0.959          0.964           0.0423
+      askdocs_gtr_s43     GTR 10000   7000    13.81  0.45      2.081      0.503          0.963           0.950            0.0422                     0.1789     2.166     0.518         0.958          0.958           0.0444
+      askdocs_gtr_s44     GTR 10000   7000    13.70  0.24      2.103      0.506          0.963           0.950            0.0410                     0.1784     2.220     0.522         0.957          0.956           0.0407
+        askdocs_qwen3   Qwen3 10000   7000    12.75  0.39      1.502      0.540          0.979           0.991            0.0148                     0.2051     1.321     0.508         0.978          0.986           0.0173
+        trump_gtr_s42     GTR 10000   7000     8.81  0.44      0.451      0.267          0.800           0.636            0.0549                     0.2658     0.526     0.304         0.653          0.612           0.0610
+        trump_gtr_s43     GTR 10000   7000     9.06  0.56      0.555      0.271          0.781           0.577            0.0539                     0.2508     1.142     0.399         0.068         -0.082           0.0973
+        trump_gtr_s44     GTR 10000   7000     9.00  0.45      0.550      0.274          0.825           0.666            0.0528                     0.2556     0.821     0.335         0.619          0.560           0.0725
+          trump_qwen3   Qwen3 10000   7000     8.97  0.51      1.296      0.259          0.875           0.782            0.0455                     0.2432     1.611     0.307         0.737          0.688           0.0667
+         tifu_gtr_s42     GTR 10000   7000    18.04  0.34      4.220      0.505          0.962           0.959            0.0384                     0.1578     4.324     0.510         0.960          0.962           0.0342
+         tifu_gtr_s43     GTR 10000   7000    18.65  0.37      4.372      0.492          0.954           0.941            0.0459                     0.1725     4.753     0.533         0.933          0.932           0.0538
+         tifu_gtr_s44     GTR 10000   7000    18.09  0.28      4.155      0.491          0.967           0.965            0.0356                     0.1563     4.216     0.494         0.966          0.968           0.0323
+           tifu_qwen3   Qwen3 10000   7000    13.64  0.35      3.408      0.528          0.970           0.959            0.0388                     0.1821     3.727     0.568         0.955          0.954           0.0444
+  census_random_qwen3   Qwen3  7610   5000    12.86  0.39      2.144      0.272          0.974           0.966            0.0402                     0.1669     2.414     0.298         0.955          0.953           0.0489
+census_citizens_qwen3   Qwen3  7849   5000     9.07  0.24      1.636      0.272          0.837           0.734            0.0430                     0.1557     1.893     0.307         0.731          0.711           0.0475
+   census_trump_qwen3   Qwen3 30136   7000     8.99  0.84      1.277      0.255          0.891           0.781            0.0426                     0.2369     1.465     0.284         0.816          0.793           0.0557
+   census_covid_qwen3   Qwen3 17837   7000    10.65  0.40      1.913      0.304          0.891           0.791            0.0452                     0.2056     2.228     0.350         0.762          0.734           0.0646
+ census_illegal_qwen3   Qwen3 17202   7000    11.38  0.33      2.439      0.262          0.906           0.852            0.0264                     0.2023     2.948     0.307         0.793          0.771           0.0444
+             ts_qwen3   Qwen3 50000   7000    12.63  0.15      2.523      0.428          0.976           0.977            0.0249                     0.1950     2.599     0.428         0.974          0.976           0.0252
+           bsky_qwen3   Qwen3 50000   7000    16.01  0.69      2.459      0.424          0.969           0.957            0.0367                     0.2153     2.833     0.470         0.939          0.934           0.0472
+
+n* test by corpus and fit range: cases, median ratio, within 1.5, within 2
+  askdocs_gtr_s42        fit<= 300 k= 9 median=1.02 in1.5= 8 in2= 9
+  askdocs_gtr_s42        fit<=1000 k= 6 median=0.97 in1.5= 5 in2= 6
+  askdocs_gtr_s43        fit<= 300 k= 9 median=0.94 in1.5= 7 in2= 9
+  askdocs_gtr_s43        fit<=1000 k= 6 median=0.99 in1.5= 6 in2= 6
+  askdocs_gtr_s44        fit<= 300 k= 8 median=0.85 in1.5= 6 in2= 8
+  askdocs_gtr_s44        fit<=1000 k= 4 median=0.89 in1.5= 3 in2= 4
+  askdocs_qwen3          fit<= 300 k= 9 median=1.31 in1.5= 7 in2= 9
+  askdocs_qwen3          fit<=1000 k= 5 median=1.04 in1.5= 5 in2= 5
+  bsky_qwen3             fit<= 300 k= 8 median=0.61 in1.5= 3 in2= 6
+  bsky_qwen3             fit<=1000 k= 5 median=0.74 in1.5= 3 in2= 4
+  census_citizens_qwen3  fit<= 300 k= 3 median=1.72 in1.5= 1 in2= 2
+  census_citizens_qwen3  fit<=1000 k= 2 median=2.06 in1.5= 0 in2= 1
+  census_covid_qwen3     fit<= 300 k= 4 median=0.92 in1.5= 4 in2= 4
+  census_covid_qwen3     fit<=1000 k= 3 median=1.22 in1.5= 3 in2= 3
+  census_illegal_qwen3   fit<= 300 k= 4 median=0.88 in1.5= 2 in2= 4
+  census_illegal_qwen3   fit<=1000 k= 3 median=1.24 in1.5= 2 in2= 3
+  census_random_qwen3    fit<= 300 k= 6 median=0.64 in1.5= 3 in2= 4
+  census_random_qwen3    fit<=1000 k= 3 median=0.81 in1.5= 2 in2= 2
+  census_trump_qwen3     fit<= 300 k= 3 median=1.16 in1.5= 3 in2= 3
+  census_trump_qwen3     fit<=1000 k= 2 median=1.55 in1.5= 1 in2= 2
+  manifold_d2            fit<= 300 k=15 median=0.89 in1.5=15 in2=15
+  manifold_d2            fit<=1000 k= 9 median=1.15 in1.5= 9 in2= 9
+  manifold_d4            fit<= 300 k=14 median=0.91 in1.5=10 in2=14
+  manifold_d4            fit<=1000 k= 9 median=1.09 in1.5= 9 in2= 9
+  manifold_d8            fit<= 300 k=12 median=0.96 in1.5= 9 in2=12
+  manifold_d8            fit<=1000 k= 7 median=1.12 in1.5= 7 in2= 7
+  tifu_gtr_s42           fit<= 300 k= 9 median=1.09 in1.5= 8 in2= 9
+  tifu_gtr_s42           fit<=1000 k= 6 median=1.19 in1.5= 6 in2= 6
+  tifu_gtr_s43           fit<= 300 k= 9 median=1.13 in1.5= 8 in2= 9
+  tifu_gtr_s43           fit<=1000 k= 6 median=1.21 in1.5= 6 in2= 6
+  tifu_gtr_s44           fit<= 300 k= 9 median=1.17 in1.5= 9 in2= 9
+  tifu_gtr_s44           fit<=1000 k= 5 median=1.30 in1.5= 5 in2= 5
+  tifu_qwen3             fit<= 300 k= 9 median=0.90 in1.5= 6 in2= 9
+  tifu_qwen3             fit<=1000 k= 6 median=1.08 in1.5= 6 in2= 6
+  trump_gtr_s42          fit<= 300 k= 3 median=1.93 in1.5= 1 in2= 2
+  trump_gtr_s42          fit<=1000 k= 2 median=2.28 in1.5= 0 in2= 1
+  trump_gtr_s43          fit<= 300 k= 3 median=0.41 in1.5= 1 in2= 1
+  trump_gtr_s43          fit<=1000 k= 2 median=1.75 in1.5= 1 in2= 1
+  trump_gtr_s44          fit<= 300 k= 3 median=0.79 in1.5= 2 in2= 3
+  trump_gtr_s44          fit<=1000 k= 2 median=1.73 in1.5= 1 in2= 1
+  trump_qwen3            fit<= 300 k= 4 median=1.08 in1.5= 3 in2= 4
+  trump_qwen3            fit<=1000 k= 2 median=1.14 in1.5= 2 in2= 2
+  ts_qwen3               fit<= 300 k= 7 median=0.76 in1.5= 5 in2= 7
+  ts_qwen3               fit<=1000 k= 6 median=0.88 in1.5= 5 in2= 6
+  zipf_k200              fit<= 300 k=13 median=141.28 in1.5= 1 in2= 1
+  zipf_k200              fit<=1000 k= 5 median=69.23 in1.5= 0 in2= 0
