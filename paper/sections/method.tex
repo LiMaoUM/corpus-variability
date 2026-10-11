@@ -2,50 +2,50 @@
 
 \subsection{Setting and estimand}
 
-A corpus is a finite set of $N$ documents. Each is embedded by a fixed encoder and normalised, and the distance between two documents is the cosine distance of their embeddings. A sample is $n$ documents drawn without replacement. The user chooses a resolution $r$: two documents within $r$ of each other count as the same content for the purpose at hand. The quantity to estimate is the missing mass at resolution $r$,
+A corpus is a finite set of $N$ documents $x_1, \dots, x_N$. Each is embedded by a fixed encoder and normalised, and the distance between two documents is the cosine distance of their embeddings. A sample $S$ is a set of $n$ documents drawn without replacement. The user chooses a resolution $r$: two documents within $r$ of each other count as the same content for the purpose at hand. The quantity to estimate, for the sample actually drawn, is the missing mass at resolution $r$,
 \begin{equation}
-M(n, r) = \frac{1}{N}\,\big|\{j : d(x_j, x_i) > r \text{ for all sampled } i\}\big| ,
+M(S, r) = \frac{1}{N}\,\big|\{j : d(x_j, x_i) > r \text{ for all } i \in S\}\big| ,
 \end{equation}
-the share of corpus documents with no sampled document within $r$. Coverage is $1 - M$. The estimator is Maurer's $G$ of Equation~\ref{eq:G}, computed on the sample alone from each sampled document's distance to its nearest sampled neighbour.
+the share of corpus documents with no sampled document within $r$. Coverage is $1 - M$. The estimator is Maurer's $G$ of Equation~\ref{eq:G}, computed on the sample alone from each sampled document's distance to its nearest sampled neighbour. We write $G(n, r)$ for its value on a sample of size $n$.
 
 The estimand is the finite corpus in hand. Sampling exists because the corpus is too large to annotate or to place in a model's context, and the full corpus is available to check the estimate. This is the setting of the experiments below, and it is what makes a finite population correction necessary.
 
 \subsection{The collapse law}
 
-Suppose the embedded documents lie near a manifold of intrinsic dimension $d$ with a smooth density. The mass of a ball of radius $r$ around a document is then of order $r^{d}$, and the probability that none of $n$ sampled documents falls in it is of order $\exp(-c\,n\,r^{d})$. Averaged over documents, the isolation rate $G$ should then depend on $n$ and $r$ only through the product $n r^{d}$. A density that varies across the manifold turns the single exponential into an average of exponentials with different rates, which is slower than exponential and well described by a stretched exponential. We therefore fit
+Suppose the embedded documents lie near a manifold of intrinsic dimension $d$ with a density that varies smoothly. The mass of a ball of radius $r$ around a document is then proportional to $r^{d}$, with a constant that depends on the local density, and the probability that none of $n$ sampled documents falls in the ball is about $\exp(-c\,n\,r^{d})$ for that constant $c$. Averaged over documents, the isolation rate $G$ should then depend on $n$ and $r$ only through the product $n r^{d}$. A density that varies across the manifold turns the single exponential into an average of exponentials with different rates. That average falls more slowly than any one exponential, and a stretched exponential, $\exp(-(c\,n\,r^{d})^{b})$ with $b < 1$, describes it well. We therefore fit
 \begin{equation}
 \log\big(-\log G(n, r)\big) = a + b \log\big(n\,r^{d}\big),
 \label{eq:collapse}
 \end{equation}
-with $d$ estimated beforehand and $a$ and $b$ fitted by least squares over the cells of an $(n, r)$ grid with $0.02 < G < 0.98$. An exponent $b = 1$ is the pure exponential, and $b < 1$ is the stretched form.
+with $d$ estimated beforehand and $a$ and $b$ fitted by least squares. The cells are an $(n, r)$ grid of eleven sample sizes from 100 to 7{,}000 and twelve radii spaced geometrically from the 5th to the 99th percentile of a pilot's nearest neighbour distances, with one nested sample per $n$, and only cells with $0.02 < G < 0.98$ enter the fit. A value $b = 1$ is the pure exponential and $b < 1$ is the stretched form.
 
-The dimension $d$ comes from the TwoNN estimator of \citet{facco2017twonn}, which uses only the ratio of each point's second to first nearest neighbour distance, on a pilot of 2{,}000 documents. We also fit Equation~\ref{eq:collapse} with $\log n$ and $\log r$ as separate regressors. The ratio of the $\log r$ coefficient to the $\log n$ coefficient is then an estimate of $d$ that owes nothing to TwoNN, and agreement between the two is a check on the law.
+The dimension $d$ comes from the TwoNN estimator of \citet{facco2017twonn}, which uses only the ratio of each point's second to first nearest neighbour distance, on a pilot of 2{,}000 documents. As a check that owes nothing to TwoNN, we also regress $\log(-\log G)$ on $\log n$ and $\log r$ separately. If the law holds, the coefficient on $\log r$ is $b\,d$ and the coefficient on $\log n$ is $b$, so their ratio estimates $d$.
 
 Solving Equation~\ref{eq:collapse} for $n$ gives the sample size at which the isolation rate at resolution $r$ reaches a target $\varepsilon$,
 \begin{equation}
-n^{*}(\varepsilon, r) = \left(\frac{\log(1/\varepsilon)}{e^{a}\, r^{d}}\right)^{1/b} .
+n^{*}(\varepsilon, r) = \left(\frac{\log(1/\varepsilon)}{e^{a}}\right)^{1/b} r^{-d} .
 \label{eq:nstar}
 \end{equation}
-This is the corpus analogue of $n = z^{2}\sigma^{2}/e^{2}$. The target $\varepsilon$ plays the part of the tolerated error, the resolution $r$ is set by the question, and $d$ is the property of the corpus that the formula needs, in the role of the variance. Each halving of $r$ multiplies $n^{*}$ by $2^{d/b}$.
+This is the corpus analogue of $n = z^{2}\sigma^{2}/e^{2}$. The target $\varepsilon$ plays the part of the tolerated error, the resolution $r$ is set by the question, and $d$ is the property of the corpus that the formula needs, in the role of the variance. Each halving of $r$ multiplies $n^{*}$ by $2^{d}$.
 
 \subsection{Finite population correction}
 
-$G$ estimates the missing mass of the distribution that generated the corpus. When the estimand is the corpus itself, each sampled document is covered at distance zero, so the finite corpus's missing mass is smaller by the share of the corpus that was sampled. The corrected estimator is
+$G$ estimates the missing mass of the distribution that generated the corpus. When the estimand is the corpus itself, the $n$ sampled documents are covered at distance zero, and each of the $N - n$ unsampled documents is isolated from the sample with probability close to $G$. The corrected estimator is therefore
 \begin{equation}
 \hat M(n, r) = G(n, r)\,\big(1 - n/N\big),
 \label{eq:fpc}
 \end{equation}
-with $1 - n/N$ the finite population correction of survey sampling. The correction is negligible at $n \ll N$ and halves the estimate at $n = N/2$.
+with $1 - n/N$ the finite population correction of survey sampling. The correction is negligible when $n$ is a small share of $N$ and halves the estimate at $n = N/2$.
 
 \subsection{A diagnostic for corpora with more than one scale}
 
-Equation~\ref{eq:collapse} assumes one dimension for the whole corpus. The $R^2$ of the fit, and its $R^2$ on cells with larger $n$ than those used to fit, say whether the assumption holds. When it fails, two probes locate the cause: the share of documents with a near duplicate (a nearest neighbour within cosine distance 0.02), and the spread of TwoNN dimension across the corpus's $k$-means clusters.
+Equation~\ref{eq:collapse} assumes one dimension for the whole corpus. The $R^2$ of the fit, and the $R^2$ on cells with $n > 1{,}000$ when the fit uses only cells with $n \le 1{,}000$, say whether the assumption holds. When it fails, two probes locate the cause: the share of documents with a near duplicate (a nearest neighbour within cosine distance 0.02), and the spread of the TwoNN dimension across twenty $k$-means clusters of the corpus.
 
 \subsection{Theme coverage as a question about a partition}
 
-A different question is how many documents are needed to see every theme. Once themes are a partition of the corpus with masses $m_1, \dots, m_K$, the expected mass of themes present in a sample of $n$ draws is
+A different question is how many documents are needed to see every theme. Once themes are a partition of the corpus with masses $m_1, \dots, m_K$, the expected mass of themes present in a sample of $n$ draws with replacement is
 \begin{equation}
 C_K(n) = \sum_{k=1}^{K} m_k\,\big(1 - (1 - m_k)^{n}\big),
 \label{eq:gt}
 \end{equation}
-the Good-Turing expectation, and it depends on the corpus only through the masses. We test this with inventories of $K = 30$ themes per corpus, with the exact label coverage of each sample and with the themes a language model reports after reading the sample. Section~\ref{sec:themes} shows that this curve and the missing mass at a fixed $r$ behave differently across corpora, which is why the two questions need two tools.
+the Good-Turing expectation, and it depends on the corpus only through the masses. Our samples are drawn without replacement, and at $n \le 400$ from corpora of at least 7{,}600 documents the difference is below 0.003. We test the equation with inventories of $K = 30$ themes per corpus, against the exact label coverage of each sample and against the themes a language model reports from the sample. Section~\ref{sec:themes} shows that this curve and the missing mass at a fixed $r$ behave differently across corpora, which is why the two questions need two tools.

@@ -1,7 +1,7 @@
 \section{Synthetic smoke test}
 \label{app:smoke}
 
-Zipf topic mixtures with 20{,}000 documents in 64 dimensions, four settings (50 topics with Zipf exponent 0.5; 200 and 500 topics with exponent 1.0; 200 topics with noise 1.0), three seeds, nested samples at eleven sizes from 50 to 5{,}000. Coverage $1 - G$ at radius $\alpha$ times the median pilot pairwise distance, against the true topic mass coverage: $\alpha = 0.5$ gives $\rho = 0.968$ and error 0.029; $\alpha = 0.4$ gives 0.797 and 0.091; $\alpha = 0.3$ gives 0.677 and 0.209; $\alpha \le 0.2$ fails. The Chao and Jost extrapolation from a 500-document pilot to the sample size for 95\% coverage lands within a factor of two of the empirical crossing in three of four settings and over-predicts on the noisy setting (1{,}267 against 1{,}000).
+Zipf topic mixtures with 20{,}000 documents in 64 dimensions, four settings (50 topics with Zipf exponent 0.5; 200 and 500 topics with exponent 1.0; 200 topics with noise 1.0), three seeds, nested samples at eleven sizes from 50 to 5{,}000. Coverage $1 - G$ at radius $\alpha$ times the median pilot pairwise distance, against the true topic mass coverage: $\alpha = 0.5$ gives $\rho = 0.968$ and error 0.029; $\alpha = 0.4$ gives 0.797 and 0.091; $\alpha = 0.3$ gives 0.677 and 0.209; $\alpha \le 0.2$ fails. The Chao and Jost extrapolation from a 500-document pilot to the sample size for 95\% coverage lands within a factor of two of the empirical crossing in three of four settings and overpredicts on the noisy setting (1{,}267 against 1{,}000).
 
 \section{Summary stability}
 \label{app:summaries}
@@ -11,7 +11,7 @@ For each of the eight forum and census corpora and each $n \in \{25, 50, 100, 20
 \section{Shared taxonomy}
 \label{app:shared}
 
-The eight thirty-theme inventories were merged by average-linkage clustering of their centroids at cosine distance 0.20, 0.15, 0.10 and 0.05, giving 42, 69, 112 and 187 shared themes, and every document was assigned to its nearest shared centroid. Table~\ref{tab:shared} gives, for each merge and each $n$, the cross-corpus Spearman of the shared theme coverage of the 1{,}200 samples with $1 - G$ at $r = 0.30$ and with Equation~\ref{eq:gt} evaluated on the shared masses.
+The eight inventories of thirty themes were merged by average linkage clustering of their centroids at cosine distance 0.20, 0.15, 0.10 and 0.05, giving 42, 69, 112 and 187 shared themes, and every document was assigned to its nearest shared centroid. Table~\ref{tab:shared} gives, for each merge and each $n$, the Spearman correlation across corpora of the shared theme coverage of the 1{,}200 samples with $1 - G$ at $r = 0.30$ and with Equation~\ref{eq:gt} evaluated on the shared masses.
 
 \begin{table}[h]
 \centering
@@ -50,3 +50,29 @@ For a document function $f$ with range 1 that takes the same value on documents 
 \paragraph{Theme naming.} ``The $\{m\}$ documents below were grouped together because they are about the same theme. Give the theme a short name (at most 8 words) and a one-sentence definition that would let a reader decide whether a new document belongs to it. Answer as JSON with keys name and definition.''
 
 \paragraph{Enumeration.} ``Below are $\{n\}$ documents sampled from a larger collection, followed by a list of $\{K\}$ themes found in the full collection. Decide which themes are present among these $\{n\}$ documents. A theme is present only if you can point to one document that is primarily about it; in a small sample most themes will be absent, and similar-sounding themes are distinct, so pick the single best theme for each document. Answer with one line per present theme in the form theme\_id: document\_number.''
+
+\section{Direct test of the sample size formula}
+\label{app:nstar}
+
+Equation~\ref{eq:collapse} was fitted on cells with $n \le 1{,}000$; Equation~\ref{eq:nstar} then gave $n^{*}$ for $\varepsilon \in \{0.3, 0.2, 0.1\}$ at every radius where the surface crosses $\varepsilon$ at some $n > 1{,}000$ within the grid, and the crossing was interpolated on the log scale between grid points. Table~\ref{tab:nstar} reports the ratio of predicted to empirical sample size.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Corpus & cases & median ratio & within 1.5 & within 2 \\
+\midrule
+Manifold $d{=}2$ & 9 & 1.21 & 9 & 9 \\
+Manifold $d{=}4$ & 9 & 1.38 & 6 & 9 \\
+Manifold $d{=}8$ & 8 & 0.97 & 6 & 8 \\
+AskDocs & 6 & 0.93 & 5 & 6 \\
+TIFU & 6 & 1.06 & 6 & 6 \\
+Census tweets (random) & 3 & 2.13 & 0 & 1 \\
+Trump & 2 & 3.00 & 0 & 1 \\
+Zipf, 200 topics & 5 & 82 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Predicted over empirical sample size for a target isolation rate, by corpus. The tweet corpus has 7{,}860 documents, so few crossings fall beyond $n = 1{,}000$.}
+\label{tab:nstar}
+\end{table}

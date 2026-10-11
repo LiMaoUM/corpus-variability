@@ -1,0 +1,3 @@
+corpus,N,d_twonn,r2_nrd,r2_heldout,b,mae_pred_G,n_target,mae_G_vs_M,mae_Gfpc_vs_M
+ts,50000,12.31,0.966,0.927,0.464,0.0394,7000,0.024,0.011
+bsky,50000,15.78,0.992,0.991,0.376,0.0183,7000,0.0256,0.0133

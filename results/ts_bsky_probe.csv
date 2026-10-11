@@ -1,0 +1,3 @@
+corpus,N,near_dup_share,local_d_min,local_d_max,local_d_cv,N_dedup,r2_nrd_dedup,r2_heldout_dedup
+ts,50000,0.0004,7.91,15.38,0.156,49872,0.969,0.923
+bsky,50000,0.0006,11.47,18.86,0.131,49961,0.991,0.994

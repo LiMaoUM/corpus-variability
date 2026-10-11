@@ -1,1 +1,12 @@
 {'corpus': 'ts', 'N': 50000, 'd_twonn': 12.31, 'r2_nrd': np.float64(0.966), 'r2_heldout': np.float64(0.927), 'b': 0.464, 'mae_pred_G': 0.0394, 'n_target': 7000, 'mae_G_vs_M': 0.024, 'mae_Gfpc_vs_M': 0.011}
+{'corpus': 'ts', 'N': 50000, 'near_dup_share': 0.0004, 'local_d_min': 7.91, 'local_d_max': 15.38, 'local_d_cv': 0.156, 'N_dedup': 49872, 'r2_nrd_dedup': np.float64(0.969), 'r2_heldout_dedup': np.float64(0.923)}
+{'corpus': 'bsky', 'N': 50000, 'd_twonn': 15.78, 'r2_nrd': np.float64(0.992), 'r2_heldout': np.float64(0.991), 'b': 0.376, 'mae_pred_G': 0.0183, 'n_target': 7000, 'mae_G_vs_M': 0.0256, 'mae_Gfpc_vs_M': 0.0133}
+{'corpus': 'bsky', 'N': 50000, 'near_dup_share': 0.0006, 'local_d_min': 11.47, 'local_d_max': 18.86, 'local_d_cv': 0.131, 'N_dedup': 49961, 'r2_nrd_dedup': np.float64(0.991), 'r2_heldout_dedup': np.float64(0.994)}
+
+corpus     N  d_twonn  r2_nrd  r2_heldout     b  mae_pred_G  n_target  mae_G_vs_M  mae_Gfpc_vs_M
+    ts 50000    12.31   0.966       0.927 0.464      0.0394      7000      0.0240         0.0110
+  bsky 50000    15.78   0.992       0.991 0.376      0.0183      7000      0.0256         0.0133
+
+corpus     N  near_dup_share  local_d_min  local_d_max  local_d_cv  N_dedup  r2_nrd_dedup  r2_heldout_dedup
+    ts 50000          0.0004         7.91        15.38       0.156    49872         0.969             0.923
+  bsky 50000          0.0006        11.47        18.86       0.131    49961         0.991             0.994

@@ -40,7 +40,8 @@ def collapse():
     summ = pd.read_csv(RES / "eureka1_collapse.csv").set_index("corpus")
     panels = [("manifold_d2", "Manifold d = 2"), ("manifold_d8", "Manifold d = 8"),
               ("gtr_askdocs", "AskDocs"), ("gtr_tifu", "TIFU"), ("gtr_trump", "Trump"), ("zipf_k200", "Zipf, 200 topics")]
-    fig, axes = plt.subplots(2, 3, figsize=(7.0, 4.0), sharey=True)
+    fig, axes = plt.subplots(2, 3, figsize=(7.0, 4.4), sharey=True)
+    fig.subplots_adjust(hspace=0.55, wspace=0.12)
     for ax, (name, label) in zip(axes.ravel(), panels):
         S = pd.read_csv(RES / f"eureka1_surface_{name}.csv", index_col=0)
         n_grid = S.index.to_numpy(float)
@@ -61,8 +62,8 @@ def collapse():
         ax.set_xscale("log")
         ax.set_ylim(0, 1.02)
         ax.set_title(label, fontsize=7.5, loc="left")
-        ax.text(0.97, 0.93, f"d = {d:.1f}\nout of sample $R^2$ = {r2:.2f}", transform=ax.transAxes,
-                ha="right", va="top", fontsize=6.5)
+        ax.text(0.04, 0.06, f"d = {d:.1f}\nout of sample $R^2$ = {r2:.2f}", transform=ax.transAxes,
+                ha="left", va="bottom", fontsize=6.5)
     for ax in axes[1]:
         ax.set_xlabel("$n\\,r^{d}$")
     for ax in axes[:, 0]:
@@ -72,6 +73,8 @@ def collapse():
     cb = fig.colorbar(sm, ax=axes, fraction=0.025, pad=0.02)
     cb.set_label("Radius $r$ (small to large)")
     cb.set_ticks([])
+    for ax in axes.ravel():
+        ax.xaxis.set_minor_formatter(mpl.ticker.NullFormatter())
     fig.savefig(FIG / "collapse.pdf", bbox_inches="tight")
     fig.savefig(FIG / "collapse.png", dpi=600, bbox_inches="tight")
     plt.close(fig)
@@ -95,6 +98,8 @@ def themes():
         ax.set_xscale("log")
         ax.set_xticks([25, 50, 100, 200, 400])
         ax.set_xticklabels(["25", "50", "100", "200", "400"])
+        ax.xaxis.set_minor_formatter(mpl.ticker.NullFormatter())
+        ax.xaxis.set_minor_locator(mpl.ticker.NullLocator())
         ax.set_xlabel("Sample size $n$")
     ax1.set_ylim(0.5, 1.02)
     ax1.set_ylabel("Theme mass covered")

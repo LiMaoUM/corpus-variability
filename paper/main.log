@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.24)  11 OCT 2026 13:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.24)  11 OCT 2026 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,17 +464,12 @@ Overfull \hbox (1.28378pt too wide) detected at line 15
 [][][]\OML/cmm/m/it/10.95 G\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X; r\OT1/cmr/m/n/10.95 ) = [] []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 k \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 d\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; X[]\OT1/cmr/m/n/10.95 ) \OML/cmm/m/it/10.95 > r[]i \OMS/cmsy/m/n/10.95 6\OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 k\OMS/cmsy/m/n/10.95 g[]\OML/cmm/m/it/10.95 ;
  []
 
-[2]) (./sections/method.tex
-Overfull \hbox (16.47177pt too wide) detected at line 8
-[][][]\OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 n; r\OT1/cmr/m/n/10.95 ) = [] []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 j \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 d\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 ) \OML/cmm/m/it/10.95 > r[]i\OMS/cmsy/m/n/10.95 g[]\OML/cmm/m/it/10.95 ;
- []
-
-[3]) (./sections/data.tex
+[2]) (./sections/method.tex [3]) (./sections/data.tex [4]
 Overfull \hbox (36.3983pt too wide) in paragraph at lines 13--29
  [][] 
  []
 
-) (./sections/results.tex [4]
+) (./sections/results.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 7.
@@ -487,26 +482,29 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 7.
 
-<figures/collapse.pdf, id=261, 447.69798pt x 277.1417pt>
+<figures/collapse.pdf, id=260, 447.69798pt x 299.40085pt>
 File: figures/collapse.pdf Graphic file (type pdf)
 <use figures/collapse.pdf>
-Package pdftex.def Info: figures/collapse.pdf  used on input line 37.
-(pdftex.def)             Requested size: 455.24411pt x 281.81808pt.
+Package pdftex.def Info: figures/collapse.pdf  used on input line 41.
+(pdftex.def)             Requested size: 455.24411pt x 304.45284pt.
 [5]
-<figures/themes.pdf, id=277, 460.90404pt x 186.79991pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 7116) has occurred while \output is active []
+
+[6]
+<figures/themes.pdf, id=290, 460.90404pt x 186.33665pt>
 File: figures/themes.pdf Graphic file (type pdf)
 <use figures/themes.pdf>
-Package pdftex.def Info: figures/themes.pdf  used on input line 80.
-(pdftex.def)             Requested size: 219.08614pt x 88.79358pt.
-) (./sections/discussion.tex) (./sections/limitations.tex
-Underfull \vbox (badness 1571) has occurred while \output is active []
-
-[6]) (./main.bbl [7 <./figures/collapse.pdf> <./figures/themes.pdf>]
+Package pdftex.def Info: figures/themes.pdf  used on input line 84.
+(pdftex.def)             Requested size: 219.08614pt x 88.57336pt.
+) (./sections/discussion.tex [7 <./figures/collapse.pdf> <./figures/themes.pdf>]) (./sections/limitations.tex) (./main.bbl
 Underfull \hbox (badness 1331) in paragraph at lines 20--23
 \OT1/ptm/m/n/10 (+20) learn-ing model gen-er-al-iza-tion[][].  \OT1/ptm/m/it/10 (+20) arXiv preprint
  []
 
-
+[8]
 Underfull \hbox (badness 3354) in paragraph at lines 90--93
 \OT1/ptm/m/n/10 (+20) ing mass in met-ric spaces[][].  \OT1/ptm/m/it/10 (+20) arXiv preprint
  []
@@ -516,20 +514,28 @@ Underfull \hbox (badness 1067) in paragraph at lines 120--123
 []\OT1/ptm/m/n/10 (+20) Amey P. Pasarkar and Adji Bousso Di-eng. 2024.
  []
 
-[8]) (./sections/appendix.tex
+) (./sections/appendix.tex [9]
 Overfull \hbox (28.17595pt too wide) in paragraph at lines 19--36
  [][] 
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 40.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 40.
 
-[9]) [10
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 40.
+
+[10]
+Overfull \hbox (58.38734pt too wide) in paragraph at lines 62--76
+ [][] 
+ []
+
+) [11
 
 ] (./main.aux)
  ***********
@@ -537,21 +543,21 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 30E057C12CF0455A18BCF069BB8AEB9F;4886.
+(rerunfilecheck)             Checksum: 450FE985F793609906EA9795EEA59035;5088.
  ) 
 Here is how much of TeX's memory you used:
- 15253 strings out of 469115
- 242016 string characters out of 5459086
- 706536 words of memory out of 5000000
- 43639 multiletter control sequences out of 15000+600000
- 665886 words of font info for 303 fonts, out of 8000000 for 9000
+ 15274 strings out of 469115
+ 242215 string characters out of 5459086
+ 708007 words of memory out of 5000000
+ 43642 multiletter control sequences out of 15000+600000
+ 666481 words of font info for 313 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 89i,9n,93p,1849b,634s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,9n,93p,2041b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 346607 bytes).
+Output written on main.pdf (11 pages, 355046 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 455 compressed objects within 5 object streams
- 86 named destinations out of 1000 (max. 500000)
- 45275 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 469 compressed objects within 5 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 45283 words of extra memory for PDF output out of 51595 (max. 10000000)
 
