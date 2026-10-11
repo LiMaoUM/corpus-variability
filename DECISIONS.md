@@ -90,3 +90,11 @@ recall across corpora; summary stability stays a within-corpus direction and a l
 Confirms the "Shared-taxonomy outcome" entry above. Rationale: across four merge radii of a
 shared taxonomy, G at absolute r did not predict partition coverage across corpora while the
 partition's own mass vector did, so the two are different functionals of the geometry.
+
+## 2026-10-11: No EACL paragraph; the two papers stay separate (Mao, via /decide)
+
+The SummEval EACL 2027 camera-ready does not cite corpus-variability and gets no RR5 paragraph
+from it. Supersedes the EACL-paragraph clause of the 2026-10-09 entry "Main line, venue,
+corpora, EACL paragraph"; its other clauses stand. The drafted heterogeneity paragraph is kept
+as material for this paper (`docs/drafts/heterogeneity-diagnostic-paragraph.tex`). Rationale:
+this is a new paper, and the SummEval camera-ready is not the place for it.
