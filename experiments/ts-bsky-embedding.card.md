@@ -32,3 +32,4 @@
 - **Monitor contract**: background; report on completion or error only, leading with the two
   held-out R2 values and the artifact path. Expires 2026-10-12 12:00.
 - **Status log**:
+  - 2026-10-11 v1: approved by Mao (interactive), run on GPU 0 shared. Sampler smoke passed (2,000 per platform, 27 s).
