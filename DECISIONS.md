@@ -131,3 +131,10 @@ reversed if he says so.
 Correction (2026-10-12): the counts in the entry above came from a partial tally. From
 `results/nstar_v2.csv` (fit on n <= 1,000): corpora with out of sample R2 >= 0.9 give 77 of 83
 cases within a factor of 1.5 and 81 of 83 within 2; corpora below 0.9 give 10 of 23 and 14 of 23.
+
+## 2026-10-13: r calibration judged by Qwen3.8-27B (Mao, interactive)
+
+The shared Gemma-4 server (127.0.0.1:8800) stayed saturated by another project (15 running, 47
+waiting; one hour of timeouts). Mao chose the idle Qwen3.8-27B server (127.0.0.1:8830, thinking
+disabled) for the r calibration judgments. The paper states that the calibration judge differs
+from the Gemma-4 summarizer and enumerator.

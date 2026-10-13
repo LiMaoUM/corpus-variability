@@ -26,7 +26,8 @@ from sklearn.neighbors import NearestNeighbors
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from summary_n_curve import unit  # noqa: E402
-from summarize_draws import BASE_URL, MODEL  # noqa: E402
+BASE_URL = "http://127.0.0.1:8830/v1"  # Qwen3.8-27B (Mao, 2026-10-13: Gemma server congested)
+MODEL = "qwen3.8-27b"
 
 EMB = ROOT / "data/emb"
 OUT = ROOT / "data/rcal"
@@ -79,7 +80,7 @@ def sample_pairs(X, rng):
 
 async def judge(client, sem, prompt):
     async with sem:
-        r = await client.chat.completions.create(model=MODEL, temperature=0.0, max_tokens=5,
+        r = await client.chat.completions.create(model=MODEL, temperature=0.0, max_tokens=5, extra_body={"chat_template_kwargs": {"enable_thinking": False}},
                                                  messages=[{"role": "user", "content": prompt}])
     t = (r.choices[0].message.content or "").strip().upper()
     for k in ("UNRELATED", "SAME", "TOPIC"):
@@ -93,6 +94,8 @@ async def run(corpora, limit, concurrency):
     sem = asyncio.Semaphore(concurrency)
     OUT.mkdir(parents=True, exist_ok=True)
     for c in corpora:
+        if (OUT / f"{c}.jsonl").exists() and not limit:
+            continue
         e, t = CORPORA[c]
         X = unit(np.load(EMB / e).astype(np.float32))
         texts = pd.read_parquet(EMB / t).text.tolist()
