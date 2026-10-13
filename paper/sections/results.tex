@@ -2,64 +2,66 @@
 
 \subsection{The estimator tracks true topic coverage}
 
-The Zipf mixtures give every document a topic, so the true topic mass covered by a sample is known. Over four settings (50 to 500 topics, two noise levels), three seeds and eleven sample sizes from 50 to 5{,}000, coverage $1 - G$ at a radius of half the median pairwise distance of a pilot tracks the true coverage with Spearman $\rho = 0.968$ and a mean absolute error of 0.029 (132 samples). Good-Turing on the true labels, which $G$ does not see, reaches $\rho = 0.989$ and error 0.016. At a tenth of the median distance the agreement is gone ($\rho = 0.31$). The radius matters, and the collapse law gives the dependence on it.
+The Zipf mixtures give every document a topic, so the true topic mass covered by a sample is known. Over four settings, three seeds and eleven sample sizes from 50 to 5{,}000, coverage $1 - G$ at a radius of half the median pairwise distance of a pilot tracks the true coverage with Spearman $\rho = 0.968$ and a mean absolute error of 0.029 (Appendix~\ref{app:smoke}). Good-Turing on the true labels, which $G$ does not see, reaches $\rho = 0.989$. At smaller radii the agreement falls away. The radius matters, and the collapse law gives the dependence on it.
 
 \subsection{The isolation rate collapses on $n r^{d}$}
 \label{sec:collapse}
 
-Table~\ref{tab:collapse} reports the fit of Equation~\ref{eq:collapse} with $d$ fixed at its TwoNN estimate. Eleven corpora pass the diagnostic: the three manifolds, AskDocs and TIFU under both encoders, the random census slice, Truth Social and Bluesky. On them the fit on cells with $n \le 1{,}000$ explains 92\% to 99\% of the variance of $\log(-\log G)$ on cells with $n$ up to 7{,}000, and the $G$ it predicts at the largest $n$ has a mean absolute error of 0.015 to 0.042. Fitting on $n \le 300$ instead, a 23-fold extrapolation, leaves the out of sample $R^2$ between 0.92 and 0.99. Across the three GTR samples of AskDocs and TIFU the out of sample $R^2$ varies by at most 0.012. Figure~\ref{fig:collapse} shows the surfaces against $n r^{d}$.
+Table~\ref{tab:collapse} reports the fit of Equation~\ref{eq:collapse} for 17 pairs of corpus and encoder. Ten pass the diagnostic: the three manifolds, AskDocs and TIFU under both encoders, the random census slice, Truth Social and Bluesky. On these ten, a fit on cells with $n \le 1{,}000$ explains 92\% or more of the variance of $\log(-\log G)$ on cells with $n$ up to 7{,}000. Fitting on $n \le 300$ instead, a 23-fold extrapolation, keeps it above 0.92. Figure~\ref{fig:collapse} shows the surfaces against $n r^{d}$.
 
-The fit with $\log n$ and $\log r$ as separate regressors recovers the dimension without TwoNN. On the three manifolds the ratio of the two coefficients falls within 10\% of the true dimension. The exponent $b$ is below 1 on every corpus (Table~\ref{tab:collapse}). It is closest to 1 on the manifolds and lowest on the census slices, whose density is the most uneven.
+The fit with $\log n$ and $\log r$ as separate regressors gives a second estimate of $d$ that does not use TwoNN. On the ten passing pairs the two estimates differ by at most 19\%. On the seven failing pairs they differ by 27\% to 43\%, with the regression estimate always lower.
 
-The per radius Chao and Jost extrapolation is the ecological standard for the same task \citep{chao2012coverage}. From the singletons and doubletons at $n = 1{,}000$ at each radius it predicts $G$ at the largest $n$ with a mean absolute error of 0.10 to 0.22 on the corpora that pass the diagnostic, four to ten times the error of the collapse law. Its premise of a discrete species does not hold at a fixed radius, where a document's neighbourhood overlaps those of others.
+Two baselines predict $G$ at the largest $n$ from the cells with $n \le 1{,}000$. A separate curve in $n$ at each radius, which needs no $d$, errs 1.5 to 3.8 times more than the collapse law on nine of the ten passing pairs, and less on the random census slice (0.025 against 0.040). The Chao and Jost extrapolation from singletons and doubletons \citep{chao2012coverage}, run within its recommended range of a doubling from $n = 1{,}000$ to 2{,}000, errs 2 to 9 times more than the collapse law on the passing pairs. Both baselines beat the collapse law on the Zipf mixture, which fails the diagnostic.
 
 \begin{table*}[t]
 \centering
 \small
-\begin{tabular}{llrrrrrrr}
+\begin{tabular}{llrrrrrrrr}
 \toprule
-Corpus & Encoder & $N$ & $d$ (sd) & $b$ & $R^2$ in & $R^2$ out & error, collapse & error, Chao--Jost \\
+Corpus & Encoder & $N$ & $d$ (sd) & $d$, ratio & $b$ & $R^2$ pilot & $R^2$ full & error, law & error, per radius \\
 \midrule
-Manifold $d{=}2$ & none & 20{,}000 & 1.99 (0.05) & 0.80 & 0.963 & 0.960 & 0.027 & 0.105 \\
-Manifold $d{=}4$ & none & 20{,}000 & 4.01 (0.16) & 0.72 & 0.950 & 0.922 & 0.036 & 0.130 \\
-Manifold $d{=}8$ & none & 20{,}000 & 7.98 (0.21) & 0.62 & 0.961 & 0.950 & 0.042 & 0.151 \\
-AskDocs & GTR & 10{,}000 & 13.6 (0.36) & 0.51 & 0.961 & 0.949 & 0.042 & 0.183 \\
-AskDocs & Qwen3 & 10{,}000 & 12.8 (0.39) & 0.54 & 0.979 & 0.991 & 0.015 & 0.205 \\
-TIFU & GTR & 10{,}000 & 18.3 (0.33) & 0.50 & 0.961 & 0.955 & 0.040 & 0.162 \\
-TIFU & Qwen3 & 10{,}000 & 13.6 (0.35) & 0.53 & 0.970 & 0.959 & 0.039 & 0.182 \\
-Census random & Qwen3 & 7{,}610 & 12.9 (0.39) & 0.27 & 0.974 & 0.966 & 0.040 & 0.167 \\
-Truth Social & Qwen3 & 50{,}000 & 12.6 (0.15) & 0.43 & 0.976 & 0.977 & 0.025 & 0.195 \\
-Bluesky & Qwen3 & 50{,}000 & 16.0 (0.69) & 0.42 & 0.969 & 0.957 & 0.037 & 0.215 \\
+AskDocs & Qwen3 & 10{,}000 & 12.8 (0.39) & 12.2 & 0.54 & 0.98 & 0.99 & 0.015 & 0.057 \\
+Truth Social & Qwen3 & 50{,}000 & 12.6 (0.15) & 14.4 & 0.43 & 0.98 & 0.98 & 0.025 & 0.053 \\
+Census random & Qwen3 & 7{,}610 & 12.9 (0.39) & 12.4 & 0.27 & 0.98 & 0.97 & 0.040 & 0.025 \\
+Manifold $d{=}2$ & none & 20{,}000 & 2.0 (0.05) & 2.4 & 0.80 & 0.97 & 0.96 & 0.027 & 0.065 \\
+TIFU & Qwen3 & 10{,}000 & 13.6 (0.35) & 13.4 & 0.53 & 0.98 & 0.96 & 0.039 & 0.086 \\
+Bluesky & Qwen3 & 50{,}000 & 16.0 (0.69) & 15.2 & 0.42 & 0.98 & 0.96 & 0.037 & 0.056 \\
+TIFU & GTR & 10{,}000 & 18.3 (0.33) & 19.0 & 0.50 & 0.97 & 0.95 & 0.040 & 0.070 \\
+Manifold $d{=}8$ & none & 20{,}000 & 8.0 (0.21) & 8.1 & 0.62 & 0.97 & 0.95 & 0.042 & 0.081 \\
+AskDocs & GTR & 10{,}000 & 13.6 (0.36) & 13.6 & 0.51 & 0.98 & 0.95 & 0.042 & 0.087 \\
+Manifold $d{=}4$ & none & 20{,}000 & 4.0 (0.16) & 4.3 & 0.72 & 0.96 & 0.92 & 0.036 & 0.091 \\
 \midrule
-Census illegal & Qwen3 & 17{,}202 & 11.4 (0.33) & 0.26 & 0.906 & 0.852 & 0.026 & 0.202 \\
-Census covid & Qwen3 & 17{,}837 & 10.7 (0.40) & 0.30 & 0.891 & 0.791 & 0.045 & 0.206 \\
-Trump & Qwen3 & 10{,}000 & 9.0 (0.51) & 0.26 & 0.875 & 0.782 & 0.046 & 0.243 \\
-Census trump & Qwen3 & 30{,}136 & 9.0 (0.84) & 0.26 & 0.891 & 0.781 & 0.043 & 0.237 \\
-Census citizens & Qwen3 & 7{,}849 & 9.1 (0.24) & 0.27 & 0.837 & 0.734 & 0.043 & 0.156 \\
-Trump & GTR & 10{,}000 & 9.0 (0.48) & 0.27 & 0.802 & 0.626 & 0.054 & 0.257 \\
-Zipf, 200 topics & none & 20{,}000 & 11.3 (0.35) & 0.21 & 0.671 & 0.618 & 0.136 & 0.096 \\
+Census illegal & Qwen3 & 17{,}202 & 11.4 (0.33) & 7.5 & 0.26 & 0.93 & 0.85 & 0.026 & 0.053 \\
+Census covid & Qwen3 & 17{,}837 & 10.7 (0.40) & 7.2 & 0.30 & 0.85 & 0.79 & 0.045 & 0.073 \\
+Trump & Qwen3 & 10{,}000 & 9.0 (0.51) & 5.3 & 0.26 & 0.90 & 0.78 & 0.045 & 0.075 \\
+Census trump & Qwen3 & 30{,}136 & 9.0 (0.84) & 6.3 & 0.26 & 0.87 & 0.78 & 0.043 & 0.056 \\
+Census citizens & Qwen3 & 7{,}849 & 9.1 (0.24) & 6.6 & 0.27 & 0.76 & 0.73 & 0.043 & 0.058 \\
+Trump & GTR & 10{,}000 & 9.0 (0.48) & 5.2 & 0.27 & 0.79 & 0.63 & 0.054 & 0.069 \\
+Zipf, 200 topics & none & 20{,}000 & 11.3 (0.35) & 6.4 & 0.21 & 0.66 & 0.62 & 0.136 & 0.026 \\
 \bottomrule
 \end{tabular}
-\caption{The collapse law on 17 corpus and encoder pairs, sorted by out of sample $R^2$; the line separates the pairs that pass the diagnostic (out of sample $R^2 \ge 0.9$). $d$ is the TwoNN dimension, mean and sd over five pilots of 2{,}000 documents (and over three samples for the GTR forum corpora). $b$ and both $R^2$ come from the fit of Equation~\ref{eq:collapse} on cells with $n \le 1{,}000$; $R^2$ out is computed on cells with $n > 1{,}000$. The errors are mean absolute errors of the predicted $G$ at the largest $n$ (7{,}000, or $0.7N$), for the collapse law and for a per radius Chao and Jost extrapolation from $n = 1{,}000$.}
+\caption{The collapse law on 17 corpus and encoder pairs, sorted by the full out of sample $R^2$; the line separates the pairs that pass the diagnostic. $d$: TwoNN dimension, mean and sd over five pilots of 2{,}000 documents (and over three samples for the GTR forum corpora). $d$, ratio: the ratio of the $\log r$ and $\log n$ coefficients. $b$: exponent of Equation~\ref{eq:collapse} fitted on cells with $n \le 1{,}000$. $R^2$ pilot: fit on subsamples of one pilot with $n \le 750$, scored on $n$ from 1{,}000 to 2{,}000. $R^2$ full: fit on $n \le 1{,}000$, scored on $n$ up to 7{,}000. Errors: mean absolute error of the predicted $G$ at the largest $n$, for the collapse law and for a separate curve in $n$ at each radius.}
 \label{tab:collapse}
 \end{table*}
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/collapse.pdf}
-\caption{Isolation rate $G$ against $n r^{d}$ on a log scale, one panel per corpus (GTR encoder for the forum corpora, first sample), colour by radius $r$. Points from different radii fall on one curve where the law holds (the manifolds, AskDocs, TIFU) and separate where it fails (Trump, the Zipf mixture). The grey line is the fit of Equation~\ref{eq:collapse} on all cells.}
+\caption{Isolation rate $G$ against $n r^{d}$ on a log scale, one panel per corpus (GTR encoder for the forum corpora), colour by radius $r$, one draw per cell. Points from different radii fall on one curve where the law holds (the manifolds, AskDocs, TIFU) and separate where it fails (Trump, the Zipf mixture). The grey line is the fit of Equation~\ref{eq:collapse} on cells with $n \le 1{,}000$; the annotation gives $d$ and the full out of sample $R^2$ of Table~\ref{tab:collapse}.}
 \label{fig:collapse}
 \end{figure*}
 
 \subsection{The sample size formula}
 
-For every corpus, Equation~\ref{eq:collapse} was fitted on cells with $n \le 1{,}000$, Equation~\ref{eq:nstar} gave $n^{*}$ for targets $\varepsilon \in \{0.3, 0.2, 0.1\}$ at every radius where the mean surface crosses $\varepsilon$ beyond $n = 1{,}000$, and the prediction was compared with the crossing interpolated on the log scale between grid points. On the corpora that pass the diagnostic, 77 of 83 predictions fall within a factor of 1.5 of the empirical sample size. On the corpora that fail it, 10 of 23 do. The Zipf mixture is off by a factor of 70. Appendix~\ref{app:nstar} lists every corpus. The 90\% interval from resampling draws is narrow, a median of 7\% of $n^{*}$, and covers the empirical crossing in only 23 of 83 cases, so the error of the formula comes from the shape of the law and the interval reflects only sampling noise in the pilot.
+For every pair, Equation~\ref{eq:collapse} was fitted on cells with $n \le 1{,}000$, and Equation~\ref{eq:nstar} gave $n^{*}$ for targets $\varepsilon \in \{0.3, 0.2, 0.1\}$ at every radius where the mean surface crosses $\varepsilon$ beyond $n = 1{,}000$. The prediction was compared with the crossing interpolated on the log scale between grid points. On the ten passing pairs, 77 of 83 predictions fall within a factor of 1.5 of the empirical sample size. On the seven failing pairs, 10 of 23 do (Appendix~\ref{app:nstar}).
 
-A random sample can be compared with a sample chosen for coverage. Greedy farthest point selection, the core-set construction of \citet{sener2018coreset}, minimises the largest distance from any document to the chosen set. To bring the missing mass at a radius below a target, a random sample needs 0.6 to 1.0 times as many documents as greedy selection on the forum and census corpora (median 0.62 over 76 cases), and 0.12 times as many on Truth Social and Bluesky. Greedy selection spends its picks on outlying documents, which are few, while the missing mass weighs documents equally. For the share of the corpus left uncovered, random sampling is the better design, and it needs no embedding of the full corpus.
+The error of $n^{*}$ comes from the shape of the law more than from the pilot. Resampling the pilot 50 times and refitting $d$, $a$ and $b$ each time gives intervals with a median width of 19\% of $n^{*}$, and these cover the empirical crossing in only 21\% of cases. We therefore report $n^{*}$ with the empirical band of a factor of 1.5, which held in 93\% of cases on passing corpora.
 
-\subsection{Where the collapse fails}
+A random sample can be compared with a sample chosen for coverage. Greedy farthest point selection, the core-set construction of \citet{sener2018coreset}, minimises the largest distance from any document to the chosen set. To bring the missing mass at a radius below a target, a random sample needs 0.6 to 1.0 times as many documents as greedy selection on the forum and census corpora, and 0.12 times as many on Truth Social and Bluesky. Greedy selection spends its picks on outlying documents, which are few, while the missing mass weighs documents equally.
 
-Seven corpus and encoder pairs fail the diagnostic: the Trump forum corpus under both encoders, four of the five census slices, and the Zipf mixture. The diagnostic is conservative: on three of them (census covid and illegal, Trump under Qwen3) the formula still predicts within a factor of 1.5 in 7 of 8 cases, while on census citizens, Trump under GTR and the Zipf mixture it fails in 11 of 13. Two probes locate the difference (Table~\ref{tab:probe}). Trump is the only corpus with a visible share of near duplicates. Its twenty $k$-means clusters also differ most in local dimension: the clusters of dimension near 2 hold slogans, and the clusters near 16 hold discussion.
+\subsection{The diagnostic}
+
+The diagnostic must work before the sample is drawn, so we compute it inside one pilot of 2{,}000 documents: fit Equation~\ref{eq:collapse} on subsamples of size up to 750, and score $R^2$ on subsamples of size 1{,}000 to 2{,}000. The ten passing pairs reach a pilot $R^2$ of 0.96 or more, and the seven failing pairs reach at most 0.93 (Table~\ref{tab:collapse}). A pilot threshold of 0.95 therefore reproduces the full diagnostic on every pair. The threshold was chosen on these corpora, and the agreement of the two dimension estimates gives a second check that needs no threshold from them: on every failing pair the two differ by more than a quarter.
 
 \begin{table}[t]
 \centering
@@ -79,13 +81,11 @@ Zipf, 200 topics & 0.0\% & 7.8 to 18.1 & 0.21 \\
 \caption{Probes of the collapse failure. Near duplicates: share of a 5{,}000-document sample with a neighbour within cosine distance 0.02. Local $d$: range of the TwoNN dimension over twenty $k$-means clusters, and its coefficient of variation.}
 \label{tab:probe}
 \end{table}
- Removing the 266 documents that have a near duplicate raises the out of sample $R^2$ only to 0.74.
 
-Section~3.2 says why a spread of local dimension breaks the law and a spread of density does not. A spread of density changes the shape of the curve in $n r^{d}$, which $b$ absorbs. A spread of dimension makes the effective $d$ change with the radius: at small $r$ the slogan clusters, where documents sit on a nearly flat set, dominate the isolation count, and at large $r$ the discussion clusters do. No single $d$ aligns the curves for different radii, which is the separation of colours visible for Trump in Figure~\ref{fig:collapse}. The Zipf mixture shows the same pattern for another reason. At small radii its documents look like noise around their centres, with the dimension of the noise, and at large radii they look like 200 points, the centres.
-
-The failing census slices are those selected by a keyword that recurs in slogans and calls to action (citizens, trump, covid, illegal). The random slice, which was not selected on a keyword, passes.
+Section~3.2 says when the law should fail: when the effective dimension changes with the radius. On Trump the probes show such a change (Table~\ref{tab:probe}). Its twenty $k$-means clusters differ most in local dimension: clusters of dimension near 2 hold slogans, and clusters near 16 hold discussion. At small radii the slogan clusters, where documents sit on a nearly flat set, dominate the count of isolated documents, and at large radii the discussion clusters do. Removing the 3.4\% of documents with a near duplicate leaves the failure in place. The Zipf mixture changes dimension with radius for another reason: at small radii its documents look like noise around their centres, and at large radii they look like 200 points. The probes do not separate the failing census slices from the passing corpora, and we do not have a mechanism for them beyond their selection on a keyword that recurs in slogans and calls to action.
 
 \subsection{The finite population correction}
+\label{sec:fpc}
 
 Table~\ref{tab:fpc} compares $G$ and $G\,(1 - n/N)$ with the true missing mass $M$ of the finite corpus on the eight forum and census corpora under Qwen3, at sampling fractions from 0.01 to 0.7 and three radii, 144 cells. Uncorrected, $G$ has a mean absolute error of 0.114 and a maximum of 0.49. Corrected, the mean error is 0.012 and the maximum 0.11, and at $n/N = 0.5$ the error is 0.004. On the three GTR forum corpora and the Zipf mixture the correction cuts the error from 0.068 to 0.015. The correction holds on the corpora that fail the collapse.
 
@@ -108,33 +108,36 @@ $n/N$ & $M$ (true) & $G$ & $G\,(1 - n/N)$ & error \\
 \label{tab:fpc}
 \end{table}
 
+
 \subsection{Choosing the resolution}
 \label{sec:rcal}
 
-The resolution $r$ is a cosine distance, and a user needs to know what content it groups. For each of the ten real corpora under Qwen3, we drew about 40 document pairs in each of ten distance bins from 0 to 1, about 3{,}900 pairs in all, and asked Qwen3.8-27B whether the two documents are about the same specific content (the same claim, question, event or story), the same general topic, or unrelated (prompt in Appendix~\ref{app:prompts}). This judge differs from the Gemma~4 model used for summaries and theme lists because the shared Gemma server was unavailable.
+The resolution $r$ is a cosine distance, and a user needs to know what content it groups. For each of the ten real corpora under Qwen3, we drew about 40 document pairs in each of ten distance bins from 0 to 1, 3{,}913 pairs in all, and asked Qwen3.8-27B whether the two documents are about the same specific content (the same claim, question, event or story), the same general topic, or unrelated (Appendix~\ref{app:prompts}). The share judged the same content falls with distance in every corpus. Where it crosses one half depends on the corpus, from $r = 0.05$ on TIFU to 0.32 on a census slice, and on Bluesky it stays below one half even for the nearest pairs (Table~\ref{tab:rcal}). Long first person stories differ in their details even when they are close in embedding space, while short posts that repeat a slogan are the same content at a larger distance. A cosine distance therefore does not carry one meaning across corpora, and a user who wants $r$ to mean ``the same claim'' should judge a few hundred pilot pairs binned by distance and take the distance where the share of same content crosses the chosen level.
 
-The share of pairs judged the same content falls with distance in every corpus, but where it crosses one half depends on the corpus. The crossing ranges from $r = 0.05$ on TIFU to 0.30 on two census slices (Table~\ref{tab:rcal}). On Bluesky the share stays below one half even for the nearest pairs.
+\subsection{What a target costs}
+\label{sec:feasible}
+
+With $r$ calibrated, Equation~\ref{eq:nstar} says what a coverage target costs in each corpus. Table~\ref{tab:rcal} gives the sample size at which half of the corpus lies within the same content distance of some sampled document. The answers span twelve orders of magnitude. On the census slices and the Trump forum corpus, whose posts repeat a few claims, a few dozen to about a thousand documents suffice, and where the grid reaches the target the empirical sample size is within a factor of two of the prediction. On AskDocs, TIFU and Truth Social the required sample exceeds the corpus by orders of magnitude: almost no document has another document in the corpus about the same specific content, and $G$ at the largest sample stays above 0.94. In those corpora no sample covers the specific content, and an analysis that needs every claim must read every document. The formula says which of the two situations a corpus is in before any annotation is bought.
 
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lr}
+\begin{tabular}{lrrr}
 \toprule
-Corpus & $r$ at which half are the same content \\
+Corpus & $d$ & $r_{\mathrm{same}}$ & $n^{*}(0.5, r_{\mathrm{same}})$ \\
 \midrule
-TIFU & 0.05 \\
-AskDocs & 0.15 \\
-Truth Social & 0.16 \\
-Census citizens & 0.23 \\
-Trump (forum) & 0.24 \\
-Census random & 0.28 \\
-Census covid & 0.29 \\
-Census illegal & 0.30 \\
-Census trump & 0.32 \\
-Bluesky & none \\
+TIFU & 13.6 & 0.05 & $4 \times 10^{14}$ \\
+AskDocs & 12.8 & 0.15 & $1 \times 10^{9}$ \\
+Truth Social & 12.6 & 0.16 & $1 \times 10^{7}$ \\
+Census citizens & 9.1 & 0.23 & 480 (385) \\
+Trump (forum) & 9.0 & 0.24 & 600 (622) \\
+Census random & 12.9 & 0.28 & 1{,}100 (660) \\
+Census covid & 10.7 & 0.29 & 350 (307) \\
+Census illegal & 11.4 & 0.30 & 20 \\
+Census trump & 9.0 & 0.32 & 50 \\
+Bluesky & 16.0 & none & \\
 \bottomrule
 \end{tabular}
-\caption{Cosine distance under Qwen3 at which half of document pairs are judged the same specific content by Qwen3.8-27B, interpolated between distance bins of about 40 pairs each. On Bluesky 42\% of pairs closer than 0.1 are judged the same content.}
+\caption{The distance $r_{\mathrm{same}}$ at which half of document pairs are judged the same specific content (Qwen3.8-27B, interpolated between bins of about 40 pairs), and the sample size the collapse law prescribes for an isolation rate of 0.5 at that distance, rounded. In parentheses, the empirical sample size where the grid reaches the target. On Bluesky 42\% of pairs closer than 0.1 are judged the same content, so no distance qualifies.}
 \label{tab:rcal}
 \end{table}
- Long first person stories differ in their details even when they are close in embedding space, while short posts repeating a slogan are the same content at a larger distance. A cosine distance therefore does not carry one meaning across corpora. A user who wants $r$ to mean ``the same claim'' should judge a few hundred pairs from the pilot, binned by distance, and take the distance where the share of same content crosses the chosen level. This adds one step to the procedure and costs a few hundred model or human judgments.

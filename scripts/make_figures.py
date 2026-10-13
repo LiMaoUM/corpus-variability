@@ -37,44 +37,41 @@ OKABE = ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC7
 
 
 def collapse():
-    summ = pd.read_csv(RES / "eureka1_collapse.csv").set_index("corpus")
-    panels = [("manifold_d2", "Manifold d = 2"), ("manifold_d8", "Manifold d = 8"),
-              ("gtr_askdocs", "AskDocs"), ("gtr_tifu", "TIFU"), ("gtr_trump", "Trump"), ("zipf_k200", "Zipf, 200 topics")]
+    """Points: one draw per cell (results/eureka1_surface_*.csv). Line: the v2 fit on cells with
+    n <= 1,000 (results/collapse_v2.csv, a and b). Annotation: d and full out of sample R2 of the
+    paper's Table 1 (v2, GTR rows averaged over three samples)."""
+    v2 = pd.read_csv(RES / "collapse_v2.csv").set_index("corpus")
+    panels = [("manifold_d2", "manifold_d2", ["manifold_d2"], "Manifold d = 2"),
+              ("manifold_d8", "manifold_d8", ["manifold_d8"], "Manifold d = 8"),
+              ("gtr_askdocs", "askdocs_gtr_s42", ["askdocs_gtr_s42", "askdocs_gtr_s43", "askdocs_gtr_s44"], "AskDocs"),
+              ("gtr_tifu", "tifu_gtr_s42", ["tifu_gtr_s42", "tifu_gtr_s43", "tifu_gtr_s44"], "TIFU"),
+              ("gtr_trump", "trump_gtr_s42", ["trump_gtr_s42", "trump_gtr_s43", "trump_gtr_s44"], "Trump"),
+              ("zipf_k200", "zipf_k200", ["zipf_k200"], "Zipf, 200 topics")]
     fig, axes = plt.subplots(2, 3, figsize=(7.0, 4.4), sharey=True)
     fig.subplots_adjust(hspace=0.55, wspace=0.12)
-    for ax, (name, label) in zip(axes.ravel(), panels):
-        S = pd.read_csv(RES / f"eureka1_surface_{name}.csv", index_col=0)
-        n_grid = S.index.to_numpy(float)
-        r_grid = S.columns.to_numpy(float)
-        G = S.to_numpy()
-        d = float(summ.loc[name, "d_twonn"])
-        r2 = float(summ.loc[name, "r2_heldout"])
-        X = np.outer(n_grid, r_grid ** d)
+    for ax, (surf, fitrow, annrows, label) in zip(axes.ravel(), panels):
+        S = pd.read_csv(RES / f"eureka1_surface_{surf}.csv", index_col=0)
+        n_grid = S.index.to_numpy(float); r_grid = S.columns.to_numpy(float); G = S.to_numpy()
+        d = float(v2.loc[annrows, "d_twonn"].mean()); r2 = float(v2.loc[annrows, "fit1000_r2_out"].mean())
+        a, b = float(v2.loc[fitrow, "fit1000_a"]), float(v2.loc[fitrow, "fit1000_b"])
+        dfit = float(v2.loc[fitrow, "d_twonn"])
+        X = np.outer(n_grid, r_grid ** dfit)
         norm = mpl.colors.LogNorm(r_grid.min(), r_grid.max())
         for j, r in enumerate(r_grid):
             ax.scatter(X[:, j], G[:, j], s=7, c=[plt.cm.viridis(norm(r))] * len(n_grid), linewidths=0)
-        m = (G > 0.02) & (G < 0.98)
-        z = np.log(X[m]); y = np.log(-np.log(G[m]))
-        A = np.column_stack([np.ones(z.size), z])
-        (a, b), *_ = np.linalg.lstsq(A, y, rcond=None)
         xs = np.geomspace(X.min(), X.max(), 200)
         ax.plot(xs, np.exp(-np.exp(a + b * np.log(xs))), color="0.45", lw=0.9, zorder=0)
-        ax.set_xscale("log")
-        ax.set_ylim(0, 1.02)
+        ax.set_xscale("log"); ax.set_ylim(0, 1.02)
+        ax.xaxis.set_minor_formatter(mpl.ticker.NullFormatter())
         ax.set_title(label, fontsize=7.5, loc="left")
-        ax.text(0.04, 0.06, f"d = {d:.1f}\nout of sample $R^2$ = {r2:.2f}", transform=ax.transAxes,
-                ha="left", va="bottom", fontsize=6.5)
+        ax.text(0.04, 0.06, f"d = {d:.1f}\nout of sample $R^2$ = {r2:.2f}", transform=ax.transAxes, ha="left", va="bottom", fontsize=6.5)
     for ax in axes[1]:
         ax.set_xlabel("$n\\,r^{d}$")
     for ax in axes[:, 0]:
         ax.set_ylabel("Isolation rate $G$")
-    sm = plt.cm.ScalarMappable(cmap="viridis", norm=mpl.colors.Normalize(0, 1))
-    sm.set_array([])
+    sm = plt.cm.ScalarMappable(cmap="viridis", norm=mpl.colors.Normalize(0, 1)); sm.set_array([])
     cb = fig.colorbar(sm, ax=axes, fraction=0.025, pad=0.02)
-    cb.set_label("Radius $r$ (small to large)")
-    cb.set_ticks([])
-    for ax in axes.ravel():
-        ax.xaxis.set_minor_formatter(mpl.ticker.NullFormatter())
+    cb.set_label("Radius $r$ (small to large)"); cb.set_ticks([])
     fig.savefig(FIG / "collapse.pdf", bbox_inches="tight")
     fig.savefig(FIG / "collapse.png", dpi=600, bbox_inches="tight")
     plt.close(fig)

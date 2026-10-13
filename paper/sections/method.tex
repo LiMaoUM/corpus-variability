@@ -30,7 +30,7 @@ Solving Equation~\ref{eq:collapse} for $n$ gives the sample size at which the is
 n^{*}(\varepsilon, r) = \left(\frac{\log(1/\varepsilon)}{e^{a}}\right)^{1/b} r^{-d} .
 \label{eq:nstar}
 \end{equation}
-The corpus enters through three numbers. The dimension $d$ sets how fast the required sample grows as the resolution becomes finer: each halving of $r$ multiplies $n^{*}$ by $2^{d}$. The constants $a$ and $b$ set the level and are fitted on the pilot. We report a 90\% interval for $n^{*}$ by resampling the draws used in the fit.
+The corpus enters through three numbers. The dimension $d$ sets how fast the required sample grows as the resolution becomes finer: each halving of $r$ multiplies $n^{*}$ by $2^{d}$. The constants $a$ and $b$ set the level and are fitted on the pilot. 
 
 \subsection{Finite population correction}
 
@@ -43,4 +43,4 @@ The factor is the one survey sampling calls the finite population correction. Th
 
 \subsection{A diagnostic for corpora with more than one scale}
 
-The law assumes one dimension across the radii of the grid. We fit Equation~\ref{eq:collapse} on cells with $n \le 1{,}000$ and compute $R^2$ on cells with $n > 1{,}000$. We call a corpus collapsing when this out of sample $R^2$ is at least 0.9. The threshold was chosen on the corpora of this paper and is reported with the error rates on both sides of it. When the law fails, two probes locate the cause: the share of documents with a near duplicate (a nearest neighbour within cosine distance 0.02), and the spread of the TwoNN dimension across twenty $k$-means clusters of the corpus.
+The law assumes one dimension across the radii of interest, and a user must know before sampling whether it holds. The diagnostic uses the pilot alone. Within one pilot of 2{,}000 documents, we fit Equation~\ref{eq:collapse} on subsamples of size up to 750 and compute $R^2$ on subsamples of size 1{,}000 to 2{,}000. A corpus passes when this pilot $R^2$ is at least 0.95. A second check needs no threshold: the ratio of coefficients from the two-regressor fit should agree with the TwoNN estimate of $d$. To validate the diagnostic we also compute the full out of sample $R^2$ on the whole corpus, from a fit on $n \le 1{,}000$ scored on $n$ up to 7{,}000, and call a corpus collapsing when it is at least 0.9. When the law fails, two probes locate the cause: the share of documents with a near duplicate (a nearest neighbour within cosine distance 0.02), and the spread of the TwoNN dimension across twenty $k$-means clusters.
