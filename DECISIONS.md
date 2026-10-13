@@ -138,3 +138,10 @@ The shared Gemma-4 server (127.0.0.1:8800) stayed saturated by another project (
 waiting; one hour of timeouts). Mao chose the idle Qwen3.8-27B server (127.0.0.1:8830, thinking
 disabled) for the r calibration judgments. The paper states that the calibration judge differs
 from the Gemma-4 summarizer and enumerator.
+
+## 2026-10-13: Judge validation by a second LLM (Mao, interactive)
+
+The re-review asked for human labels on about 200 calibration pairs. Mao chose a second LLM
+judge instead: re-judge all calibration pairs with Gemma-4-31B-it (when the shared server frees)
+or another local model, and report agreement with Qwen3.8-27B. No human labels for now; the
+limitation is stated.
