@@ -1,104 +1,32 @@
-random 400 pairs; {'TOPIC': 182, 'SAME': 173, 'UNRELATED': 45}
-citizens 400 pairs; {'SAME': 232, 'TOPIC': 160, 'UNRELATED': 8}
-trump 400 pairs; {'SAME': 207, 'TOPIC': 170, 'UNRELATED': 23}
-covid 400 pairs; {'TOPIC': 200, 'SAME': 178, 'UNRELATED': 22}
-illegal 400 pairs; {'SAME': 201, 'TOPIC': 164, 'UNRELATED': 35}
-Traceback (most recent call last):
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 98, in map_httpcore_exceptions
-    yield
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 388, in handle_async_request
-    resp = await self._pool.handle_async_request(req)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 242, in handle_async_request
-    raise exc from None
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_async/connection_pool.py", line 224, in handle_async_request
-    response = await connection.handle_async_request(pool_request.request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_async/connection.py", line 96, in handle_async_request
-    return await self._connection.handle_async_request(request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 125, in handle_async_request
-    raise exc
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 97, in handle_async_request
-    ) = await self._receive_response_headers(**kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 167, in _receive_response_headers
-    event = await self._receive_event(timeout=timeout)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_async/http11.py", line 200, in _receive_event
-    data = await self._network_stream.read(self.READ_NUM_BYTES, timeout=timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_backends/anyio.py", line 34, in read
-    with map_exceptions(exc_map):
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/contextlib.py", line 158, in __exit__
-    self.gen.throw(value)
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpcore2/_exceptions.py", line 17, in map_exceptions
-    raise to_exc(exc) from exc
-httpcore2.ReadTimeout
+citizens 400 pairs; {'TOPIC': 208, 'SAME': 165, 'UNRELATED': 27}
+sv_askdocs 364 pairs; {'TOPIC': 237, 'UNRELATED': 80, 'SAME': 47}
+sv_trump 400 pairs; {'SAME': 159, 'TOPIC': 151, 'UNRELATED': 90}
+sv_tifu 349 pairs; {'TOPIC': 175, 'UNRELATED': 165, 'SAME': 9}
+ts 400 pairs; {'TOPIC': 162, 'UNRELATED': 131, 'SAME': 107}
+bsky 400 pairs; {'UNRELATED': 205, 'TOPIC': 125, 'SAME': 70}
+corpus         bsky  citizens  covid  illegal  random  sv_askdocs  sv_tifu  sv_trump  trump    ts
+bin_lo bin_hi                                                                                    
+0.00   0.10    0.42      1.00   0.98     0.98    0.88        1.00     0.50      1.00   1.00  0.90
+0.10   0.15    0.35      0.90   0.88     1.00    0.80        0.70     0.16      1.00   0.98  0.72
+0.15   0.20    0.25      0.68   0.98     0.92    0.92        0.22     0.02      0.75   0.90  0.42
+0.20   0.25    0.22      0.50   0.57     0.85    0.72        0.10     0.02      0.57   0.92  0.10
+0.25   0.30    0.20      0.35   0.57     0.68    0.57        0.00     0.00      0.32   0.68  0.15
+0.30   0.35    0.12      0.30   0.22     0.32    0.15        0.00     0.02      0.18   0.48  0.15
+0.35   0.40    0.08      0.20   0.18     0.22    0.20        0.00     0.00      0.00   0.15  0.12
+0.40   0.50    0.02      0.20   0.08     0.05    0.00        0.00     0.00      0.12   0.08  0.08
+0.50   0.65    0.05      0.00   0.00     0.00    0.08        0.00     0.00      0.02   0.00  0.02
+0.65   1.00    0.02      0.00   0.00     0.00    0.00        0.00     0.00      0.00   0.00  0.00
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1773, in request
-    response = await self._send_request(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/openai/_client.py", line 1375, in _send_request
-    response = await self._send_with_auth_retry(request, stream=stream, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/openai/_client.py", line 1354, in _send_with_auth_retry
-    response = await super()._send_request(request, stream=stream, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1690, in _send_request
-    return await self._client.send(request, stream=stream, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpx2/_client.py", line 1818, in send
-    response = await self._send_handling_auth(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpx2/_client.py", line 1846, in _send_handling_auth
-    response = await self._send_handling_redirects(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpx2/_client.py", line 1881, in _send_handling_redirects
-    response = await self._send_single_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpx2/_client.py", line 1915, in _send_single_request
-    response = await transport.handle_async_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 387, in handle_async_request
-    with map_httpcore_exceptions():
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/contextlib.py", line 158, in __exit__
-    self.gen.throw(value)
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/httpx2/_transports/default.py", line 115, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx2.ReadTimeout
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/maolee/projects/corpus-variability/scripts/r_calibration.py", line 138, in <module>
-    asyncio.run(run(a.corpora, None, a.concurrency))
-  File "/home/maolee/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
-    return runner.run(main)
-           ^^^^^^^^^^^^^^^^
-  File "/home/maolee/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
-    return self._loop.run_until_complete(task)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
-    return future.result()
-           ^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/scripts/r_calibration.py", line 103, in run
-    outs = await asyncio.gather(*(judge(client, sem, PROMPT.format(a=texts[i][:800], b=texts[j][:800])) for i, j, _ in pairs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/scripts/r_calibration.py", line 82, in judge
-    r = await client.chat.completions.create(model=MODEL, temperature=0.0, max_tokens=5,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2952, in create
-    return await self._post(
-           ^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 2053, in post
-    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/maolee/projects/corpus-variability/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1791, in request
-    raise APITimeoutError(request=request) from err
-openai.APITimeoutError: Request timed out.
+P(same or topic):
+corpus         bsky  citizens  covid  illegal  random  sv_askdocs  sv_tifu  sv_trump  trump    ts
+bin_lo bin_hi                                                                                    
+0.00   0.10    0.95      1.00   1.00     1.00    1.00        1.00     1.00      1.00   1.00  1.00
+0.10   0.15    0.75      1.00   1.00     1.00    1.00        1.00     1.00      1.00   1.00  0.98
+0.15   0.20    0.30      1.00   1.00     1.00    1.00        0.98     0.98      1.00   1.00  0.75
+0.20   0.25    0.40      1.00   1.00     1.00    1.00        0.98     0.95      1.00   1.00  0.75
+0.25   0.30    0.72      1.00   1.00     1.00    1.00        0.98     0.62      0.98   1.00  0.80
+0.30   0.35    0.88      1.00   1.00     1.00    1.00        0.85     0.50      0.98   1.00  0.85
+0.35   0.40    0.45      1.00   0.95     1.00    1.00        0.88     0.40      0.90   1.00  0.85
+0.40   0.50    0.28      0.92   0.98     0.90    1.00        0.75     0.35      0.75   0.98  0.35
+0.50   0.65    0.12      0.80   0.80     0.85    0.60        0.60     0.08      0.12   0.90  0.38
+0.65   1.00    0.02      0.60   0.72     0.38    0.28        0.00     0.00      0.02   0.55  0.02

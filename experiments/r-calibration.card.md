@@ -23,3 +23,4 @@
 - **Monitor contract**: background; report on completion or error only, leading with the r at
   which P(SAME) crosses 0.5 per corpus. Expires 2026-10-12 12:00.
 - **Status log**:
+  - 2026-10-13 v1: ran with Qwen3.8-27B (Gemma server congested; Mao's decision). 3,913 pairs over ten corpora. P(SAME) crosses 0.5 at r = 0.05 (TIFU), 0.15 (AskDocs), 0.16 (Truth Social), 0.22 to 0.30 (census), 0.24 (Trump forum); Bluesky never reaches 0.5 (0.42 below 0.1). Hypothesis of a corpus-independent curve rejected; per corpus calibration on a few hundred pairs is the recommended step. Results: results/r_calibration.csv.

@@ -242,3 +242,9 @@ n <= 1,000: corpora with out of sample R2 >= 0.9, 77 of 83 within 1.5 and 81 of 
 below 0.9, 10 of 23 and 14 of 23. FPC on the eight Qwen3 forum and census corpora at sampling
 fractions 0.01 to 0.7 (`scripts/fpc_census.py`, 144 cells): raw MAE 0.114 (max 0.49), corrected
 0.0115 (max 0.11); at n/N = 0.5 the corrected error is 0.004.
+
+## r calibration (2026-10-13, Qwen3.8-27B judge, `scripts/r_calibration.py`)
+
+The distance at which half of pairs are judged the same specific content is corpus dependent:
+TIFU 0.05, AskDocs 0.15, Truth Social 0.16, census 0.22 to 0.30, Trump forum 0.24, Bluesky never
+(0.42 at r < 0.1). A cosine r has no corpus-independent meaning; calibrate per corpus.

@@ -272,13 +272,13 @@ INPUT ./figures/collapse.pdf
 INPUT ./figures/collapse.pdf
 INPUT ./figures/collapse.pdf
 INPUT ./figures/collapse.pdf
+INPUT /home/maolee/.TinyTeX/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /home/maolee/.TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./sections/discussion.tex
 INPUT ./sections/discussion.tex
 INPUT ./sections/discussion.tex
 INPUT ./sections/discussion.tex
 INPUT sections/discussion.tex
-INPUT /home/maolee/.TinyTeX/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT /home/maolee/.TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./sections/limitations.tex
 INPUT ./sections/limitations.tex
 INPUT ./sections/limitations.tex

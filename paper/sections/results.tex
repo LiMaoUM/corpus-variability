@@ -89,5 +89,8 @@ $n/N$ & $M$ (true) & $G$ & $G\,(1 - n/N)$ & error \\
 \end{table}
 
 \subsection{Choosing the resolution}
+\label{sec:rcal}
 
-\textcolor{red}{[Pending: calibration of $r$ against model judgments of same content on document pairs binned by cosine distance.]}
+The resolution $r$ is a cosine distance, and a user needs to know what content it groups. For each of the ten real corpora under Qwen3, we drew about 40 document pairs in each of ten distance bins from 0 to 1, about 3{,}900 pairs in all, and asked Qwen3.8-27B whether the two documents are about the same specific content (the same claim, question, event or story), the same general topic, or unrelated (prompt in Appendix~\ref{app:prompts}). This judge differs from the Gemma~4 model used for summaries and theme lists because the shared Gemma server was unavailable.
+
+The share of pairs judged the same content falls with distance in every corpus, but where it crosses one half depends on the corpus. It crosses at $r = 0.05$ on TIFU, 0.15 on AskDocs, 0.16 on Truth Social, 0.23 to 0.30 on the census slices and 0.24 on the Trump forum corpus, and on Bluesky it stays below one half even for the nearest pairs (0.42 below $r = 0.1$). Long first person stories differ in their details even when they are close in embedding space, while short posts repeating a slogan are the same content at a larger distance. A cosine distance therefore does not carry one meaning across corpora. A user who wants $r$ to mean ``the same claim'' should judge a few hundred pairs from the pilot, binned by distance, and take the distance where the share of same content crosses the chosen level. This adds one step to the procedure and costs a few hundred model or human judgments.
