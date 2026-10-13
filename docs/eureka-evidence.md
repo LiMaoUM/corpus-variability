@@ -236,3 +236,9 @@ k-center needs on the forum and census corpora (medians 0.59 to 1.00), and 0.12 
 Social and Bluesky. Greedy k-center minimises the maximum uncovered distance and spends points on
 outliers; for the share of mass covered, random sampling is as good or better, which answers the
 question of why one should sample at random.
+
+Correction (2026-10-12): the n* tallies in the paragraph above were partial. Full tally, fit on
+n <= 1,000: corpora with out of sample R2 >= 0.9, 77 of 83 within 1.5 and 81 of 83 within 2;
+below 0.9, 10 of 23 and 14 of 23. FPC on the eight Qwen3 forum and census corpora at sampling
+fractions 0.01 to 0.7 (`scripts/fpc_census.py`, 144 cells): raw MAE 0.114 (max 0.49), corrected
+0.0115 (max 0.11); at n/N = 0.5 the corrected error is 0.004.

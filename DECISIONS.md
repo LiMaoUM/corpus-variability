@@ -127,3 +127,7 @@ empirical threshold of out-of-sample R2 0.9, stated as fitted on these ten corpo
 factor of 1.5 in 59 of 66 cases above it, 10 of 23 below. Mao's interactive answer did not reach
 the session (tool call rejected); these are the recommended options under his stated rule, to be
 reversed if he says so.
+
+Correction (2026-10-12): the counts in the entry above came from a partial tally. From
+`results/nstar_v2.csv` (fit on n <= 1,000): corpora with out of sample R2 >= 0.9 give 77 of 83
+cases within a factor of 1.5 and 81 of 83 within 2; corpora below 0.9 give 10 of 23 and 14 of 23.
