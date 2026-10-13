@@ -1,9 +1,11 @@
 \section*{Limitations}
 
-The resolution $r$ is a cosine distance in one encoder's space, and the same $r$ means different things in GTR and in Qwen3 embeddings. The collapse law held under GTR on the forum corpora and under Qwen3 on the census, Truth Social and Bluesky corpora, and $d$ moved with the encoder (13.6 under GTR against 12.6 under Qwen3 on AskDocs), so a user must fix the encoder before choosing $r$ and must report the encoder with $r$.
+The resolution $r$ is a cosine distance in one encoder's space. The law held under both encoders on AskDocs and TIFU, but $d$ moved with the encoder (18.3 under GTR against 13.6 under Qwen3 on TIFU), so a user must fix the encoder before choosing $r$ and report the two together.
 
-The exponent $b$ of the stretched exponential is fitted. We have an account of why it is below 1 but no closed form that predicts it from the density, so the formula needs a pilot large enough to fit two coefficients.
+The required sample size grows as $r^{-d}$, so the formula is useful only at resolutions where $n^{*}$ is a feasible number. At $d = 15$, halving $r$ multiplies $n^{*}$ by about 33{,}000. The formula plans samples at the resolution of the question and cannot make a fine resolution affordable.
 
-The corpora are English social media and forum text from four sources. The Truth Social collection is conditioned on candidate threads, so its $d$ describes that collection and not the platform.
+The constants $a$ and $b$ are fitted on the pilot. We have an account of why $b$ is below 1 but no expression that predicts it.
 
-The stability of summaries written from samples, measured as the mean pairwise distance among the summaries of thirty independent samples, falls with $n$ along the coverage curve within each of eight corpora, and across corpora at a fixed $n$ the ordering by coverage does not predict the ordering by stability (Appendix~\ref{app:summaries}). A summary's stability depends on the scale at which the model abstracts, which this paper does not model.
+The diagnostic threshold of 0.9 was chosen on the corpora of this paper. The corpora are English social media and forum text, and the Truth Social and Bluesky collections are political pools, so their $d$ describes those collections.
+
+The test unit is the document. Posts by the same account are correlated, and a design that samples accounts would need a cluster version of the estimator.

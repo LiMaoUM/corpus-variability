@@ -1,5 +1,15 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{37}
 \providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Abbas et~al.(2023)Abbas, Tirumala, Simig, Ganguli, and Morcos}]{abbas2023semdedup}
+Amro Abbas, Kushal Tirumala, D{\'a}niel Simig, Surya Ganguli, and Ari~S. Morcos. 2023.
+\newblock \href {https://arxiv.org/abs/2303.09540} {{SemDeDup}: Data-efficient learning at web-scale through semantic deduplication}.
+\newblock \emph{arXiv preprint arXiv:2303.09540}.
+
+\bibitem[{Ansuini et~al.(2019)Ansuini, Laio, Macke, and Zoccolan}]{ansuini2019}
+Alessio Ansuini, Alessandro Laio, Jakob~H. Macke, and Davide Zoccolan. 2019.
+\newblock \href {https://arxiv.org/abs/1905.12784} {Intrinsic dimension of data representations in deep neural networks}.
+\newblock In \emph{Advances in Neural Information Processing Systems 32 (NeurIPS 2019)}.
 
 \bibitem[{Chao(1984)}]{chao1984}
 Anne Chao. 1984.
@@ -36,6 +46,11 @@ Bradley Efron and Ronald Thisted. 1976.
 \newblock \href {https://doi.org/10.1093/biomet/63.3.435} {Estimating the number of unseen species: How many words did {Shakespeare} know?}
 \newblock \emph{Biometrika}, 63(3):435--447.
 
+\bibitem[{Evans et~al.(2002)Evans, Jones, and Schmidt}]{evans2002}
+Dafydd Evans, Antonia~J. Jones, and Wolfgang~M. Schmidt. 2002.
+\newblock \href {https://doi.org/10.1098/rspa.2002.1011} {Asymptotic moments of near-neighbour distance distributions}.
+\newblock \emph{Proceedings of the Royal Society of London. Series A: Mathematical, Physical and Engineering Sciences}, 458(2028):2839--2849.
+
 \bibitem[{Facco et~al.(2017)Facco, d'Errico, Rodriguez, and Laio}]{facco2017twonn}
 Elena Facco, Maria d'Errico, Alex Rodriguez, and Alessandro Laio. 2017.
 \newblock \href {https://doi.org/10.1038/s41598-017-11873-y} {Estimating the intrinsic dimension of datasets by a minimal neighborhood information}.
@@ -55,6 +70,11 @@ Dan Friedman and Adji~Bousso Dieng. 2023.
 I.~J. Good. 1953.
 \newblock \href {https://doi.org/10.1093/biomet/40.3-4.237} {The population frequencies of species and the estimation of population parameters}.
 \newblock \emph{Biometrika}, 40(3-4):237--264.
+
+\bibitem[{Grassberger and Procaccia(1983)}]{grassberger1983}
+Peter Grassberger and Itamar Procaccia. 1983.
+\newblock \href {https://doi.org/10.1016/0167-2789(83)90298-1} {Measuring the strangeness of strange attractors}.
+\newblock \emph{Physica D: Nonlinear Phenomena}, 9(1--2):189--208.
 
 \bibitem[{Guest et~al.(2006)Guest, Bunce, and Johnson}]{guest2006}
 Greg Guest, Arwen Bunce, and Laura Johnson. 2006.
@@ -81,6 +101,16 @@ Tuomas Kynk{\"a}{\"a}nniemi, Tero Karras, Samuli Laine, Jaakko Lehtinen, and Tim
 \newblock \href {https://arxiv.org/abs/1904.06991} {Improved precision and recall metric for assessing generative models}.
 \newblock In \emph{Advances in Neural Information Processing Systems 32 (NeurIPS 2019)}.
 
+\bibitem[{Lee et~al.(2022)Lee, Ippolito, Nystrom, Zhang, Eck, Callison-Burch, and Carlini}]{lee2022dedup}
+Katherine Lee, Daphne Ippolito, Andrew Nystrom, Chiyuan Zhang, Douglas Eck, Chris Callison-Burch, and Nicholas Carlini. 2022.
+\newblock \href {https://doi.org/10.18653/v1/2022.acl-long.577} {Deduplicating training data makes language models better}.
+\newblock In \emph{Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 8424--8445, Dublin, Ireland. Association for Computational Linguistics.
+
+\bibitem[{Levina and Bickel(2005)}]{levina2005}
+Elizaveta Levina and Peter~J. Bickel. 2005.
+\newblock \href {https://proceedings.neurips.cc/paper/2004/hash/74934548253bcab8490ebd74afed7031-Abstract.html} {Maximum likelihood estimation of intrinsic dimension}.
+\newblock In \emph{Advances in Neural Information Processing Systems 17 (NIPS 2004)}. MIT Press.
+
 \bibitem[{Maeda et~al.(2025)Maeda, Wang, Zhang, Banks, and Kenney}]{maeda2025}
 Yukiko Maeda, Xiyu Wang, Yuxiao Zhang, Josiah~Bansueda Banks, and Rachael~H. Kenney. 2025.
 \newblock \href {https://doi.org/10.1016/j.chb.2025.108703} {Balancing human and machine coding: Evaluating the credibility and potential of topic modeling for open-ended survey responses}.
@@ -90,11 +120,6 @@ Yukiko Maeda, Xiyu Wang, Yuxiao Zhang, Josiah~Bansueda Banks, and Rachael~H. Ken
 Andreas Maurer. 2022.
 \newblock \href {https://arxiv.org/abs/2206.02012} {Concentration of the missing mass in metric spaces}.
 \newblock \emph{arXiv preprint arXiv:2206.02012}.
-
-\bibitem[{Morris et~al.(2023)Morris, Kuleshov, Shmatikov, and Rush}]{morris2023vec2text}
-John Morris, Volodymyr Kuleshov, Vitaly Shmatikov, and Alexander Rush. 2023.
-\newblock \href {https://doi.org/10.18653/v1/2023.emnlp-main.765} {Text embeddings reveal (almost) as much as text}.
-\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing}, pages 12448--12460, Singapore. Association for Computational Linguistics.
 
 \bibitem[{Naeem et~al.(2020)Naeem, Oh, Uh, Choi, and Yoo}]{naeem2020}
 Muhammad~Ferjad Naeem, Seong~Joon Oh, Youngjung Uh, Yunjey Choi, and Jaejun Yoo. 2020.
@@ -121,6 +146,11 @@ Amey~P. Pasarkar and Adji~Bousso Dieng. 2024.
 \newblock \href {https://arxiv.org/abs/2310.12952} {Cousins of the {Vendi} score: A family of similarity-based diversity metrics for science and machine learning}.
 \newblock In \emph{Proceedings of the 27th International Conference on Artificial Intelligence and Statistics (AISTATS)}, volume 238 of \emph{Proceedings of Machine Learning Research}, pages 3808--3816.
 
+\bibitem[{Penrose(2003)}]{penrose2003rgg}
+Mathew Penrose. 2003.
+\newblock \href {https://doi.org/10.1093/acprof:oso/9780198506263.001.0001} {\emph{Random Geometric Graphs}}, volume~5 of \emph{Oxford Studies in Probability}.
+\newblock Oxford University Press.
+
 \bibitem[{Pham et~al.(2024)Pham, Hoyle, Sun, Resnik, and Iyyer}]{pham2024topicgpt}
 Chau~Minh Pham, Alexander Hoyle, Simeng Sun, Philip Resnik, and Mohit Iyyer. 2024.
 \newblock \href {https://doi.org/10.18653/v1/2024.naacl-long.164} {{TopicGPT}: A prompt-based topic modeling framework}.
@@ -131,10 +161,25 @@ Krishna Pillutla, Swabha Swayamdipta, Rowan Zellers, John Thickstun, Sean Wellec
 \newblock \href {https://arxiv.org/abs/2102.01454} {{MAUVE}: Measuring the gap between neural text and human text using divergence frontiers}.
 \newblock In \emph{Advances in Neural Information Processing Systems 34 (NeurIPS 2021)}.
 
+\bibitem[{Pope et~al.(2021)Pope, Zhu, Abdelkader, Goldblum, and Goldstein}]{pope2021intrinsic}
+Phillip Pope, Chen Zhu, Ahmed Abdelkader, Micah Goldblum, and Tom Goldstein. 2021.
+\newblock \href {https://arxiv.org/abs/2104.08894} {The intrinsic dimension of images and its impact on learning}.
+\newblock In \emph{International Conference on Learning Representations (ICLR)}.
+
+\bibitem[{Sener and Savarese(2018)}]{sener2018coreset}
+Ozan Sener and Silvio Savarese. 2018.
+\newblock \href {https://arxiv.org/abs/1708.00489} {Active learning for convolutional neural networks: A core-set approach}.
+\newblock In \emph{International Conference on Learning Representations (ICLR)}.
+
 \bibitem[{Tran et~al.(2017)Tran, Porcher, Tran, and Ravaud}]{tran2017}
 Viet-Thi Tran, Rapha{\"e}l Porcher, Viet-Chi Tran, and Philippe Ravaud. 2017.
 \newblock \href {https://doi.org/10.1016/j.jclinepi.2016.10.001} {Predicting data saturation in qualitative surveys with mathematical models from ecological research}.
 \newblock \emph{Journal of Clinical Epidemiology}, 82:71--78.e2.
+
+\bibitem[{Tulchinskii et~al.(2023)Tulchinskii, Kuznetsov, Kushnareva, Cherniavskii, Nikolenko, Burnaev, Barannikov, and Piontkovskaya}]{tulchinskii2023}
+Eduard Tulchinskii, Kristian Kuznetsov, Laida Kushnareva, Daniil Cherniavskii, Sergey Nikolenko, Evgeny Burnaev, Serguei Barannikov, and Irina Piontkovskaya. 2023.
+\newblock \href {https://doi.org/10.52202/075280-1706} {Intrinsic dimension estimation for robust detection of {AI}-generated texts}.
+\newblock In \emph{Advances in Neural Information Processing Systems 36 (NeurIPS 2023)}, pages 39257--39276.
 
 \bibitem[{Zhang et~al.(2025)Zhang, Li, Long, Zhang, Lin, Yang, Xie, Yang, Liu, Lin, Huang, and Zhou}]{qwen3embedding2025}
 Yanzhao Zhang, Mingxin Li, Dingkun Long, Xin Zhang, Huan Lin, Baosong Yang, Pengjun Xie, An~Yang, Dayiheng Liu, Junyang Lin, Fei Huang, and Jingren Zhou. 2025.

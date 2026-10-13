@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1791740693.18885 "main.aux" "main.bbl" "main" 1791740693.66323 0
+["bibtex main"] 1791853687.30355 "main.aux" "main.bbl" "main" 1791853687.79814 0
   "./acl_natbib.bst" 1791740302.89368 45186 3d1af46d62cc9172ef6e42b56c1cd613 ""
-  "./references.bib" 1791739992.46883 10614 b04de1e4602bb5765ad3ecadd330fe80 ""
-  "main.aux" 1791740693.59075 12413 33914f1d2135e0e595b97fe47625f3fe "pdflatex"
+  "./references.bib" 1791853489.94665 16218 36464ba318841dd289c4f8332e9657ec ""
+  "main.aux" 1791853687.69921 13427 e7ad2236b21bbb5aac593a655216adf8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1791740693.20591 "main.tex" "main.pdf" "main" 1791740693.66359 0
+["pdflatex"] 1791853687.31785 "main.tex" "main.pdf" "main" 1791853687.79852 0
   "/home/maolee/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -48,7 +48,6 @@
   "/home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
-  "/home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1248133631 36094 798f80770b3b148ceedd006d487db67c ""
@@ -145,19 +144,19 @@
   "acl.sty" 1791740302.89368 11615 e2c027f483aa40e577ed34264c8b0655 ""
   "figures/collapse.pdf" 1791740376.48988 61178 57a60df19bfd746aff3ae6eca25cad98 ""
   "figures/themes.pdf" 1791740377.50189 34581 aebab1910b24549c4a0ed3c2dde8682b ""
-  "main.aux" 1791740693.59075 12413 33914f1d2135e0e595b97fe47625f3fe "pdflatex"
-  "main.bbl" 1791740693.19875 9907 ba1562dfa9ca6fdaf1ba289263f0c501 "bibtex main"
-  "main.out" 1791740693.59075 5088 450fe985f793609906ea9795eea59035 "pdflatex"
+  "main.aux" 1791853687.69921 13427 e7ad2236b21bbb5aac593a655216adf8 "pdflatex"
+  "main.bbl" 1791853687.31121 13279 61e3f58041e6aaef993e5806534400fe "bibtex main"
+  "main.out" 1791853687.70321 4695 044dfc8279baa2ca0ec88559bec79ed9 "pdflatex"
   "main.tex" 1791739951.60872 636 c4c5b8ebf77f7fe0cd9d3f5314a666aa ""
   "sections/abstract.tex" 1791740679.76671 1899 c74f87b5e900ff2764ebb79b2bca6720 ""
-  "sections/appendix.tex" 1791740692.64274 6541 3a3b5941e2cbe7a85500e5dbf44c9b72 ""
-  "sections/background.tex" 1791740553.20637 4801 829c2dc56b4573f984ec86719a0d297c ""
-  "sections/data.tex" 1791740588.22646 2931 59ff14f2bb34960b2b3a58318111931a ""
-  "sections/discussion.tex" 1791740687.27873 2445 4bf62ec6253a7ef090789c7b47b4aad9 ""
-  "sections/introduction.tex" 1791740534.90232 4007 cc50233249fe06358903cdc222da839b ""
-  "sections/limitations.tex" 1791740651.71463 1317 2315ab0575529f65d6be34ba26734e20 ""
-  "sections/method.tex" 1791740692.64674 5708 57654529f60996a892af5c6b8e039f7d ""
-  "sections/results.tex" 1791740692.64274 10958 06102dd8aadc4a255c31a0514f342170 ""
+  "sections/appendix.tex" 1791853549.63082 7478 0d168ced6f41d5afa5021932888186c0 ""
+  "sections/background.tex" 1791853429.09847 5886 ecbd87a7ab16d78eaa5d5244f256f792 ""
+  "sections/data.tex" 1791853459.18256 2112 1882b2c06d869982cdd032eb146c3649 ""
+  "sections/discussion.tex" 1791853507.0147 2765 b3e50116b051833b2b469d992f829e3a ""
+  "sections/introduction.tex" 1791853422.57446 3888 d783d5128929bbc072455708f83873fb ""
+  "sections/limitations.tex" 1791853511.27071 1119 6c931a5a566b9ff389ba8de6a775122d ""
+  "sections/method.tex" 1791853445.12652 5169 5c7778c75cf1af5f8c9e7604f602d6ad ""
+  "sections/results.tex" 1791853526.12675 10517 c3e26c411058a04f4702a97b5b3a7d3d ""
   (generated)
   "main.aux"
   "main.log"
