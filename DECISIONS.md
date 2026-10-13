@@ -114,3 +114,16 @@ the "same curve" is a function of K; (3) the forum corpora under Qwen3 as a seco
 two baselines, per-radius Chao and Jost extrapolation and greedy k-center covering; (4) a
 calibration of r by LLM judgments of document pairs binned by cosine distance. Claim 4 (theme
 coverage) is decided after the K sensitivity result.
+
+## 2026-10-12: Claim 4 demoted; diagnostic threshold 0.9 (applied per Mao's rule)
+
+Mao's rule of 2026-10-11 was to decide claim 4 after the K sensitivity result. The result: for
+K = 10, 30, 100 and two skewed inventories, label coverage curves coincide across the eight
+corpora (sd < 0.05) and the mass vector predicts them to MAE 0.004, so the "same curve" comes
+from inventory construction. Claim 4 leaves the contribution list and becomes one paragraph in the
+Discussion (partition coverage is set by the mass vector, a different quantity from coverage at
+resolution r), with its table and figure in the appendix. The collapse diagnostic uses an
+empirical threshold of out-of-sample R2 0.9, stated as fitted on these ten corpora: n* within a
+factor of 1.5 in 59 of 66 cases above it, 10 of 23 below. Mao's interactive answer did not reach
+the session (tool call rejected); these are the recommended options under his stated rule, to be
+reversed if he says so.
