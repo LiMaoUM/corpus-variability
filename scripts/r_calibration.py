@@ -89,7 +89,7 @@ async def judge(client, sem, prompt):
 
 
 async def run(corpora, limit, concurrency):
-    client = AsyncOpenAI(base_url=BASE_URL, api_key="local", timeout=600)
+    client = AsyncOpenAI(base_url=BASE_URL, api_key="local", timeout=3600, max_retries=5)
     sem = asyncio.Semaphore(concurrency)
     OUT.mkdir(parents=True, exist_ok=True)
     for c in corpora:
