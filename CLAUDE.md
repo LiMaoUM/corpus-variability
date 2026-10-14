@@ -60,6 +60,15 @@ confidence band and a required-n.
 - Overlap check: `~/maospace/map/CORPUS-PAPERS.md` holds only Truth Social and Bluesky
   conclusion papers; add a row once those corpora enter the validation set.
 
+## Release and preprint
+
+- Public release repo (created private 2026-10-14, made public only after Mao checks it):
+  `~/projects/how-many-documents`, remote LiMaoUM/how-many-documents. Code, results CSVs, Truth Social
+  and Bluesky post identifiers, pair judgments; no post text, no review records or internal files.
+- arXiv version: `paper/arxiv.tex` (defines `\arxivversion`, signed, repo link); ARR version:
+  `paper/main.tex` (anonymous). `paper/make_arxiv.sh` builds the source tarball.
+- Listen: registered as key `corpus-variability` in `~/maospace/listen/papers.toml`.
+
 ## Agent room
 
 Exchanges with Codex are archived in `docs/agent-room/` (see its README).

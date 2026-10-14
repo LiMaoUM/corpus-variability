@@ -6,3 +6,10 @@ results/*.npz
 __pycache__/
 *.pyc
 logs/
+paper/arxiv-how-many-documents.tar.gz
+paper/arxiv.aux
+paper/arxiv.log
+paper/arxiv.out
+paper/arxiv.fls
+paper/arxiv.fdb_latexmk
+paper/arxiv.blg

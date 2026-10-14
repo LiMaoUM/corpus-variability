@@ -1,5 +1,11 @@
+% ARR version: compile main.tex (anonymous, line numbers).
+% arXiv version: compile arxiv.tex, which defines \arxivversion and inputs this file.
 \documentclass[11pt]{article}
+\ifdefined\arxivversion
+\usepackage[final]{acl}
+\else
 \usepackage[review]{acl}
+\fi
 \usepackage{times}
 \usepackage{latexsym}
 \usepackage{amsmath,amssymb}
@@ -11,7 +17,13 @@
 
 \title{How Many Documents Cover a Corpus}
 
+\ifdefined\arxivversion
+\author{Mao Li \\
+  University of Michigan \\
+  \texttt{maolee@umich.edu}}
+\else
 \author{Anonymous ACL submission}
+\fi
 
 \begin{document}
 \maketitle

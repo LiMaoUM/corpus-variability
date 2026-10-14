@@ -215,3 +215,13 @@ limit of 200 words; report the half-cover prediction with d, a and b from one pi
 (Table 2, 5.7, appendix); store the TIFU bound prediction in results/rcal_pilot.csv; state that
 AskDocs and TIFU sit at the cap and test little, that the TIFU bound holds if a crossing exists, and
 restore the census trump interval end in 5.7.
+
+## 2026-10-14: Post to arXiv before ARR (Mao, interactive)
+
+Post a signed preprint on arXiv now, ahead of the ACL 2027 ARR window (January 2027); ACL has allowed
+non-anonymous preprints at any time since February 2024. Single author: Mao Li, University of
+Michigan. Code and data go to a clean public repository (scripts, Truth Social and Bluesky post
+identifiers, pair judgments; no post text, no review records or internal files), created private
+first and made public after Mao checks it. Mao reads the paper in Listen before the upload.
+Rationale: priority on applying Maurer's estimator and the n r^d law to text; the ARR version stays
+anonymous.
