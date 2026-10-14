@@ -42,6 +42,10 @@ confidence band and a required-n.
   BLAS thread contention makes a one-minute job take fifteen.
 - `from-windows-2026-07-26/` is 3.1 GB of 2023-2024 summarization data (50-sampled CSVs,
   covariance files, Mistral embeddings). Gitignored. Nothing in it is used yet.
+- vLLM: `~/.local/bin/vllm` is broken (torch ABI mismatch, 2026-10-13). Serve with
+  `/home/maolee/projects/arena/.venv/bin/vllm` (0.21.0), `--host 127.0.0.1`, TMPDIR=/home/maolee/tmp.
+  After the 2026-10-13 reboot no shared servers ran; this project served Gemma-4-31B-it itself on
+  GPUs 0,1, port 8840, for the r calibration cross-judge, and stopped it afterwards.
 - Experiment cards live in `experiments/`; results in `results/` (large arrays gitignored).
 
 ## Related work in the vault

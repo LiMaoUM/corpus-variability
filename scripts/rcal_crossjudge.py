@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from r_calibration import CORPORA, PROMPT, EMB  # noqa: E402
 SRC, OUT = ROOT / "data/rcal", ROOT / "data/rcal_gemma"
-URL, MODEL = "http://127.0.0.1:8800/v1", "google/gemma-4-31B-it"
+URL, MODEL = "http://127.0.0.1:8840/v1", "google/gemma-4-31B-it"
 
 async def judge(client, sem, prompt):
     async with sem:
@@ -20,7 +20,7 @@ async def judge(client, sem, prompt):
 
 async def run():
     client = AsyncOpenAI(base_url=URL, api_key="local", timeout=7200, max_retries=8)
-    sem = asyncio.Semaphore(4); OUT.mkdir(exist_ok=True)
+    sem = asyncio.Semaphore(32); OUT.mkdir(exist_ok=True)
     for c, (e, t) in CORPORA.items():
         if (OUT / f"{c}.jsonl").exists() or not (SRC / f"{c}.jsonl").exists():
             continue
