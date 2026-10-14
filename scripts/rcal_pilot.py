@@ -86,10 +86,14 @@ def main():
             G = np.exp(-np.exp(a + b * np.log(n_fine * r_pt ** dim)))
             hit = np.flatnonzero(G * (1 - n_fine / N) <= 0.5)
             return float(n_fine[hit[0]]) if len(hit) else N / 2
+        # no crossing inside the pilot: bound r_same by the lower edge of the closest non-empty bin
+        r_bound = np.nan if np.isfinite(r_pt) else BINS[int(bins.min())][0] if (bins == bins.min()).any() else np.nan
+        if not np.isfinite(r_pt):
+            r_pt = r_bound
         n_pred = predict(pilot_law(X, "cosine"))
         n_pred1 = predict(pilot_law_one(X, "cosine"))
         full = hc[(hc.corpus == name) & (hc.judge == "gemma") & (hc.end == "point")].iloc[0]
-        rows.append(dict(corpus=c, pairs=len(d), pairs_by_bin=np.bincount(bins, minlength=len(BINS)).tolist(),
+        rows.append(dict(corpus=c, pairs=len(d), r_bound=r_bound, pairs_by_bin=np.bincount(bins, minlength=len(BINS)).tolist(),
                          r_same_pilot=round(r_pt, 3), r_lo=round(lo, 3), r_hi=round(hi, 3),
                          no_crossing=round(float(np.isnan(bs).mean()), 3), r_same_full=full.r,
                          share_pred_pilot=round(n_pred / N, 3), n_pred_pilot=round(n_pred) if np.isfinite(n_pred) else np.nan,

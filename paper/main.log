@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.24)  14 OCT 2026 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.24)  14 OCT 2026 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -461,17 +461,11 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 ]) (./sections/background.tex
-Underfull \vbox (badness 1681) has occurred while \output is active []
-
-
 Overfull \hbox (1.28378pt too wide) detected at line 15
 [][][]\OML/cmm/m/it/10.95 G\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X; r\OT1/cmr/m/n/10.95 ) = [] []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 k \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 d\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; X[]\OT1/cmr/m/n/10.95 ) \OML/cmm/m/it/10.95 > r[]i \OMS/cmsy/m/n/10.95 6\OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 k\OMS/cmsy/m/n/10.95 g[]\OML/cmm/m/it/10.95 ;
  []
 
 [2]) (./sections/method.tex [3]) (./sections/data.tex [4]) (./sections/results.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 7.
@@ -484,7 +478,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 7.
 
-<figures/collapse.pdf, id=328, 447.69798pt x 299.40085pt>
+<figures/collapse.pdf, id=330, 447.69798pt x 299.40085pt>
 File: figures/collapse.pdf Graphic file (type pdf)
 <use figures/collapse.pdf>
 Package pdftex.def Info: figures/collapse.pdf  used on input line 50.
@@ -492,10 +486,7 @@ Package pdftex.def Info: figures/collapse.pdf  used on input line 50.
 [5] [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./figures/collapse.pdf>]) (./sections/discussion.tex) (./sections/limitations.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]) (./main.bbl
+ [7 <./figures/collapse.pdf>]) (./sections/discussion.tex) (./sections/limitations.tex [8]) (./main.bbl
 Underfull \hbox (badness 1331) in paragraph at lines 35--38
 \OT1/ptm/m/n/10 (+20) learn-ing model gen-er-al-iza-tion[][].  \OT1/ptm/m/it/10 (+20) arXiv preprint
  []
@@ -510,12 +501,12 @@ Underfull \hbox (badness 1067) in paragraph at lines 175--178
 []\OT1/ptm/m/n/10 (+20) Amey P. Pasarkar and Adji Bousso Di-eng. 2024.
  []
 
-[10]
+
 Underfull \hbox (badness 10000) in paragraph at lines 210--213
 []\OT1/ptm/m/n/10 (+20) Eduard Tulchin-skii, Kris-tian Kuznetsov, Laida
  []
 
-) (./sections/appendix.tex [11]
+[10]) (./sections/appendix.tex [11]
 <figures/themes.pdf, id=611, 460.90404pt x 186.33665pt>
 File: figures/themes.pdf Graphic file (type pdf)
 <use figures/themes.pdf>
@@ -525,10 +516,7 @@ Package pdftex.def Info: figures/themes.pdf  used on input line 163.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 7576) has occurred while \output is active []
-
- [12]
+[12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 173.
@@ -546,15 +534,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: FF81F64202BA4A7D59328A99807C546E;5745.
  ) 
 Here is how much of TeX's memory you used:
- 15369 strings out of 469115
- 243755 string characters out of 5459086
- 722861 words of memory out of 5000000
+ 15366 strings out of 469115
+ 243728 string characters out of 5459086
+ 720989 words of memory out of 5000000
  43698 multiletter control sequences out of 15000+600000
- 665921 words of font info for 323 fonts, out of 8000000 for 9000
+ 665802 words of font info for 321 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 89i,11n,93p,2235b,660s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,93p,1848b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></home/maolee/.TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (13 pages, 369141 bytes).
+Output written on main.pdf (13 pages, 368610 bytes).
 PDF statistics:
  770 PDF objects out of 1000 (max. 8388607)
  600 compressed objects within 6 object streams

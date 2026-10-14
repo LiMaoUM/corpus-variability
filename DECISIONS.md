@@ -207,3 +207,11 @@ Truth Social and Bluesky seeds. Space: the row-type breakdown moved to an append
 
 The paper states that public posts were collected through the platforms' public interfaces and says
 nothing about ethics review; terms and review are left to the ARR checklist at submission.
+
+## 2026-10-14: Seventh revision after the ARS re-review of v7
+
+Make every change the v7 re-review lists (standing instruction from Mao). Cut the abstract to the ACL
+limit of 200 words; report the half-cover prediction with d, a and b from one pilot everywhere
+(Table 2, 5.7, appendix); store the TIFU bound prediction in results/rcal_pilot.csv; state that
+AskDocs and TIFU sit at the cap and test little, that the TIFU bound holds if a crossing exists, and
+restore the census trump interval end in 5.7.
