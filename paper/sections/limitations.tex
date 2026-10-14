@@ -4,8 +4,8 @@ The resolution $r$ is a cosine distance in one encoder's space. The law held und
 
 The required sample size grows as $r^{-d}$, so the formula is useful only at resolutions where $n^{*}$ is a feasible number. At $d = 15$, halving $r$ multiplies $n^{*}$ by about 33{,}000. The formula plans samples at the resolution of the question and cannot make a fine resolution affordable.
 
-The constants $a$ and $b$ are fitted on the pilot. We have an account of why $b$ is below 1 but no expression that predicts it.
+The constants $a$ and $b$ are fitted for each corpus. We have an account of why $b$ is below 1 but no expression that predicts it.
 
-The pilot threshold of 0.95 was chosen on the corpora of this paper, although the agreement of the two dimension estimates separates the same pairs without it. The formula's error band of a factor of 1.5 is empirical, and resampling the pilot does not reproduce it. The corpora are English social media and forum text, and the Truth Social and Bluesky collections are political pools, so their $d$ describes those collections.
+The pilot threshold of 0.95 and the gap of a quarter between the two dimension estimates were both chosen on the corpora of this paper. The formula's error band of a factor of 1.5 is empirical, and resampling the pilot does not reproduce it. The corpora are English social media and forum text, and the Truth Social and Bluesky collections are political pools, so their $d$ describes those collections.
 
 The test unit is the document. Posts by the same account are correlated, and a design that samples accounts would need a cluster version of the estimator.

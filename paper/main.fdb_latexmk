@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1791995591.11262 "main.aux" "main.bbl" "main" 1791995609.16042 0
+["bibtex main"] 1792009922.98877 "main.aux" "main.bbl" "main" 1792009930.62155 0
   "./acl_natbib.bst" 1791740302.89368 45186 3d1af46d62cc9172ef6e42b56c1cd613 ""
   "./references.bib" 1791942437.35042 16989 1154625dd5ce577249e1fa9cf625925c ""
-  "main.aux" 1791995609.08854 17266 621dd5f63f5b3cc6716f1baa36855140 "pdflatex"
+  "main.aux" 1792009930.41745 17623 4ffa44cd9958650c59b21799330749a0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1791995608.69427 "main.tex" "main.pdf" "main" 1791995609.16065 0
+["pdflatex"] 1792009929.89286 "main.tex" "main.pdf" "main" 1792009930.62177 0
   "/home/maolee/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/home/maolee/.TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -144,19 +144,19 @@
   "acl.sty" 1791740302.89368 11615 e2c027f483aa40e577ed34264c8b0655 ""
   "figures/collapse.pdf" 1791942925.01941 60026 1105602e0a9c0e6f10d0c5d6a7416561 ""
   "figures/themes.pdf" 1791942925.97941 34581 41c5039a33c0dcb1638d0948d36a8d5e ""
-  "main.aux" 1791995609.08854 17266 621dd5f63f5b3cc6716f1baa36855140 "pdflatex"
-  "main.bbl" 1791995591.1245 15582 04ecdf0b028969d8b4378201fee7f5f2 "bibtex main"
-  "main.out" 1791995609.09254 4801 ac4dcd1faa762229cb927a38451f8e85 "pdflatex"
+  "main.aux" 1792009930.41745 17623 4ffa44cd9958650c59b21799330749a0 "pdflatex"
+  "main.bbl" 1792009923.03744 15582 04ecdf0b028969d8b4378201fee7f5f2 "bibtex main"
+  "main.out" 1792009930.41745 5015 22bbea4436dabf843f29a60a3b187cdb "pdflatex"
   "main.tex" 1791739951.60872 636 c4c5b8ebf77f7fe0cd9d3f5314a666aa ""
-  "sections/abstract.tex" 1791995549.1404 1761 da0f294666215e527ff78c1068904c0a ""
-  "sections/appendix.tex" 1791995590.5605 8049 2031ff05540cddeb1b0749bcfee75aa2 ""
+  "sections/abstract.tex" 1792009818.7532 1913 862ef79273d9144fc3e7c417b889942b ""
+  "sections/appendix.tex" 1792009876.86133 9420 b3ce6dfe854250b3229a5f3ab7818bc8 ""
   "sections/background.tex" 1791942437.37042 6141 18733ed5fb23d48da21a9c65f14af775 ""
-  "sections/data.tex" 1791853459.18256 2112 1882b2c06d869982cdd032eb146c3649 ""
-  "sections/discussion.tex" 1791995608.61254 2597 fa7a3a3f24dd9ea4a97acc8b89aae3e8 ""
-  "sections/introduction.tex" 1791995558.86442 4338 010c5b1a10bfa27b7ec149cd3ce8fe93 ""
-  "sections/limitations.tex" 1791943507.4326 1589 f02118ff60adb2d3438c3dd32711c1c4 ""
+  "sections/data.tex" 1792008457.7979 2146 2e64d83f7d0c0caabf1e045908872850 ""
+  "sections/discussion.tex" 1792009929.71745 2166 ff017e5079544ccc2e57105e0539428f ""
+  "sections/introduction.tex" 1792009818.7532 4520 cf3d4d71fbcf3ffd01980d711f8f9d3d ""
+  "sections/limitations.tex" 1792008438.94986 1568 d1e41abbe4bfc15a8499236ed18dc640 ""
   "sections/method.tex" 1791995443.01215 5826 5980974601853047e89f7f9960147f3c ""
-  "sections/results.tex" 1791995600.61252 14910 550a58a3c38847ca005e2752e18c43f8 ""
+  "sections/results.tex" 1792009929.70145 15366 898a56dd86b4d23fd76a7a0a7282bbaa ""
   (generated)
   "main.aux"
   "main.log"

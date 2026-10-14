@@ -157,3 +157,18 @@ n = 100, and leads with the empirical crossings. (3) Two new runs: a and b fitte
 2,000-document pilot to re-score the 77/83 tally, and bootstrap intervals on r_same under each judge
 carried into n*. Also correct Section 3.2, which said a and b are fitted on the pilot when the code
 drew them from the whole corpus. Rationale: the re-review's critical item N2 and major items N1, N3, N4.
+
+## 2026-10-14: Fourth revision after the ARS re-review of v4
+
+Make all three changes the v4 re-review asked for (Mao, 2026-10-14, chosen from three options).
+(1) Section 5.7 uses the formula again: on the corpora that pass the diagnostic and have an r_same
+(AskDocs, TIFU, Truth Social, census random), the law fitted inside the pilot predicts G(n, r_same)
+out to N/2 and is compared with the measured curve and the half-cover share. Fix the Truth Social
+bound, which is an upper bound; give absolute n beside each share and state the 50% cap. (2) Treat
+the judge as part of the definition of r: state on how many corpora the two judges' intervals are
+disjoint, report the share at both ends of each r_same interval, mark censored crossings (TIFU
+under Qwen, Bluesky). (3) One pass over the residual wording and housekeeping: Introduction and
+Limitations wording on the pilot fit and the d check, per-seed range in 5.2, Zipf-free counts in the
+main text, Truth Social and Bluesky citations, f2 for Chao and Jost, last sentence of 5.1, "a few
+hundred" in the abstract, the Table 4 overfull box. Rationale: re-review items V1 to V8, N3, N5, N6,
+N8, N9, N11, N12.

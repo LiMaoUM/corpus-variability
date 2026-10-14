@@ -26,9 +26,12 @@ $\alpha$ & Spearman $\rho$ & mean absolute error \\
 
 Equation~\ref{eq:collapse} was fitted on cells with $n \le 1{,}000$, five draws per cell. Equation~\ref{eq:nstar} then gave $n^{*}$ for $\varepsilon \in \{0.3, 0.2, 0.1\}$ at every radius where the mean surface crosses $\varepsilon$ at some $n > 1{,}000$, and the crossing was interpolated on the log scale between grid points. Table~\ref{tab:nstar} reports the ratio of predicted to empirical sample size. The grid steps by a factor of about 1.5 between adjacent sample sizes, and the interpolated crossing varies across the five draws by a median of 6\%. Leaving out the Zipf mixture, 10 of the 18 cases on failing text pairs fall within a factor of 1.5 and 14 within 2. With $a$ and $b$ fitted on nested subsamples of one 2{,}000-document pilot instead of draws from the whole corpus, 76 of the 83 cases on passing pairs fall within 1.5 and 81 within 2.
 
+A random sample can be compared with a sample chosen for coverage. Greedy farthest point selection, the core-set construction of \citet{sener2018coreset}, minimises the largest distance from any document to the chosen set. To bring the missing mass at a radius below a target, a random sample needs 0.6 to 1.0 times as many documents as greedy selection on the forum and census corpora, and 0.12 times as many on Truth Social and Bluesky. Greedy selection spends its picks on outlying documents, which are few, while the missing mass weighs documents equally.
+
 \begin{table}[h]
 \centering
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{llrrrr}
 \toprule
 Corpus & Enc. & cases & median & $\le 1.5$ & $\le 2$ \\
@@ -52,9 +55,31 @@ Census citizens & Qwen3 & 2 & 2.06 & 0 & 1 \\
 Trump & GTR & 6 & 1.86 & 2 & 3 \\
 Zipf, 200 topics & none & 5 & 69 & 0 & 0 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Predicted over empirical sample size for a target isolation rate, in the order of Table~\ref{tab:collapse}. GTR rows pool three samples of the forum corpus.}
 \label{tab:nstar}
+\end{table}
+
+\section{The finite population correction}
+\label{app:fpc}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+$n/N$ & $M$ (true) & $G$ & $G\,(1 - n/N)$ & error \\
+\midrule
+0.01 & 0.762 & 0.768 & 0.760 & 0.032 \\
+0.05 & 0.590 & 0.623 & 0.592 & 0.014 \\
+0.10 & 0.497 & 0.547 & 0.492 & 0.010 \\
+0.25 & 0.347 & 0.459 & 0.344 & 0.006 \\
+0.50 & 0.198 & 0.396 & 0.198 & 0.004 \\
+0.70 & 0.110 & 0.366 & 0.110 & 0.003 \\
+\bottomrule
+\end{tabular}
+\caption{Missing mass of the finite corpus by sampling fraction, mean over eight Qwen3 corpora and three radii (the 25th, 50th and 75th percentiles of the pilot's nearest neighbour distances). The last column is the mean absolute error of the corrected estimate.}
+\label{tab:fpc}
 \end{table}
 
 \section{Coverage of a theme inventory}
@@ -65,6 +90,7 @@ Each of the eight forum and census corpora received inventories of themes by $k$
 \begin{table}[h]
 \centering
 \small
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 Inventory & $n{=}25$ & $n{=}50$ & $n{=}100$ \\
@@ -75,7 +101,7 @@ $k$-means, $K{=}100$ & 0.25 to 0.30 & 0.44 to 0.48 & 0.67 to 0.72 \\
 seeding only, $K{=}30$ & 0.60 to 0.72 & 0.82 to 0.88 & 0.94 to 0.96 \\
 Zipf merge, $K{=}30$ & 0.79 to 0.84 & 0.87 to 0.91 & 0.93 to 0.96 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Share of theme mass present in a sample, range across eight corpora.}
 \label{tab:themes}
 \end{table}

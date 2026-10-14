@@ -271,3 +271,17 @@ split holds under both judges for eight of nine corpora with a crossing; census 
   45 to 50% under both judges (the no-repetition value is exactly 50%); Trump forum and the
   citizens, trump, illegal slices 5% or less under both; covid 19% (Qwen) vs 1.6% (Gemma);
   census random 44% vs 7%. G at n = 100 is 1.00 on the no-repetition corpora.
+
+## Fourth revision runs (2026-10-14, after the ARS re-review of v4)
+
+`scripts/half_cover.py` (rewritten) -> `results/half_cover.csv`, `results/half_cover.log`. For each
+calibrated Qwen3 corpus and judge, at r_same and both ends of its 90% interval: the measured n at
+which G(n, r)(1 - n/N) reaches 0.5, on a grid extended to 0.7 N (three draws per n, so Truth Social
+is now measured to 35,000), and the n predicted by the law fitted inside one 2,000-document pilot
+(same seeds as `revision_round4.py`). Results: the prediction is within 3.8 percentage points of the
+measured share on every corpus with a measured crossing and within a factor of 1.31 of the measured
+n (largest gap census random under Gemma, 532 measured against 695). Truth Social needs 44% (Qwen)
+and 41% (Gemma), so the v4 table's 47% and 45% were upper bounds (V1). Over the r_same intervals the
+two groups hold on seven corpora; census trump reaches 18% at the near end of the Qwen interval, and
+census covid and census random change group with the judge. Judge intervals are disjoint on six of
+nine corpora (AskDocs, Trump forum, census random, covid, citizens, trump).
