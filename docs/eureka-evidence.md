@@ -257,3 +257,17 @@ re-judged with Qwen3.8-27B on the same pairs. Qwen crossings for them fall to 0.
 vs rest); Gemma is more liberal with SAME, so r_same moves out by 0.02 to 0.16. The feasibility
 split holds under both judges for eight of nine corpora with a crossing; census random flips
 (n* 7e7 under Qwen, 1,200 under Gemma). Paper Section 5.6, 5.7 and Table 4 updated.
+
+### Third revision runs (2026-10-14, after the ARS re-review of v3)
+
+- Pilot-only fit (`scripts/revision_round4.py`, `results/nstar_pilotfit.csv`): a and b fitted on
+  nested subsamples of one 2,000-document pilot give 76/83 within x1.5 and 81/83 within x2 on
+  passing pairs (whole-corpus draws: 77/83, 81/83). Failing text pairs without Zipf: 10/18, 14/18.
+- r_same bootstrap (`results/rsame_boot.csv`, B = 2,000, pairs resampled within bins): intervals
+  are narrow except TIFU and census trump under Qwen; census random intervals under the two
+  judges do not overlap ([.10, .18] vs [.26, .29]).
+- Half coverage of the finite corpus (`scripts/half_cover.py`, `results/half_cover.csv`): share of
+  N a random sample needs so that G(n)(1 - n/N) = 0.5 at r_same. AskDocs, TIFU, Truth Social
+  45 to 50% under both judges (the no-repetition value is exactly 50%); Trump forum and the
+  citizens, trump, illegal slices 5% or less under both; covid 19% (Qwen) vs 1.6% (Gemma);
+  census random 44% vs 7%. G at n = 100 is 1.00 on the no-repetition corpora.

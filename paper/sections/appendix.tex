@@ -24,7 +24,7 @@ $\alpha$ & Spearman $\rho$ & mean absolute error \\
 \section{The sample size formula by corpus}
 \label{app:nstar}
 
-Equation~\ref{eq:collapse} was fitted on cells with $n \le 1{,}000$, five draws per cell. Equation~\ref{eq:nstar} then gave $n^{*}$ for $\varepsilon \in \{0.3, 0.2, 0.1\}$ at every radius where the mean surface crosses $\varepsilon$ at some $n > 1{,}000$, and the crossing was interpolated on the log scale between grid points. Table~\ref{tab:nstar} reports the ratio of predicted to empirical sample size. The grid steps by a factor of about 1.5 between adjacent sample sizes, and the interpolated crossing varies across the five draws by a median of 6\%.
+Equation~\ref{eq:collapse} was fitted on cells with $n \le 1{,}000$, five draws per cell. Equation~\ref{eq:nstar} then gave $n^{*}$ for $\varepsilon \in \{0.3, 0.2, 0.1\}$ at every radius where the mean surface crosses $\varepsilon$ at some $n > 1{,}000$, and the crossing was interpolated on the log scale between grid points. Table~\ref{tab:nstar} reports the ratio of predicted to empirical sample size. The grid steps by a factor of about 1.5 between adjacent sample sizes, and the interpolated crossing varies across the five draws by a median of 6\%. Leaving out the Zipf mixture, 10 of the 18 cases on failing text pairs fall within a factor of 1.5 and 14 within 2. With $a$ and $b$ fitted on nested subsamples of one 2{,}000-document pilot instead of draws from the whole corpus, 76 of the 83 cases on passing pairs fall within 1.5 and 81 within 2.
 
 \begin{table}[h]
 \centering

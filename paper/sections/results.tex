@@ -53,7 +53,7 @@ Zipf, 200 topics & none & 20{,}000 & 11.3 (0.35) & 6.4 & 0.21 & 0.66 & 0.62 & 0.
 
 \subsection{The sample size formula}
 
-For every pair, Equation~\ref{eq:collapse} was fitted on cells with $n \le 1{,}000$, and Equation~\ref{eq:nstar} gave $n^{*}$ for targets $\varepsilon \in \{0.3, 0.2, 0.1\}$ at every radius where the mean surface crosses $\varepsilon$ beyond $n = 1{,}000$. The prediction was compared with the crossing interpolated on the log scale between grid points. On the ten passing pairs, 77 of 83 predictions fall within a factor of 1.5 of the empirical sample size. On the seven failing pairs, 10 of 23 do (Appendix~\ref{app:nstar}).
+For every pair, Equation~\ref{eq:collapse} was fitted on cells with $n \le 1{,}000$, and Equation~\ref{eq:nstar} gave $n^{*}$ for targets $\varepsilon \in \{0.3, 0.2, 0.1\}$ at every radius where the mean surface crosses $\varepsilon$ beyond $n = 1{,}000$. The prediction was compared with the crossing interpolated on the log scale between grid points. On the ten passing pairs, 77 of 83 predictions fall within a factor of 1.5 of the empirical sample size. On the seven failing pairs, 10 of 23 do (Appendix~\ref{app:nstar}). Fitting $a$ and $b$ inside one 2{,}000-document pilot, as a user would, gives 76 of 83.
 
 The error of $n^{*}$ comes from the shape of the law more than from the pilot. Resampling the pilot 50 times and refitting $d$, $a$ and $b$ each time gives intervals with a median width of 19\% of $n^{*}$, and these cover the empirical crossing in only 21\% of cases. We therefore report $n^{*}$ with the empirical band of a factor of 1.5, which held in 93\% of cases on passing corpora.
 
@@ -61,7 +61,7 @@ A random sample can be compared with a sample chosen for coverage. Greedy farthe
 
 \subsection{The diagnostic}
 
-The diagnostic must work before the sample is drawn, so we compute it inside one pilot of 2{,}000 documents: fit Equation~\ref{eq:collapse} on subsamples of size up to 750, and score $R^2$ on subsamples of size 1{,}000 to 2{,}000. The ten passing pairs reach a pilot $R^2$ of 0.96 or more, and the seven failing pairs reach at most 0.93 (Table~\ref{tab:collapse}). A pilot threshold of 0.95 therefore reproduces the full diagnostic on every pair. The threshold was chosen on these corpora, and the agreement of the two dimension estimates gives a second check that needs no threshold from them: on every failing pair the two differ by more than a quarter.
+The diagnostic must work before the sample is drawn, so we compute it inside one pilot of 2{,}000 documents: fit Equation~\ref{eq:collapse} on subsamples of size up to 750, and score $R^2$ on subsamples of size 1{,}000 to 2{,}000. The ten passing pairs reach a pilot $R^2$ of 0.96 or more, and the seven failing pairs reach at most 0.93 (Table~\ref{tab:collapse}). A pilot threshold of 0.95 therefore reproduces the full diagnostic on every pair. The threshold was chosen on these corpora, and the agreement of the two dimension estimates gives a second check: the two differ by at most 19\% on every passing pair and by more than a quarter on every failing pair.
 
 \begin{table}[t]
 \centering
@@ -112,36 +112,36 @@ $n/N$ & $M$ (true) & $G$ & $G\,(1 - n/N)$ & error \\
 \subsection{Choosing the resolution}
 \label{sec:rcal}
 
-The resolution $r$ is a cosine distance, and a user needs to know what content it groups. For each of the ten real corpora under Qwen3, we drew about 40 document pairs in each of ten distance bins from 0 to 1, 3{,}913 pairs in all, and asked Qwen3.8-27B whether the two documents are about the same specific content (the same claim, question, event or story), the same general topic, or unrelated (Appendix~\ref{app:prompts}). The share judged the same content falls with distance in every corpus. Where it crosses one half depends on the corpus, from $r = 0.05$ on TIFU to 0.28 on a census slice, and on Bluesky it stays below one half even for the nearest pairs (Table~\ref{tab:rcal}). Long first person stories differ in their details even when they are close in embedding space, while short posts that repeat a slogan are the same content at a larger distance. A cosine distance therefore does not carry one meaning across corpora, and a user who wants $r$ to mean ``the same claim'' should judge a few hundred pilot pairs binned by distance and take the distance where the share of same content crosses the chosen level.
+The resolution $r$ is a cosine distance, and a user needs to know what content it groups. For each of the ten real corpora under Qwen3, we drew about 40 document pairs in each of ten distance bins from 0 to 1, 3{,}913 pairs in all, and asked Qwen3.8-27B whether the two documents are about the same specific content (the same claim, question, event or story), the same general topic, or unrelated (Appendix~\ref{app:prompts}). The share judged the same content falls with distance in every corpus. Where it crosses one half depends on the corpus, from $r = 0.05$ on TIFU to 0.28 on a census slice, and on Bluesky it stays below one half even for the nearest pairs (Table~\ref{tab:rcal}). Long first person stories differ in their details even when they are close in embedding space, while short posts that repeat a slogan are the same content at a larger distance. A cosine distance therefore carries no fixed meaning across corpora, and a user who wants $r$ to mean ``the same claim'' should judge a few hundred pilot pairs binned by distance.
 
 A second model, Gemma-4-31B-it, judged the same pairs with the same prompt. The two agree on 71\% of pairs (Cohen's $\kappa = 0.55$; $\kappa = 0.68$ for same content against the other two labels). Gemma calls more pairs the same content, 39\% against 28\%, so its crossing lies farther out in every corpus, by 0.02 to 0.16, and a user should report the judge along with the encoder.
 
 \subsection{What a target costs}
 \label{sec:feasible}
 
-Table~\ref{tab:rcal} gives, under each judge, the sample size at which half of the corpus lies within the same content distance of some sampled document. On the Trump forum corpus and three census slices, whose posts repeat a few claims, between eight and about six hundred documents suffice under either judge, and where the grid reaches the target the empirical sample size is within a factor of 1.6 of the prediction. On AskDocs, TIFU and Truth Social the required sample exceeds the corpus by orders of magnitude under either judge, and $G$ at the largest sample stays above 0.9: almost no document has another about the same specific content, so an analysis that needs every claim must read every document. The census random slice, drawn from the census export with no keyword filter, falls on either side depending on the judge, since its two crossings differ by a factor of 2.3 and $n^{*}$ grows as $r^{-12.9}$. The formula says which situation a corpus is in before any annotation is bought.
+Table~\ref{tab:rcal} gives, under each judge, the share of the corpus a random sample must contain for half of the corpus to lie within $r_{\mathrm{same}}$ of a sampled document. The share is measured directly: $G(n, r_{\mathrm{same}})$ on the grid of Section~3.2, multiplied by $1 - n/N$, interpolated where it crosses one half. On the Trump forum corpus and four census slices, whose posts repeat a few claims, a sample of 5\% of the corpus or less covers half of it under either judge, except census covid under the stricter judge (19\%). On AskDocs, TIFU and Truth Social it is 45 to 50\%, the share a corpus needs when no two of its documents share content, so a sample covers what it contains and little else. A pilot of 100 documents tells the two kinds apart: $G$ is 1.00 on AskDocs, TIFU and Truth Social and at most 0.90 on the repetitive corpora. The repetitive corpora fail the diagnostic, so their shares rest on the measured curve alone. The census random slice, drawn with no keyword filter, needs 44\% under Qwen3.8 and 7\% under Gemma, and the 90\% intervals of its two crossings do not overlap, so the judges disagree by more than the sampling of pairs explains.
 
 \begin{table}[t]
 \centering
 \small
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{lrcrr}
+\begin{tabular}{llcrcr}
 \toprule
- & & $r_{\mathrm{same}}$ & \multicolumn{2}{c}{$n^{*}(0.5, r_{\mathrm{same}})$} \\
-Corpus & $d$ & Q / G & Qwen & Gemma \\
+ & & \multicolumn{2}{c}{Qwen3.8-27B} & \multicolumn{2}{c}{Gemma-4-31B} \\
+Corpus & Diag. & $r_{\mathrm{same}}$ & share & $r_{\mathrm{same}}$ & share \\
 \midrule
-TIFU & 13.6 & 0.05 / 0.08 & $4 \times 10^{14}$ & $7 \times 10^{11}$ \\
-AskDocs & 12.8 & 0.15 / 0.17 & $1 \times 10^{9}$ & $2 \times 10^{8}$ \\
-Cens.\ random & 12.9 & 0.12 / 0.28 & $7 \times 10^{7}$ & 1{,}200 (780) \\
-Truth Social & 12.6 & 0.16 / 0.18 & $1 \times 10^{7}$ & $2 \times 10^{6}$ \\
-Cens.\ covid & 10.7 & 0.20 / 0.29 & 16{,}000 & 350 (280) \\
-Trump (forum) & 9.0 & 0.24 / 0.31 & 600 (540) & 50 \\
-Cens.\ trump & 9.0 & 0.24 / 0.31 & 510 (530) & 50 \\
-Cens.\ citizens & 9.1 & 0.23 / 0.36 & 480 (390) & 8 \\
-Cens.\ illegal & 11.4 & 0.28 / 0.30 & 50 & 20 \\
-Bluesky & 16.0 & none & & \\
+TIFU & pass & .05 [.05, .10] & 50\% & .08 [.05, .10] & 50\% \\
+AskDocs & pass & .15 [.13, .16] & 50\% & .17 [.16, .19] & 49\% \\
+Truth Social & pass & .16 [.15, .18] & 47\% & .18 [.17, .20] & 45\% \\
+Cens.\ random & pass & .12 [.10, .18] & 44\% & .28 [.26, .29] & 7\% \\
+Cens.\ covid & fail & .20 [.19, .21] & 19\% & .29 [.22, .30] & 1.6\% \\
+Cens.\ citizens & fail & .23 [.20, .26] & 4.7\% & .36 [.32, .38] & $<$1.3\% \\
+Trump (forum) & fail & .24 [.22, .26] & 4.4\% & .31 [.31, .33] & $<$1\% \\
+Cens.\ trump & fail & .24 [.17, .25] & 2.0\% & .31 [.29, .33] & $<$0.3\% \\
+Cens.\ illegal & fail & .28 [.25, .29] & $<$0.6\% & .30 [.29, .32] & $<$0.6\% \\
+Bluesky & pass & none & & none & \\
 \bottomrule
 \end{tabular}
-\caption{The distance $r_{\mathrm{same}}$ at which half of document pairs are judged the same specific content, interpolated between bins of about 40 pairs, under Qwen3.8-27B (Q) and Gemma-4-31B-it (G), and the sample size the collapse law prescribes for an isolation rate of 0.5 at that distance, rounded. In parentheses, the empirical sample size where the grid of 100 to 7{,}000 reaches the target. On Bluesky fewer than half of the pairs closer than 0.1 are judged the same content under either judge, so no distance qualifies.}
+\caption{The distance $r_{\mathrm{same}}$ at which half of document pairs are judged the same specific content under each judge, interpolated between bins of about 40 pairs, with a 90\% interval from resampling pairs within bins, and the share of the corpus a random sample must contain for half of the corpus to lie within $r_{\mathrm{same}}$ of it. A share marked $<$ is reached below the smallest sample of 100. On Truth Social the grid ends first, and the table gives the lower bound of a share that lies below 50\%. On Bluesky fewer than half of the pairs closer than 0.1 are judged the same content, so no distance qualifies. Diag.: the pilot diagnostic of Section~5.4.}
 \label{tab:rcal}
 \end{table}

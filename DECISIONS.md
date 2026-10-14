@@ -145,3 +145,15 @@ The re-review asked for human labels on about 200 calibration pairs. Mao chose a
 judge instead: re-judge all calibration pairs with Gemma-4-31B-it (when the shared server frees)
 or another local model, and report agreement with Qwen3.8-27B. No human labels for now; the
 limitation is stated.
+
+## 2026-10-14: Third revision after the ARS re-review of v3
+
+Make all three changes the re-review asked for (Mao, 2026-10-14, chosen from three options).
+(1) Section 5.7, Table 4, the abstract and the introduction state the feasibility result for the
+finite corpus: G at the largest sample and "n* exceeds N" replace the extrapolated values, and with
+the finite population correction a corpus without repeated content needs about half of itself to
+cover half. (2) Table 4 marks rows whose fit fails the diagnostic or whose prediction falls below
+n = 100, and leads with the empirical crossings. (3) Two new runs: a and b fitted inside the
+2,000-document pilot to re-score the 77/83 tally, and bootstrap intervals on r_same under each judge
+carried into n*. Also correct Section 3.2, which said a and b are fitted on the pilot when the code
+drew them from the whole corpus. Rationale: the re-review's critical item N2 and major items N1, N3, N4.

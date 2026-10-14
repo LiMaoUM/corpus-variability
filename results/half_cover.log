@@ -1,0 +1,38 @@
+{'corpus': 'askdocs_qwen3', 'judge': 'qwen', 'N': 10000, 'r_same': np.float64(0.146), 'G_100': np.float64(1.0), 'G_nmax': np.float64(0.991), 'n_max': 7000, 'n_half_lo': 4953, 'n_half_hi': 4953, 'frac_lo': 0.495, 'frac_hi': 0.495}
+{'corpus': 'askdocs_qwen3', 'judge': 'gemma', 'N': 10000, 'r_same': np.float64(0.172), 'G_100': np.float64(1.0), 'G_nmax': np.float64(0.987), 'n_max': 7000, 'n_half_lo': 4923, 'n_half_hi': 4923, 'frac_lo': 0.492, 'frac_hi': 0.492}
+{'corpus': 'trump_qwen3', 'judge': 'qwen', 'N': 10000, 'r_same': np.float64(0.24), 'G_100': np.float64(0.667), 'G_nmax': np.float64(0.279), 'n_max': 7000, 'n_half_lo': 442, 'n_half_hi': 442, 'frac_lo': 0.044, 'frac_hi': 0.044}
+{'corpus': 'trump_qwen3', 'judge': 'gemma', 'N': 10000, 'r_same': np.float64(0.314), 'G_100': np.float64(0.353), 'G_nmax': np.float64(0.088), 'n_max': 7000, 'n_half_lo': 0, 'n_half_hi': 100, 'frac_lo': 0.0, 'frac_hi': 0.01}
+{'corpus': 'tifu_qwen3', 'judge': 'qwen', 'N': 10000, 'r_same': np.float64(0.05), 'G_100': np.float64(1.0), 'G_nmax': np.float64(1.0), 'n_max': 7000, 'n_half_lo': 4997, 'n_half_hi': 4997, 'frac_lo': 0.5, 'frac_hi': 0.5}
+{'corpus': 'tifu_qwen3', 'judge': 'gemma', 'N': 10000, 'r_same': np.float64(0.08), 'G_100': np.float64(1.0), 'G_nmax': np.float64(1.0), 'n_max': 7000, 'n_half_lo': 4997, 'n_half_hi': 4997, 'frac_lo': 0.5, 'frac_hi': 0.5}
+{'corpus': 'census_random_qwen3', 'judge': 'qwen', 'N': 7610, 'r_same': np.float64(0.12), 'G_100': np.float64(1.0), 'G_nmax': np.float64(0.918), 'n_max': 5000, 'n_half_lo': 3352, 'n_half_hi': 3352, 'frac_lo': 0.44, 'frac_hi': 0.44}
+{'corpus': 'census_random_qwen3', 'judge': 'gemma', 'N': 7610, 'r_same': np.float64(0.281), 'G_100': np.float64(0.693), 'G_nmax': np.float64(0.336), 'n_max': 5000, 'n_half_lo': 532, 'n_half_hi': 532, 'frac_lo': 0.07, 'frac_hi': 0.07}
+{'corpus': 'census_citizens_qwen3', 'judge': 'qwen', 'N': 7849, 'r_same': np.float64(0.225), 'G_100': np.float64(0.63), 'G_nmax': np.float64(0.222), 'n_max': 5000, 'n_half_lo': 370, 'n_half_hi': 370, 'frac_lo': 0.047, 'frac_hi': 0.047}
+{'corpus': 'census_citizens_qwen3', 'judge': 'gemma', 'N': 7849, 'r_same': np.float64(0.355), 'G_100': np.float64(0.083), 'G_nmax': np.float64(0.009), 'n_max': 5000, 'n_half_lo': 0, 'n_half_hi': 100, 'frac_lo': 0.0, 'frac_hi': 0.013}
+{'corpus': 'census_trump_qwen3', 'judge': 'qwen', 'N': 30136, 'r_same': np.float64(0.244), 'G_100': np.float64(0.69), 'G_nmax': np.float64(0.272), 'n_max': 7000, 'n_half_lo': 604, 'n_half_hi': 604, 'frac_lo': 0.02, 'frac_hi': 0.02}
+{'corpus': 'census_trump_qwen3', 'judge': 'gemma', 'N': 30136, 'r_same': np.float64(0.314), 'G_100': np.float64(0.353), 'G_nmax': np.float64(0.09), 'n_max': 7000, 'n_half_lo': 0, 'n_half_hi': 100, 'frac_lo': 0.0, 'frac_hi': 0.003}
+{'corpus': 'census_covid_qwen3', 'judge': 'qwen', 'N': 17837, 'r_same': np.float64(0.2), 'G_100': np.float64(0.903), 'G_nmax': np.float64(0.554), 'n_max': 7000, 'n_half_lo': 3356, 'n_half_hi': 3356, 'frac_lo': 0.188, 'frac_hi': 0.188}
+{'corpus': 'census_covid_qwen3', 'judge': 'gemma', 'N': 17837, 'r_same': np.float64(0.286), 'G_100': np.float64(0.56), 'G_nmax': np.float64(0.196), 'n_max': 7000, 'n_half_lo': 279, 'n_half_hi': 279, 'frac_lo': 0.016, 'frac_hi': 0.016}
+{'corpus': 'census_illegal_qwen3', 'judge': 'qwen', 'N': 17202, 'r_same': np.float64(0.275), 'G_100': np.float64(0.35), 'G_nmax': np.float64(0.089), 'n_max': 7000, 'n_half_lo': 0, 'n_half_hi': 100, 'frac_lo': 0.0, 'frac_hi': 0.006}
+{'corpus': 'census_illegal_qwen3', 'judge': 'gemma', 'N': 17202, 'r_same': np.float64(0.3), 'G_100': np.float64(0.263), 'G_nmax': np.float64(0.053), 'n_max': 7000, 'n_half_lo': 0, 'n_half_hi': 100, 'frac_lo': 0.0, 'frac_hi': 0.006}
+{'corpus': 'ts_qwen3', 'judge': 'qwen', 'N': 50000, 'r_same': np.float64(0.162), 'G_100': np.float64(1.0), 'G_nmax': np.float64(0.94), 'n_max': 7000, 'n_half_lo': 23408, 'n_half_hi': 25000, 'frac_lo': np.float64(0.468), 'frac_hi': 0.5}
+{'corpus': 'ts_qwen3', 'judge': 'gemma', 'N': 50000, 'r_same': np.float64(0.184), 'G_100': np.float64(1.0), 'G_nmax': np.float64(0.91), 'n_max': 7000, 'n_half_lo': 22523, 'n_half_hi': 25000, 'frac_lo': np.float64(0.45), 'frac_hi': 0.5}
+
+               corpus judge     N  r_same  G_100  G_nmax  n_max  n_half_lo  n_half_hi  frac_lo  frac_hi
+        askdocs_qwen3  qwen 10000   0.146  1.000   0.991   7000       4953       4953    0.495    0.495
+        askdocs_qwen3 gemma 10000   0.172  1.000   0.987   7000       4923       4923    0.492    0.492
+          trump_qwen3  qwen 10000   0.240  0.667   0.279   7000        442        442    0.044    0.044
+          trump_qwen3 gemma 10000   0.314  0.353   0.088   7000          0        100    0.000    0.010
+           tifu_qwen3  qwen 10000   0.050  1.000   1.000   7000       4997       4997    0.500    0.500
+           tifu_qwen3 gemma 10000   0.080  1.000   1.000   7000       4997       4997    0.500    0.500
+  census_random_qwen3  qwen  7610   0.120  1.000   0.918   5000       3352       3352    0.440    0.440
+  census_random_qwen3 gemma  7610   0.281  0.693   0.336   5000        532        532    0.070    0.070
+census_citizens_qwen3  qwen  7849   0.225  0.630   0.222   5000        370        370    0.047    0.047
+census_citizens_qwen3 gemma  7849   0.355  0.083   0.009   5000          0        100    0.000    0.013
+   census_trump_qwen3  qwen 30136   0.244  0.690   0.272   7000        604        604    0.020    0.020
+   census_trump_qwen3 gemma 30136   0.314  0.353   0.090   7000          0        100    0.000    0.003
+   census_covid_qwen3  qwen 17837   0.200  0.903   0.554   7000       3356       3356    0.188    0.188
+   census_covid_qwen3 gemma 17837   0.286  0.560   0.196   7000        279        279    0.016    0.016
+ census_illegal_qwen3  qwen 17202   0.275  0.350   0.089   7000          0        100    0.000    0.006
+ census_illegal_qwen3 gemma 17202   0.300  0.263   0.053   7000          0        100    0.000    0.006
+             ts_qwen3  qwen 50000   0.162  1.000   0.940   7000      23408      25000    0.468    0.500
+             ts_qwen3 gemma 50000   0.184  1.000   0.910   7000      22523      25000    0.450    0.500

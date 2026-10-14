@@ -1,0 +1,91 @@
+{'corpus': 'bsky', 'judge': 'qwen', 'r_same': nan, 'r_lo': np.float64(0.05), 'r_hi': np.float64(0.13), 'share_no_crossing': 0.737}
+{'corpus': 'bsky', 'judge': 'gemma', 'r_same': nan, 'r_lo': np.float64(0.05), 'r_hi': np.float64(0.129), 'share_no_crossing': 0.656}
+{'corpus': 'citizens', 'judge': 'qwen', 'r_same': np.float64(0.225), 'r_lo': np.float64(0.198), 'r_hi': np.float64(0.255), 'share_no_crossing': 0.0, 'nstar_lo': 154.0, 'nstar_hi': 1520.0, 'nstar': np.float64(479.0), 'N': np.int64(7849)}
+{'corpus': 'citizens', 'judge': 'gemma', 'r_same': np.float64(0.355), 'r_lo': np.float64(0.319), 'r_hi': np.float64(0.382), 'share_no_crossing': 0.0, 'nstar_lo': 3.96, 'nstar_hi': 20.3, 'nstar': np.float64(7.66), 'N': np.int64(7849)}
+{'corpus': 'covid', 'judge': 'qwen', 'r_same': np.float64(0.2), 'r_lo': np.float64(0.191), 'r_hi': np.float64(0.208), 'share_no_crossing': 0.0, 'nstar_lo': 10100.0, 'nstar_hi': 25400.0, 'nstar': np.float64(15600.0), 'N': np.int64(17837)}
+{'corpus': 'covid', 'judge': 'gemma', 'r_same': np.float64(0.286), 'r_lo': np.float64(0.218), 'r_hi': np.float64(0.298), 'share_no_crossing': 0.0, 'nstar_lo': 227.0, 'nstar_hi': 6180.0, 'nstar': np.float64(346.0), 'N': np.int64(17837)}
+{'corpus': 'illegal', 'judge': 'qwen', 'r_same': np.float64(0.275), 'r_lo': np.float64(0.252), 'r_hi': np.float64(0.288), 'share_no_crossing': 0.0, 'nstar_lo': 31.1, 'nstar_hi': 142.0, 'nstar': np.float64(53.0), 'N': np.int64(17202)}
+{'corpus': 'illegal', 'judge': 'gemma', 'r_same': np.float64(0.3), 'r_lo': np.float64(0.286), 'r_hi': np.float64(0.315), 'share_no_crossing': 0.0, 'nstar_lo': 11.3, 'nstar_hi': 33.8, 'nstar': np.float64(19.7), 'N': np.int64(17202)}
+{'corpus': 'random', 'judge': 'qwen', 'r_same': np.float64(0.12), 'r_lo': np.float64(0.101), 'r_hi': np.float64(0.181), 'share_no_crossing': 0.0, 'nstar_lo': 354000.0, 'nstar_hi': 611000000.0, 'nstar': np.float64(69300000.0), 'N': np.int64(7610)}
+{'corpus': 'random', 'judge': 'gemma', 'r_same': np.float64(0.281), 'r_lo': np.float64(0.261), 'r_hi': np.float64(0.293), 'share_no_crossing': 0.0, 'nstar_lo': 730.0, 'nstar_hi': 3120.0, 'nstar': np.float64(1230.0), 'N': np.int64(7610)}
+{'corpus': 'sv_askdocs', 'judge': 'qwen', 'r_same': np.float64(0.146), 'r_lo': np.float64(0.133), 'r_hi': np.float64(0.155), 'share_no_crossing': 0.0, 'nstar_lo': 690000000.0, 'nstar_hi': 4490000000.0, 'nstar': np.float64(1420000000.0), 'N': np.int64(10000)}
+{'corpus': 'sv_askdocs', 'judge': 'gemma', 'r_same': np.float64(0.172), 'r_lo': np.float64(0.16), 'r_hi': np.float64(0.188), 'share_no_crossing': 0.0, 'nstar_lo': 58600000.0, 'nstar_hi': 442000000.0, 'nstar': np.float64(176000000.0), 'N': np.int64(10000)}
+{'corpus': 'sv_tifu', 'judge': 'qwen', 'r_same': np.float64(0.05), 'r_lo': np.float64(0.05), 'r_hi': np.float64(0.095), 'share_no_crossing': 0.322, 'nstar_lo': 72200000000.0, 'nstar_hi': 435000000000000.0, 'nstar': np.float64(435000000000000.0), 'N': np.int64(10000)}
+{'corpus': 'sv_tifu', 'judge': 'gemma', 'r_same': np.float64(0.08), 'r_lo': np.float64(0.05), 'r_hi': np.float64(0.095), 'share_no_crossing': 0.047, 'nstar_lo': 72200000000.0, 'nstar_hi': 435000000000000.0, 'nstar': np.float64(715000000000.0), 'N': np.int64(10000)}
+{'corpus': 'sv_trump', 'judge': 'qwen', 'r_same': np.float64(0.24), 'r_lo': np.float64(0.216), 'r_hi': np.float64(0.258), 'share_no_crossing': 0.0, 'nstar_lo': 307.0, 'nstar_hi': 1540.0, 'nstar': np.float64(595.0), 'N': np.int64(10000)}
+{'corpus': 'sv_trump', 'judge': 'gemma', 'r_same': np.float64(0.314), 'r_lo': np.float64(0.306), 'r_hi': np.float64(0.33), 'share_no_crossing': 0.0, 'nstar_lo': 34.6, 'nstar_hi': 68.2, 'nstar': np.float64(53.4), 'N': np.int64(10000)}
+{'corpus': 'trump', 'judge': 'qwen', 'r_same': np.float64(0.244), 'r_lo': np.float64(0.17), 'r_hi': np.float64(0.253), 'share_no_crossing': 0.0, 'nstar_lo': 365.0, 'nstar_hi': 13300.0, 'nstar': np.float64(511.0), 'N': np.int64(30136)}
+{'corpus': 'trump', 'judge': 'gemma', 'r_same': np.float64(0.314), 'r_lo': np.float64(0.293), 'r_hi': np.float64(0.334), 'share_no_crossing': 0.0, 'nstar_lo': 30.1, 'nstar_hi': 98.0, 'nstar': np.float64(52.9), 'N': np.int64(30136)}
+{'corpus': 'ts', 'judge': 'qwen', 'r_same': np.float64(0.162), 'r_lo': np.float64(0.148), 'r_hi': np.float64(0.181), 'share_no_crossing': 0.0, 'nstar_lo': 2800000.0, 'nstar_hi': 34400000.0, 'nstar': np.float64(11300000.0), 'N': np.int64(50000)}
+{'corpus': 'ts', 'judge': 'gemma', 'r_same': np.float64(0.184), 'r_lo': np.float64(0.168), 'r_hi': np.float64(0.195), 'share_no_crossing': 0.0, 'nstar_lo': 1050000.0, 'nstar_hi': 6950000.0, 'nstar': np.float64(2260000.0), 'N': np.int64(50000)}
+
+    corpus judge  r_same  r_lo  r_hi  share_no_crossing     nstar_lo     nstar_hi        nstar       N
+      bsky  qwen     NaN 0.050 0.130              0.737          NaN          NaN          NaN     NaN
+      bsky gemma     NaN 0.050 0.129              0.656          NaN          NaN          NaN     NaN
+  citizens  qwen   0.225 0.198 0.255              0.000 1.540000e+02 1.520000e+03 4.790000e+02  7849.0
+  citizens gemma   0.355 0.319 0.382              0.000 3.960000e+00 2.030000e+01 7.660000e+00  7849.0
+     covid  qwen   0.200 0.191 0.208              0.000 1.010000e+04 2.540000e+04 1.560000e+04 17837.0
+     covid gemma   0.286 0.218 0.298              0.000 2.270000e+02 6.180000e+03 3.460000e+02 17837.0
+   illegal  qwen   0.275 0.252 0.288              0.000 3.110000e+01 1.420000e+02 5.300000e+01 17202.0
+   illegal gemma   0.300 0.286 0.315              0.000 1.130000e+01 3.380000e+01 1.970000e+01 17202.0
+    random  qwen   0.120 0.101 0.181              0.000 3.540000e+05 6.110000e+08 6.930000e+07  7610.0
+    random gemma   0.281 0.261 0.293              0.000 7.300000e+02 3.120000e+03 1.230000e+03  7610.0
+sv_askdocs  qwen   0.146 0.133 0.155              0.000 6.900000e+08 4.490000e+09 1.420000e+09 10000.0
+sv_askdocs gemma   0.172 0.160 0.188              0.000 5.860000e+07 4.420000e+08 1.760000e+08 10000.0
+   sv_tifu  qwen   0.050 0.050 0.095              0.322 7.220000e+10 4.350000e+14 4.350000e+14 10000.0
+   sv_tifu gemma   0.080 0.050 0.095              0.047 7.220000e+10 4.350000e+14 7.150000e+11 10000.0
+  sv_trump  qwen   0.240 0.216 0.258              0.000 3.070000e+02 1.540000e+03 5.950000e+02 10000.0
+  sv_trump gemma   0.314 0.306 0.330              0.000 3.460000e+01 6.820000e+01 5.340000e+01 10000.0
+     trump  qwen   0.244 0.170 0.253              0.000 3.650000e+02 1.330000e+04 5.110000e+02 30136.0
+     trump gemma   0.314 0.293 0.334              0.000 3.010000e+01 9.800000e+01 5.290000e+01 30136.0
+        ts  qwen   0.162 0.148 0.181              0.000 2.800000e+06 3.440000e+07 1.130000e+07 50000.0
+        ts gemma   0.184 0.168 0.195              0.000 1.050000e+06 6.950000e+06 2.260000e+06 50000.0
+manifold_d2 9 within1.5 full 9 pilot 9
+manifold_d4 9 within1.5 full 9 pilot 9
+manifold_d8 7 within1.5 full 7 pilot 7
+zipf_k200 5 within1.5 full 0 pilot 0
+askdocs_gtr_s42 6 within1.5 full 5 pilot 5
+askdocs_gtr_s43 6 within1.5 full 6 pilot 6
+askdocs_gtr_s44 4 within1.5 full 3 pilot 4
+askdocs_qwen3 5 within1.5 full 5 pilot 5
+trump_gtr_s42 2 within1.5 full 0 pilot 1
+trump_gtr_s43 2 within1.5 full 1 pilot 1
+trump_gtr_s44 2 within1.5 full 1 pilot 1
+trump_qwen3 2 within1.5 full 2 pilot 2
+tifu_gtr_s42 6 within1.5 full 6 pilot 5
+tifu_gtr_s43 6 within1.5 full 6 pilot 6
+tifu_gtr_s44 5 within1.5 full 5 pilot 5
+tifu_qwen3 6 within1.5 full 6 pilot 6
+census_random_qwen3 3 within1.5 full 2 pilot 2
+census_citizens_qwen3 2 within1.5 full 0 pilot 0
+census_trump_qwen3 2 within1.5 full 1 pilot 1
+census_covid_qwen3 3 within1.5 full 3 pilot 3
+census_illegal_qwen3 3 within1.5 full 2 pilot 1
+ts_qwen3 6 within1.5 full 5 pilot 5
+bsky_qwen3 5 within1.5 full 3 pilot 2
+
+                       cases  in15_full  in15_pilot  med_pilot
+corpus                                                        
+askdocs_gtr_s42          6.0        5.0         5.0      0.995
+askdocs_gtr_s43          6.0        6.0         6.0      1.065
+askdocs_gtr_s44          4.0        3.0         4.0      0.945
+askdocs_qwen3            5.0        5.0         5.0      1.060
+bsky_qwen3               5.0        3.0         2.0      0.660
+census_citizens_qwen3    2.0        0.0         0.0      2.460
+census_covid_qwen3       3.0        3.0         3.0      1.130
+census_illegal_qwen3     3.0        2.0         1.0      1.680
+census_random_qwen3      3.0        2.0         2.0      0.760
+census_trump_qwen3       2.0        1.0         1.0      1.280
+manifold_d2              9.0        9.0         9.0      1.170
+manifold_d4              9.0        9.0         9.0      1.090
+manifold_d8              7.0        7.0         7.0      1.110
+tifu_gtr_s42             6.0        6.0         5.0      1.280
+tifu_gtr_s43             6.0        6.0         6.0      1.185
+tifu_gtr_s44             5.0        5.0         5.0      1.310
+tifu_qwen3               6.0        6.0         6.0      0.990
+trump_gtr_s42            2.0        0.0         1.0      1.615
+trump_gtr_s43            2.0        1.0         1.0      2.135
+trump_gtr_s44            2.0        1.0         1.0      1.515
+trump_qwen3              2.0        2.0         2.0      0.910
+ts_qwen3                 6.0        5.0         5.0      0.875
+zipf_k200                5.0        0.0         0.0     67.980
