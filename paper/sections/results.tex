@@ -112,32 +112,36 @@ $n/N$ & $M$ (true) & $G$ & $G\,(1 - n/N)$ & error \\
 \subsection{Choosing the resolution}
 \label{sec:rcal}
 
-The resolution $r$ is a cosine distance, and a user needs to know what content it groups. For each of the ten real corpora under Qwen3, we drew about 40 document pairs in each of ten distance bins from 0 to 1, 3{,}913 pairs in all, and asked Qwen3.8-27B whether the two documents are about the same specific content (the same claim, question, event or story), the same general topic, or unrelated (Appendix~\ref{app:prompts}). The share judged the same content falls with distance in every corpus. Where it crosses one half depends on the corpus, from $r = 0.05$ on TIFU to 0.32 on a census slice, and on Bluesky it stays below one half even for the nearest pairs (Table~\ref{tab:rcal}). Long first person stories differ in their details even when they are close in embedding space, while short posts that repeat a slogan are the same content at a larger distance. A cosine distance therefore does not carry one meaning across corpora, and a user who wants $r$ to mean ``the same claim'' should judge a few hundred pilot pairs binned by distance and take the distance where the share of same content crosses the chosen level.
+The resolution $r$ is a cosine distance, and a user needs to know what content it groups. For each of the ten real corpora under Qwen3, we drew about 40 document pairs in each of ten distance bins from 0 to 1, 3{,}913 pairs in all, and asked Qwen3.8-27B whether the two documents are about the same specific content (the same claim, question, event or story), the same general topic, or unrelated (Appendix~\ref{app:prompts}). The share judged the same content falls with distance in every corpus. Where it crosses one half depends on the corpus, from $r = 0.05$ on TIFU to 0.28 on a census slice, and on Bluesky it stays below one half even for the nearest pairs (Table~\ref{tab:rcal}). Long first person stories differ in their details even when they are close in embedding space, while short posts that repeat a slogan are the same content at a larger distance. A cosine distance therefore does not carry one meaning across corpora, and a user who wants $r$ to mean ``the same claim'' should judge a few hundred pilot pairs binned by distance and take the distance where the share of same content crosses the chosen level.
+
+A second model, Gemma-4-31B-it, judged the same pairs with the same prompt. The two agree on 71\% of pairs (Cohen's $\kappa = 0.55$; $\kappa = 0.68$ for same content against the other two labels). Gemma calls more pairs the same content, 39\% against 28\%, so its crossing lies farther out in every corpus, by 0.02 to 0.16, and a user should report the judge along with the encoder.
 
 \subsection{What a target costs}
 \label{sec:feasible}
 
-With $r$ calibrated, Equation~\ref{eq:nstar} says what a coverage target costs in each corpus. Table~\ref{tab:rcal} gives the sample size at which half of the corpus lies within the same content distance of some sampled document. The answers span twelve orders of magnitude. On the census slices and the Trump forum corpus, whose posts repeat a few claims, a few dozen to about a thousand documents suffice, and where the grid reaches the target the empirical sample size is within a factor of two of the prediction. On AskDocs, TIFU and Truth Social the required sample exceeds the corpus by orders of magnitude: almost no document has another document in the corpus about the same specific content, and $G$ at the largest sample stays above 0.94. In those corpora no sample covers the specific content, and an analysis that needs every claim must read every document. The formula says which of the two situations a corpus is in before any annotation is bought.
+Table~\ref{tab:rcal} gives, under each judge, the sample size at which half of the corpus lies within the same content distance of some sampled document. On the Trump forum corpus and three census slices, whose posts repeat a few claims, between eight and about six hundred documents suffice under either judge, and where the grid reaches the target the empirical sample size is within a factor of 1.6 of the prediction. On AskDocs, TIFU and Truth Social the required sample exceeds the corpus by orders of magnitude under either judge, and $G$ at the largest sample stays above 0.9: almost no document has another about the same specific content, so an analysis that needs every claim must read every document. The census random slice, drawn from the census export with no keyword filter, falls on either side depending on the judge, since its two crossings differ by a factor of 2.3 and $n^{*}$ grows as $r^{-12.9}$. The formula says which situation a corpus is in before any annotation is bought.
 
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lrrr}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrcrr}
 \toprule
-Corpus & $d$ & $r_{\mathrm{same}}$ & $n^{*}(0.5, r_{\mathrm{same}})$ \\
+ & & $r_{\mathrm{same}}$ & \multicolumn{2}{c}{$n^{*}(0.5, r_{\mathrm{same}})$} \\
+Corpus & $d$ & Q / G & Qwen & Gemma \\
 \midrule
-TIFU & 13.6 & 0.05 & $4 \times 10^{14}$ \\
-AskDocs & 12.8 & 0.15 & $1 \times 10^{9}$ \\
-Truth Social & 12.6 & 0.16 & $1 \times 10^{7}$ \\
-Census citizens & 9.1 & 0.23 & 480 (385) \\
-Trump (forum) & 9.0 & 0.24 & 600 (622) \\
-Census random & 12.9 & 0.28 & 1{,}100 (660) \\
-Census covid & 10.7 & 0.29 & 350 (307) \\
-Census illegal & 11.4 & 0.30 & 20 \\
-Census trump & 9.0 & 0.32 & 50 \\
-Bluesky & 16.0 & none & \\
+TIFU & 13.6 & 0.05 / 0.08 & $4 \times 10^{14}$ & $7 \times 10^{11}$ \\
+AskDocs & 12.8 & 0.15 / 0.17 & $1 \times 10^{9}$ & $2 \times 10^{8}$ \\
+Cens.\ random & 12.9 & 0.12 / 0.28 & $7 \times 10^{7}$ & 1{,}200 (780) \\
+Truth Social & 12.6 & 0.16 / 0.18 & $1 \times 10^{7}$ & $2 \times 10^{6}$ \\
+Cens.\ covid & 10.7 & 0.20 / 0.29 & 16{,}000 & 350 (280) \\
+Trump (forum) & 9.0 & 0.24 / 0.31 & 600 (540) & 50 \\
+Cens.\ trump & 9.0 & 0.24 / 0.31 & 510 (530) & 50 \\
+Cens.\ citizens & 9.1 & 0.23 / 0.36 & 480 (390) & 8 \\
+Cens.\ illegal & 11.4 & 0.28 / 0.30 & 50 & 20 \\
+Bluesky & 16.0 & none & & \\
 \bottomrule
 \end{tabular}
-\caption{The distance $r_{\mathrm{same}}$ at which half of document pairs are judged the same specific content (Qwen3.8-27B, interpolated between bins of about 40 pairs), and the sample size the collapse law prescribes for an isolation rate of 0.5 at that distance, rounded. In parentheses, the empirical sample size where the grid reaches the target. On Bluesky 42\% of pairs closer than 0.1 are judged the same content, so no distance qualifies.}
+\caption{The distance $r_{\mathrm{same}}$ at which half of document pairs are judged the same specific content, interpolated between bins of about 40 pairs, under Qwen3.8-27B (Q) and Gemma-4-31B-it (G), and the sample size the collapse law prescribes for an isolation rate of 0.5 at that distance, rounded. In parentheses, the empirical sample size where the grid of 100 to 7{,}000 reaches the target. On Bluesky fewer than half of the pairs closer than 0.1 are judged the same content under either judge, so no distance qualifies.}
 \label{tab:rcal}
 \end{table}

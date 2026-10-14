@@ -64,7 +64,8 @@ def collapse():
         ax.set_xscale("log"); ax.set_ylim(0, 1.02)
         ax.xaxis.set_minor_formatter(mpl.ticker.NullFormatter())
         ax.set_title(label, fontsize=7.5, loc="left")
-        ax.text(0.04, 0.06, f"d = {d:.1f}\nout of sample $R^2$ = {r2:.2f}", transform=ax.transAxes, ha="left", va="bottom", fontsize=6.5)
+        corner = (0.04, 0.05, "left", "bottom") if label == "Trump" else (0.97, 0.97, "right", "top")
+        ax.text(corner[0], corner[1], f"d = {d:.1f}, $R^2$ = {r2:.2f}", transform=ax.transAxes, ha=corner[2], va=corner[3], fontsize=6.5)
     for ax in axes[1]:
         ax.set_xlabel("$n\\,r^{d}$")
     for ax in axes[:, 0]:

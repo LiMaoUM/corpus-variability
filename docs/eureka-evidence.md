@@ -248,3 +248,12 @@ fractions 0.01 to 0.7 (`scripts/fpc_census.py`, 144 cells): raw MAE 0.114 (max 0
 The distance at which half of pairs are judged the same specific content is corpus dependent:
 TIFU 0.05, AskDocs 0.15, Truth Social 0.16, census 0.22 to 0.30, Trump forum 0.24, Bluesky never
 (0.42 at r < 0.1). A cosine r has no corpus-independent meaning; calibrate per corpus.
+
+### Correction and cross-judge (2026-10-13)
+
+Four census corpora (random, trump, covid, illegal) had Gemma labels in the "Qwen3.8" calibration;
+re-judged with Qwen3.8-27B on the same pairs. Qwen crossings for them fall to 0.12, 0.24, 0.20,
+0.275. Gemma-4-31B-it as second judge on all 3,913 pairs: agreement 0.71, kappa 0.55 (0.68 for SAME
+vs rest); Gemma is more liberal with SAME, so r_same moves out by 0.02 to 0.16. The feasibility
+split holds under both judges for eight of nine corpora with a crossing; census random flips
+(n* 7e7 under Qwen, 1,200 under Gemma). Paper Section 5.6, 5.7 and Table 4 updated.

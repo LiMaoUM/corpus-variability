@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{43}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Abbas et~al.(2023)Abbas, Tirumala, Simig, Ganguli, and Morcos}]{abbas2023semdedup}
@@ -21,6 +21,11 @@ Anne Chao, Chun-Huo Chiu, Sebastien Vill{\'e}ger, I-Fang Sun, Simon Thorn, Yi-Ch
 \newblock \href {https://doi.org/10.1002/ecm.1343} {An attribute-diversity approach to functional diversity, functional beta diversity, and related (dis)similarity measures}.
 \newblock \emph{Ecological Monographs}, 89(2):e01343.
 
+\bibitem[{Chao et~al.(2014)Chao, Gotelli, Hsieh, Sander, Ma, Colwell, and Ellison}]{chao2014hill}
+Anne Chao, Nicholas~J. Gotelli, T.~C. Hsieh, Elizabeth~L. Sander, K.~H. Ma, Robert~K. Colwell, and Aaron~M. Ellison. 2014.
+\newblock \href {https://doi.org/10.1890/13-0133.1} {Rarefaction and extrapolation with {Hill} numbers: A framework for sampling and estimation in species diversity studies}.
+\newblock \emph{Ecological Monographs}, 84(1):45--67.
+
 \bibitem[{Chao and Jost(2012)}]{chao2012coverage}
 Anne Chao and Lou Jost. 2012.
 \newblock \href {https://doi.org/10.1890/11-1952.1} {Coverage-based rarefaction and extrapolation: Standardizing samples by completeness rather than size}.
@@ -36,6 +41,11 @@ William~G. Cochran. 1977.
 \newblock \emph{Sampling Techniques}, 3rd edition.
 \newblock John Wiley \& Sons, New York.
 
+\bibitem[{Colwell et~al.(2012)Colwell, Chao, Gotelli, Lin, Mao, Chazdon, and Longino}]{colwell2012}
+Robert~K. Colwell, Anne Chao, Nicholas~J. Gotelli, Shang-Yi Lin, Chang~Xuan Mao, Robin~L. Chazdon, and John~T. Longino. 2012.
+\newblock \href {https://doi.org/10.1093/jpe/rtr044} {Models and estimators linking individual-based and sample-based rarefaction, extrapolation and comparison of assemblages}.
+\newblock \emph{Journal of Plant Ecology}, 5(1):3--21.
+
 \bibitem[{De~Paoli and Mathis(2024)}]{depaoli2024}
 Stefano De~Paoli and Walter~Stan Mathis. 2024.
 \newblock \href {https://arxiv.org/abs/2401.03239} {Reflections on inductive thematic saturation as a potential metric for measuring the validity of an inductive thematic analysis with {LLMs}}.
@@ -45,6 +55,11 @@ Stefano De~Paoli and Walter~Stan Mathis. 2024.
 Bradley Efron and Ronald Thisted. 1976.
 \newblock \href {https://doi.org/10.1093/biomet/63.3.435} {Estimating the number of unseen species: How many words did {Shakespeare} know?}
 \newblock \emph{Biometrika}, 63(3):435--447.
+
+\bibitem[{Ethayarajh(2019)}]{ethayarajh2019}
+Kawin Ethayarajh. 2019.
+\newblock \href {https://doi.org/10.18653/v1/D19-1006} {How contextual are contextualized word representations? {C}omparing the geometry of {BERT}, {ELMo}, and {GPT-2} embeddings}.
+\newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)}, pages 55--65, Hong Kong, China. Association for Computational Linguistics.
 
 \bibitem[{Evans et~al.(2002)Evans, Jones, and Schmidt}]{evans2002}
 Dafydd Evans, Antonia~J. Jones, and Wolfgang~M. Schmidt. 2002.
@@ -61,6 +76,11 @@ Dan Friedman and Adji~Bousso Dieng. 2023.
 \newblock \href {https://arxiv.org/abs/2210.02410} {The vendi score: A diversity evaluation metric for machine learning}.
 \newblock \emph{Transactions on Machine Learning Research}.
 
+\bibitem[{Gale and Sampson(1995)}]{gale1995}
+William~A. Gale and Geoffrey Sampson. 1995.
+\newblock \href {https://doi.org/10.1080/09296179508590051} {Good-{T}uring frequency estimation without tears}.
+\newblock \emph{Journal of Quantitative Linguistics}, 2(3):217--237.
+
 \bibitem[{{Gemma Team}(2026)}]{gemma4}
 {Gemma Team}. 2026.
 \newblock \href {https://arxiv.org/abs/2607.02770} {Gemma 4 technical report}.
@@ -71,10 +91,20 @@ I.~J. Good. 1953.
 \newblock \href {https://doi.org/10.1093/biomet/40.3-4.237} {The population frequencies of species and the estimation of population parameters}.
 \newblock \emph{Biometrika}, 40(3-4):237--264.
 
+\bibitem[{Good and Toulmin(1956)}]{good1956}
+I.~J. Good and G.~H. Toulmin. 1956.
+\newblock \href {https://doi.org/10.1093/biomet/43.1-2.45} {The number of new species, and the increase in population coverage, when a sample is increased}.
+\newblock \emph{Biometrika}, 43(1--2):45--63.
+
 \bibitem[{Grassberger and Procaccia(1983)}]{grassberger1983}
 Peter Grassberger and Itamar Procaccia. 1983.
 \newblock \href {https://doi.org/10.1016/0167-2789(83)90298-1} {Measuring the strangeness of strange attractors}.
 \newblock \emph{Physica D: Nonlinear Phenomena}, 9(1--2):189--208.
+
+\bibitem[{Groves et~al.(2009)Groves, Fowler, Couper, Lepkowski, Singer, and Tourangeau}]{groves2009survey}
+Robert~M. Groves, Floyd~J. Fowler, Mick~P. Couper, James~M. Lepkowski, Eleanor Singer, and Roger Tourangeau. 2009.
+\newblock \emph{Survey Methodology}, 2 edition.
+\newblock John Wiley \& Sons, Hoboken, NJ.
 
 \bibitem[{Guest et~al.(2006)Guest, Bunce, and Johnson}]{guest2006}
 Greg Guest, Arwen Bunce, and Laura Johnson. 2006.

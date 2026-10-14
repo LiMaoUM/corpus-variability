@@ -12,8 +12,11 @@
 \citation{penrose2003rgg}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
 \citation{good1953}
+\citation{gale1995}
+\citation{good1956}
 \citation{chao1984}
 \citation{chao2012coverage}
+\citation{colwell2012,chao2014hill}
 \citation{efron1976}
 \citation{orlitsky2016unseen}
 \citation{hajic2025}
@@ -45,12 +48,14 @@
 \citation{depaoli2024}
 \citation{pham2024topicgpt}
 \citation{maeda2025}
+\citation{ethayarajh2019}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Diversity of a sample in embedding space}{3}{subsection.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Saturation in practice}{3}{subsection.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Method}{3}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Setting and estimand}{3}{subsection.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The collapse law}{3}{subsection.3.2}\protected@file@percent }
 \citation{facco2017twonn}
+\citation{groves2009survey}
 \citation{ni2022gtr}
 \citation{qwen3embedding2025}
 \newlabel{eq:collapse}{{4}{4}{The collapse law}{equation.4}{}}
@@ -67,85 +72,91 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}The isolation rate collapses on $n r^{d}$}{5}{subsection.5.2}\protected@file@percent }
 \newlabel{sec:collapse}{{5.2}{5}{The isolation rate collapses on $n r^{d}$}{subsection.5.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}The sample size formula}{5}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}The diagnostic}{5}{subsection.5.4}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The collapse law on 17 corpus and encoder pairs, sorted by the full out of sample $R^2$; the line separates the pairs that pass the diagnostic. $d$: TwoNN dimension, mean and sd over five pilots of 2{,}000 documents (and over three samples for the GTR forum corpora). $d$, ratio: the ratio of the $\log r$ and $\log n$ coefficients. $b$: exponent of Equation~\ref {eq:collapse} fitted on cells with $n \le 1{,}000$. $R^2$ pilot: fit on subsamples of one pilot with $n \le 750$, scored on $n$ from 1{,}000 to 2{,}000. $R^2$ full: fit on $n \le 1{,}000$, scored on $n$ up to 7{,}000. Errors: mean absolute error of the predicted $G$ at the largest $n$, for the collapse law and for a separate curve in $n$ at each radius.}}{6}{table.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:collapse}{{1}{6}{The collapse law on 17 corpus and encoder pairs, sorted by the full out of sample $R^2$; the line separates the pairs that pass the diagnostic. $d$: TwoNN dimension, mean and sd over five pilots of 2{,}000 documents (and over three samples for the GTR forum corpora). $d$, ratio: the ratio of the $\log r$ and $\log n$ coefficients. $b$: exponent of Equation~\ref {eq:collapse} fitted on cells with $n \le 1{,}000$. $R^2$ pilot: fit on subsamples of one pilot with $n \le 750$, scored on $n$ from 1{,}000 to 2{,}000. $R^2$ full: fit on $n \le 1{,}000$, scored on $n$ up to 7{,}000. Errors: mean absolute error of the predicted $G$ at the largest $n$, for the collapse law and for a separate curve in $n$ at each radius}{table.caption.1}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Probes of the collapse failure. Near duplicates: share of a 5{,}000-document sample with a neighbour within cosine distance 0.02. Local $d$: range of the TwoNN dimension over twenty $k$-means clusters, and its coefficient of variation.}}{6}{table.caption.3}\protected@file@percent }
 \newlabel{tab:probe}{{2}{6}{Probes of the collapse failure. Near duplicates: share of a 5{,}000-document sample with a neighbour within cosine distance 0.02. Local $d$: range of the TwoNN dimension over twenty $k$-means clusters, and its coefficient of variation}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}The diagnostic}{6}{subsection.5.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5}The finite population correction}{6}{subsection.5.5}\protected@file@percent }
 \newlabel{sec:fpc}{{5.5}{6}{The finite population correction}{subsection.5.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Choosing the resolution}{6}{subsection.5.6}\protected@file@percent }
-\newlabel{sec:rcal}{{5.6}{6}{Choosing the resolution}{subsection.5.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Isolation rate $G$ against $n r^{d}$ on a log scale, one panel per corpus (GTR encoder for the forum corpora), colour by radius $r$, one draw per cell. Points from different radii fall on one curve where the law holds (the manifolds, AskDocs, TIFU) and separate where it fails (Trump, the Zipf mixture). The grey line is the fit of Equation~\ref {eq:collapse} on cells with $n \le 1{,}000$; the annotation gives $d$ and the full out of sample $R^2$ of Table~\ref {tab:collapse}.}}{7}{figure.caption.2}\protected@file@percent }
 \newlabel{fig:collapse}{{1}{7}{Isolation rate $G$ against $n r^{d}$ on a log scale, one panel per corpus (GTR encoder for the forum corpora), colour by radius $r$, one draw per cell. Points from different radii fall on one curve where the law holds (the manifolds, AskDocs, TIFU) and separate where it fails (Trump, the Zipf mixture). The grey line is the fit of Equation~\ref {eq:collapse} on cells with $n \le 1{,}000$; the annotation gives $d$ and the full out of sample $R^2$ of Table~\ref {tab:collapse}}{figure.caption.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Missing mass of the finite corpus by sampling fraction, mean over eight Qwen3 corpora and three radii (the 25th, 50th and 75th percentiles of the pilot's nearest neighbour distances). The last column is the mean absolute error of the corrected estimate.}}{7}{table.caption.4}\protected@file@percent }
 \newlabel{tab:fpc}{{3}{7}{Missing mass of the finite corpus by sampling fraction, mean over eight Qwen3 corpora and three radii (the 25th, 50th and 75th percentiles of the pilot's nearest neighbour distances). The last column is the mean absolute error of the corrected estimate}{table.caption.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}What a target costs}{7}{subsection.5.7}\protected@file@percent }
-\newlabel{sec:feasible}{{5.7}{7}{What a target costs}{subsection.5.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces The distance $r_{\mathrm  {same}}$ at which half of document pairs are judged the same specific content (Qwen3.8-27B, interpolated between bins of about 40 pairs), and the sample size the collapse law prescribes for an isolation rate of 0.5 at that distance, rounded. In parentheses, the empirical sample size where the grid reaches the target. On Bluesky 42\% of pairs closer than 0.1 are judged the same content, so no distance qualifies.}}{8}{table.caption.5}\protected@file@percent }
-\newlabel{tab:rcal}{{4}{8}{The distance $r_{\mathrm {same}}$ at which half of document pairs are judged the same specific content (Qwen3.8-27B, interpolated between bins of about 40 pairs), and the sample size the collapse law prescribes for an isolation rate of 0.5 at that distance, rounded. In parentheses, the empirical sample size where the grid reaches the target. On Bluesky 42\% of pairs closer than 0.1 are judged the same content, so no distance qualifies}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Choosing the resolution}{7}{subsection.5.6}\protected@file@percent }
+\newlabel{sec:rcal}{{5.6}{7}{Choosing the resolution}{subsection.5.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces The distance $r_{\mathrm  {same}}$ at which half of document pairs are judged the same specific content, interpolated between bins of about 40 pairs, under Qwen3.8-27B (Q) and Gemma-4-31B-it (G), and the sample size the collapse law prescribes for an isolation rate of 0.5 at that distance, rounded. In parentheses, the empirical sample size where the grid of 100 to 7{,}000 reaches the target. On Bluesky fewer than half of the pairs closer than 0.1 are judged the same content under either judge, so no distance qualifies.}}{8}{table.caption.5}\protected@file@percent }
+\newlabel{tab:rcal}{{4}{8}{The distance $r_{\mathrm {same}}$ at which half of document pairs are judged the same specific content, interpolated between bins of about 40 pairs, under Qwen3.8-27B (Q) and Gemma-4-31B-it (G), and the sample size the collapse law prescribes for an isolation rate of 0.5 at that distance, rounded. In parentheses, the empirical sample size where the grid of 100 to 7{,}000 reaches the target. On Bluesky fewer than half of the pairs closer than 0.1 are judged the same content under either judge, so no distance qualifies}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}What a target costs}{8}{subsection.5.7}\protected@file@percent }
+\newlabel{sec:feasible}{{5.7}{8}{What a target costs}{subsection.5.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{8}{section.6}\protected@file@percent }
 \bibdata{references}
 \bibcite{abbas2023semdedup}{{1}{2023}{{Abbas et~al.}}{{Abbas, Tirumala, Simig, Ganguli, and Morcos}}}
 \bibcite{ansuini2019}{{2}{2019}{{Ansuini et~al.}}{{Ansuini, Laio, Macke, and Zoccolan}}}
 \bibcite{chao1984}{{3}{1984}{{Chao}}{{}}}
 \bibcite{chao2019attribute}{{4}{2019}{{Chao et~al.}}{{Chao, Chiu, Vill{\'e}ger, Sun, Thorn, Lin, Chiang, and Sherwin}}}
-\bibcite{chao2012coverage}{{5}{2012}{{Chao and Jost}}{{}}}
-\bibcite{chung2018unknown}{{6}{2018}{{Chung et~al.}}{{Chung, Haas, Upfal, and Kraska}}}
-\bibcite{cochran1977}{{7}{1977}{{Cochran}}{{}}}
-\bibcite{depaoli2024}{{8}{2024}{{De~Paoli and Mathis}}{{}}}
-\bibcite{efron1976}{{9}{1976}{{Efron and Thisted}}{{}}}
-\bibcite{evans2002}{{10}{2002}{{Evans et~al.}}{{Evans, Jones, and Schmidt}}}
-\bibcite{facco2017twonn}{{11}{2017}{{Facco et~al.}}{{Facco, d'Errico, Rodriguez, and Laio}}}
-\bibcite{friedman2023vendi}{{12}{2023}{{Friedman and Dieng}}{{}}}
-\bibcite{gemma4}{{13}{2026}{{Gemma Team}}{{}}}
-\bibcite{good1953}{{14}{1953}{{Good}}{{}}}
-\bibcite{grassberger1983}{{15}{1983}{{Grassberger and Procaccia}}{{}}}
-\bibcite{guest2006}{{16}{2006}{{Guest et~al.}}{{Guest, Bunce, and Johnson}}}
-\bibcite{hajic2025}{{17}{2025}{{Haji{\v c} and Moss}}{{}}}
-\bibcite{hennink2022}{{18}{2022}{{Hennink and Kaiser}}{{}}}
-\bibcite{kish1965}{{19}{1965}{{Kish}}{{}}}
-\bibcite{kynkaanniemi2019}{{20}{2019}{{Kynk{\"a}{\"a}nniemi et~al.}}{{Kynk{\"a}{\"a}nniemi, Karras, Laine, Lehtinen, and Aila}}}
-\bibcite{lee2022dedup}{{21}{2022}{{Lee et~al.}}{{Lee, Ippolito, Nystrom, Zhang, Eck, Callison-Burch, and Carlini}}}
-\bibcite{levina2005}{{22}{2005}{{Levina and Bickel}}{{}}}
-\bibcite{maeda2025}{{23}{2025}{{Maeda et~al.}}{{Maeda, Wang, Zhang, Banks, and Kenney}}}
-\bibcite{maurer2022missing}{{24}{2022}{{Maurer}}{{}}}
-\bibcite{naeem2020}{{25}{2020}{{Naeem et~al.}}{{Naeem, Oh, Uh, Choi, and Yoo}}}
-\bibcite{ni2022gtr}{{26}{2022}{{Ni et~al.}}{{Ni, Qu, Lu, Dai, Hernandez~Abrego, Ma, Zhao, Luan, Hall, Chang, and Yang}}}
-\bibcite{orlitsky2016unseen}{{27}{2016}{{Orlitsky et~al.}}{{Orlitsky, Suresh, and Wu}}}
-\bibcite{pal2026blindspot}{{28}{2026}{{Pal et~al.}}{{Pal, Bhattacharya, and Singh}}}
-\bibcite{pasarkar2024cousins}{{29}{2024}{{Pasarkar and Dieng}}{{}}}
-\bibcite{penrose2003rgg}{{30}{2003}{{Penrose}}{{}}}
-\bibcite{pham2024topicgpt}{{31}{2024}{{Pham et~al.}}{{Pham, Hoyle, Sun, Resnik, and Iyyer}}}
-\bibcite{pillutla2021mauve}{{32}{2021}{{Pillutla et~al.}}{{Pillutla, Swayamdipta, Zellers, Thickstun, Welleck, Choi, and Harchaoui}}}
-\bibcite{pope2021intrinsic}{{33}{2021}{{Pope et~al.}}{{Pope, Zhu, Abdelkader, Goldblum, and Goldstein}}}
-\bibcite{sener2018coreset}{{34}{2018}{{Sener and Savarese}}{{}}}
-\bibcite{tran2017}{{35}{2017}{{Tran et~al.}}{{Tran, Porcher, Tran, and Ravaud}}}
-\bibcite{tulchinskii2023}{{36}{2023}{{Tulchinskii et~al.}}{{Tulchinskii, Kuznetsov, Kushnareva, Cherniavskii, Nikolenko, Burnaev, Barannikov, and Piontkovskaya}}}
-\bibcite{qwen3embedding2025}{{37}{2025}{{Zhang et~al.}}{{Zhang, Li, Long, Zhang, Lin, Yang, Xie, Yang, Liu, Lin, Huang, and Zhou}}}
+\bibcite{chao2014hill}{{5}{2014}{{Chao et~al.}}{{Chao, Gotelli, Hsieh, Sander, Ma, Colwell, and Ellison}}}
+\bibcite{chao2012coverage}{{6}{2012}{{Chao and Jost}}{{}}}
+\bibcite{chung2018unknown}{{7}{2018}{{Chung et~al.}}{{Chung, Haas, Upfal, and Kraska}}}
+\bibcite{cochran1977}{{8}{1977}{{Cochran}}{{}}}
+\bibcite{colwell2012}{{9}{2012}{{Colwell et~al.}}{{Colwell, Chao, Gotelli, Lin, Mao, Chazdon, and Longino}}}
+\bibcite{depaoli2024}{{10}{2024}{{De~Paoli and Mathis}}{{}}}
+\bibcite{efron1976}{{11}{1976}{{Efron and Thisted}}{{}}}
+\bibcite{ethayarajh2019}{{12}{2019}{{Ethayarajh}}{{}}}
+\bibcite{evans2002}{{13}{2002}{{Evans et~al.}}{{Evans, Jones, and Schmidt}}}
+\bibcite{facco2017twonn}{{14}{2017}{{Facco et~al.}}{{Facco, d'Errico, Rodriguez, and Laio}}}
+\bibcite{friedman2023vendi}{{15}{2023}{{Friedman and Dieng}}{{}}}
+\bibcite{gale1995}{{16}{1995}{{Gale and Sampson}}{{}}}
+\bibcite{gemma4}{{17}{2026}{{Gemma Team}}{{}}}
+\bibcite{good1953}{{18}{1953}{{Good}}{{}}}
+\bibcite{good1956}{{19}{1956}{{Good and Toulmin}}{{}}}
+\bibcite{grassberger1983}{{20}{1983}{{Grassberger and Procaccia}}{{}}}
+\bibcite{groves2009survey}{{21}{2009}{{Groves et~al.}}{{Groves, Fowler, Couper, Lepkowski, Singer, and Tourangeau}}}
+\bibcite{guest2006}{{22}{2006}{{Guest et~al.}}{{Guest, Bunce, and Johnson}}}
+\bibcite{hajic2025}{{23}{2025}{{Haji{\v c} and Moss}}{{}}}
+\bibcite{hennink2022}{{24}{2022}{{Hennink and Kaiser}}{{}}}
+\bibcite{kish1965}{{25}{1965}{{Kish}}{{}}}
+\bibcite{kynkaanniemi2019}{{26}{2019}{{Kynk{\"a}{\"a}nniemi et~al.}}{{Kynk{\"a}{\"a}nniemi, Karras, Laine, Lehtinen, and Aila}}}
+\bibcite{lee2022dedup}{{27}{2022}{{Lee et~al.}}{{Lee, Ippolito, Nystrom, Zhang, Eck, Callison-Burch, and Carlini}}}
+\bibcite{levina2005}{{28}{2005}{{Levina and Bickel}}{{}}}
+\bibcite{maeda2025}{{29}{2025}{{Maeda et~al.}}{{Maeda, Wang, Zhang, Banks, and Kenney}}}
+\bibcite{maurer2022missing}{{30}{2022}{{Maurer}}{{}}}
+\bibcite{naeem2020}{{31}{2020}{{Naeem et~al.}}{{Naeem, Oh, Uh, Choi, and Yoo}}}
+\bibcite{ni2022gtr}{{32}{2022}{{Ni et~al.}}{{Ni, Qu, Lu, Dai, Hernandez~Abrego, Ma, Zhao, Luan, Hall, Chang, and Yang}}}
+\bibcite{orlitsky2016unseen}{{33}{2016}{{Orlitsky et~al.}}{{Orlitsky, Suresh, and Wu}}}
+\bibcite{pal2026blindspot}{{34}{2026}{{Pal et~al.}}{{Pal, Bhattacharya, and Singh}}}
+\bibcite{pasarkar2024cousins}{{35}{2024}{{Pasarkar and Dieng}}{{}}}
+\bibcite{penrose2003rgg}{{36}{2003}{{Penrose}}{{}}}
+\bibcite{pham2024topicgpt}{{37}{2024}{{Pham et~al.}}{{Pham, Hoyle, Sun, Resnik, and Iyyer}}}
+\bibcite{pillutla2021mauve}{{38}{2021}{{Pillutla et~al.}}{{Pillutla, Swayamdipta, Zellers, Thickstun, Welleck, Choi, and Harchaoui}}}
+\bibcite{pope2021intrinsic}{{39}{2021}{{Pope et~al.}}{{Pope, Zhu, Abdelkader, Goldblum, and Goldstein}}}
+\bibcite{sener2018coreset}{{40}{2018}{{Sener and Savarese}}{{}}}
+\bibcite{tran2017}{{41}{2017}{{Tran et~al.}}{{Tran, Porcher, Tran, and Ravaud}}}
+\bibcite{tulchinskii2023}{{42}{2023}{{Tulchinskii et~al.}}{{Tulchinskii, Kuznetsov, Kushnareva, Cherniavskii, Nikolenko, Burnaev, Barannikov, and Piontkovskaya}}}
+\bibcite{qwen3embedding2025}{{43}{2025}{{Zhang et~al.}}{{Zhang, Li, Long, Zhang, Lin, Yang, Xie, Yang, Liu, Lin, Huang, and Zhou}}}
 \citation{gemma4}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Synthetic smoke test}{10}{appendix.A}\protected@file@percent }
-\newlabel{app:smoke}{{A}{10}{Synthetic smoke test}{appendix.A}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Agreement of $1 - G$ with true topic coverage on the Zipf mixtures, 132 samples.}}{10}{table.caption.8}\protected@file@percent }
-\newlabel{tab:smoke}{{5}{10}{Agreement of $1 - G$ with true topic coverage on the Zipf mixtures, 132 samples}{table.caption.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}The sample size formula by corpus}{10}{appendix.B}\protected@file@percent }
-\newlabel{app:nstar}{{B}{10}{The sample size formula by corpus}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Synthetic smoke test}{11}{appendix.A}\protected@file@percent }
+\newlabel{app:smoke}{{A}{11}{Synthetic smoke test}{appendix.A}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Agreement of $1 - G$ with true topic coverage on the Zipf mixtures, 132 samples.}}{11}{table.caption.8}\protected@file@percent }
+\newlabel{tab:smoke}{{5}{11}{Agreement of $1 - G$ with true topic coverage on the Zipf mixtures, 132 samples}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}The sample size formula by corpus}{11}{appendix.B}\protected@file@percent }
+\newlabel{app:nstar}{{B}{11}{The sample size formula by corpus}{appendix.B}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Predicted over empirical sample size for a target isolation rate, in the order of Table~\ref {tab:collapse}. GTR rows pool three samples of the forum corpus.}}{11}{table.caption.9}\protected@file@percent }
 \newlabel{tab:nstar}{{6}{11}{Predicted over empirical sample size for a target isolation rate, in the order of Table~\ref {tab:collapse}. GTR rows pool three samples of the forum corpus}{table.caption.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {C}Coverage of a theme inventory}{11}{appendix.C}\protected@file@percent }
 \newlabel{app:themes}{{C}{11}{Coverage of a theme inventory}{appendix.C}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Share of theme mass present in a sample, range across eight corpora.}}{11}{table.caption.10}\protected@file@percent }
-\newlabel{tab:themes}{{7}{11}{Share of theme mass present in a sample, range across eight corpora}{table.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces (a) Share of theme mass present in a sample against $n$ for the $K = 30$ inventory, eight corpora (points), with the expected coverage from each corpus's masses (lines). (b) Coverage $1 - G$ at the fixed radius $r = 0.34$ for the same samples.}}{11}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:themes}{{2}{11}{(a) Share of theme mass present in a sample against $n$ for the $K = 30$ inventory, eight corpora (points), with the expected coverage from each corpus's masses (lines). (b) Coverage $1 - G$ at the fixed radius $r = 0.34$ for the same samples}{figure.caption.11}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {D}Summary stability}{11}{appendix.D}\protected@file@percent }
 \newlabel{app:summaries}{{D}{11}{Summary stability}{appendix.D}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {E}A bound for functions that are stable at scale $r$}{11}{appendix.E}\protected@file@percent }
-\newlabel{app:bound}{{E}{11}{A bound for functions that are stable at scale $r$}{appendix.E}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {F}Prompts}{11}{appendix.F}\protected@file@percent }
-\newlabel{app:prompts}{{F}{11}{Prompts}{appendix.F}{}}
-\@writefile{toc}{\contentsline {paragraph}{Summary.}{11}{section*.12}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Share of theme mass present in a sample, range across eight corpora.}}{12}{table.caption.10}\protected@file@percent }
+\newlabel{tab:themes}{{7}{12}{Share of theme mass present in a sample, range across eight corpora}{table.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces (a) Share of theme mass present in a sample against $n$ for the $K = 30$ inventory, eight corpora (points), with the expected coverage from each corpus's masses (lines). (b) Coverage $1 - G$ at the fixed radius $r = 0.34$ for the same samples.}}{12}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:themes}{{2}{12}{(a) Share of theme mass present in a sample against $n$ for the $K = 30$ inventory, eight corpora (points), with the expected coverage from each corpus's masses (lines). (b) Coverage $1 - G$ at the fixed radius $r = 0.34$ for the same samples}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}A bound for functions that are stable at scale $r$}{12}{appendix.E}\protected@file@percent }
+\newlabel{app:bound}{{E}{12}{A bound for functions that are stable at scale $r$}{appendix.E}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Prompts}{12}{appendix.F}\protected@file@percent }
+\newlabel{app:prompts}{{F}{12}{Prompts}{appendix.F}{}}
+\@writefile{toc}{\contentsline {paragraph}{Summary.}{12}{section*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Theme naming.}{12}{section*.13}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Enumeration.}{12}{section*.14}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Same content.}{12}{section*.15}\protected@file@percent }

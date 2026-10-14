@@ -24,3 +24,15 @@
   which P(SAME) crosses 0.5 per corpus. Expires 2026-10-12 12:00.
 - **Status log**:
   - 2026-10-13 v1: ran with Qwen3.8-27B (Gemma server congested; Mao's decision). 3,913 pairs over ten corpora. P(SAME) crosses 0.5 at r = 0.05 (TIFU), 0.15 (AskDocs), 0.16 (Truth Social), 0.22 to 0.30 (census), 0.24 (Trump forum); Bluesky never reaches 0.5 (0.42 below 0.1). Hypothesis of a corpus-independent curve rejected; per corpus calibration on a few hundred pairs is the recommended step. Results: results/r_calibration.csv.
+  - 2026-10-13 v2 (correction): the labels for census random, trump, covid and illegal had been
+    written by Gemma-4-31B-it before the switch to Qwen3.8-27B, and the resumable runner kept
+    them. The four were moved to `data/rcal/gemma_initial/` and re-judged by Qwen3.8-27B on the
+    same pairs (seed 5). New Qwen crossings: random 0.12 (was 0.28), census trump 0.24 (0.32),
+    covid 0.20 (0.29), illegal 0.275 (0.30). Cross-judge with Gemma-4-31B-it on all 3,913 pairs
+    (`scripts/rcal_crossjudge.py`, `results/rcal_crossjudge.csv`): agreement 0.71, kappa 0.55,
+    kappa 0.68 for SAME vs rest; Gemma labels SAME on 39% of pairs against 28%, so its crossing is
+    0.02 to 0.16 farther out in every corpus. n* at both crossings in `results/nstar_rsame.csv`
+    (`scripts/nstar_rsame.py`): AskDocs, TIFU, Truth Social infeasible under both judges; Trump
+    forum, census citizens, trump, illegal feasible under both (8 to 600 documents); census random
+    flips (7e7 under Qwen, 1,200 under Gemma); covid 16,000 vs 350. Empirical crossings within
+    a factor of 1.6 of the prediction at eps 0.5 where the grid reaches them.
