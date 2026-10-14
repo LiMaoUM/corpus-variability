@@ -202,3 +202,8 @@ extended to AskDocs and TIFU (five corpora, Gemma). (2) Abstract states the grou
 accuracy and the judge dependence. (3) Housekeeping: censored rows at the point estimate, the census
 covid clause, the Zipf clause, the Data pointer to Table 1, and the collection descriptions of the
 Truth Social and Bluesky seeds. Space: the row-type breakdown moved to an appendix section.
+
+## 2026-10-14: Collection terms for Truth Social and Bluesky (Mao, interactive)
+
+The paper states that public posts were collected through the platforms' public interfaces and says
+nothing about ethics review; terms and review are left to the ARR checklist at submission.
