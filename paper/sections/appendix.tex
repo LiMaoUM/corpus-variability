@@ -178,6 +178,8 @@ For a document function $f$ with range 1 that takes the same value on documents 
 \section{Prompts}
 \label{app:prompts}
 
+The language models ran on NVIDIA H100 GPUs, served with vLLM \citep{kwon2023vllm} at temperature 0. Nearest neighbour search and the fits used NumPy and scikit-learn \citep{pedregosa2011sklearn} on CPU.
+
 \paragraph{Summary.} ``Below are $\{n\}$ documents sampled from a larger collection. Write a summary of the collection in one paragraph of at most 150 words. Cover the main themes in proportion to how often they appear, name notable minority themes briefly, and do not mention individual document numbers.''
 
 \paragraph{Theme naming.} ``The $\{m\}$ documents below were grouped together because they are about the same theme. Give the theme a short name (at most 8 words) and a one-sentence definition that would let a reader decide whether a new document belongs to it. Answer as JSON with keys name and definition.''
