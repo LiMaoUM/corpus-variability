@@ -1,11 +1,11 @@
 \section*{Limitations}
 
-The resolution $r$ is a cosine distance in one encoder's space. The law held under both encoders on AskDocs and TIFU, but $d$ moved with the encoder (18.3 under GTR against 13.6 under Qwen3 on TIFU), so a user must fix the encoder before choosing $r$ and report the two together. Within one encoder the same $r$ also means different things in different corpora (Section~\ref{sec:rcal}), and the calibration rests on the judgments of two language models, which agree with $\kappa = 0.55$ and place the crossing at different distances, without a human check.
+The resolution $r$ is a cosine distance in the space of one encoder. The law held under both encoders on AskDocs and TIFU, but $d$ changed with the encoder, from 13.6 under Qwen3 to 18.3 under GTR on TIFU. A user must therefore fix the encoder before choosing $r$, and report the two together. Within one encoder, the same $r$ also means different things in different corpora (Section~\ref{sec:rcal}). Our calibration of $r$ rests on the judgments of two large language models, which agree with $\kappa = 0.55$ and place the crossing at different distances, and no person checked them.
 
-The required sample size grows as $r^{-d}$, so the formula is useful only at resolutions where $n^{*}$ is a feasible number. At $d = 15$, halving $r$ multiplies $n^{*}$ by about 33{,}000. The formula plans samples at the resolution of the question and cannot make a fine resolution affordable.
+The required sample grows as $r^{-d}$, so the formula is useful only at resolutions where the required sample is a feasible number. At $d = 15$, halving $r$ multiplies the required sample by about 33{,}000. The formula helps plan a sample at the resolution of the question, and it cannot make a fine resolution affordable.
 
-The constants $a$ and $b$ are fitted for each corpus. We have an account of why $b$ is below 1 but no expression that predicts it.
+The constants $a$ and $b$ must be fitted for each corpus. We can explain why $b$ is below 1, but we have no expression that predicts its value.
 
-The pilot threshold of 0.95 and the gap of a quarter between the two dimension estimates were both chosen on the corpora of this paper. The formula's error band of a factor of 1.5 is empirical, and resampling the pilot does not reproduce it. The corpora are English social media and forum text, and the Truth Social and Bluesky collections are political pools, so their $d$ describes those collections.
+The pilot threshold of 0.95, and the gap of a quarter between the two estimates of $d$, were both chosen on the corpora of this paper. The band of two thirds to one and a half times $n^{*}$ is empirical, and resampling the pilot does not reproduce it. The corpora are English social media and forum text, and the Truth Social and Bluesky collections are political collections, so their values of $d$ describe those collections.
 
-The test unit is the document. Posts by the same account are correlated, and a design that samples accounts would need a cluster version of the estimator.
+The unit of sampling is the document. Posts by the same account are correlated, and a design that samples accounts would need a version of the estimator for clusters.

@@ -1,46 +1,66 @@
 \section{Method}
 
-\subsection{Setting and estimand}
+\subsection{What we estimate}
 
-A corpus is a finite set of $N$ documents $x_1, \dots, x_N$. Each is embedded by a fixed encoder and normalised, and the distance between two documents is the cosine distance of their embeddings. A sample $S$ is a set of $n$ documents drawn without replacement. The user chooses a resolution $r$: two documents within $r$ of each other count as the same content for the purpose at hand. Contextual embeddings fill a narrow cone of the space \citep{ethayarajh2019}, so the same cosine distance means different things for different encoders and corpora, and Section~\ref{sec:rcal} calibrates $r$ against judgments of content. The quantity to estimate, for the sample actually drawn, is the missing mass at resolution $r$,
+A corpus is a finite set of $N$ documents $x_1, \dots, x_N$. We embed each document with a fixed encoder, scale each embedding to length 1, and measure the distance between two documents by the cosine distance of their embeddings. Two documents with nearly the same meaning are at a distance near 0, and two unrelated documents are at a distance near 1. A sample $S$ is a set of $n$ documents drawn at random without replacement.
+
+The user chooses a resolution $r$. Two documents within $r$ of each other count as the same content for the purpose at hand. A small $r$ asks for close matches, such as two posts that make the same claim, and a large $r$ accepts loose matches, such as two posts on the same topic. Embeddings from current encoders crowd into a narrow region of the space \citep{ethayarajh2019}, so the same number, say $r = 0.2$, means different things for different encoders and corpora. Section~\ref{sec:rcal} therefore ties $r$ to judgments of content.
+
+The quantity we estimate is the missing mass of the sample at resolution $r$,
 \begin{equation}
 M(S, r) = \frac{1}{N}\,\big|\{j : d(x_j, x_i) > r \text{ for all } i \in S\}\big| ,
 \end{equation}
-the share of corpus documents with no sampled document within $r$. Coverage is $1 - M$. The estimator is Maurer's $G$ of Equation~\ref{eq:G}, computed on the sample alone from each sampled document's distance to its nearest sampled neighbour. We write $G(n, r)$ for its value on a sample of size $n$.
+the share of corpus documents that have no sampled document within $r$. In words, $M$ is the share of the corpus that has nothing like it in the sample. If $M = 0.6$, then 60\% of the corpus consists of documents for which the sample holds no document with the same content, and a summary or an annotation built from the sample can say nothing specific about them. Coverage is $1 - M$, the share of the corpus that does have something like it in the sample.
 
-The estimand is the finite corpus in hand. Sampling exists because the corpus is too large to annotate or to place in a model's context, and the full corpus is available to check the estimate.
+Computing $M$ requires the whole embedded corpus, because it compares every corpus document with the sample. The estimator $G$ of Equation~\ref{eq:G} needs only the sample. For each sampled document it finds the nearest other sampled document, and it counts the sampled documents whose nearest sampled neighbour lies farther than $r$. We write $G(n, r)$ for its value on a sample of $n$ documents. Our target is the finite corpus in hand. A researcher samples because the corpus is too large to annotate or to place in a model's context, and in our experiments the whole corpus is available, so we can check every estimate against the true $M$.
 
-\subsection{The collapse law}
+\subsection{How the isolation rate falls as the sample grows}
 
-Suppose the embedded documents lie near a set of intrinsic dimension $d$. The mass of a ball of radius $r$ around document $x$ is then about $c(x)\, r^{d}$, where $c(x)$ is proportional to the local density, and the probability that none of $n$ sampled documents falls in the ball is about $\exp(-c(x)\, n\, r^{d})$. Averaging over documents gives
+The isolation rate $G$ is the share of sampled documents that are isolated from the rest of the sample. To plan a sample, we need to know how $G$ falls as $n$ grows, and how that depends on $r$.
+
+Suppose the embedded documents lie close to a set of intrinsic dimension $d$. The intrinsic dimension counts the independent directions along which documents actually vary, which is far smaller than the 768 or 4{,}096 coordinates of an embedding. Around a document $x$, the share of the corpus that lies within $r$ is then about $c(x)\, r^{d}$, where $c(x)$ is larger where documents are densely packed. The chance that none of $n$ sampled documents falls within $r$ of $x$ is about $\exp(-c(x)\, n\, r^{d})$. Averaging over documents gives
 \begin{equation}
 \mathbb{E}\, G(n, r) \approx \mathbb{E}_{x}\big[\exp(-c(x)\, n\, r^{d})\big] = \mathcal{L}_{c}(n\, r^{d}),
 \end{equation}
-the Laplace transform of the distribution of $c$ evaluated at $n r^{d}$. Whatever the density, $G$ depends on $n$ and $r$ through the product $n r^{d}$ alone, so long as one $d$ holds across the radii of interest. The shape of the curve depends on how $c$ varies: a constant $c$ gives a pure exponential, and a spread of $c$ gives a curve that falls more slowly. We describe the shape by a stretched exponential, $\exp(-(\kappa\, n\, r^{d})^{b})$ with $b \le 1$, which is the Laplace transform of a particular mixing distribution, and fit
+where $\mathcal{L}_{c}$ is the Laplace transform of the distribution of $c$ over documents. The important point is the argument, $n r^{d}$. Whatever the density looks like, $G$ depends on the sample size and the resolution only through this product, as long as one $d$ holds across the resolutions of interest. We call this the collapse law, because curves of $G$ against $n$ at different resolutions collapse onto one curve when they are plotted against $n r^{d}$.
+
+The product tells a researcher how sample size and resolution trade against each other. Doubling the sample has the same effect on $G$ as loosening the resolution by $2^{1/d}$, which for $d = 13$ is only 5\%. In the other direction, halving $r$ requires $2^{d}$ times as many documents, about 8{,}000 times for $d = 13$. Corpora with a high intrinsic dimension are therefore expensive to cover at a fine resolution, in the same way that populations with a large variance are expensive to survey precisely.
+
+The shape of the curve depends on how much the density varies across the corpus. If every document sat in a region of the same density, $G$ would fall as a pure exponential in $n r^{d}$. Real corpora mix dense regions, where many documents say similar things, with sparse regions, where documents are unusual, and the curve then falls more slowly. We describe the shape by a stretched exponential, $G = \exp(-(\kappa\, n\, r^{d})^{b})$ with $0 < b \le 1$, where a smaller $b$ means a more uneven density. Taking logarithms twice turns this into a straight line,
 \begin{equation}
 \log\big(-\log G(n, r)\big) = a + b \log\big(n\,r^{d}\big),
 \label{eq:collapse}
 \end{equation}
-with $d$ estimated beforehand and $a$ and $b$ fitted by least squares. The grid has eleven sample sizes from 100 to 7{,}000 (capped at $0.7N$), twelve radii spaced geometrically from the 5th to the 99th percentile of a pilot's nearest neighbour distances, and five independent draws per sample size. Only cells with $0.02 < G < 0.98$ enter the fit. The law fails when the dimension itself changes with the radius, because no single $d$ then aligns the curves for different $r$.
+which we fit by least squares, with $d$ estimated beforehand.
 
-The dimension $d$ comes from the TwoNN estimator of \citet{facco2017twonn}, which uses the ratio of each point's second to first nearest neighbour distance, averaged over five pilots of 2{,}000 documents. As a check that owes nothing to TwoNN, we also regress $\log(-\log G)$ on $\log n$ and $\log r$ separately. If the law holds, the coefficient on $\log r$ is $b\,d$ and the coefficient on $\log n$ is $b$, so their ratio estimates $d$.
+We estimate $d$ with the TwoNN estimator of \citet{facco2017twonn}, which uses, for every document, the ratio of the distance to its second nearest neighbour to the distance to its first. We average it over five pilot samples of 2{,}000 documents. To fit $a$ and $b$, we draw five independent samples at each of eleven sample sizes from 100 to 7{,}000 (no more than $0.7N$), and compute $G$ at twelve resolutions spaced evenly on a log scale between the 5th and the 99th percentile of the nearest neighbour distances in a pilot. Only cells with $0.02 < G < 0.98$ enter the fit, because the double logarithm is unstable near 0 and 1.
 
-Solving Equation~\ref{eq:collapse} for $n$ gives the sample size at which the isolation rate at resolution $r$ reaches a target $\varepsilon$,
+As a check on $d$ that does not use TwoNN, we also fit $\log(-\log G)$ on $\log n$ and $\log r$ as two separate regressors. If the collapse law holds, the coefficient on $\log r$ equals $b\,d$ and the coefficient on $\log n$ equals $b$, so their ratio is a second estimate of $d$. When the two estimates of $d$ disagree, no single dimension describes the corpus across the resolutions used.
+
+\subsection{The sample size formula}
+
+Solving Equation~\ref{eq:collapse} for $n$ gives the sample size at which the isolation rate at resolution $r$ falls to a target $\varepsilon$,
 \begin{equation}
 n^{*}(\varepsilon, r) = \left(\frac{\log(1/\varepsilon)}{e^{a}}\right)^{1/b} r^{-d} .
 \label{eq:nstar}
 \end{equation}
-The corpus enters through three numbers. The dimension $d$ sets how fast the required sample grows as the resolution becomes finer: each halving of $r$ multiplies $n^{*}$ by $2^{d}$. The constants $a$ and $b$ set the level. A user fits them on subsamples of the pilot; Section~5.3 reports both this fit and one on draws from the whole corpus. 
+For example, $\varepsilon = 0.2$ asks for a sample in which at most 20\% of the documents are isolated, which, by the argument of Good and Turing, is a sample that leaves about 20\% of the corpus unseen. The corpus enters the formula through three numbers. The intrinsic dimension $d$ sets how fast the required sample grows as the resolution becomes finer. The constants $a$ and $b$ set the level and the shape. All three can be estimated from a pilot. Section~\ref{sec:nstar} reports the formula with $a$ and $b$ fitted inside a pilot of 2{,}000 documents, as a user would fit them, and with $a$ and $b$ fitted on draws from the whole corpus.
 
-\subsection{Finite population correction}
+\subsection{The finite population correction}
 
-$G$ estimates the missing mass of the distribution that generated the corpus. When the estimand is the corpus itself, the $n$ sampled documents have distance zero to the sample, and each of the $N - n$ unsampled documents is isolated from the sample with probability close to $G$. The expected missing mass of the corpus is therefore
+$G$ estimates the missing mass of the process that generated the corpus, as if new documents kept arriving. When the target is the corpus itself, two facts change the picture. The $n$ sampled documents are part of the corpus, and each of them has something like it in the sample, namely itself. Each of the other $N - n$ documents is isolated from the sample with a probability close to $G$. The missing mass of the corpus is therefore
 \begin{equation}
 \hat M(n, r) = G(n, r)\,\big(1 - n/N\big).
 \label{eq:fpc}
 \end{equation}
-The factor is the one survey sampling calls the finite population correction \citep{groves2009survey}. There it scales the variance of a mean, and here it scales an expectation, because sampled units are covered by definition.
+If a researcher samples half of a corpus and $G$ is 0.8, then 80\% of the unread half is unseen, which is 40\% of the corpus. The factor $1 - n/N$ is the one survey sampling calls the finite population correction \citep{groves2009survey}. In a survey it shrinks the variance of an estimated mean. Here it shrinks an expected share, for the simple reason that the documents in the sample are covered by definition.
 
-\subsection{A diagnostic for corpora with more than one scale}
+\subsection{A test for corpora with more than one scale}
 
-The law assumes one dimension across the radii of interest, and a user must know before sampling whether it holds. The diagnostic uses the pilot alone. Within one pilot of 2{,}000 documents, we fit Equation~\ref{eq:collapse} on subsamples of size up to 750 and compute $R^2$ on subsamples of size 1{,}000 to 2{,}000. A corpus passes when this pilot $R^2$ is at least 0.95. A second check compares the ratio of coefficients from the two-regressor fit with the TwoNN estimate of $d$; on our corpora a gap of about a quarter separates the two groups. To validate the diagnostic we also compute the full out of sample $R^2$ on the whole corpus, from a fit on $n \le 1{,}000$ scored on $n$ up to 7{,}000, and call a corpus collapsing when it is at least 0.9. When the law fails, two probes locate the cause: the share of documents with a near duplicate (a nearest neighbour within cosine distance 0.02), and the spread of the TwoNN dimension across twenty $k$-means clusters.
+The collapse law assumes that one intrinsic dimension holds across the resolutions of interest, and a researcher needs to know whether that holds before drawing the sample. We therefore test the law inside a pilot of 2{,}000 documents. We fit Equation~\ref{eq:collapse} on subsamples of the pilot with up to 750 documents, and we compute how much of the variance of $\log(-\log G)$ the fit explains on subsamples of 1{,}000 to 2{,}000 documents, which it did not see. A corpus passes when this pilot $R^2$ is at least 0.95. The two estimates of $d$ give a second test, since they should agree when the law holds.
+
+To check whether the pilot test gives the right answer, we also fit the law on the whole corpus with samples of up to 1{,}000 documents and evaluate it on samples of up to 7{,}000. We call a corpus collapsing when this full out of sample $R^2$ is at least 0.9. When the law fails, two probes help find the reason. The first is the share of documents that have a near duplicate, a nearest neighbour within cosine distance 0.02. The second is the spread of the intrinsic dimension across twenty clusters of the corpus found by $k$-means, which shows whether different parts of the corpus vary along different numbers of directions.
+
+\subsection{Giving the resolution a meaning}
+
+A cosine distance means little to a reader until it is tied to content. For each real corpus, we drew about 40 pairs of documents in each of ten bins of distance between 0 and 1, about 400 pairs per corpus. Near pairs come from the nearest neighbours of random documents, and far pairs come from random pairs. A large language model read each pair and judged whether the two documents are about the same specific content (the same claim, question, event or story), about the same general topic, or unrelated (Appendix~\ref{app:prompts}). The share of pairs judged the same content falls as the distance grows. We call $r_{\mathrm{same}}$ the distance at which this share crosses one half, interpolated between the centres of neighbouring bins, and $r_{\mathrm{topic}}$ the distance at which the share judged the same content or the same topic crosses one half. We obtain a 90\% interval for each crossing by resampling the judged pairs within their bins 2{,}000 times. Two models judged every pair, Qwen3.8-27B and Gemma-4-31B-it, so that we can see how much the meaning of $r$ depends on the judge.
