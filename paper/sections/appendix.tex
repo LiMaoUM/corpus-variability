@@ -60,6 +60,51 @@ Zipf, 200 topics & none & 5 & 69 & 0 & 0 \\
 \label{tab:nstar}
 \end{table}
 
+\section{Calibration inside the pilot}
+\label{app:pilotcal}
+
+For three corpora, Gemma-4-31B-it judged about 40 pairs in each distance bin, drawn inside the first pilot of 2{,}000 documents with the sampler, bins and prompt of Section~\ref{sec:rcal}. Table~\ref{tab:pilotcal} gives the crossing with its pair bootstrap interval, the crossing from pairs over the whole corpus under the same judge, and the share that covers half of the corpus, predicted from the pilot's crossing and the pilot's fit and measured at the crossing from the whole corpus. On Truth Social the pilot has 14 pairs closer than 0.1, against 40 in the other bins.
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+Corpus & $r_{\mathrm{same}}$, pilot & $r_{\mathrm{same}}$, corpus & predicted & measured \\
+\midrule
+Census random & .28 [.26, .30] & .28 & 9.4\% & 7.0\% \\
+Truth Social & .20 [.18, .21] & .18 & 43\% & 41\% \\
+Trump (forum) & .29 [.27, .33] & .31 & $<$100 docs & $<$100 docs \\
+\bottomrule
+\end{tabular}}
+\caption{Calibration of $r_{\mathrm{same}}$ inside one pilot, under Gemma.}
+\label{tab:pilotcal}
+\end{table}
+
+\section{Probes of the collapse failure}
+\label{app:probe}
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrr}
+\toprule
+Corpus & near duplicates & local $d$ & CV of local $d$ \\
+\midrule
+AskDocs (GTR) & 0.0\% & 8.1 to 16.3 & 0.15 \\
+TIFU (GTR) & 0.0\% & 14.4 to 21.7 & 0.10 \\
+Truth Social & 0.04\% & 7.9 to 15.4 & 0.16 \\
+Bluesky & 0.06\% & 11.5 to 18.9 & 0.13 \\
+Trump (GTR) & 3.4\% & 2.0 to 16.2 & 0.52 \\
+Zipf, 200 topics & 0.0\% & 7.8 to 18.1 & 0.21 \\
+\bottomrule
+\end{tabular}}
+\caption{Probes of the collapse failure. Near duplicates: share of a 5{,}000-document sample with a neighbour within cosine distance 0.02. Local $d$: range of the TwoNN dimension over twenty $k$-means clusters, and its coefficient of variation.}
+\label{tab:probe}
+\end{table}
+
 \section{The finite population correction}
 \label{app:fpc}
 

@@ -172,3 +172,17 @@ Limitations wording on the pilot fit and the d check, per-seed range in 5.2, Zip
 main text, Truth Social and Bluesky citations, f2 for Chao and Jost, last sentence of 5.1, "a few
 hundred" in the abstract, the Table 4 overfull box. Rationale: re-review items V1 to V8, N3, N5, N6,
 N8, N9, N11, N12.
+
+## 2026-10-14: Fifth revision after the ARS re-review of v5
+
+Make every change the v5 re-review lists (Mao, 2026-10-14: "change it as they said"). (1) Report the
+half-cover prediction by row type (censored below n = 100, at the 50% cap, interpolated inside the
+pilot's fitted range, extrapolated), give the error on the gap below 50% for the extrapolated rows,
+state the systematic overprediction and the worst error at the interval ends, and align the abstract.
+(2) Reconcile 5.7 with the diagnostic: the failing corpora cross inside the fitted range; the
+diagnostic governs extrapolation in n and transfer across r. Recalibrate r_same on pairs found inside
+a 2,000-document pilot for at least two corpora, so the claim "before embedding the corpus" is
+measured. (3) Housekeeping: no-crossing rates (TIFU under Qwen, Bluesky), TIFU r in 5.6, double comma
+in 5.2, subsample dependence of the Truth Social share, per-corpus minimum of the 1.5 band and the
+81 against 83 bootstrap cases, and the selection criteria and terms for the Truth Social and Bluesky
+collections. Rationale: re-review items W1 to W6, V4, V5, N10.

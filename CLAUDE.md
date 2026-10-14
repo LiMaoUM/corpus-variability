@@ -46,6 +46,8 @@ confidence band and a required-n.
   `/home/maolee/projects/arena/.venv/bin/vllm` (0.21.0), `--host 127.0.0.1`, TMPDIR=/home/maolee/tmp.
   After the 2026-10-13 reboot no shared servers ran; this project served Gemma-4-31B-it itself on
   GPUs 0,1, port 8840, for the r calibration cross-judge, and stopped it afterwards.
+  On 2026-10-14 the pilot calibration (`scripts/rcal_pilot.py`, about 1,200 pairs) used the shared
+  Gemma server on port 8801 at concurrency 8, because port 8800 had a queue and every GPU was busy.
 - Experiment cards live in `experiments/`; results in `results/` (large arrays gitignored).
 
 ## Related work in the vault

@@ -285,3 +285,16 @@ and 41% (Gemma), so the v4 table's 47% and 45% were upper bounds (V1). Over the 
 two groups hold on seven corpora; census trump reaches 18% at the near end of the Qwen interval, and
 census covid and census random change group with the judge. Judge intervals are disjoint on six of
 nine corpora (AskDocs, Trump forum, census random, covid, citizens, trump).
+
+## Fifth revision runs (2026-10-14, after the ARS re-review of v5)
+
+`scripts/rcal_pilot.py` -> `data/rcal_pilot/`, `results/rcal_pilot.csv`, `results/rcal_pilot.log`.
+Pairs drawn inside the first 2,000-document pilot (same sampler, bins, prompt), judged by Gemma on
+the shared server at port 8801. Pilot r_same against whole-corpus r_same (Gemma): census random
+0.280 [0.257, 0.297] against 0.281; Truth Social 0.197 [0.184, 0.208] against 0.184 (14 pairs in
+the first bin); Trump forum 0.294 [0.270, 0.325] against 0.314. Pilot-only predicted half-cover
+share against the measured share at the whole-corpus r_same: 9.4% against 7.0%, 42.8% against
+41.2%, 80 documents against below 100. Row types of the half-cover test (point rows): 5 censored
+below n = 100, 4 at the 50% cap, 5 inside the pilot's fitted range, 4 extrapolated; near the cap the
+prediction recovers 38% to 57% of the measured distance below 50% and overstates the share on all
+12 Truth Social and census random rows.
