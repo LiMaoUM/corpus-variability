@@ -58,6 +58,18 @@ def pilot_law(X, metric):
     return a, b, d
 
 
+def pilot_law_one(X, metric):
+    """As pilot_law, with d from the first pilot alone (ARS re-review of v6, X1)."""
+    N = X.shape[0]
+    pilot = X[np.random.default_rng(11).choice(N, 2000, replace=False)]
+    d = float(twonn_dimension(pilot, metric))
+    d1 = NearestNeighbors(n_neighbors=2, metric=metric).fit(pilot).kneighbors(pilot)[0][:, 1]
+    r_grid = np.geomspace(np.percentile(d1, 5), np.percentile(d1, 99), 12)
+    Gp, _ = surface(pilot, PILOT_GRID, r_grid, metric, np.random.default_rng(29))
+    a, b = fit_cells(Gp, PILOT_GRID, r_grid, d, 1000)
+    return a, b, d
+
+
 def half_share(M, n_grid):
     if M[0] <= 0.5:
         return np.nan, n_grid[0]  # below the smallest sample

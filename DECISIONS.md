@@ -192,3 +192,13 @@ collections. Rationale: re-review items W1 to W6, V4, V5, N10.
 Release the post identifiers of the two 50,000-post samples, the code, and the pair judgments; do
 not release post text. Rationale: common practice for social media research; others can rehydrate by
 identifier. Stated in the Data section (re-review item W6).
+
+## 2026-10-14: Sixth revision after the ARS re-review of v6
+
+Make every change the v6 re-review lists (standing instruction from Mao, 2026-10-14: do what the
+reviewers say, including the optional experiment). (1) Scope the pilot calibration claim and run the
+experiment: d from the first pilot alone for every half-cover prediction, and pilot calibration
+extended to AskDocs and TIFU (five corpora, Gemma). (2) Abstract states the grouping with its
+accuracy and the judge dependence. (3) Housekeeping: censored rows at the point estimate, the census
+covid clause, the Zipf clause, the Data pointer to Table 1, and the collection descriptions of the
+Truth Social and Bluesky seeds. Space: the row-type breakdown moved to an appendix section.

@@ -298,3 +298,14 @@ share against the measured share at the whole-corpus r_same: 9.4% against 7.0%, 
 below n = 100, 4 at the 50% cap, 5 inside the pilot's fitted range, 4 extrapolated; near the cap the
 prediction recovers 38% to 57% of the measured distance below 50% and overstates the share on all
 12 Truth Social and census random rows.
+
+## Sixth revision runs (2026-10-14, after the ARS re-review of v6)
+
+`scripts/half_cover_onepilot.py` -> `results/half_cover_onepilot.csv`: with d, a and b all from the
+first pilot (`half_cover.pilot_law_one`), no predicted share moves by more than 0.5 points from the
+five-pilot d version; against the measured values, factor 0.78 to 1.86 and at most 4.5 points.
+`scripts/rcal_pilot.py` extended to AskDocs and TIFU (and now uses the one-pilot law as well):
+AskDocs pilot r_same 0.185 [0.125, 0.199] against 0.172, predicted share 49.8% against 49.2%
+measured; TIFU pilot has no pair below 0.15 and no SAME judgment below 0.2, so no crossing (bound
+r_same < 0.15); at r = 0.15 the one-pilot law predicts 49.8%, measured 50%. Census random with the
+one-pilot law: 721 documents predicted against 532 measured.

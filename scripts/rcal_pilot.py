@@ -28,12 +28,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from r_calibration import CORPORA, PROMPT, EMB, BINS, sample_pairs  # noqa: E402
 from revision_round4 import crossing_p, B  # noqa: E402
-from half_cover import pilot_law  # noqa: E402
+from half_cover import pilot_law, pilot_law_one  # noqa: E402
 from summary_n_curve import unit  # noqa: E402
 
 URL, MODEL = "http://127.0.0.1:8801/v1", "google/gemma-4-31B-it"
 OUT = ROOT / "data/rcal_pilot"
-RUN = {"random": "census_random_qwen3", "ts": "ts_qwen3", "sv_trump": "trump_qwen3"}
+RUN = {"random": "census_random_qwen3", "ts": "ts_qwen3", "sv_trump": "trump_qwen3",
+       "sv_askdocs": "askdocs_qwen3", "sv_tifu": "tifu_qwen3"}  # last two added after the v6 re-review (X1)
 
 
 async def judge(client, sem, prompt):
@@ -75,17 +76,24 @@ def main():
         bs = np.array([crossing_p(dist[idx], same[idx]) for idx in
                        (np.concatenate([rng.choice(np.flatnonzero(bins == k), (bins == k).sum()) for k in np.unique(bins)])
                         for _ in range(B))])
-        lo, hi = np.nanpercentile(bs, [5, 95])
-        a, b, dim = pilot_law(X, "cosine")
+        lo, hi = np.nanpercentile(bs, [5, 95]) if np.isfinite(bs).any() else (np.nan, np.nan)
         n_fine = np.geomspace(10, N / 2, 4000)
-        G = np.exp(-np.exp(a + b * np.log(n_fine * r_pt ** dim)))
-        hit = np.flatnonzero(G * (1 - n_fine / N) <= 0.5)
-        n_pred = float(n_fine[hit[0]]) if len(hit) else N / 2
+
+        def predict(law):
+            a, b, dim = law
+            if not np.isfinite(r_pt):
+                return np.nan
+            G = np.exp(-np.exp(a + b * np.log(n_fine * r_pt ** dim)))
+            hit = np.flatnonzero(G * (1 - n_fine / N) <= 0.5)
+            return float(n_fine[hit[0]]) if len(hit) else N / 2
+        n_pred = predict(pilot_law(X, "cosine"))
+        n_pred1 = predict(pilot_law_one(X, "cosine"))
         full = hc[(hc.corpus == name) & (hc.judge == "gemma") & (hc.end == "point")].iloc[0]
         rows.append(dict(corpus=c, pairs=len(d), pairs_by_bin=np.bincount(bins, minlength=len(BINS)).tolist(),
                          r_same_pilot=round(r_pt, 3), r_lo=round(lo, 3), r_hi=round(hi, 3),
                          no_crossing=round(float(np.isnan(bs).mean()), 3), r_same_full=full.r,
-                         share_pred_pilot=round(n_pred / N, 3), n_pred_pilot=round(n_pred),
+                         share_pred_pilot=round(n_pred / N, 3), n_pred_pilot=round(n_pred) if np.isfinite(n_pred) else np.nan,
+                         share_pred_one=round(n_pred1 / N, 3), n_pred_one=round(n_pred1) if np.isfinite(n_pred1) else np.nan,
                          share_meas_full=full.share, n_meas_full=full.n_half))
         print(rows[-1], flush=True)
     pd.DataFrame(rows).to_csv(ROOT / "results/rcal_pilot.csv", index=False)
