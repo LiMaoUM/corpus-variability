@@ -186,3 +186,9 @@ measured. (3) Housekeeping: no-crossing rates (TIFU under Qwen, Bluesky), TIFU r
 in 5.2, subsample dependence of the Truth Social share, per-corpus minimum of the 1.5 band and the
 81 against 83 bootstrap cases, and the selection criteria and terms for the Truth Social and Bluesky
 collections. Rationale: re-review items W1 to W6, V4, V5, N10.
+
+## 2026-10-14: Data release for the Truth Social and Bluesky samples (Mao, interactive)
+
+Release the post identifiers of the two 50,000-post samples, the code, and the pair judgments; do
+not release post text. Rationale: common practice for social media research; others can rehydrate by
+identifier. Stated in the Data section (re-review item W6).
