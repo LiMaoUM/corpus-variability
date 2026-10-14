@@ -1,0 +1,12 @@
+    corpus   n  agree  kappa  kappa_same
+      bsky 400  0.760  0.631       0.780
+  citizens 400  0.710  0.474       0.538
+     covid 400  0.672  0.463       0.632
+   illegal 400  0.752  0.601       0.775
+    random 400  0.658  0.459       0.540
+sv_askdocs 364  0.764  0.533       0.638
+   sv_tifu 349  0.765  0.543       0.524
+  sv_trump 400  0.655  0.444       0.644
+     trump 400  0.668  0.465       0.668
+        ts 400  0.710  0.557       0.695
+pooled agree 0.710 kappa 0.546 kappa(SAME) 0.682
