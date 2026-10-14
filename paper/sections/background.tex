@@ -10,9 +10,9 @@ These estimators have been applied to text and to machine learning a few times. 
 
 \subsection{How much a sample has missed: the case of distances}
 
-\citet{maurer2022missing} removed the need for categories. He works in any space with a distance $d(\cdot, \cdot)$ between items. For a sample $X_1, \dots, X_n$ and a distance $r$, the missing mass is the probability that a new item lies farther than $r$ from every item in the sample. Maurer calls it the conditional missing mass, because it depends on the sample actually drawn. His estimator is
+\citet{maurer2022missing} removed the need for categories. He works in any space with a distance $\delta(\cdot, \cdot)$ between items. For a sample $X_1, \dots, X_n$ and a distance $r$, the missing mass is the probability that a new item lies farther than $r$ from every item in the sample. Maurer calls it the conditional missing mass, because it depends on the sample actually drawn. His estimator is
 \begin{equation}
-G(X, r) = \frac{1}{n}\,\big|\{k : d(X_k, X_i) > r \text{ for all } i \neq k\}\big| ,
+G(X, r) = \frac{1}{n}\,\big|\{k : \delta(X_k, X_i) > r \text{ for all } i \neq k\}\big| ,
 \label{eq:G}
 \end{equation}
 the share of sampled items that have no other sampled item within $r$. When items are categories, so that two items are at distance 0 if they share a category and at distance 1 otherwise, $G$ with $r < 1$ is exactly Good and Turing's $f_1/n$. Maurer proved that $G$ overstates the conditional missing mass by at most $1/n$ on average, and that the variance of the difference between the two is at most $3/n$ (his Theorem 2.1). His paper is theory. It sketches anomaly detection and data compression as uses, and it contains no data, no embeddings and no statement about how $G$ changes as the sample grows.
