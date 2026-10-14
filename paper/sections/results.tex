@@ -7,7 +7,7 @@ The Zipf mixtures give every document a topic, so the true topic mass covered by
 \subsection{The isolation rate collapses on $n r^{d}$}
 \label{sec:collapse}
 
-Table~\ref{tab:collapse} reports the fit of Equation~\ref{eq:collapse} for 17 pairs of corpus and encoder. Ten pass the diagnostic: the three manifolds, AskDocs and TIFU under both encoders, the random census slice, Truth Social and Bluesky. On these ten, a fit on cells with $n \le 1{,}000$ explains 92\% or more of the variance of $\log(-\log G)$ on cells with $n$ up to 7{,}000. Fitting on $n \le 300$ instead, a 23-fold extrapolation, keeps it above 0.92. Figure~\ref{fig:collapse} shows the surfaces against $n r^{d}$.
+Table~\ref{tab:collapse} and Figure~\ref{fig:collapse} report the fit of Equation~\ref{eq:collapse} for 17 pairs of corpus and encoder. Ten pass the diagnostic: the three manifolds, AskDocs and TIFU under both encoders, the random census slice, Truth Social and Bluesky. On these ten, a fit on cells with $n \le 1{,}000$ explains 92\% or more of the variance of $\log(-\log G)$ on cells with $n$ up to 7{,}000. Fitting on $n \le 300$ instead, a 23-fold extrapolation, keeps it above 0.92.
 
 The fit with $\log n$ and $\log r$ as separate regressors gives a second estimate of $d$ that does not use TwoNN. On the ten passing pairs the two estimates differ by at most 19\%. On the seven failing pairs they differ by 27\% to 43\%, and by 46\% on one of the three GTR samples of Trump, with the regression estimate always lower.
 
@@ -68,7 +68,7 @@ Section~3.2 says when the law should fail: when the effective dimension changes 
 \subsection{The finite population correction}
 \label{sec:fpc}
 
-Table~\ref{tab:fpc} in Appendix~\ref{app:fpc} compares $G$ and $G\,(1 - n/N)$ with the true missing mass $M$ of the finite corpus on the eight forum and census corpora under Qwen3, at sampling fractions from 0.01 to 0.7 and three radii, 144 cells. Uncorrected, $G$ has a mean absolute error of 0.114 and a maximum of 0.49. Corrected, the mean error is 0.012 and the maximum 0.11, and at $n/N = 0.5$ the error is 0.004. The correction holds on the corpora that fail the collapse.
+Table~\ref{tab:fpc} in Appendix~\ref{app:fpc} compares $G$ and $G\,(1 - n/N)$ with the true missing mass $M$ of the finite corpus on the eight forum and census corpora under Qwen3, at sampling fractions from 0.01 to 0.7 and three radii, 144 cells. Uncorrected, $G$ has a mean absolute error of 0.114 and a maximum of 0.49. Corrected, the mean error is 0.012 and the maximum 0.11. The correction holds on the corpora that fail the collapse.
 
 \begin{table*}[t]
 \centering
@@ -101,7 +101,7 @@ Cens.\ illegal & fail & .28 [.25, .29] & $<$100 ($<$0.6\%) & 0.3\% & $<$0.6\% & 
 
 The resolution $r$ is a cosine distance, and a user needs to know what content it groups. For each of the ten real corpora under Qwen3, we drew about 40 document pairs in each of ten distance bins from 0 to 1, 3{,}913 pairs in all, and asked Qwen3.8-27B whether the two documents are about the same specific content (the same claim, question, event or story), the same general topic, or unrelated (Appendix~\ref{app:prompts}). The share judged the same content falls with distance in every corpus. Where it crosses one half depends on the corpus, from $r \le 0.05$ on TIFU to 0.28 on a census slice, and on Bluesky it stays below one half even for the nearest pairs (Table~\ref{tab:rcal}). A cosine distance therefore carries no fixed meaning across corpora.
 
-A second model, Gemma-4-31B-it, judged the same pairs with the same prompt. The two agree on 71\% of pairs (Cohen's $\kappa = 0.55$; $\kappa = 0.68$ for same content against the other two labels). Gemma calls more pairs the same content, 39\% against 28\%, so its crossing lies farther out in every corpus, by 0.02 to 0.16. On six of the nine corpora the 90\% intervals of the two crossings, from resampling pairs within bins, do not overlap (Table~\ref{tab:rcal}). The choice of judge therefore moves $r_{\mathrm{same}}$ more than the sampling of pairs does, and the judge is part of the definition of $r$, to be reported with the encoder.
+A second model, Gemma-4-31B-it, judged the same pairs with the same prompt. The two agree on 71\% of pairs (Cohen's $\kappa = 0.55$; $\kappa = 0.68$ for same content against the other two labels). Gemma calls more pairs the same content (39\% against 28\%), so its crossing lies farther out in every corpus. On six of the nine corpora the 90\% intervals of the two crossings, from resampling pairs within bins, do not overlap (Table~\ref{tab:rcal}). The choice of judge therefore moves $r_{\mathrm{same}}$ more than the sampling of pairs does, and the judge is part of the definition of $r$, to be reported with the encoder.
 
 \subsection{What a target costs}
 \label{sec:feasible}
