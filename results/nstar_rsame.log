@@ -1,0 +1,38 @@
+{'corpus': 'askdocs_qwen3', 'judge': 'qwen', 'N': 10000, 'd': np.float64(12.75), 'r_same': np.float64(0.146), 'nstar_eps0.5': 1420000000.0, 'nemp_eps0.5': nan, 'G_at_nmax': 0.99, 'nstar_eps0.2': 6750000000.0, 'nemp_eps0.2': nan}
+{'corpus': 'askdocs_qwen3', 'judge': 'gemma', 'N': 10000, 'd': np.float64(12.75), 'r_same': np.float64(0.172), 'nstar_eps0.5': 176000000.0, 'nemp_eps0.5': nan, 'G_at_nmax': 0.987, 'nstar_eps0.2': 835000000.0, 'nemp_eps0.2': nan}
+{'corpus': 'trump_qwen3', 'judge': 'qwen', 'N': 10000, 'd': np.float64(8.97), 'r_same': np.float64(0.24), 'nstar_eps0.5': 595.0, 'nemp_eps0.5': 543, 'G_at_nmax': 0.283, 'nstar_eps0.2': 15400.0, 'nemp_eps0.2': nan}
+{'corpus': 'trump_qwen3', 'judge': 'gemma', 'N': 10000, 'd': np.float64(8.97), 'r_same': np.float64(0.314), 'nstar_eps0.5': 53.4, 'nemp_eps0.5': nan, 'G_at_nmax': 0.089, 'nstar_eps0.2': 1380.0, 'nemp_eps0.2': 596}
+{'corpus': 'tifu_qwen3', 'judge': 'qwen', 'N': 10000, 'd': np.float64(13.64), 'r_same': np.float64(0.05), 'nstar_eps0.5': 435000000000000.0, 'nemp_eps0.5': nan, 'G_at_nmax': 1.0, 'nstar_eps0.2': 2150000000000000.0, 'nemp_eps0.2': nan}
+{'corpus': 'tifu_qwen3', 'judge': 'gemma', 'N': 10000, 'd': np.float64(13.64), 'r_same': np.float64(0.08), 'nstar_eps0.5': 715000000000.0, 'nemp_eps0.5': nan, 'G_at_nmax': 1.0, 'nstar_eps0.2': 3530000000000.0, 'nemp_eps0.2': nan}
+{'corpus': 'census_random_qwen3', 'judge': 'qwen', 'N': 7610, 'd': np.float64(12.86), 'r_same': np.float64(0.12), 'nstar_eps0.5': 69300000.0, 'nemp_eps0.5': nan, 'G_at_nmax': 0.92, 'nstar_eps0.2': 1530000000.0, 'nemp_eps0.2': nan}
+{'corpus': 'census_random_qwen3', 'judge': 'gemma', 'N': 7610, 'd': np.float64(12.86), 'r_same': np.float64(0.281), 'nstar_eps0.5': 1230.0, 'nemp_eps0.5': 784, 'G_at_nmax': 0.333, 'nstar_eps0.2': 27100.0, 'nemp_eps0.2': nan}
+{'corpus': 'census_citizens_qwen3', 'judge': 'qwen', 'N': 7849, 'd': np.float64(9.07), 'r_same': np.float64(0.225), 'nstar_eps0.5': 479.0, 'nemp_eps0.5': 387, 'G_at_nmax': 0.223, 'nstar_eps0.2': 10600.0, 'nemp_eps0.2': nan}
+{'corpus': 'census_citizens_qwen3', 'judge': 'gemma', 'N': 7849, 'd': np.float64(9.07), 'r_same': np.float64(0.355), 'nstar_eps0.5': 7.66, 'nemp_eps0.5': nan, 'G_at_nmax': 0.011, 'nstar_eps0.2': 169.0, 'nemp_eps0.2': nan}
+{'corpus': 'census_trump_qwen3', 'judge': 'qwen', 'N': 30136, 'd': np.float64(8.99), 'r_same': np.float64(0.244), 'nstar_eps0.5': 511.0, 'nemp_eps0.5': 529, 'G_at_nmax': 0.274, 'nstar_eps0.2': 13900.0, 'nemp_eps0.2': nan}
+{'corpus': 'census_trump_qwen3', 'judge': 'gemma', 'N': 30136, 'd': np.float64(8.99), 'r_same': np.float64(0.314), 'nstar_eps0.5': 52.9, 'nemp_eps0.5': nan, 'G_at_nmax': 0.089, 'nstar_eps0.2': 1440.0, 'nemp_eps0.2': 645}
+{'corpus': 'census_covid_qwen3', 'judge': 'qwen', 'N': 17837, 'd': np.float64(10.65), 'r_same': np.float64(0.2), 'nstar_eps0.5': 15600.0, 'nemp_eps0.5': nan, 'G_at_nmax': 0.551, 'nstar_eps0.2': 249000.0, 'nemp_eps0.2': nan}
+{'corpus': 'census_covid_qwen3', 'judge': 'gemma', 'N': 17837, 'd': np.float64(10.65), 'r_same': np.float64(0.286), 'nstar_eps0.5': 346.0, 'nemp_eps0.5': 279, 'G_at_nmax': 0.193, 'nstar_eps0.2': 5510.0, 'nemp_eps0.2': 6335}
+{'corpus': 'census_illegal_qwen3', 'judge': 'qwen', 'N': 17202, 'd': np.float64(11.38), 'r_same': np.float64(0.275), 'nstar_eps0.5': 53.0, 'nemp_eps0.5': nan, 'G_at_nmax': 0.088, 'nstar_eps0.2': 1320.0, 'nemp_eps0.2': 618}
+{'corpus': 'census_illegal_qwen3', 'judge': 'gemma', 'N': 17202, 'd': np.float64(11.38), 'r_same': np.float64(0.3), 'nstar_eps0.5': 19.7, 'nemp_eps0.5': nan, 'G_at_nmax': 0.052, 'nstar_eps0.2': 491.0, 'nemp_eps0.2': 150}
+{'corpus': 'ts_qwen3', 'judge': 'qwen', 'N': 50000, 'd': np.float64(12.63), 'r_same': np.float64(0.162), 'nstar_eps0.5': 11300000.0, 'nemp_eps0.5': nan, 'G_at_nmax': 0.942, 'nstar_eps0.2': 81100000.0, 'nemp_eps0.2': nan}
+{'corpus': 'ts_qwen3', 'judge': 'gemma', 'N': 50000, 'd': np.float64(12.63), 'r_same': np.float64(0.184), 'nstar_eps0.5': 2260000.0, 'nemp_eps0.5': nan, 'G_at_nmax': 0.913, 'nstar_eps0.2': 16200000.0, 'nemp_eps0.2': nan}
+
+               corpus judge     N     d  r_same  nstar_eps0.5  nemp_eps0.5  G_at_nmax  nstar_eps0.2  nemp_eps0.2
+        askdocs_qwen3  qwen 10000 12.75   0.146  1.420000e+09          NaN      0.990  6.750000e+09          NaN
+        askdocs_qwen3 gemma 10000 12.75   0.172  1.760000e+08          NaN      0.987  8.350000e+08          NaN
+          trump_qwen3  qwen 10000  8.97   0.240  5.950000e+02        543.0      0.283  1.540000e+04          NaN
+          trump_qwen3 gemma 10000  8.97   0.314  5.340000e+01          NaN      0.089  1.380000e+03        596.0
+           tifu_qwen3  qwen 10000 13.64   0.050  4.350000e+14          NaN      1.000  2.150000e+15          NaN
+           tifu_qwen3 gemma 10000 13.64   0.080  7.150000e+11          NaN      1.000  3.530000e+12          NaN
+  census_random_qwen3  qwen  7610 12.86   0.120  6.930000e+07          NaN      0.920  1.530000e+09          NaN
+  census_random_qwen3 gemma  7610 12.86   0.281  1.230000e+03        784.0      0.333  2.710000e+04          NaN
+census_citizens_qwen3  qwen  7849  9.07   0.225  4.790000e+02        387.0      0.223  1.060000e+04          NaN
+census_citizens_qwen3 gemma  7849  9.07   0.355  7.660000e+00          NaN      0.011  1.690000e+02          NaN
+   census_trump_qwen3  qwen 30136  8.99   0.244  5.110000e+02        529.0      0.274  1.390000e+04          NaN
+   census_trump_qwen3 gemma 30136  8.99   0.314  5.290000e+01          NaN      0.089  1.440000e+03        645.0
+   census_covid_qwen3  qwen 17837 10.65   0.200  1.560000e+04          NaN      0.551  2.490000e+05          NaN
+   census_covid_qwen3 gemma 17837 10.65   0.286  3.460000e+02        279.0      0.193  5.510000e+03       6335.0
+ census_illegal_qwen3  qwen 17202 11.38   0.275  5.300000e+01          NaN      0.088  1.320000e+03        618.0
+ census_illegal_qwen3 gemma 17202 11.38   0.300  1.970000e+01          NaN      0.052  4.910000e+02        150.0
+             ts_qwen3  qwen 50000 12.63   0.162  1.130000e+07          NaN      0.942  8.110000e+07          NaN
+             ts_qwen3 gemma 50000 12.63   0.184  2.260000e+06          NaN      0.913  1.620000e+07          NaN
