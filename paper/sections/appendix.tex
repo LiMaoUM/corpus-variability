@@ -63,18 +63,18 @@ Zipf, 200 topics & none & 5 & 69 & 0 & 0 \\
 \section{Prediction of the sample that covers half the corpus}
 \label{app:halfcover}
 
-The predictions in this appendix use $d$, $a$ and $b$ from the first pilot alone. Averaging $d$ over five pilots instead moves no predicted share by more than half a percentage point.
+The predictions in this appendix use $d$, $a$ and $b$ from the first pilot alone. Averaging $d$ over five pilots instead moves no predicted percentage by more than half a percentage point.
 
 The eighteen pairs of corpus and judge test the prediction to very different degrees. On five pairs the target is reached before the smallest sample of 100 documents, and at the point estimate of $r_{\mathrm{same}}$ the prediction also falls below 100. On four pairs (AskDocs and TIFU under both judges) the target is reached at the 50\% limit, with $G$ at 1.00. Any law that keeps $G$ near 1 predicts these four, so they tell little about the law or about $r$. On five pairs the target is reached between 100 and 1{,}000 documents, inside the range of sample sizes the pilot fit used. There the predicted sample is at most a third larger or a quarter smaller than the measured one.
 
-The remaining four pairs require the law to predict beyond the pilot, and they are the real test. On the Census covid slice under Qwen3.8, the prediction is 8\% above the measured 3{,}356 documents. This corpus fails the pilot test, but the test checks the fit across many resolutions at once, and at a single resolution the fitted curve can still follow $G$. On Truth Social under both judges and on the random Census slice under Qwen3.8, the measured share lies near the 50\% limit, between 41\% and 44\%. The prediction is 3.6 to 3.7 percentage points higher. Measured from the limit, the corpus stands 6 to 9 points below 50\%, and the law places it only about half as far below.
+The remaining four pairs require the law to predict beyond the pilot, and they are the real test. On the Census covid slice under Qwen3.8, the prediction is 8\% above the measured 3{,}356 documents. This corpus fails the pilot test, but the test checks the fit across many resolutions at once, and at a single resolution the fitted curve can still follow $G$. On Truth Social under both judges and on the random Census slice under Qwen3.8, the measured percentage lies near the 50\% limit, between 41\% and 44\%. The prediction is 3.6 to 3.7 percentage points higher. Measured from the limit, the corpus stands 6 to 9 points below 50\%, and the law places it only about half as far below.
 
 The prediction is too high on all twelve rows of these two corpora, including the ends of the interval of $r_{\mathrm{same}}$. Where both a prediction and a measurement exist, the largest errors fall at those ends. On the random Census slice the prediction is 4.5 percentage points too high, and on the Census covid slice under Gemma the law predicts 197 documents where 106 suffice. At two ends where the measurement falls below 100 documents (the Census citizens and illegal slices under Qwen3.8), the prediction is about 150 documents. Near the 50\% limit the error always points toward a larger sample than needed. On the random Census slice, the full procedure of Appendix~\ref{app:pilotcal}, with $r_{\mathrm{same}}$ also found inside the pilot, predicts 721 documents where 532 suffice.
 
 \section{Calibration inside the pilot}
 \label{app:pilotcal}
 
-For five corpora, Gemma-4-31B-it judged up to 40 pairs in each distance bin, drawn inside the first pilot of 2{,}000 documents with the sampler, bins and prompt of Section~\ref{sec:rcal}. Table~\ref{tab:pilotcal} gives the crossing with its pair bootstrap interval, the crossing from pairs over the whole corpus under the same judge, and the share that covers half of the corpus, predicted from the pilot's crossing with $d$, $a$ and $b$ from the same pilot, and measured at the crossing from the whole corpus. Pilots of the forum corpora hold few close pairs: AskDocs has 14 pairs closer than 0.2, and 4.5\% of its resamples find no crossing, while TIFU has none closer than 0.15. The census and Truth Social pilots fill every bin above 0.1.
+For five corpora, Gemma-4-31B-it judged up to 40 pairs in each distance bin, drawn inside the first pilot of 2{,}000 documents with the sampler, bins and prompt of Section~\ref{sec:rcal}. Table~\ref{tab:pilotcal} gives the crossing with its pair bootstrap interval, the crossing from pairs over the whole corpus under the same judge, and the percentage that covers half of the corpus, predicted from the pilot's crossing with $d$, $a$ and $b$ from the same pilot, and measured at the crossing from the whole corpus. Pilots of the forum corpora hold few close pairs: AskDocs has 14 pairs closer than 0.2, and 4.5\% of its resamples find no crossing, while TIFU has none closer than 0.15. The census and Truth Social pilots fill every bin above 0.1.
 
 \begin{table}[h]
 \centering
@@ -114,7 +114,7 @@ Trump (GTR) & 3.4\% & 2.0 to 16.2 & 0.52 \\
 Zipf, 200 topics & 0.0\% & 7.8 to 18.1 & 0.21 \\
 \bottomrule
 \end{tabular}}
-\caption{Probes of the collapse failure. Near duplicates: share of a 5{,}000-document sample with a neighbour within cosine distance 0.02. Local $d$: range of the TwoNN dimension over twenty $k$-means clusters, and its coefficient of variation.}
+\caption{Probes of the collapse failure. Near duplicates: percentage of a 5{,}000-document sample with a neighbour within cosine distance 0.02. Local $d$: range of the TwoNN dimension over twenty $k$-means clusters, and its coefficient of variation.}
 \label{tab:probe}
 \end{table}
 
@@ -143,7 +143,7 @@ $n/N$ & $M$ (true) & $G$ & $G\,(1 - n/N)$ & error \\
 \section{Coverage of a theme inventory}
 \label{app:themes}
 
-Each of the eight forum and census corpora received inventories of themes by $k$-means on the full Qwen3 embeddings at $K = 10$, 30 and 100, and two inventories with skewed masses at $K = 30$: one from $k$-means++ seeding without refinement, one by merging the 100 clusters into 30 groups of Zipf sizes. The effective number of themes (the exponential of the entropy of the masses) ranges from 6.8 to 91. For each inventory and the 1{,}200 samples of Section~\ref{app:summaries}, Table~\ref{tab:themes} gives the range across corpora of the share of theme mass present. The expected coverage $\sum_k m_k (1 - (1 - m_k)^{n})$ matches the observed value to a mean absolute error of 0.004 over all cells. For the $K = 30$ inventory, Gemma~4 \citep{gemma4} was shown each sample and the list of named themes and asked which were present, with a supporting document for each. The mass of themes it reported rose with $n$ along the label coverage curve in every corpus, and the share of its reports that the labels confirm rose from 0.73 at $n = 25$ to 0.98 at $n = 400$.
+Each of the eight forum and census corpora received inventories of themes by $k$-means on the full Qwen3 embeddings at $K = 10$, 30 and 100, and two inventories with skewed masses at $K = 30$: one from $k$-means++ seeding without refinement, one by merging the 100 clusters into 30 groups of Zipf sizes. The effective number of themes (the exponential of the entropy of the masses) ranges from 6.8 to 91. For each inventory and the 1{,}200 samples of Section~\ref{app:summaries}, Table~\ref{tab:themes} gives the range across corpora of the percentage of theme mass present. The expected coverage $\sum_k m_k (1 - (1 - m_k)^{n})$ matches the observed value to a mean absolute error of 0.004 over all cells. For the $K = 30$ inventory, Gemma~4 \citep{gemma4} was shown each sample and the list of named themes and asked which were present, with a supporting document for each. The mass of themes it reported rose with $n$ along the label coverage curve in every corpus, and the percentage of its reports that the labels confirm rose from 0.73 at $n = 25$ to 0.98 at $n = 400$.
 
 \begin{table}[h]
 \centering
@@ -160,14 +160,14 @@ seeding only, $K{=}30$ & 0.60 to 0.72 & 0.82 to 0.88 & 0.94 to 0.96 \\
 Zipf merge, $K{=}30$ & 0.79 to 0.84 & 0.87 to 0.91 & 0.93 to 0.96 \\
 \bottomrule
 \end{tabular}}
-\caption{Share of theme mass present in a sample, range across eight corpora.}
+\caption{Percentage of theme mass present in a sample, range across eight corpora.}
 \label{tab:themes}
 \end{table}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{figures/themes.pdf}
-\caption{(a) Share of theme mass present in a sample against $n$ for the $K = 30$ inventory, eight corpora (points), with the expected coverage from each corpus's masses (lines). (b) Coverage $1 - G$ at the fixed radius $r = 0.34$ for the same samples.}
+\caption{(a) Percentage of theme mass present in a sample against $n$ for the $K = 30$ inventory, eight corpora (points), with the expected coverage from each corpus's masses (lines). (b) Coverage $1 - G$ at the fixed radius $r = 0.34$ for the same samples.}
 \label{fig:themes}
 \end{figure}
 
@@ -179,7 +179,7 @@ For each of the eight forum and census corpora and each $n \in \{25, 50, 100, 20
 \section{A bound for functions that are stable at scale $r$}
 \label{app:bound}
 
-For a document function $f$ with range 1 that takes the same value on documents within $r$ of each other, the estimate of the corpus mean of $f$ formed by giving each corpus document the value of its nearest sampled document errs by at most $v(r) + M(r)$, where $v(r)$ is the share of covered documents whose nearest sampled document disagrees with them on $f$. On fifty cluster indicator functions over four corpora, six sample sizes and six radii, the bound held in 144 of 144 cells and was loose for proportions (median 22 times the realised error), where the plain sample mean already errs by 0.003 to 0.07.
+For a document function $f$ with range 1 that takes the same value on documents within $r$ of each other, the estimate of the corpus mean of $f$ formed by giving each corpus document the value of its nearest sampled document errs by at most $v(r) + M(r)$, where $v(r)$ is the proportion of covered documents whose nearest sampled document disagrees with them on $f$. On fifty cluster indicator functions over four corpora, six sample sizes and six radii, the bound held in 144 of 144 cells and was loose for proportions (median 22 times the realised error), where the plain sample mean already errs by 0.003 to 0.07.
 
 \section{Prompts}
 \label{app:prompts}
