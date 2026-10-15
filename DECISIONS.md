@@ -225,3 +225,9 @@ identifiers, pair judgments; no post text, no review records or internal files),
 first and made public after Mao checks it. Mao reads the paper in Listen before the upload.
 Rationale: priority on applying Maurer's estimator and the n r^d law to text; the ARR version stays
 anonymous.
+
+## 2026-10-15: Ideas and facts recorded from the month retrospective
+
+PROPOSAL: recorded ideas and facts, none decided by Mao; the source is notes/reviews/2026-10-15-month-retrospective/unrecorded-ideas.md in maospace.
+
+- **Corpus as a semantic space that sampling can cover; manifold and metric-space framing.** Embeddings represent language in space, so a corpus can be wrapped by sampling and coverage. A 768-d space is not spanned by semantics: data lie on a low-dimensional manifold, which is the theoretical logic for sample points in a metric space; Maurer is a metric-space result, and the neighbor-substitute idea needs a KNN expression. The reader's question "If I read 15 texts, do I understand the corpus?" is the paper's frame (writing lesson 41). Voiced by Mao in Listen comments, 2026-10-14 (`review/listen/*.md`, Disposition empty). Quotes: "既然语言，语料，语意可以在空间上表示，那它就可以被这个用一种抽样，用一种覆盖的想法去包裹它"; "我们把G这个概念有点太奉为圭臬了"; "比如我抽了15个text，我能不能保证我基本上理解了所有的corpus？" (Item 107)
