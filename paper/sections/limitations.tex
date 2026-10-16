@@ -1,8 +1,8 @@
 \section*{Limitations}
 
-The resolution $r$ is a cosine distance in the space of one encoder. The law held under both encoders on AskDocs and TIFU, but $d$ changed with the encoder, from 13.6 under Qwen3 to 18.3 under GTR on TIFU. A user must therefore fix the encoder before choosing $r$, and report the two together. Within one encoder, the same $r$ also means different things in different corpora (Section~\ref{sec:rcal}). Our calibration of $r$ rests on the judgments of two large language models, which agree with $\kappa = 0.55$ and place the crossing at different distances, and no person checked them.
+The resolution $r$ is a cosine distance in the space of one encoder. The law held under both encoders on AskDocs and TIFU, but $d$ changed with the encoder, from 27.3 under Qwen3 to 36.5 under GTR on TIFU. A user must therefore fix the encoder before choosing $r$, and report the two together. Within one encoder, the same $r$ also means different things in different corpora (Section~\ref{sec:rcal}). Our calibration of $r$ rests on the judgments of two large language models, which agree with $\kappa = 0.55$ and place the crossing at different distances, and no person checked them.
 
-The required sample grows as $r^{-d}$, so the formula is useful only at resolutions where the required sample is a feasible number. At $d = 15$, halving $r$ multiplies the required sample by about 33{,}000. The formula helps plan a sample at the resolution of the question, and it cannot make a fine resolution affordable.
+The required sample grows as $r^{-d/2}$, so the formula is useful only at resolutions where the required sample is a feasible number. At $d = 30$, halving $r$ multiplies the required sample by about 33{,}000. The formula helps plan a sample at the resolution of the question, and it cannot make a fine resolution affordable.
 
 The constants $a$ and $b$ must be fitted for each corpus. We can explain why $b$ is below 1, but we have no expression that predicts its value.
 

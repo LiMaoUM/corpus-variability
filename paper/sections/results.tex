@@ -4,12 +4,12 @@
 
 Before testing the law, we check that $G$ measures what it should. In the synthetic Zipf mixtures every document belongs to a known topic, so we know exactly which percentage of the topics a sample has covered. Over four settings of the mixture, three random seeds and eleven sample sizes from 50 to 5{,}000, the coverage $1 - G$ at a resolution of half the median distance between documents in a pilot follows the true topic coverage closely. The rank correlation is $\rho = 0.968$, and $1 - G$ is off by 2.9 percentage points on average (Appendix~\ref{app:smoke}). Good and Turing's estimator applied to the true topic labels, which $G$ never sees, does only slightly better ($\rho = 0.989$). At smaller resolutions the agreement falls away. At those resolutions two documents of the same topic often lie farther apart than $r$, so $G$ counts a document as unseen content even when its topic is in the sample. The resolution must therefore match the question being asked of the sample, and Section~\ref{sec:rcal} ties it to judgments of content.
 
-\subsection{The isolation rate collapses on $n r^{d}$}
+\subsection{The isolation rate collapses on $n r^{d/2}$}
 \label{sec:collapse}
 
 Table~\ref{tab:collapse} reports the fit of Equation~\ref{eq:collapse} on 17 pairs of corpus and encoder, and Figure~\ref{fig:collapse} shows six of them. On ten pairs the law holds: the three synthetic manifolds, AskDocs and TIFU under both encoders, the random slice of the Census tweets, Truth Social and Bluesky. On these ten, a fit on samples of up to 1{,}000 documents explains 92\% or more of the variance of $\log(-\log G)$ in samples of up to 7{,}000 documents. A fit on samples of up to 300 documents still explains more than 92\%, although it predicts samples 23 times larger than any it saw. In terms of $G$ itself, the law predicts the isolation rate of the largest sample with an average error between 1.5 and 4.2 percentage points on these ten pairs (Table~\ref{tab:collapse}). A researcher who has drawn a few hundred documents can thus predict from them alone what percentage of a sample twenty times larger will be isolated, at every resolution at once.
 
-In each panel of Figure~\ref{fig:collapse}, the points of one colour are the values of $G$ at one resolution, for sample sizes from 100 to 7{,}000. For AskDocs and TIFU, the points of all colours lie on one curve once the horizontal axis is $n r^{d}$, so that a larger sample and a looser resolution are interchangeable. For Trump and for the Zipf mixture, each colour traces its own curve, and no single $d$ brings them together.
+In each panel of Figure~\ref{fig:collapse}, the points of one colour are the values of $G$ at one resolution, for sample sizes from 100 to 7{,}000. For AskDocs and TIFU, the points of all colours lie on one curve once the horizontal axis is $n r^{d/2}$, so that a larger sample and a looser resolution are interchangeable. For Trump and for the Zipf mixture, each colour traces its own curve, and no single $d$ brings them together.
 
 The second estimate of $d$, from the separate coefficients on $\log n$ and $\log r$, agrees with the TwoNN estimate where the law holds. On the ten passing pairs the two estimates differ by at most 19\%. On the seven failing pairs they differ by 27\% to 43\%, and by 46\% on one of the three GTR samples of Trump, and the regression estimate is always the lower one.
 
@@ -46,7 +46,7 @@ A second model, Gemma-4-31B-it, judged the same pairs with the same prompt. The 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/collapse.pdf}
-\caption{Isolation rate $G$ against $n r^{d}$ (log scale), one panel per corpus, with the GTR encoder for the three forum corpora. Each point is one sample size at one resolution, and the colour gives the resolution, from the 5th (dark) to the 99th (light) percentile of the nearest neighbour distances in a pilot. Where the law holds (the synthetic manifolds, AskDocs, TIFU), points from all resolutions fall on one curve. Where it fails (Trump, the Zipf mixture), the points of each resolution form their own curve. The grey line is the fit of Equation~\ref{eq:collapse} on samples of up to 1{,}000 documents. Each panel gives $d$ and the full out of sample $R^2$ from Table~\ref{tab:collapse}.}
+\caption{Isolation rate $G$ against $n r^{d/2}$ (log scale; $n r^{d}$ on the manifolds, which use Euclidean distance), one panel per corpus, with the GTR encoder for the three forum corpora. Each point is one sample size at one resolution, and the colour gives the resolution, from the 5th (dark) to the 99th (light) percentile of the nearest neighbour distances in a pilot. Where the law holds (the synthetic manifolds, AskDocs, TIFU), points from all resolutions fall on one curve. Where it fails (Trump, the Zipf mixture), the points of each resolution form their own curve. The grey line is the fit of Equation~\ref{eq:collapse} on samples of up to 1{,}000 documents. Each panel gives $d$ and the full out of sample $R^2$ from Table~\ref{tab:collapse}.}
 \label{fig:collapse}
 \end{figure*}
 \begin{table*}[t]
@@ -57,27 +57,27 @@ A second model, Gemma-4-31B-it, judged the same pairs with the same prompt. The 
 \toprule
 Corpus & Encoder & $N$ & $d$ (sd) & $d$, ratio & $b$ & $R^2$ pilot & $R^2$ full & error, law & error, per resolution \\
 \midrule
-AskDocs & Qwen3 & 10{,}000 & 12.8 (0.39) & 12.2 & 0.54 & 0.98 & 0.99 & 0.015 & 0.057 \\
-Truth Social & Qwen3 & 50{,}000 & 12.6 (0.15) & 14.4 & 0.43 & 0.98 & 0.98 & 0.025 & 0.053 \\
-Census random & Qwen3 & 7{,}610 & 12.9 (0.39) & 12.4 & 0.27 & 0.98 & 0.97 & 0.040 & 0.025 \\
+AskDocs & Qwen3 & 10{,}000 & 25.5 (0.78) & 24.4 & 0.54 & 0.98 & 0.99 & 0.015 & 0.057 \\
+Truth Social & Qwen3 & 50{,}000 & 25.3 (0.30) & 28.9 & 0.43 & 0.98 & 0.98 & 0.025 & 0.053 \\
+Census random & Qwen3 & 7{,}610 & 25.7 (0.78) & 24.8 & 0.27 & 0.98 & 0.97 & 0.040 & 0.025 \\
 Manifold $d{=}2$ & none & 20{,}000 & 2.0 (0.05) & 2.4 & 0.80 & 0.97 & 0.96 & 0.027 & 0.065 \\
-TIFU & Qwen3 & 10{,}000 & 13.6 (0.35) & 13.4 & 0.53 & 0.98 & 0.96 & 0.039 & 0.086 \\
-Bluesky & Qwen3 & 50{,}000 & 16.0 (0.69) & 15.2 & 0.42 & 0.98 & 0.96 & 0.037 & 0.056 \\
-TIFU & GTR & 10{,}000 & 18.3 (0.33) & 19.0 & 0.50 & 0.97 & 0.95 & 0.040 & 0.070 \\
+TIFU & Qwen3 & 10{,}000 & 27.3 (0.70) & 26.8 & 0.53 & 0.98 & 0.96 & 0.039 & 0.086 \\
+Bluesky & Qwen3 & 50{,}000 & 32.0 (1.38) & 30.4 & 0.42 & 0.98 & 0.96 & 0.037 & 0.056 \\
+TIFU & GTR & 10{,}000 & 36.5 (0.66) & 38.1 & 0.50 & 0.97 & 0.95 & 0.040 & 0.070 \\
 Manifold $d{=}8$ & none & 20{,}000 & 8.0 (0.21) & 8.1 & 0.62 & 0.97 & 0.95 & 0.042 & 0.081 \\
-AskDocs & GTR & 10{,}000 & 13.6 (0.36) & 13.6 & 0.51 & 0.98 & 0.95 & 0.042 & 0.087 \\
+AskDocs & GTR & 10{,}000 & 27.3 (0.71) & 27.1 & 0.51 & 0.98 & 0.95 & 0.042 & 0.087 \\
 Manifold $d{=}4$ & none & 20{,}000 & 4.0 (0.16) & 4.3 & 0.72 & 0.96 & 0.92 & 0.036 & 0.091 \\
 \midrule
-Census illegal & Qwen3 & 17{,}202 & 11.4 (0.33) & 7.5 & 0.26 & 0.93 & 0.85 & 0.026 & 0.053 \\
-Census covid & Qwen3 & 17{,}837 & 10.7 (0.40) & 7.2 & 0.30 & 0.85 & 0.79 & 0.045 & 0.073 \\
-Trump & Qwen3 & 10{,}000 & 9.0 (0.51) & 5.3 & 0.26 & 0.90 & 0.78 & 0.045 & 0.075 \\
-Census trump & Qwen3 & 30{,}136 & 9.0 (0.84) & 6.3 & 0.26 & 0.87 & 0.78 & 0.043 & 0.056 \\
-Census citizens & Qwen3 & 7{,}849 & 9.1 (0.24) & 6.6 & 0.27 & 0.76 & 0.73 & 0.043 & 0.058 \\
-Trump & GTR & 10{,}000 & 9.0 (0.48) & 5.2 & 0.27 & 0.79 & 0.63 & 0.054 & 0.069 \\
-Zipf, 200 topics & none & 20{,}000 & 11.3 (0.35) & 6.4 & 0.21 & 0.66 & 0.62 & 0.136 & 0.026 \\
+Census illegal & Qwen3 & 17{,}202 & 22.8 (0.66) & 15.0 & 0.26 & 0.93 & 0.85 & 0.026 & 0.053 \\
+Census covid & Qwen3 & 17{,}837 & 21.3 (0.80) & 14.4 & 0.30 & 0.85 & 0.79 & 0.045 & 0.073 \\
+Trump & Qwen3 & 10{,}000 & 17.9 (1.02) & 10.5 & 0.26 & 0.90 & 0.78 & 0.045 & 0.075 \\
+Census trump & Qwen3 & 30{,}136 & 18.0 (1.68) & 12.6 & 0.26 & 0.87 & 0.78 & 0.043 & 0.056 \\
+Census citizens & Qwen3 & 7{,}849 & 18.1 (0.48) & 13.2 & 0.27 & 0.76 & 0.73 & 0.043 & 0.058 \\
+Trump & GTR & 10{,}000 & 17.9 (0.97) & 10.4 & 0.27 & 0.79 & 0.63 & 0.054 & 0.069 \\
+Zipf, 200 topics & none & 20{,}000 & 22.7 (0.70) & 12.9 & 0.21 & 0.66 & 0.62 & 0.136 & 0.026 \\
 \bottomrule
 \end{tabular}
-\caption{The collapse law on 17 pairs of corpus and encoder, sorted by the full out of sample $R^2$. Pairs above the line pass the pilot test. $d$: intrinsic dimension by TwoNN, mean and standard deviation over five pilots of 2{,}000 documents (over three samples of the source for the GTR forum corpora). $d$, ratio: the second estimate of $d$, the ratio of the coefficients on $\log r$ and $\log n$. $b$: shape exponent of Equation~\ref{eq:collapse}, fitted on samples of up to 1{,}000 documents. $R^2$ pilot: proportion of variance explained on subsamples of 1{,}000 to 2{,}000 documents of one pilot, by a fit on subsamples of up to 750. $R^2$ full: proportion of variance explained on samples of up to 7{,}000 documents, by a fit on samples of up to 1{,}000. Error, law and error, per resolution: average error in predicting $G$ at the largest sample, for the collapse law and for a separate curve in $n$ at each resolution.}
+\caption{The collapse law on 17 pairs of corpus and encoder, sorted by the full out of sample $R^2$. Pairs above the line pass the pilot test. $d$: intrinsic dimension by TwoNN with Euclidean distance between unit embeddings (Euclidean distance on the manifolds), mean and standard deviation over five pilots of 2{,}000 documents (over three samples of the source for the GTR forum corpora). $d$, ratio: the second estimate of $d$, from the ratio of the coefficients on $\log r$ and $\log n$. $b$: shape exponent of Equation~\ref{eq:collapse}, fitted on samples of up to 1{,}000 documents. $R^2$ pilot: proportion of variance explained on subsamples of 1{,}000 to 2{,}000 documents of one pilot, by a fit on subsamples of up to 750. $R^2$ full: proportion of variance explained on samples of up to 7{,}000 documents, by a fit on samples of up to 1{,}000. Error, law and error, per resolution: average error in predicting $G$ at the largest sample, for the collapse law and for a separate curve in $n$ at each resolution.}
 \label{tab:collapse}
 \end{table*}
 \begin{table*}[t]

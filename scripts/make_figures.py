@@ -1,6 +1,6 @@
 """Paper figures (specs confirmed by Mao, 2026-10-11).
 
-collapse: 2x3 panels, G against n r^d (log x), colour = radius r (viridis), grey fitted stretched
+collapse: 2x3 panels, G against n r^d (manifolds) or n r^(d/2) (cosine corpora, geometric d) (log x), colour = radius r (viridis), grey fitted stretched
 exponential, annotation d and out-of-sample R2.
 themes: two panels, theme mass coverage against n with the Good-Turing expectation per corpus
 (left) and coverage at the shared radius r = 0.34 (right), Okabe-Ito colours.
@@ -65,9 +65,10 @@ def collapse():
         ax.xaxis.set_minor_formatter(mpl.ticker.NullFormatter())
         ax.set_title(label, fontsize=7.5, loc="left")
         corner = (0.04, 0.05, "left", "bottom") if label == "Trump" else (0.97, 0.97, "right", "top")
-        ax.text(corner[0], corner[1], f"d = {d:.1f}, $R^2$ = {r2:.2f}", transform=ax.transAxes, ha=corner[2], va=corner[3], fontsize=6.5)
-    for ax in axes[1]:
-        ax.set_xlabel("$n\\,r^{d}$")
+        euclid = label.startswith("Manifold")  # manifolds use Euclidean distance; text corpora use cosine
+        d_geo = d if euclid else 2 * d  # TwoNN on cosine distance gives half the geometric dimension
+        ax.text(corner[0], corner[1], f"d = {d_geo:.1f}, $R^2$ = {r2:.2f}", transform=ax.transAxes, ha=corner[2], va=corner[3], fontsize=6.5)
+        ax.set_xlabel("$n\\,r^{d}$" if euclid else "$n\\,r^{d/2}$", fontsize=7)
     for ax in axes[:, 0]:
         ax.set_ylabel("Isolation rate $G$")
     sm = plt.cm.ScalarMappable(cmap="viridis", norm=mpl.colors.Normalize(0, 1)); sm.set_array([])
