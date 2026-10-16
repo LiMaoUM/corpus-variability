@@ -12,7 +12,9 @@ confidence band and a required-n.
 - Primary metric: nearest-neighbour isolation coverage, the continuous analogue of Good-Turing.
   `C_r(n) = 1 - #{i : d(x_i, NN_{-i}(x_i)) > r} / n` on document embeddings. Comparison lines:
   Vendi score convergence, discrete topics with iNEXT coverage-based rarefaction.
-- Main line (2026-10-09): the corpus sample-size formula, n r^d collapse with TwoNN d plus the
+- Main line (2026-10-15): designed samples (k-means medoids, greedy maximum coverage) against random ones,
+  with the isolation rate, the collapse law, the pilot test and the resolution reached as tools.
+  Earlier main line (2026-10-09): the corpus sample-size formula, n r^d collapse with TwoNN d plus the
   finite population correction on Maurer's G; collapse R2 is the corpus diagnostic. Venue:
   ACL/EMNLP via ARR. Two questions, two tools (2026-10-09): the formula answers coverage at
   resolution r, label-free, cross-corpus through d; theme coverage is a partition question
@@ -80,7 +82,8 @@ Exchanges with Codex are archived in `docs/agent-room/` (see its README).
   intrinsic dimension (TwoNN with Euclidean distance gives about 25 on AskDocs, 24 on Zipf, 4.2 on the
   d = 4 manifold, which uses Euclidean). The collapse law and every prediction are unaffected, because r is
   also a cosine distance, so n r_cos^(d_cos) = n r_euc^(d_euc) up to a constant. Prose that calls d "the number
-  of independent directions" is off by a factor of two; the presentation fix is Mao's decision.
+  of independent directions" is off by a factor of two. Decided 2026-10-15: the paper reports the geometric d and writes the law
+  as n r^(d/2) for cosine r.
 - The package (`~/projects/how-many-documents/package`, `corpus_coverage`) reports the Euclidean d and uses
   exponent d / 2 with cosine r. With one pilot it reproduces the paper's pilot verdict on 9 of 10 Qwen3
   corpora (Census covid passes with pilot R2 0.966 against 0.85 in the paper).
