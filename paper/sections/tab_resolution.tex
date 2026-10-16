@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{$r_{80}$} & \multicolumn{3}{c}{Same topic (\%)} & \multicolumn{3}{c}{Same content (\%)} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+Corpus & 15 & 100 & 1{,}000 & 15 & 100 & 1{,}000 & 15 & 100 & 1{,}000 \\
+\midrule
+AskDocs & 0.66 & 0.58 & 0.49 & 19 & 56 & 70 & 0 & 0 & 0 \\
+TIFU & 0.53 & 0.47 & 0.39 & 18 & 32 & 39 & 0 & 0 & 0 \\
+Truth Social & 0.51 & 0.46 & 0.39 & 36 & 35 & 72 & 5 & 7 & 11 \\
+Census random & 0.48 & 0.43 & 0.35 & 65 & 81 & 88 & 0 & 4 & 11 \\
+Census covid & 0.44 & 0.38 & 0.32 & 79 & 69 & 95 & 1 & 7 & 10 \\
+Census citizens & 0.36 & 0.31 & 0.25 & 100 & 100 & 100 & 24 & 32 & 42 \\
+Trump (forum) & 0.41 & 0.36 & 0.30 & 83 & 92 & 98 & 6 & 5 & 26 \\
+Census trump & 0.41 & 0.36 & 0.30 & 65 & 87 & 98 & 11 & 14 & 15 \\
+Census illegal & 0.36 & 0.31 & 0.26 & 89 & 96 & 100 & 14 & 24 & 55 \\
+\bottomrule
+\end{tabular}
+\caption{The resolution a random sample reaches. $r_{80}$: the cosine distance within which 80\% of the corpus has a document in a random sample of 15, 100 or 1{,}000 documents, averaged over 20 samples. The estimate from the sample alone, the $r$ at which $G\,(1 - n/N) = 0.2$, is within 0.02 of these values in every cell. Same topic and same content: the percentage of the pairs judged by Qwen3.8 at that distance that share at least a topic, or that have the same specific content, interpolated between distance bins.}
+\label{tab:resolution}
+\end{table*}
