@@ -14,6 +14,9 @@ confidence band and a required-n.
   Vendi score convergence, discrete topics with iNEXT coverage-based rarefaction.
 - Main line (2026-10-15): designed samples (k-means medoids, greedy maximum coverage) against random ones,
   with the isolation rate, the collapse law, the pilot test and the resolution reached as tools.
+  Refined 2026-10-16: k-means selection is presented as existing practice with citations; the contribution is
+  measuring its coverage, when it pays, and the pilot that predicts the gain. Method states the conditions for
+  embedding the whole corpus and the fallbacks (embed a large random sample; else estimate with G (1 - n/N)).
   Earlier main line (2026-10-09): the corpus sample-size formula, n r^d collapse with TwoNN d plus the
   finite population correction on Maurer's G; collapse R2 is the corpus diagnostic. Venue:
   ACL/EMNLP via ARR. Two questions, two tools (2026-10-09): the formula answers coverage at
