@@ -72,3 +72,15 @@ confidence band and a required-n.
 ## Agent room
 
 Exchanges with Codex are archived in `docs/agent-room/` (see its README).
+
+## Dimension units (found 2026-10-15)
+
+- Every d in the paper and results (`d_twonn`, about 13 on AskDocs) is TwoNN on cosine distance. Cosine
+  distance between unit vectors is half the squared Euclidean distance, so this d is half the geometric
+  intrinsic dimension (TwoNN with Euclidean distance gives about 25 on AskDocs, 24 on Zipf, 4.2 on the
+  d = 4 manifold, which uses Euclidean). The collapse law and every prediction are unaffected, because r is
+  also a cosine distance, so n r_cos^(d_cos) = n r_euc^(d_euc) up to a constant. Prose that calls d "the number
+  of independent directions" is off by a factor of two; the presentation fix is Mao's decision.
+- The package (`~/projects/how-many-documents/package`, `corpus_coverage`) reports the Euclidean d and uses
+  exponent d / 2 with cosine r. With one pilot it reproduces the paper's pilot verdict on 9 of 10 Qwen3
+  corpora (Census covid passes with pilot R2 0.966 against 0.85 in the paper).
