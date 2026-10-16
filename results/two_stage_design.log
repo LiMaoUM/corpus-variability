@@ -1,0 +1,82 @@
+       corpus     N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+askdocs_qwen3 10000  same 0.146  1000  15   0.985     0.998          0.998     0.998
+askdocs_qwen3 10000  same 0.146  1000 100   0.900     0.989          0.988     0.990
+askdocs_qwen3 10000  same 0.146  5000  15   0.997     0.998          0.998     0.998
+askdocs_qwen3 10000  same 0.146  5000 100   0.979     0.989          0.988     0.990
+askdocs_qwen3 10000 topic 0.596  1000  15   0.322     0.331          0.242     0.558
+askdocs_qwen3 10000 topic 0.596  1000 100   0.070     0.085          0.053     0.155
+askdocs_qwen3 10000 topic 0.596  5000  15   0.248     0.251          0.242     0.558
+askdocs_qwen3 10000 topic 0.596  5000 100   0.055     0.058          0.053     0.155
+     corpus     N level    r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+trump_qwen3 10000  same 0.24  1000  15   0.670     0.686          0.635     0.880
+trump_qwen3 10000  same 0.24  1000 100   0.522     0.587          0.508     0.684
+trump_qwen3 10000  same 0.24  5000  15   0.655     0.655          0.635     0.880
+trump_qwen3 10000  same 0.24  5000 100   0.510     0.514          0.508     0.684
+trump_qwen3 10000 topic 0.50  1000  15   0.020     0.017          0.014     0.040
+trump_qwen3 10000 topic 0.50  1000 100   0.005     0.006          0.004     0.010
+trump_qwen3 10000 topic 0.50  5000  15   0.015     0.015          0.014     0.040
+trump_qwen3 10000 topic 0.50  5000 100   0.005     0.005          0.004     0.010
+    corpus     N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+tifu_qwen3 10000  same 0.050  1000  15   0.985     0.999          0.999     0.999
+tifu_qwen3 10000  same 0.050  1000 100   0.900     0.990          0.990     0.990
+tifu_qwen3 10000  same 0.050  5000  15   0.997     0.999          0.999     0.999
+tifu_qwen3 10000  same 0.050  5000 100   0.980     0.990          0.990     0.990
+tifu_qwen3 10000 topic 0.325  1000  15   0.918     0.934          0.919     0.985
+tifu_qwen3 10000 topic 0.325  1000 100   0.742     0.840          0.743     0.913
+tifu_qwen3 10000 topic 0.325  5000  15   0.919     0.922          0.919     0.985
+tifu_qwen3 10000 topic 0.325  5000 100   0.763     0.773          0.743     0.913
+             corpus    N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+census_random_qwen3 7610  same 0.120  1000  15   0.976     0.990          0.988     0.997
+census_random_qwen3 7610  same 0.120  1000 100   0.887     0.974          0.962     0.981
+census_random_qwen3 7610  same 0.120  5000  15   0.989     0.989          0.988     0.997
+census_random_qwen3 7610  same 0.120  5000 100   0.960     0.966          0.962     0.981
+census_random_qwen3 7610 topic 0.502  1000  15   0.089     0.092          0.079     0.157
+census_random_qwen3 7610 topic 0.502  1000 100   0.042     0.052          0.041     0.071
+census_random_qwen3 7610 topic 0.502  5000  15   0.079     0.080          0.079     0.157
+census_random_qwen3 7610 topic 0.502  5000 100   0.041     0.042          0.041     0.071
+               corpus    N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+census_citizens_qwen3 7849  same 0.225  1000  15   0.677     0.695          0.648     0.898
+census_citizens_qwen3 7849  same 0.225  1000 100   0.482     0.541          0.448     0.671
+census_citizens_qwen3 7849  same 0.225  5000  15   0.665     0.663          0.648     0.898
+census_citizens_qwen3 7849  same 0.225  5000 100   0.466     0.468          0.448     0.671
+            corpus     N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+census_trump_qwen3 30136  same 0.244  1000  15   0.653     0.669          0.585     0.878
+census_trump_qwen3 30136  same 0.244  1000 100   0.496     0.564          0.466     0.660
+census_trump_qwen3 30136  same 0.244  5000  15   0.640     0.641          0.585     0.878
+census_trump_qwen3 30136  same 0.244  5000 100   0.496     0.505          0.466     0.660
+census_trump_qwen3 30136 topic 0.450  1000  15   0.052     0.056          0.044     0.109
+census_trump_qwen3 30136 topic 0.450  1000 100   0.021     0.028          0.018     0.042
+census_trump_qwen3 30136 topic 0.450  5000  15   0.052     0.053          0.044     0.109
+census_trump_qwen3 30136 topic 0.450  5000 100   0.020     0.022          0.018     0.042
+            corpus     N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+census_covid_qwen3 17837  same 0.200  1000  15   0.904     0.916          0.868     0.984
+census_covid_qwen3 17837  same 0.200  1000 100   0.770     0.851          0.779     0.917
+census_covid_qwen3 17837  same 0.200  5000  15   0.891     0.892          0.868     0.984
+census_covid_qwen3 17837  same 0.200  5000 100   0.785     0.795          0.779     0.917
+census_covid_qwen3 17837 topic 0.533  1000  15   0.008     0.007          0.005     0.024
+census_covid_qwen3 17837 topic 0.533  1000 100   0.001     0.002          0.001     0.003
+census_covid_qwen3 17837 topic 0.533  5000  15   0.007     0.006          0.005     0.024
+census_covid_qwen3 17837 topic 0.533  5000 100   0.002     0.001          0.001     0.003
+              corpus     N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+census_illegal_qwen3 17202  same 0.275  1000  15   0.367     0.383          0.326     0.627
+census_illegal_qwen3 17202  same 0.275  1000 100   0.229     0.268          0.206     0.354
+census_illegal_qwen3 17202  same 0.275  5000  15   0.342     0.344          0.326     0.627
+census_illegal_qwen3 17202  same 0.275  5000 100   0.220     0.226          0.206     0.354
+census_illegal_qwen3 17202 topic 0.481  1000  15   0.008     0.009          0.005     0.018
+census_illegal_qwen3 17202 topic 0.481  1000 100   0.002     0.005          0.004     0.006
+census_illegal_qwen3 17202 topic 0.481  5000  15   0.007     0.007          0.005     0.018
+census_illegal_qwen3 17202 topic 0.481  5000 100   0.004     0.004          0.004     0.006
+  corpus     N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+ts_qwen3 50000  same 0.162  1000  15   0.981     0.997          0.995     0.999
+ts_qwen3 50000  same 0.162  1000 100   0.891     0.991          0.981     0.996
+ts_qwen3 50000  same 0.162  5000  15   0.994     0.996          0.995     0.999
+ts_qwen3 50000  same 0.162  5000 100   0.970     0.987          0.981     0.996
+ts_qwen3 50000 topic 0.427  1000  15   0.372     0.393          0.296     0.659
+ts_qwen3 50000 topic 0.427  1000 100   0.196     0.241          0.160     0.325
+ts_qwen3 50000 topic 0.427  5000  15   0.345     0.344          0.296     0.659
+ts_qwen3 50000 topic 0.427  5000 100   0.197     0.201          0.160     0.325
+    corpus     N level     r  pool   n  M_pool  M_corpus  M_kmeans_full  M_random
+bsky_qwen3 50000 topic 0.153  1000  15   0.984     0.999          0.999     1.000
+bsky_qwen3 50000 topic 0.153  1000 100   0.899     0.997          0.996     0.998
+bsky_qwen3 50000 topic 0.153  5000  15   0.997     0.999          0.999     1.000
+bsky_qwen3 50000 topic 0.153  5000 100   0.978     0.996          0.996     0.998
