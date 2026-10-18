@@ -24,7 +24,7 @@ $\alpha$ & Spearman $\rho$ & mean absolute error \\
 \section{The sample size formula by corpus}
 \label{app:nstar}
 
-For each pair of corpus and encoder, we fitted Equation~\ref{eq:collapse} on samples of up to 1{,}000 documents, with five independent samples at each size. Equation~\ref{eq:nstar} then gave the sample size $n^{*}$ that brings the isolation rate down to 30\%, 20\% or 10\%, at every resolution where the average over the five samples reaches the target only beyond 1{,}000 documents. We found the true sample size by interpolating between the sample sizes we drew, on a log scale. Table~\ref{tab:nstar} reports, for each pair, how many cases there were, the typical ratio of the formula's answer to the true sample size, and in how many cases the true sample size lay between two thirds and one and a half times the formula's answer (column $\le 1.5$) or between half and twice the answer (column $\le 2$). Two facts help in judging these numbers. Neighbouring sample sizes in our grid differ by about one and a half times, and the true sample size varies by a median of 6\% across the five samples. On the six failing pairs of real text, which leave out the Zipf mixture, the true sample size lay within the narrower band in 10 of 18 cases and within the wider band in 14. When $a$ and $b$ are fitted on subsamples of one pilot of 2{,}000 documents instead of on draws from the whole corpus, the narrower band holds in 76 of the 83 cases on passing pairs. The wider band holds in 81 of them.
+For each pair of corpus and encoder, we fitted Equation~\ref{eq:collapse} on samples of up to 1{,}000 documents, with five independent samples at each size. Equation~\ref{eq:nstar} then gave the sample size $n^{*}$ that brings the isolation rate down to 30\%, 20\% or 10\%, at every resolution where the average over the five samples reaches the target only beyond 1{,}000 documents. We found the true sample size by interpolating between the sample sizes we drew, on a log scale. Table~\ref{tab:nstar} reports, for each pair, how many cases there were, the typical ratio of the formula's answer to the true sample size, and in how many cases the true sample size lay between two thirds and one and a half times the formula's answer (column $\le 1.5$) or between half and twice the answer (column $\le 2$). Two facts help in judging these numbers. Neighboring sample sizes in our grid differ by about one and a half times, and the true sample size varies by a median of 6\% across the five samples. On the six failing pairs of real text, which leave out the Zipf mixture, the true sample size lay within the narrower band in 10 of 18 cases and within the wider band in 14. When $a$ and $b$ are fitted on subsamples of one pilot of 2{,}000 documents instead of on draws from the whole corpus, the narrower band holds in 76 of the 83 cases on passing pairs. The wider band holds in 81 of them.
 
 A random sample can be compared with a sample chosen for coverage. Greedy farthest point selection, the core-set construction of \citet{sener2018coreset}, minimises the largest distance from any document to the chosen set. To bring the missing mass at a radius below a target, a random sample needs 0.6 to 1.0 times as many documents as greedy selection on the forum and census corpora, and 0.12 times as many on Truth Social and Bluesky. Greedy selection spends its picks on outlying documents, which are few, while the missing mass weighs documents equally.
 
@@ -114,7 +114,7 @@ Trump (GTR) & 3.4\% & 4.0 to 32.4 & 0.52 \\
 Zipf, 200 topics & 0.0\% & 15.6 to 36.2 & 0.21 \\
 \bottomrule
 \end{tabular}}
-\caption{Probes of the collapse failure. Near duplicates: percentage of a 5{,}000-document sample with a neighbour within cosine distance 0.02. Local $d$: range of the TwoNN dimension over twenty $k$-means clusters, and its coefficient of variation.}
+\caption{Probes of the collapse failure. Near duplicates: percentage of a 5{,}000-document sample with a neighbor within cosine distance 0.02. Local $d$: range of the TwoNN dimension over twenty $k$-means clusters, and its coefficient of variation.}
 \label{tab:probe}
 \end{table}
 
@@ -136,7 +136,7 @@ $n/N$ & $M$ (true) & $G$ & $G\,(1 - n/N)$ & error \\
 0.70 & 0.110 & 0.366 & 0.110 & 0.003 \\
 \bottomrule
 \end{tabular}
-\caption{Missing mass of the finite corpus by sampling fraction, mean over eight Qwen3 corpora and three radii (the 25th, 50th and 75th percentiles of the pilot's nearest neighbour distances). The last column is the mean absolute error of the corrected estimate.}
+\caption{Missing mass of the finite corpus by sampling fraction, mean over eight Qwen3 corpora and three radii (the 25th, 50th and 75th percentiles of the pilot's nearest neighbor distances). The last column is the mean absolute error of the corrected estimate.}
 \label{tab:fpc}
 \end{table}
 
@@ -184,7 +184,7 @@ For a document function $f$ with range 1 that takes the same value on documents 
 \section{Prompts}
 \label{app:prompts}
 
-The large language models ran on NVIDIA H100 GPUs, served with vLLM \citep{kwon2023vllm} at temperature 0. Nearest neighbour search and the fits used NumPy and scikit-learn \citep{pedregosa2011sklearn} on CPU.
+The large language models ran on NVIDIA H100 GPUs, served with vLLM \citep{kwon2023vllm} at temperature 0. Nearest neighbor search and the fits used NumPy and scikit-learn \citep{pedregosa2011sklearn} on CPU.
 
 \paragraph{Summary.} ``Below are $\{n\}$ documents sampled from a larger collection. Write a summary of the collection in one paragraph of at most 150 words. Cover the main themes in proportion to how often they appear, name notable minority themes briefly, and do not mention individual document numbers.''
 

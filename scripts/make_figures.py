@@ -113,7 +113,45 @@ def themes():
     plt.close(fig)
 
 
+def spread():
+    """One row per corpus, ordered by the median distance to the nearest neighbor among 5,000 random
+    documents (results/nn_spread.npz and .csv, scripts/nn_spread.py): a violin of the distances, the
+    interquartile range as a thick bar, the median as a white tick, the judged distances r_same (filled
+    diamond) and r_topic (open diamond), and on the right the percentage of documents whose nearest
+    neighbor lies within r_same."""
+    S = pd.read_csv(RES / "nn_spread.csv")
+    A = np.load(RES / "nn_spread.npz")
+    names = {"askdocs": "AskDocs", "trump": "Trump forum", "tifu": "TIFU", "census_random": "Census random",
+             "census_citizens": "Census citizens", "census_trump": "Census trump", "census_covid": "Census covid",
+             "census_illegal": "Census illegal", "ts": "Truth Social"}
+    fig, ax = plt.subplots(figsize=(3.3, 3.0))
+    ys = np.arange(len(S))[::-1]
+    for y, (_, row) in zip(ys, S.iterrows()):
+        nn = A[row.corpus]
+        v = ax.violinplot(nn, positions=[y], orientation="horizontal", widths=0.8, showextrema=False)
+        for b in v["bodies"]:
+            b.set_facecolor(OKABE[4]); b.set_alpha(0.35); b.set_edgecolor("none")
+        ax.plot([row.nn_q25, row.nn_q75], [y, y], color=OKABE[4], lw=2.2, solid_capstyle="butt")
+        ax.plot([row.nn_median], [y], marker="|", color="white", ms=5, mew=1.2)
+        ax.plot([row.r_same], [y], marker="D", color="black", ms=3.2, ls="none")
+        if row.r_topic == row.r_topic:
+            ax.plot([row.r_topic], [y], marker="D", mfc="white", mec="black", ms=3.2, mew=0.7, ls="none")
+        ax.text(0.83, y, f"{100 * row.nn_within_same:.0f}%", va="center", ha="right", fontsize=6.5)
+    ax.text(0.83, len(S) - 0.35, "Same content\nneighbor", va="bottom", ha="right", fontsize=6)
+    ax.set_yticks(ys); ax.set_yticklabels([names[c] for c in S.corpus])
+    ax.set_xlim(0, 0.85); ax.set_ylim(-0.7, len(S) + 0.5)
+    ax.set_xlabel("Cosine distance to nearest neighbor")
+    ax.spines["left"].set_visible(False); ax.tick_params(axis="y", length=0)
+    ax.plot([], [], marker="D", color="black", ms=3.2, ls="none", label="Same content ($r_{\\mathrm{same}}$)")
+    ax.plot([], [], marker="D", mfc="white", mec="black", ms=3.2, mew=0.7, ls="none", label="Same topic ($r_{\\mathrm{topic}}$)")
+    ax.legend(loc="lower center", bbox_to_anchor=(0.45, 1.0), ncol=2, fontsize=6, handletextpad=0.3, columnspacing=1.0)
+    fig.savefig(FIG / "spread.pdf", bbox_inches="tight")
+    fig.savefig(FIG / "spread.png", dpi=600, bbox_inches="tight")
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     collapse()
     themes()
+    spread()
     print("written", sorted(p.name for p in FIG.iterdir()))
