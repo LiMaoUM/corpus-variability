@@ -19,7 +19,8 @@ confidence band and a required-n.
   embedding the whole corpus and the fallbacks (embed a large random sample; else estimate with G (1 - n/N)).
   Earlier main line (2026-10-09): the corpus sample-size formula, n r^d collapse with TwoNN d plus the
   finite population correction on Maurer's G; collapse R2 is the corpus diagnostic. Venue:
-  ACL/EMNLP via ARR. Two questions, two tools (2026-10-09): the formula answers coverage at
+  arXiv first, then a venue outside ARR (2026-11-13; IJCAI 2027 under discussion; the ARR January 2027
+  slots went to demographic-inference-rl and twin-attribution). Two questions, two tools (2026-10-09): the formula answers coverage at
   resolution r, label-free, cross-corpus through d; theme coverage is a partition question
   answered by Good-Turing on theme masses, within corpus and universal for fixed k. Summary
   stability is a within-corpus direction only, a limitation.
@@ -70,7 +71,7 @@ confidence band and a required-n.
 - Public release repo (created private 2026-10-14, made public only after Mao checks it):
   `~/projects/how-many-documents`, remote LiMaoUM/how-many-documents. Code, results CSVs, Truth Social
   and Bluesky post identifiers, pair judgments; no post text, no review records or internal files.
-- arXiv version: `paper/arxiv.tex` (defines `\arxivversion`, signed, repo link); ARR version:
+- arXiv version: `paper/arxiv.tex` (defines `\arxivversion`, signed, repo link); anonymous version:
   `paper/main.tex` (anonymous). `paper/make_arxiv.sh` builds the source tarball.
 - Listen: registered as key `corpus-variability` in `~/maospace/listen/papers.toml`.
 
