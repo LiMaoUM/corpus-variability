@@ -1,0 +1,53 @@
+% IJCAI 2027 main track version (anonymous). Compile in paper: latexmk -pdf ijcai.tex
+% Official call: https://2027.ijcai.org/ijcai-2027-call-for-papers-main-track/ (checked 2026-11-19)
+% Style: https://www.ijcai.org/authors_kit (FormattingGuidelines-IJCAI-27.zip)
+\documentclass{article}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+\usepackage{ijcai27}
+\usepackage{times}
+\usepackage{soul}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[small]{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[switch]{lineno}
+\linenumbers
+\urlstyle{same}
+
+% The sections use natbib commands; map them to the IJCAI named style.
+\newcommand{\citet}[1]{\citeauthor{#1}~\shortcite{#1}}
+\newcommand{\citep}[1]{\cite{#1}}
+
+\pdfinfo{
+/TemplateVersion (IJCAI.2027.0)
+}
+
+\title{How Many Documents Cover a Corpus}
+\author{Anonymous submission}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/method}
+\input{sections/data}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/limitations}
+
+\bibliographystyle{named}
+\bibliography{references}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

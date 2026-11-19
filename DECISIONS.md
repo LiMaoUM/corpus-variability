@@ -247,3 +247,7 @@ Coverage of samples pulled through platform APIs by keyword and time window goes
 ## 2026-11-13: arXiv first, then a venue outside ARR
 
 The paper does not go to ARR January 2027. Mao's two ARR slots in that cycle go to demographic-inference-rl and twin-attribution, because each qualified contributor can cover at most two submissions per cycle. It goes to arXiv first, then to a venue outside ARR. IJCAI 2027 is one candidate under discussion (abstract 2027-01-04, full paper 2027-01-11 AoE, 7 body pages plus 2 reference pages, no concurrent review elsewhere, large language models allowed only to polish text the authors wrote); not decided. Supersedes the 2026-10-14 ACL 2027 January plan. Decided by Mao 2026-11-13, relayed by the maospace session. (Mao, via /decide)
+
+## 2026-11-19: corpus-variability: IJCAI 2027
+
+Venue: IJCAI 2027 after an arXiv posting (Mao, 2026-11-19); dates to verify on ijcai-27.org (recorded as abstract 2027-01-04, full paper 2027-01-11 AoE); Mao reads the draft first. (Mao, via /decide)
