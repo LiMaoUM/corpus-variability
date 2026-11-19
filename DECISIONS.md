@@ -257,3 +257,7 @@ Verified 2026-11-19 on https://2027.ijcai.org/ijcai-2027-call-for-papers-main-tr
 ## 2026-11-19: IJCAI version: sample size formula as main line; Mao writes, Claude polishes
 
 The 7-page IJCAI 2027 body takes the sample size formula as its main line: the collapse law n r^(d/2), the formula for n and the pilot test in the body; the designed samples (k-means against random, the pilot that predicts the gain, the nearest neighbor figure) shortened to a paragraph, details in the supplementary material. This applies to the IJCAI version; for that version it reverses the 2026-10-15 main line (designed samples first). IJCAI 2027 allows large language models only to polish text the authors wrote themselves, so Mao writes the IJCAI body; Claude supplies the structure, the point for each paragraph and the verified numbers, then polishes Mao's text, typesets and checks numbers. Decided by Mao 2026-11-19. (Mao, via /decide)
+
+## 2026-11-19: IJCAI version cut from the current text
+
+Mao, 2026-11-19: the current version is his own writing, so the IJCAI version is made by adjusting it. Claude cuts, reorders and condenses the existing sentences to 7 pages with the sample size formula as main line, and polishes; no new content is drafted. Replaces the arrangement of the same day in which Mao would write the IJCAI body from an outline. (Mao, via /decide)
