@@ -253,3 +253,7 @@ The paper does not go to ARR January 2027. Mao's two ARR slots in that cycle go 
 Venue: IJCAI 2027 after an arXiv posting (Mao, 2026-11-19); dates to verify on ijcai-27.org (recorded as abstract 2027-01-04, full paper 2027-01-11 AoE); Mao reads the draft first. (Mao, via /decide)
 
 Verified 2026-11-19 on https://2027.ijcai.org/ijcai-2027-call-for-papers-main-track/ : abstract 2027-01-04, full paper including appendix 2027-01-11, 23:59 AoE; 7 body pages plus up to 2 pages of references; details in CLAUDE.md.
+
+## 2026-11-19: IJCAI version: sample size formula as main line; Mao writes, Claude polishes
+
+The 7-page IJCAI 2027 body takes the sample size formula as its main line: the collapse law n r^(d/2), the formula for n and the pilot test in the body; the designed samples (k-means against random, the pilot that predicts the gain, the nearest neighbor figure) shortened to a paragraph, details in the supplementary material. This applies to the IJCAI version; for that version it reverses the 2026-10-15 main line (designed samples first). IJCAI 2027 allows large language models only to polish text the authors wrote themselves, so Mao writes the IJCAI body; Claude supplies the structure, the point for each paragraph and the verified numbers, then polishes Mao's text, typesets and checks numbers. Decided by Mao 2026-11-19. (Mao, via /decide)

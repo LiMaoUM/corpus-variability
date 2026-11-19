@@ -91,6 +91,9 @@ confidence band and a required-n.
 - No concurrent submission to a venue with proceedings during review. Reproducibility checklist at submission.
   Reciprocal reviewing: one qualified author designated as reviewer. USD 100 fee unless no author is on another
   IJCAI 2027 submission.
+- IJCAI version (Mao, 2026-11-19): main line is the sample size formula (collapse law, n formula, pilot test);
+  designed samples shortened to a paragraph. Mao writes the IJCAI body; Claude gives structure, points and verified
+  numbers, then only polishes, typesets and checks. Do not draft IJCAI body prose with mao-writer.
 - Build: `paper/ijcai.tex` (anonymous, inputs the same sections; maps \citet and \citep to the named style, which
   needs citation lists without spaces after commas).
 
