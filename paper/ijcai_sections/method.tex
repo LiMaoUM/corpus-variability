@@ -1,0 +1,56 @@
+\section{Method}
+
+\subsection{The missing mass of a corpus sample}
+
+A corpus is a finite set of $N$ documents $x_1, \dots, x_N$. We embed each document with a fixed encoder, scale each embedding to length 1, and measure the distance between two documents by the cosine distance of their embeddings. A sample $S$ is a set of $n$ documents drawn at random without replacement. The user chooses a resolution $r$, and we define two documents within $r$ of each other as the same content for the purpose at hand. The quantity we estimate is the missing mass of the sample at resolution $r$,
+\begin{equation}
+M(S, r) = \frac{1}{N}\,\big|\{j : \delta(x_j, x_i) > r \text{ for all } i \in S\}\big| ,
+\end{equation}
+the proportion of corpus documents that have no sampled document within $r$. If $M = 0.6$, then 60\% of the corpus consists of documents for which the sample holds no document with the same content, and a summary or an annotation built from the sample can say nothing specific about them. Computing $M$ requires the whole embedded corpus. The estimator $G$ of Equation~\ref{eq:G} needs only the sample. We write $G(n, r)$ for its value on a sample of $n$ documents. In our experiments the whole corpus is available, so we can check every estimate against the true $M$.
+
+\subsection{The collapse law}
+
+Suppose the embedded documents lie close to a set of intrinsic dimension $d$, far smaller than the 768 or 4{,}096 coordinates of an embedding. Around a document $x$, the proportion of the corpus that lies within Euclidean distance $\rho$ is then about $c(x)\, \rho^{d}$, where $c(x)$ is larger where documents are densely packed. Between embeddings of length 1, the cosine distance is half the squared Euclidean distance, so the proportion of the corpus within cosine distance $r$ of $x$ is about $c(x)\, r^{d/2}$. The chance that none of $n$ sampled documents falls within $r$ of $x$ is about $\exp(-c(x)\, n\, r^{d/2})$. Averaging over documents gives
+\begin{equation}
+\mathbb{E}\, G(n, r) \approx \mathbb{E}_{x}\big[\exp(-c(x)\, n\, r^{d/2})\big] = \mathcal{L}_{c}(n\, r^{d/2}),
+\end{equation}
+where $\mathcal{L}_{c}$ is the Laplace transform of the distribution of $c$ over documents. Whatever the density looks like, two samples with the same product $n r^{d/2}$ have the same expected $G$, as long as one $d$ holds across the resolutions of interest. We call this the collapse law, because curves of $G$ against $n$ at different resolutions fall onto one curve when they are plotted against $n r^{d/2}$. On the synthetic manifolds, where we use Euclidean distance, the product is $n r^{d}$.
+
+Real corpora mix dense regions, where many documents say similar things, with sparse regions, where documents are unusual, and the curve then falls more slowly than a pure exponential. We describe the shape by a stretched exponential, $G = \exp(-(\kappa\, n\, r^{d/2})^{b})$ with $0 < b \le 1$. Taking logarithms twice turns this into a straight line,
+\begin{equation}
+\log\big(-\log G(n, r)\big) = a + b \log\big(n\,r^{d/2}\big),
+\label{eq:collapse}
+\end{equation}
+which we fit by least squares. We estimate $d$ beforehand with the TwoNN estimator of \citet{facco2017twonn}, which uses, for every document, the ratio of the distance to its second nearest neighbor to the distance to its first, averaged over five pilot samples of 2{,}000 documents. To fit $a$ and $b$, we draw five independent samples at each of eleven sample sizes from 100 to 7{,}000 (no more than $0.7N$), and compute $G$ at twelve resolutions spaced evenly on a log scale between the 5th and the 99th percentile of the nearest neighbor distances in a pilot. Only cells with $0.02 < G < 0.98$ enter the fit. As a check on $d$ that does not use TwoNN, we also fit $\log(-\log G)$ on $\log n$ and $\log r$ as two separate regressors, so that twice the ratio of their coefficients is a second estimate of $d$.
+
+\subsection{The sample size formula}
+
+Solving Equation~\ref{eq:collapse} for $n$ gives the sample size at which the isolation rate at resolution $r$ falls to a target $\varepsilon$,
+\begin{equation}
+n^{*}(\varepsilon, r) = \left(\frac{\log(1/\varepsilon)}{e^{a}}\right)^{1/b} r^{-d/2} .
+\label{eq:nstar}
+\end{equation}
+For example, $\varepsilon = 0.2$ asks for a sample in which at most 20\% of the documents are isolated, which, by the argument of Good and Turing, is a sample that leaves about 20\% of the corpus unseen. The corpus enters the formula through three numbers, $d$, $a$ and $b$, and all three can be estimated from a pilot.
+
+\subsection{The finite population correction}
+
+$G$ estimates the missing mass of the process that generated the corpus, as if new documents kept arriving. When the target is the corpus itself, the $n$ sampled documents are part of the corpus, and each of them has something like it in the sample, namely itself. Each of the other $N - n$ documents is isolated from the sample with a probability close to $G$. The missing mass of the corpus is therefore
+\begin{equation}
+\hat M(n, r) = G(n, r)\,\big(1 - n/N\big).
+\label{eq:fpc}
+\end{equation}
+The factor $1 - n/N$ is the one survey sampling calls the finite population correction \citep{groves2009survey}.
+
+\subsection{A pilot test for the law}
+
+The collapse law assumes that one intrinsic dimension holds across the resolutions of interest, and a researcher needs to know whether that holds before drawing the sample. We fit Equation~\ref{eq:collapse} on subsamples of a pilot of 2{,}000 documents with up to 750 documents, and we compute how much of the variance of $\log(-\log G)$ the fit explains on subsamples of 1{,}000 to 2{,}000 documents, which it did not see. A corpus passes when this pilot $R^2$ is at least 0.95. To check the pilot test, we also fit the law on samples of up to 1{,}000 documents from the whole corpus and evaluate it on samples of up to 7{,}000.
+
+\subsection{Calibrating the resolution with judgments of content}
+\label{sec:rcalm}
+
+For each real corpus, we drew about 40 pairs of documents in each of ten bins of distance between 0 and 1. A large language model read each pair and judged whether the two documents are about the same specific content (the same claim, question, event or story), about the same general topic, or unrelated. We call $r_{\mathrm{same}}$ the distance at which the percentage of pairs judged the same content crosses one half, and $r_{\mathrm{topic}}$ the distance at which the percentage judged the same content or the same topic crosses one half. Two models judged every pair, Qwen3.8-27B and Gemma-4-31B-it.
+
+\subsection{Choosing the documents to read}
+\label{sec:design}
+
+A researcher who holds the whole corpus can embed it and choose which $n$ documents to read. We take the $k$-means design from work that picks data for a model to learn from \citep{chang2021training,yuan2020coldstart,hacohen2022active,zhang2023autocot}. The researcher divides the corpus into $n$ groups of similar documents \citep{lloyd1982} and reads the document nearest the center of each group. We measure how much of the corpus the chosen documents cover, against a random sample of the same size.

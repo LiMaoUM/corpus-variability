@@ -1,0 +1,20 @@
+\section{Background}
+
+\subsection{The missing mass of a sample of categories}
+
+The missing mass of a sample was first estimated for samples of categories, such as words in a text or species in a forest. A sample of $n$ draws covers the categories it contains, and the missing mass is the total proportion of the population that belongs to categories the sample never saw. \citet{good1953} showed that $f_1/n$, the proportion of draws whose category appears only once, estimates the missing mass with little bias. The intuition is that a category seen once is the kind of category that could easily have been missed. Ecologists built a whole sampling theory on the same idea, because no field survey finds every species and the surveyor must decide when to stop. \citet{chao2012coverage} wrote the coverage a survey would reach after $m$ more draws as a formula in $n$ and the counts of species seen once and twice, so that a survey can be planned to stop at a target coverage. These estimators have been applied to text a few times \citep{tran2017,hajic2025}. In these studies an item belongs to a discrete category and two items either match or do not. Documents rarely fall into such categories. Two posts can make the same point in different words, and two posts with many words in common can make opposite points.
+
+\subsection{The missing mass with distances between items}
+
+\citet{maurer2022missing} removed the need for categories. He works in any space with a distance $\delta(\cdot, \cdot)$ between items. For a sample $X_1, \dots, X_n$ and a distance $r$, the missing mass is the probability that a new item lies farther than $r$ from every item in the sample. His estimator is
+\begin{equation}
+G(X, r) = \frac{1}{n}\,\big|\{k : \delta(X_k, X_i) > r \text{ for all } i \neq k\}\big| ,
+\label{eq:G}
+\end{equation}
+the proportion of sampled items that have no other sampled item within $r$. When items are categories, $G$ is exactly Good and Turing's $f_1/n$. Maurer proved that $G$ overstates the missing mass by at most $1/n$ on average. His paper is theory, and it contains no data, no embeddings and no statement about how $G$ changes as the sample grows.
+
+That change is described by a classical result about nearest neighbors. Suppose items are drawn from a density $f$ on a set of dimension $d$. Then the probability that an item at $x$ has no other item within Euclidean distance $r$ among $n$ draws is close to $\exp(-n f(x)\, v_d\, r^{d})$, where $v_d$ is the volume of a ball of radius 1 in $d$ dimensions \citep{evans2002,penrose2003rgg}. The same result is the basis of the estimators of intrinsic dimension proposed by \citet{levina2005} and \citet{facco2017twonn}, which work backward from nearest neighbor distances to $d$. We use it forward, to predict how $G$ falls as $n$ grows.
+
+\subsection{Diversity measures and stopping rules}
+
+Several measures describe how spread out a set of embedded documents is, such as the Vendi score \citep{friedman2023vendi} and the precision and recall of \citet{kynkaanniemi2019}. Each of these measures describes the sample in hand or compares two samples. None predicts what a larger sample would cover. Where a sample size for text is set on purpose at all, it is set by a stopping rule. Qualitative researchers stop interviewing at saturation \citep{guest2006,hennink2022}, and TopicGPT stops when 200 further documents add no new topic \citep{pham2024topicgpt}. Each of these studies observes one coverage curve and stops on it. None can say, before reading, where the curve will flatten for a new corpus. The present paper gives the curve a parameter, the intrinsic dimension $d$, and an estimator that a researcher can compute from the sample.
