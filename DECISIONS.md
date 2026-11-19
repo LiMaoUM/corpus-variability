@@ -251,3 +251,5 @@ The paper does not go to ARR January 2027. Mao's two ARR slots in that cycle go 
 ## 2026-11-19: corpus-variability: IJCAI 2027
 
 Venue: IJCAI 2027 after an arXiv posting (Mao, 2026-11-19); dates to verify on ijcai-27.org (recorded as abstract 2027-01-04, full paper 2027-01-11 AoE); Mao reads the draft first. (Mao, via /decide)
+
+Verified 2026-11-19 on https://2027.ijcai.org/ijcai-2027-call-for-papers-main-track/ : abstract 2027-01-04, full paper including appendix 2027-01-11, 23:59 AoE; 7 body pages plus up to 2 pages of references; details in CLAUDE.md.
